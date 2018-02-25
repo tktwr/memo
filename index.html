@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Memo</title>
+<link rel="icon" href="images/icon.png" type="image/png" />
+<style>
+body,html{
+    height:100%;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+}
+iframe{
+    border:none
+}
+#header{
+    position:absolute;
+    top:0;
+    left:0;
+    height:50px;
+    width:100%;
+}
+#main_container{
+    position:absolute;
+    top:50px;
+    bottom:0px;
+    left:0;
+    width:100%;
+
+    /*IE6用*/
+    _top:auto;
+    _bottom:auto;
+    _padding-top:50px;
+    _padding-bottom:0px;
+}
+#main{
+    *position:absolute; /* IE7用 */
+    _position:relative; /* IE6用 */
+    width:100%;
+    height:100%;
+}
+#toc{
+    font: 100% fantasy;
+    text-align: center;
+    margin:4px;
+}
+#toc_item{
+    margin:4px;
+}
+</style>
+</head>
+
+<body>
+<div id="toc">
+<a href="os.md.html"     id="toc_item" target="main">OS</a>
+<a href="dev.md.html"    id="toc_item" target="main">Dev</a>
+<a href="vcs.md.html"    id="toc_item" target="main">VCS</a>
+</div>
+
+<div id="main_container">
+<iframe src="os.md.html" name="main" id="main">main</iframe>
+</div>
+</body>
+
+</html>
+

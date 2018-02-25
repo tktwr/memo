@@ -1,0 +1,201 @@
+<meta charset="utf-8">
+**OS**
+
+<meta name="keywords" content="*memo_os*">
+<meta name="keywords" content="*memo_windows*">
+<meta name="keywords" content="*memo_windows10*">
+Windows
+===============================================================================
+## Shortcut
+Shortcut    | Description
+------------|-------------------------------
+Alt + `     | 日本語入力 [英語キーボード]
+Windows + L | 画面ロック
+
+## パーティションの変更
+コンピュータ (右クリックメニュー) -> 管理 -> ディスクの管理
+
+<meta name="keywords" content="*memo_dos*">
+<meta name="keywords" content="*memo_bat*">
+DOSコマンド
+===============================================================================
+## UNIX - DOS コマンド対応表
+UNIX                    | DOS
+------------------------|--------------
+mkdir dir               | mkdir(md) dir
+cp src_file dst_file    | copy src_file dst_file
+cp -a src_dir dst_dir   | xcopy src_dir dst_dir
+mv src_file dst_file    | move src_file dst_file
+mv src_dir dst_dir      | move src_dir dst_dir
+rm file                 | del file
+rm -r dir               | rmdir(rd) /s dir
+ln -s src_file dst_file | mklink dst_file src_file
+ln -s src_dir dst_dir   | mklink /d dst_dir src_dir
+
+## HDDの廃棄
+1. NTFSでフォーマット
+2. f:ドライブを消去 (0を書込み -> 1を書込み -> 乱数を書込み)
+~~~
+cipher /w:f:
+~~~
+
+## ミラーリング (管理者権限で実行)
+~~~
+robocopy C:¥srcdir D:¥dstdir /mir /sl
+robocopy srcdir D:¥dstdir /mir /sl
+robocopy /?
+~~~
+
+## シンボリックリンクの作成と削除
+     | 作成                    | 削除
+-----|-------------------------|----
+dir  | mklink /d dstdir srcdir | rmdir dstdir
+file | mklink dstfile srcfile  | del dstfile
+
+注意点
+
+- シンボリックリンク作成には管理者権限が必要。コマンドプロンプト(cmd.exe)を管理者権限で起動する。
+- mklink は ln と書き順が逆。
+- delでディレクトリへのシンボリックリンクは削除できない。del dir/* と解釈されてリンク先のディレクトリ内のファイルが削除される。
+
+## sample.bat
+~~~
+@echo off
+rem sample batch file
+
+echo ARGS : %*
+echo ARG0 : %0
+echo ARG1 : %1
+echo DIR  : %~dp0
+
+set num=0
+if %num% equ 0 (
+  echo 0
+) else (
+  echo 1
+)
+
+set str=A
+if "%str%" == "A" (
+  echo 0
+) else (
+  echo 1
+)
+~~~
+
+<meta name="keywords" content="*memo_msys*">
+<meta name="keywords" content="*memo_msys2*">
+MSYS2
+===============================================================================
+- http://www.msys2.org/
+- https://wiki.archlinux.org/index.php/pacman
+
+## stdc++ man pages
+
+- https://github.com/jeaye/stdman
+
+ファイル名にstd::...を使用しているのでMSYS2のgitを使う
+~~~
+/usr/bin/git clone https://github.com/jeaye/stdman.git
+~~~
+
+## disable POSIX-to-Windows path conversion
+~~~
+MSYS_NO_PATHCONV=1
+~~~
+
+<meta name="keywords" content="*memo_cmake*">
+## cmake
+~~~
+mkdir build
+cd build
+cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+~~~
+
+<meta name="keywords" content="*memo_pacman*">
+## pacman
+
+Option              | 説明
+--------------------|-----------------
+-S -h               | help
+-Syu                | update database
+-Su                 | update
+-S package          | install
+-R package          | uninstall
+-Sg [package group] | print package group
+-Si [package]       | print information
+-Sl                 | print list
+-Ss [pattern]       | search packages
+
+<meta name="keywords" content="*memo_cygwin*">
+Cygwin
+===============================================================================
+## DLLの読み込みに失敗する場合
+C:¥cygwin¥bin¥dash.exe -c '/usr/bin/rebaseall -v'
+
+## X serverのインストール
+- xorg-server
+- xinit
+
+## X serverの起動
+スタートメニュー -> XWin Server
+
+## テキストファイル形式
+UTF8, DOS形式
+
+## 現在のパスをWindows形式の絶対パスに変換
+cygpath -am `pwd`
+
+<meta name="keywords" content="*memo_bootcamp*">
+BootCamp
+===============================================================================
+## Shortcut
+Shortcut               | Description
+-----------------------|-------------------------------------
+option長押し           | OSの選択 [起動時]
+      Shift + Fn + F11 | スクリーンキャプチャ
+Alt + Shift + Fn + F11 | 選択されたウィンドウのキャプチャ
+
+
+<meta name="keywords" content="*memo_linux*">
+Linux
+===============================================================================
+## Shortcut [X Window]
+Shortcut            | Description
+--------------------|-------------------------------------
+Ctrl + Alt + F[1-6] | X Window から仮想コンソールへの切替え
+Ctrl + Alt + BS     | kill X server
+
+## Shortcut [Console]
+Shortcut            | Description
+--------------------|-------------------------------------
+       Alt + F[1-6] | 仮想コンソールの切替え
+       Alt + F7     | X Window へもどる
+Ctrl + Alt + Delete | reboot
+SysRq + s           | sync
+SysRq + u           | unmount
+SysRq + b           | reboot
+
+<meta name="keywords" content="*memo_mac*">
+Mac
+===============================================================================
+## Shortcut
+Shortcut        | Description
+----------------|-------------------------------------
+Cmd + Tab       | アプリ切替
+Cmd + Space     | 日本語入力
+Shift + クリック| ファイル連続選択
+Cmd + クリック  | ファイル個別選択
+Cmd + delete    | ファイル削除
+
+<meta name="keywords" content="*memo_misc*">
+misc
+===============================================================================
+## NTP Server
+ntp.nict.jp
+
+
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+<meta vim:syntax=md
+>

@@ -1,0 +1,242 @@
+<meta charset="utf-8">
+**VCS**
+
+<meta name="keywords" content="*memo_vcs*">
+
+<meta name="keywords" content="*memo_git*">
+git
+===========================================================================
+
+## Links
+
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
+- [GitLab](https://about.gitlab.com/)
+- [サルでもわかるGit入門](https://www.backlog.jp/git-guide/)
+- [TortoiseGit](https://tortoisegit.org/)
+- [git manual](https://git.github.io/htmldocs/git.html)
+- [GitHub GIT CHEAT SHEET](files/github-git-cheat-sheet.pdf)
+
+## layers
+- Upstream repository
+  - push
+  - pull
+- Local repository
+  - commit
+- Index
+  - add
+  - reset
+- Workspace
+  - stash
+- Stash
+
+## workflow
+~~~
+git add .               # ステージング
+git commit              # ローカルレポジトリにコミット
+git push origin master  # リモートレポジトリoriginにpush
+~~~
+
+<meta name="keywords" content="*memo_git-status*">
+## information
+~~~
+git status
+git status -sb            # show status in short format
+git log                   # show commit log
+git ls-files              # list tracked files
+git branch -a             # list local and remote branches
+git branch -vv -a         # show default upstream
+git remote -v             # list remote repositories
+git rev-parse --show-cdup
+~~~
+
+<meta name="keywords" content="*memo_git-config*">
+## config
+~~~
+git config --global user.name {name}
+git config --global user.email {email}
+git config --global core.autocrlf input
+git config -l       # list config
+~~~
+
+<meta name="keywords" content="*memo_git-init*">
+## make a remote repository
+~~~
+mkdir myproj.git
+cd myproj.git
+git init --bare
+~~~
+
+## make a local repository
+
+<meta name="keywords" content="*memo_git-clone*">
+### clone
+~~~
+git clone URL/myproj.git [work_dir]
+~~~
+
+### init
+~~~
+mkdir myproj
+cd myproj
+git init
+git remote add origin URL/myproj.git
+~~~
+
+<meta name="keywords" content="*memo_git-remote*">
+## remote repository
+~~~
+git remote add     origin URL  # connect oring to URL
+git remote set-url origin URL  # set origin to URL
+git remote rename src dst      # rename
+git remote rm origin           # disconnect origin
+git remote prune origin        # prune remote branches
+git remote show origin         # show info of the remote repository
+git remote -v                  # list remote repositories
+~~~
+
+<meta name="keywords" content="*memo_git-fetch*">
+<meta name="keywords" content="*memo_git-pull*">
+<meta name="keywords" content="*memo_git-push*">
+## remote branch
+~~~
+git fetch
+git fetch --prune         # prune remote branches
+git pull                  # fetch + merge
+git push origin master
+git push origin :BRANCH   # remove the remote branch
+~~~
+
+<meta name="keywords" content="*memo_git-add*">
+## add
+~~~
+git add {file}   # ファイルをtraced fileにする
+git add .        # カレントディレクトリのすべてのファイルをtraced fileにする
+git add -u       # add updated file
+~~~
+
+## stage/unstage, discard
+~~~
+git add {file}                       # stage
+git reset [tree-ish] [--] {paths}    # unstage
+git checkout [--] {paths}            # discard changes
+~~~
+
+## track/untrack files
+~~~
+git add {file}
+git rm --cached    {file} # untrack file
+git rm --cached -r {dir}  # untrack dir
+git ls-files              # list tracked files
+~~~
+
+<meta name="keywords" content="*memo_git-commit*">
+## commit
+~~~
+git commit
+git commit -a            # 変更されたtraced fileをaddしてcommit
+git commit -m "message"  # メッセージをつけてコミット
+git commit --amend       # 直前のコミットを取り消す
+~~~
+
+## commit message
+~~~
+一行目は概要
+二行目は空行
+三行目以降に詳細
+- 現在形で記述する
+~~~
+
+<meta name="keywords" content="*memo_git-reset*">
+## reset
+~~~
+git reset [tree-ish] [--] {paths}  # unstage
+git reset --hard [commit]          # reset work directory to commit
+~~~
+
+<meta name="keywords" content="*memo_git-checkout*">
+## checkout
+~~~
+git checkout    {branch}                 # ブランチの移動
+git checkout -b {branch} {origin/branch} # リモートブランチをチェックアウト
+git checkout [--] {paths}                # ファイルをリポジトリから取り出す -- 以降はファイル名として扱う (ファイル名がブランチ名と被るのを避ける)
+~~~
+
+<meta name="keywords" content="*memo_git-branch*">
+## branch
+~~~
+git branch    {branch}  # ブランチの作成
+git branch -d {branch}  # ブランチの削除
+git branch -m {branch}  # 現在のブランチ名の変更
+git branch -a           # ブランチの表示
+~~~
+
+<meta name="keywords" content="*memo_git-merge*">
+<meta name="keywords" content="*memo_git-rebase*">
+## merge
+~~~
+git merge {branch}  # 指定したブランチを現在のブランチに統合する
+git rebase {branch} # 現在のブランチの派生元を指定したブランチに変更する
+git rebase -i
+~~~
+
+<meta name="keywords" content="*memo_git-cherry-pick*">
+## cherry-pick
+~~~
+git cherry-pick
+~~~
+
+<meta name="keywords" content="*memo_git-stash*">
+## stash
+~~~
+git stash
+git stash pop
+git stash clear
+git stash list
+~~~
+
+<meta name="keywords" content="*memo_git-worktree*">
+## worktree
+~~~
+git worktree add {worktree} {branch}
+git worktree prune                     # worktree を削除後実行
+git worktree list                      # list worktrees
+~~~
+
+<meta name="keywords" content="*memo_git-diff*">
+## diff
+~~~
+git diff rev1 rev2 FILE|DIR
+~~~
+
+<meta name="keywords" content="*memo_git-svn*">
+git-svn
+===========================================================================
+
+コマンド        | svn                               | git                         | git-svn
+----------------|-----------------------------------|-----------------------------|-------------------------
+チェックアウト  | svn checkout URL                  | git clone URL               | git svn clone URL
+更新            | svn update                        | git pull                    | git svn rebase
+コミット        | svn commit                        | git commit -a<br> git push  | git commit -a<br> git svn dcommit
+追加            | svn add FILE/DIR                  | git add FILE/DIR            |
+削除            | svn rm FILE/DIR                   | git rm FILE                 |
+移動            | svn mv FILE/DIR                   | git mv FILE                 |
+変更取り消し    | svn revert FILE                   | git checkout -- FILE        |
+スイッチ        | svn switch URL                    | git checkout BRANCH         |
+状態            | svn status                        | git status                  |
+ログ            | svn log                           | git log                     |
+差分            | svn diff                          | git diff                    |
+ブランチ作成    | svn copy URL URL                  | git branch BRANCH           | git svn branch BRANCH
+タグ作成        | svn copy URL URL                  | git tag TAG                 | git svn tag TAG
+マージ          | svn merge -r REV1:REV2 URL        | git merge BRANCH            |
+
+<meta name="keywords" content="*memo_svn*">
+svn
+===========================================================================
+
+- [TortoiseSVN](https://tortoisesvn.net/)
+  - [Doc](https://tortoisesvn.net/docs/release/TortoiseSVN_ja/index.html)
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+<meta vim:syntax=md
+>
