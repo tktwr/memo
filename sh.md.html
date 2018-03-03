@@ -1,0 +1,254 @@
+<meta charset="utf-8">
+**Shell**
+
+<meta name="keywords" content="*memo_sh*">
+<meta name="keywords" content="*memo_bash*">
+bash
+===========================================================================
+## 環境変数
+~~~
+HISTCONTROL=ignoreboth
+FIGNORE=.o
+~~~
+
+## 引数 year/month/day の切り出し
+~~~
+orig_IFS=$IFS
+IFS='/'
+set $*
+year=$1
+month=$2
+day=$3
+IFS=$orig_IFS
+~~~
+
+## sh
+~~~
+# redirect stderr and stdout
+$ command > foo.txt 2>&1
+    1. 2>&1:      redirect stderr to stdout
+    2. > foo.txt: redirect stdout to file foo.txt
+So, foo.txt will contain stderr and stdout of command
+
+# 標準エラー出力をlog.txtに書き出す
+$ a.exe 2>&1 | tee log.txt
+
+# 実行時間をlog.txtに書き出す
+$ (time a.exe) 2>&1 | tee log.txt
+~~~
+
+## bash
+~~~
+# redirect stderr and stdout
+$ command &> foo.txt
+$ command >& foo.txt
+
+# redirect only stderr
+$ command 2> foo.txt
+
+# redirect stdout to stderr
+echo "error" 1>&2
+
+# pipe
+% tar cf - dir | (cd /mirror; tar xf -)
+~~~
+
+
+~~~
+x=foo.bar
+echo $x
+echo ${x:4}
+echo ${x:$((-4))}
+echo ${x/.bar/.com}
+echo a{d,c,b}e
+~~~
+
+## array
+~~~
+a=(\
+"abc" \
+"def" \
+"ghi" \
+)
+echo ${a[0]}
+echo ${a[2]}
+echo ${a[*]}
+echo ${a[@]}
+echo ${#a[*]}
+~~~
+
+## date
+~~~
+`date '+%Y%m%d'`
+~~~
+
+## 文法
+~~~
+while [ ]; do
+done
+
+if [ ]; then
+elif [ ]; then
+else
+fi
+
+case i in $*
+*word1|*word2)
+  ;;
+esac
+~~~
+
+## read from stdin
+~~~
+while [ true ]; do
+  read line
+  if [ -z $line ]; then
+    break;
+  else
+    echo $line
+  fi
+done
+~~~
+
+<meta name="keywords" content="*memo_csh*">
+csh
+===========================================================================
+## redirect stderr and stdout
+~~~
+% command >& foo.txt
+~~~
+
+## 文法
+~~~
+while ()
+end
+
+if () then
+else if () then
+else
+endif
+
+switch ()
+case <label>:
+  breaksw
+default:
+  breaksw
+endsw
+~~~
+
+<meta name="keywords" content="*memo_awk*">
+awk
+===========================================================================
+## counter
+~~~
+ls -l | grep -v '^total' | awk '{c[$6]++} END {for(m in c) print m,c[m]}'
+~~~
+
+## define the field separator to ';'
+~~~
+awk -F ';' '{print $1}'
+~~~
+
+## シェル変数 $1 を awk の命令の中で使うとき
+awk '{print "' + "$1" + ':" $1}' と考える
+~~~
+awk '{print "'"$1"':" $1}'
+~~~
+
+<meta name="keywords" content="*memo_sed*">
+sed
+===========================================================================
+## 複数のコマンドを実行
+~~~
+sed -e '...' -e '...'
+~~~
+## 10行目のみ表示
+~~~
+sed -e '10p' -n input.txt
+~~~
+## wordを含む行のみ表示
+~~~
+sed -e '/word/p' -n input.txt
+~~~
+## wordを含む行を削除
+~~~
+sed -e '/word/d' input.txt
+~~~
+
+## begin_lines という行から end_lines という行までを取り出す
+~~~
+sed -n '/^begin_lines$/,/^end_lines$/p'
+~~~
+
+## タグ付き正規表現
+\( と \) で囲んだ正規表現が \1, \2, ... として参照できる。
+html から url を取り出す。
+~~~
+sed -n 's/.*src="\([^"]*\)".*/\1/p'
+~~~
+
+## シェル変数 $1 を sed の命令の中で使うとき
+sed 's/aaa/' + "$1" + '/' と考える
+~~~
+sed 's/aaa/'"$1"'/'
+~~~
+
+<meta name="keywords" content="*memo_grep*">
+grep
+===========================================================================
+## NOT
+~~~
+grep -v "exp1"
+~~~
+
+## AND
+~~~
+grep "exp1" | grep "exp2"
+~~~
+
+## OR
+~~~
+grep -e "exp1" -e "exp2"
+grep "exp1\|exp2"
+~~~
+
+## exact matching
+~~~
+grep '\<hoge\>' file
+~~~
+- \<  the begining of a word
+- \>  the end of a word
+
+<meta name="keywords" content="*memo_readline*">
+readline
+===========================================================================
+
+## History manipulation
+
+Key | Description
+----|---
+C-p | previous-history
+C-n | next-history
+C-r | reverse-search-history
+C-s | forward-search-history
+
+## Command line editing
+
+Key | Description
+----|---
+C-a | beginning-of-line
+C-e | end-of-line
+C-f | forward-char
+C-b | backward-char
+C-l | clear-screen
+C-d | delete-char
+C-k | kill-line
+C-u | unix-line-discard
+M-f | forward-word
+M-b | backward-word
+M-d | kill-word
+C-w | unix-word-rubout
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+<meta vim:syntax=md
+>
