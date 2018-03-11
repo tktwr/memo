@@ -5,9 +5,13 @@ memo_bash	sh.md.html	/*memo_bash*
 memo_bat	os.md.html	/*memo_bat*
 memo_blender	soft.md.html	/*memo_blender*
 memo_bootcamp	os.md.html	/*memo_bootcamp*
+memo_c	prog.md.html	/*memo_c*
+memo_c++	prog.md.html	/*memo_c++*
 memo_cmake	os.md.html	/*memo_cmake*
 memo_convert	soft.md.html	/*memo_convert*
+memo_cpp	prog.md.html	/*memo_cpp*
 memo_csh	sh.md.html	/*memo_csh*
+memo_cxx	prog.md.html	/*memo_cxx*
 memo_cygwin	os.md.html	/*memo_cygwin*
 memo_dev	dev.md.html	/*memo_dev*
 memo_dos	os.md.html	/*memo_dos*
@@ -44,6 +48,7 @@ memo_msys	os.md.html	/*memo_msys*
 memo_msys2	os.md.html	/*memo_msys2*
 memo_os	os.md.html	/*memo_os*
 memo_pacman	os.md.html	/*memo_pacman*
+memo_prog	prog.md.html	/*memo_prog*
 memo_readline	sh.md.html	/*memo_readline*
 memo_sed	sh.md.html	/*memo_sed*
 memo_sh	sh.md.html	/*memo_sh*
