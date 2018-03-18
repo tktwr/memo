@@ -13,9 +13,46 @@ Word
 <meta name="keywords" content="*memo_convert*">
 ImageMagick
 ===========================================================================
-## grayscale 変換
+## size
+~~~
+convert -geometry {width}x{height} input_image output_image
+convert -geometry {width}          input_image output_image
+~~~
+## grayscale
 ~~~
 convert input_image -type GrayScale output_image
+~~~
+## png24
+~~~
+convert input_image png24:output_image
+~~~
+## png32
+~~~
+convert input_image png32:output_image
+~~~
+## 上下反転
+~~~
+convert -flip input_image output_image
+~~~
+## 左右反転
+~~~
+convert -flop input_image output_image
+~~~
+## 時計回りに回転
+~~~
+convert -rotate 90 input_image output_image
+~~~
+## crop
+~~~
+convert -crop {width}x{height}+{x}+{y} input_image output_image
+~~~
+## 縦に結合
+~~~
+convert -append image1 image2 image3 output_image
+~~~
+## 横に結合
+~~~
+convert +append image1 image2 image3 output_image
 ~~~
 
 <meta name="keywords" content="*memo_gimp*">
