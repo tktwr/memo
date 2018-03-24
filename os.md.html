@@ -163,8 +163,16 @@ MSYS2
 ~~~
 
 ## disable POSIX-to-Windows path conversion
+以下のいずれかの方法がある
+
+- パスの先頭の'/'を'//'に変更する
+- MSYS_NO_PATHCONVを設定する
 ~~~
 MSYS_NO_PATHCONV=1
+~~~
+- MSYS2_ARG_CONV_EXCLを設定する
+~~~
+MSYS2_ARG_CONV_EXCL="*"
 ~~~
 
 <meta name="keywords" content="*memo_cmake*">
@@ -284,6 +292,7 @@ Cmd + delete    | ファイル削除
 Termux
 ===============================================================================
 - https://termux.com/
+- [The Termux Wiki](https://wiki.termux.com/wiki/Main_Page)
 - Hacker's Keyboard
 
 ## update, upgrade
@@ -291,11 +300,19 @@ Termux
 apt update
 apt upgrade
 ~~~
+
+## setup storage
+~~~
+termux-setup-storage
+~~~
+- https://wiki.termux.com/wiki/Termux-setup-storage
+
 ## /bin/shで始まるスクリプトを実行できるようにする
 ~~~
 pkg install termux-exec
 ~~~
 - https://wiki.termux.com/wiki/FAQ#Why_do_I_keep_getting_.27.2Fbin.2Fsh_bad_interpreter.27_error.3F
+
 ## Installed
 ~~~
 pkg install git vim ctags clang cmake

@@ -32,6 +32,108 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'tyru/eskk.vim'
 ~~~
 
+## vimrcを読み込まずに起動する
+
+~~~
+$ vim -u NONE
+~~~
+
+<meta name="keywords" content="*memo_eskk*">
+## eskk
+
+- [SKK Manual](http://skk-dev.github.io/ddskk/skk.html)
+- [SKK日本語入力FEP](http://coexe.web.fc2.com/skkfep.html)
+- [SKK辞書](http://openlab.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1)
+
+~~~
+NeoBundle 'tyru/eskk.vim'
+if neobundle#is_installed('eskk.vim')
+  let g:eskk#directory = "~/.eskk"
+  let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
+  let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
+endif
+~~~
+
+注意
+
+- gzip圧縮した辞書は使用不可
+- sortedは0で使用
+
+Termuxで使用するときの注意
+
+- 辞書のエンコーディングをEUC-JPからUTF-8に変換が必要
+
+<meta name="keywords" content="*memo_skk*">
+### 基本操作
+Mode     | Command              | Description
+---------|----------------------|---
+n <-> k  | C-j                  | かな入力へ
+k <-> K  | q                    | カタカナ入力へ
+k  -> a  | l                    | 半角英数入力へ
+k  -> A  | L                    | 全角英数入力へ
+k  -> R  | アルファベット大文字 | 漢字開始、送りがな開始
+R  -> J  | SPACE                | 変換
+J        | SPACE                | 次候補
+J        | x                    | 前候補
+RJ -> k  | C-g                  | 変換キャンセル
+   -> n  | ESC                  | normalモードへ
+
+************************************************************************
+*                      .----------.                                    *
+*                      | ascii    |                                    *
+*                      '----------'                                    *
+*                         ^  | C-j                                     *
+*                       l |  v                                         *
+* .--------.           .-------------------.    .-------.    .-------. *
+* | normal | <--C-j--> | kana <- q -> KANA |--> | Roman |--> | Kanji | *
+* '--------'           '-------------------'    '-------'    '-------' *
+*                       L |  ^                                         *
+*                         v  | C-j                                     *
+*                      .-------------.                                 *
+*                      | 2byte-Ascii |                                 *
+*                      '-------------'                                 *
+************************************************************************
+
+## encryption
+
+Command          | Description
+-----------------|---
+set cm=blowfish2 | set an encryption method
+:X               | set a new key
+:set key=        | unset a key
+:w               | write a encrypted file
+
+## vimgrep
+
+### サブディレクトリの検索
+~~~
+:vimgrep WORD **
+~~~
+
+## diff
+
+Command          | Description
+-----------------|---
+[c               | jump to the previous change
+]c               | jump to the next change
+[count]do        | :diffget
+[count]dp        | :diffput
+
+## netrwプラグイン
+
+~~~
+$ vim .
+~~~
+
+Command          | Description
+-----------------|---
+i                | 表示形式変更
+< cr >           | ファイルを開く
+o                | ウィンドウを水平に分割してファイルを開く
+v                | ウィンドウを垂直に分割してファイルを開く
+P                | 前回のウィンドウでファイルを開く
+p                | プレビュー
+
 ## Keymap
 
 ~~~
@@ -129,97 +231,6 @@ NeoBundle 'tyru/eskk.vim'
   <
   >
 ~~~
-
-## vimrcを読み込まずに起動する
-
-~~~
-$ vim -u NONE
-~~~
-
-## vimgrep
-
-### サブディレクトリの検索
-~~~
-:vimgrep WORD **
-~~~
-
-## eskk
-
-- [SKK Manual](http://skk-dev.github.io/ddskk/skk.html)
-- [SKK日本語入力FEP](http://coexe.web.fc2.com/skkfep.html)
-- [SKK辞書](http://openlab.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1)
-
-~~~
-NeoBundle 'tyru/eskk.vim'
-if neobundle#is_installed('eskk.vim')
-  let g:eskk#directory = "~/.eskk"
-  let g:eskk#dictionary = { 'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'utf-8', }
-  let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
-endif
-~~~
-
-### 基本操作
-Mode     | Command              | Description
----------|----------------------|---
-n <-> k  | C-j                  | かな入力へ
-k <-> K  | q                    | カタカナ入力へ
-k  -> a  | l                    | 半角英数入力へ
-k  -> A  | L                    | 全角英数入力へ
-k  -> R  | アルファベット大文字 | 漢字開始、送りがな開始
-R  -> J  | SPACE                | 変換
-J        | SPACE                | 次候補
-J        | x                    | 前候補
-RJ -> k  | C-g                  | 変換キャンセル
-   -> n  | ESC                  | normalモードへ
-
-************************************************************************
-*                      .----------.                                    *
-*                      | ascii    |                                    *
-*                      '----------'                                    *
-*                         ^  | C-j                                     *
-*                       l |  v                                         *
-* .--------.           .-------------------.    .-------.    .-------. *
-* | normal | <--C-j--> | kana <- q -> KANA |--> | Roman |--> | Kanji | *
-* '--------'           '-------------------'    '-------'    '-------' *
-*                       L |  ^                                         *
-*                         v  | C-j                                     *
-*                      .-------------.                                 *
-*                      | 2byte-Ascii |                                 *
-*                      '-------------'                                 *
-************************************************************************
-
-## encryption
-
-Command          | Description
------------------|---
-set cm=blowfish2 | set an encryption method
-:X               | set a new key
-:set key=        | unset a key
-:w               | write a encrypted file
-
-## diff
-
-Command          | Description
------------------|---
-[c               | jump to the previous change
-]c               | jump to the next change
-[count]do        | :diffget
-[count]dp        | :diffput
-
-## netrwプラグイン
-
-~~~
-$ vim .
-~~~
-
-Command          | Description
------------------|---
-i                | 表示形式変更
-< cr >           | ファイルを開く
-o                | ウィンドウを水平に分割してファイルを開く
-v                | ウィンドウを垂直に分割してファイルを開く
-P                | 前回のウィンドウでファイルを開く
-p                | プレビュー
 
 <meta name="keywords" content="*memo_android*">
 android

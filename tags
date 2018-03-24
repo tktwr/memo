@@ -15,6 +15,7 @@ memo_cxx	prog.md.html	/*memo_cxx*
 memo_cygwin	os.md.html	/*memo_cygwin*
 memo_dev	dev.md.html	/*memo_dev*
 memo_dos	os.md.html	/*memo_dos*
+memo_eskk	dev.md.html	/*memo_eskk*
 memo_freecad	soft.md.html	/*memo_freecad*
 memo_gimp	soft.md.html	/*memo_gimp*
 memo_git	vcs.md.html	/*memo_git*
@@ -52,6 +53,7 @@ memo_prog	prog.md.html	/*memo_prog*
 memo_readline	sh.md.html	/*memo_readline*
 memo_sed	sh.md.html	/*memo_sed*
 memo_sh	sh.md.html	/*memo_sh*
+memo_skk	dev.md.html	/*memo_skk*
 memo_soft	soft.md.html	/*memo_soft*
 memo_stock	stock.md.html	/*memo_stock*
 memo_svn	vcs.md.html	/*memo_svn*
