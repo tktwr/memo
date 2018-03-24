@@ -19,6 +19,19 @@ vim
 - [gitv](https://github.com/gregsexton/gitv)
 - [agit](https://github.com/cohama/agit.vim)
 
+~~~
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'cohama/agit.vim'
+NeoBundle 'scrooloose/nerdtree'
+"NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'will133/vim-dirdiff'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'tyru/eskk.vim'
+~~~
+
 ## Keymap
 
 ~~~
@@ -117,6 +130,12 @@ vim
   >
 ~~~
 
+## vimrcを読み込まずに起動する
+
+~~~
+$ vim -u NONE
+~~~
+
 ## vimgrep
 
 ### サブディレクトリの検索
@@ -124,9 +143,54 @@ vim
 :vimgrep WORD **
 ~~~
 
+## eskk
+
+- [SKK Manual](http://skk-dev.github.io/ddskk/skk.html)
+- [SKK日本語入力FEP](http://coexe.web.fc2.com/skkfep.html)
+- [SKK辞書](http://openlab.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1)
+
+~~~
+NeoBundle 'tyru/eskk.vim'
+if neobundle#is_installed('eskk.vim')
+  let g:eskk#directory = "~/.eskk"
+  let g:eskk#dictionary = { 'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'utf-8', }
+  let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
+endif
+~~~
+
+### 基本操作
+Mode     | Command              | Description
+---------|----------------------|---
+n <-> k  | C-j                  | かな入力へ
+k <-> K  | q                    | カタカナ入力へ
+k  -> a  | l                    | 半角英数入力へ
+k  -> A  | L                    | 全角英数入力へ
+k  -> R  | アルファベット大文字 | 漢字開始、送りがな開始
+R  -> J  | SPACE                | 変換
+J        | SPACE                | 次候補
+J        | x                    | 前候補
+RJ -> k  | C-g                  | 変換キャンセル
+   -> n  | ESC                  | normalモードへ
+
+************************************************************************
+*                      .----------.                                    *
+*                      | ascii    |                                    *
+*                      '----------'                                    *
+*                         ^  | C-j                                     *
+*                       l |  v                                         *
+* .--------.           .-------------------.    .-------.    .-------. *
+* | normal | <--C-j--> | kana <- q -> KANA |--> | Roman |--> | Kanji | *
+* '--------'           '-------------------'    '-------'    '-------' *
+*                       L |  ^                                         *
+*                         v  | C-j                                     *
+*                      .-------------.                                 *
+*                      | 2byte-Ascii |                                 *
+*                      '-------------'                                 *
+************************************************************************
+
 ## encryption
 
-command          | Description
+Command          | Description
 -----------------|---
 set cm=blowfish2 | set an encryption method
 :X               | set a new key
@@ -135,7 +199,7 @@ set cm=blowfish2 | set an encryption method
 
 ## diff
 
-command          | Description
+Command          | Description
 -----------------|---
 [c               | jump to the previous change
 ]c               | jump to the next change
@@ -148,7 +212,7 @@ command          | Description
 $ vim .
 ~~~
 
-command          | Description
+Command          | Description
 -----------------|---
 i                | 表示形式変更
 < cr >           | ファイルを開く

@@ -197,6 +197,7 @@ pacman -S vim ctags vimpager
 pacman -S zip unzip
 pacman -S man-pages-posix
 pacman -S base-devel
+pacman -S tmux winpty
 pacman -S mingw-w64-x86_64-toolchain
 pacman -S mingw-w64-x86_64-clang
 pacman -S mingw-w64-x86_64-cmake
@@ -278,6 +279,27 @@ Cmd + Space     | 日本語入力
 Shift + クリック| ファイル連続選択
 Cmd + クリック  | ファイル個別選択
 Cmd + delete    | ファイル削除
+
+<meta name="keywords" content="*memo_termux*">
+Termux
+===============================================================================
+- https://termux.com/
+- Hacker's Keyboard
+
+## update, upgrade
+~~~
+apt update
+apt upgrade
+~~~
+## /bin/shで始まるスクリプトを実行できるようにする
+~~~
+pkg install termux-exec
+~~~
+- https://wiki.termux.com/wiki/FAQ#Why_do_I_keep_getting_.27.2Fbin.2Fsh_bad_interpreter.27_error.3F
+## Installed
+~~~
+pkg install git vim ctags clang cmake
+~~~
 
 <meta name="keywords" content="*memo_misc*">
 misc
