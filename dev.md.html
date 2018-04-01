@@ -3,6 +3,33 @@
 
 <meta name="keywords" content="*memo_dev*">
 
+<meta name="keywords" content="*memo_tmux*">
+tmux
+===========================================================================
+## Basic key bindings
+Mode | Command              | Description
+-----|----------------------|---
+W    | C-b r                | reload ~/.tmux.conf
+W    | C-b c                | create a new window
+W    | C-b [1-9]            | select the window
+P    | C-b o                | move to the next pane
+P    | C-b z                | maximize the current pane / return
+P    | C-b 0                | my favorite split pane *
+P    | C-b -                | hrizontal split pane *
+P    | C-b &brvbar;         | vertical split pane *
+P    | C-b [hjkl]           | move to a pane *
+P    | C-b [HJKL]           | resize the current pane *
+
+- * my key bindings
+
+## Other key bindings
+Mode | Command              | Description
+-----|----------------------|---
+W    | C-b ,                | rename the current window name
+W    | C-b w                | list window / move to a window
+W    | C-b n                | move to the next window
+W    | C-b p                | move to the prev window
+
 <meta name="keywords" content="*memo_vi*">
 <meta name="keywords" content="*memo_vim*">
 vim
@@ -24,7 +51,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'cohama/agit.vim'
 NeoBundle 'scrooloose/nerdtree'
-"NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'will133/vim-dirdiff'
 NeoBundle 'tpope/vim-surround'

@@ -58,6 +58,7 @@ memo_soft	soft.md.html	/*memo_soft*
 memo_stock	stock.md.html	/*memo_stock*
 memo_svn	vcs.md.html	/*memo_svn*
 memo_termux	os.md.html	/*memo_termux*
+memo_tmux	dev.md.html	/*memo_tmux*
 memo_top	memo.md.html	/*memo_top*
 memo_unity	dev.md.html	/*memo_unity*
 memo_vcs	vcs.md.html	/*memo_vcs*
