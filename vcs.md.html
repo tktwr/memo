@@ -130,6 +130,13 @@ git rm --cached -r {dir}  # untrack dir
 git ls-files              # list tracked files
 ~~~
 
+## chmod (Windows)
+~~~
+git update-index --add --chmod=(+|-)x {file}  # add|remove exec permission
+git ls-files -s                               # show filemode of tracked files
+git config -l | grep filemode                 # show filemode setting
+~~~
+
 <meta name="keywords" content="*memo_git-commit*">
 ## commit
 ~~~

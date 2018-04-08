@@ -7,7 +7,35 @@
 Windows
 ===============================================================================
 
+<meta name="keywords" content="*memo_chocolatey*">
+<meta name="keywords" content="*memo_choco*">
+## Chocolatey
+
 - https://chocolatey.org/
+
+~~~
+# help
+choco -h
+# version
+choco -v
+# upgrade
+choco upgrade chocolatey
+choco upgrade -y all
+# install
+choco install -y PACKAGE
+# uninstall
+choco uninstall PACKAGE
+# search PACKAGE
+choco list PACKAGE
+# list local
+choco list -l
+
+choco install -y jdk8
+choco install -y opencv
+choco install -y meshlab fsviewer
+~~~
+
+- PACKAGE.install use native installer
 
 ## Shortcut
 Shortcut    | Description
