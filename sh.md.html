@@ -22,26 +22,26 @@ day=$3
 IFS=$orig_IFS
 ~~~
 
-## sh
+## redirect
+
 ~~~
+[sh]
 # redirect stderr and stdout
 $ command > foo.txt 2>&1
-    1. 2>&1:      redirect stderr to stdout
-    2. > foo.txt: redirect stdout to file foo.txt
-So, foo.txt will contain stderr and stdout of command
+  1. 2>&1:      redirect stderr to stdout
+  2. > foo.txt: redirect stdout to file foo.txt
+  So, foo.txt will contain stderr and stdout of command
+
+[bash]
+# redirect stderr and stdout
+$ command &> foo.txt
+$ command >& foo.txt
 
 # 標準エラー出力をlog.txtに書き出す
 $ a.exe 2>&1 | tee log.txt
 
 # 実行時間をlog.txtに書き出す
 $ (time a.exe) 2>&1 | tee log.txt
-~~~
-
-## bash
-~~~
-# redirect stderr and stdout
-$ command &> foo.txt
-$ command >& foo.txt
 
 # redirect only stderr
 $ command 2> foo.txt
@@ -53,7 +53,17 @@ echo "error" 1>&2
 % tar cf - dir | (cd /mirror; tar xf -)
 ~~~
 
+## 変数置換
+変数                                 | 説明
+-------------------------------------|---
+${変数名#パターン}                   | 前方一致でのマッチ部分削除 (最短マッチ)
+${変数名##パターン}                  | 前方一致でのマッチ部分削除 (最長マッチ)
+${変数名%パターン}                   | 後方一致でのマッチ部分削除 (最短マッチ)
+${変数名%%パターン}                  | 後方一致でのマッチ部分削除 (最長マッチ)
+${変数名/置換前文字列/置換後文字列}  | 文字列置換 (最初にマッチしたもののみ)
+${変数名//置換前文字列/置換後文字列} | 文字列置換 (マッチしたものすべて)
 
+## 変数置換
 ~~~
 x=foo.bar
 echo $x
@@ -248,6 +258,17 @@ M-f | forward-word
 M-b | backward-word
 M-d | kill-word
 C-w | unix-word-rubout
+
+<meta name="keywords" content="*memo_less*">
+less
+===========================================================================
+Option | Description
+-------|---
+-E     | quit at EOF
+-F     | quit if one screen
+-R     | raw control chars
+-S     | chop long lines
+-X     | no init
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
 <meta vim:syntax=md
