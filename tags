@@ -44,6 +44,8 @@ memo_git-worktree	vcs.md.html	/*memo_git-worktree*
 memo_grep	sh.md.html	/*memo_grep*
 memo_imagemagick	soft.md.html	/*memo_imagemagick*
 memo_keymap	dev.md.html	/*memo_keymap*
+memo_less	sh.md.html	/*memo_less*
+memo_lib	prog.md.html	/*memo_lib*
 memo_links	links.md.html	/*memo_links*
 memo_linux	os.md.html	/*memo_linux*
 memo_mac	os.md.html	/*memo_mac*
@@ -67,6 +69,7 @@ memo_unity	dev.md.html	/*memo_unity*
 memo_vcs	vcs.md.html	/*memo_vcs*
 memo_vi	dev.md.html	/*memo_vi*
 memo_vim	dev.md.html	/*memo_vim*
+memo_w3m	dev.md.html	/*memo_w3m*
 memo_windows	os.md.html	/*memo_windows*
 memo_windows10	os.md.html	/*memo_windows10*
 memo_word	soft.md.html	/*memo_word*

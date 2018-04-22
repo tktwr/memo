@@ -5,6 +5,17 @@
 <meta name="keywords" content="*memo_bash*">
 bash
 ===========================================================================
+## get lines and columns in a shell script
+~~~
+#!/bin/bash
+
+lines=$(tput lines)
+columns=$(tput cols)
+
+echo "Lines: " $lines
+echo "Columns: " $columns
+~~~
+
 ## 環境変数
 ~~~
 HISTCONTROL=ignoreboth
