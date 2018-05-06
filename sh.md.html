@@ -4,7 +4,7 @@
 <meta name="keywords" content="*memo_sh*">
 <meta name="keywords" content="*memo_bash*">
 bash
-===========================================================================
+=======================================================
 ## get lines and columns in a shell script
 ~~~
 #!/bin/bash
@@ -133,7 +133,7 @@ done
 
 <meta name="keywords" content="*memo_csh*">
 csh
-===========================================================================
+=======================================================
 ## redirect stderr and stdout
 ~~~
 % command >& foo.txt
@@ -159,7 +159,7 @@ endsw
 
 <meta name="keywords" content="*memo_awk*">
 awk
-===========================================================================
+=======================================================
 ## counter
 ~~~
 ls -l | grep -v '^total' | awk '{c[$6]++} END {for(m in c) print m,c[m]}'
@@ -178,7 +178,7 @@ awk '{print "'"$1"':" $1}'
 
 <meta name="keywords" content="*memo_sed*">
 sed
-===========================================================================
+=======================================================
 ## 複数のコマンドを実行
 ~~~
 sed -e '...' -e '...'
@@ -216,7 +216,7 @@ sed 's/aaa/'"$1"'/'
 
 <meta name="keywords" content="*memo_grep*">
 grep
-===========================================================================
+=======================================================
 ## NOT
 ~~~
 grep -v "exp1"
@@ -242,7 +242,7 @@ grep '\<hoge\>' file
 
 <meta name="keywords" content="*memo_readline*">
 readline
-===========================================================================
+=======================================================
 
 ## History manipulation
 
@@ -272,7 +272,7 @@ C-w | unix-word-rubout
 
 <meta name="keywords" content="*memo_less*">
 less
-===========================================================================
+=======================================================
 Option | Description
 -------|---
 -E     | quit at EOF
@@ -280,6 +280,25 @@ Option | Description
 -R     | raw control chars
 -S     | chop long lines
 -X     | no init
+
+<meta name="keywords" content="*memo_trans*">
+translate-shell
+=======================================================
+- [translate-shell](https://www.soimort.org/translate-shell/)
+
+## Install
+~~~
+wget git.io/trans
+~~~
+
+## Interactive mode
+~~~
+$ trans -I -b
+> :ja hello
+こんにちは
+> :zh hello
+你好
+~~~
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
 <meta vim:syntax=md

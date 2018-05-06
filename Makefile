@@ -4,3 +4,5 @@ memotags:
 helptags:
 	vim -e -c "helptags . | quit"
 
+g:
+	dot -T svg -o images/skk.svg skk.dot

@@ -5,205 +5,133 @@
 
 <meta name="keywords" content="*memo_font*">
 Font
-===============================================================================
+=======================================================
 - [Best programming fonts](https://www.slant.co/topics/67/~best-programming-fonts)
 - [日本語等幅フォント](https://qiita.com/hamaguchitm/items/546d40b7777bd9242e78)
 - [Myrica](https://myrica.estable.jp/)
 - [Rounded Mgen+](http://jikasei.me/font/rounded-mgenplus/)
 
 <meta name="keywords" content="*memo_keymap*">
-Key map
-===========================================================================
-App  | Command              | Description
------|----------------------|---
-tmux | F1                   | prefix
-vim  | F2                   | nerdtree
-vim  | F3                   | fugitive
-vim  | F4                   | agit
-vim  | F5                   | prev tab
-vim  | F6                   | next tab
-vim  | F7                   | memo
-vim  | F8                   | w3m
-vim  | F9                   | chrome
-tmux | F10                  | maximize pane
-vim  | F11                  | copy
-vim  | F12                  | paste
+keymap
+=======================================================
+App  | Command         | Description
+-----|-----------------|---
+tmux | F1              | prefix
+vim  | F2              | nerdtree
+vim  | F3              | fugitive
+vim  | F4              | agit
+vim  | F5              | prev tab
+vim  | F6              | next tab
+tmux | F7              | memo
+tmux | F8              | select next pane
+tmux | F9              | toggle pane width 60/80
+tmux | F10             | maximize pane
+vim  | F11             | copy
+vim  | F12             | paste
+vim  | C-h             | make hyper link
+vim  | C-y             | open the current file in chrome
+vim  | C-u             | open the hyper link in chrome
+vim  | C-i             | open the hyper link in W3m
+vim  | C-x             | update date
+tmux | m               | man
+tmux | t               | trans
 
 <meta name="keywords" content="*memo_tmux*">
 tmux
-===========================================================================
-## Basic key bindings
-Mode | Command              | Description
------|----------------------|---
-W    | C-b r                | reload ~/.tmux.conf
-W    | C-b c                | create a new window
-W    | C-b [1-9]            | select the window
-P    | C-b o                | move to the next pane
-P    | C-b z                | maximize the current pane / return
-P    | C-b 0                | my favorite split pane *
-P    | C-b -                | hrizontal split pane *
-P    | C-b &brvbar;         | vertical split pane *
-P    | C-b [hjkl]           | move to a pane *
-P    | C-b [HJKL]           | resize the current pane *
+=======================================================
 
-- * my key bindings
+<meta name="keywords" content="*memo_tmux_keymap*">
+## tmux keymap
+Mode | Command         | Description
+-----|-----------------|---
+R    | prefix :        | command-prompt
+R    | prefix ?        | list-keys
+R    | prefix q        | display-panes
+R *  | prefix r        | reload ~/.tmux.conf
+W    | prefix c        | create a new window
+W    | prefix [1-9]    | select the window
+W    | prefix ,        | rename the current window name
+W    | prefix w        | list window / move to a window
+W    | prefix n        | move to the next window
+W    | prefix p        | move to the prev window
+P    | prefix z        | maximize the current pane / return
+P    | prefix o        | move to the next pane
+P *  | prefix 0        | my favorite split pane
+P *  | prefix -        | hrizontal split pane
+P *  | prefix &brvbar; | vertical split pane
+P *  | prefix [HJKL]   | resize the current pane
+P *  | prefix [hjkl]   | move to a pane
 
-## Other key bindings
-Mode | Command              | Description
------|----------------------|---
-W    | C-b ,                | rename the current window name
-W    | C-b w                | list window / move to a window
-W    | C-b n                | move to the next window
-W    | C-b p                | move to the prev window
+- * my key maps
 
 <meta name="keywords" content="*memo_vi*">
 <meta name="keywords" content="*memo_vim*">
 vim
-===========================================================================
-## プラグイン
+=======================================================
 
-- [VimAwesome](https://vimawesome.com/)
-- [neobundle](https://github.com/Shougo/neobundle.vim)
-- [dein](https://github.com/Shougo/dein.vim)
-- [nerdtree](https://github.com/scrooloose/nerdtree)
-- [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
-- [vim-fugitive](https://github.com/tpope/vim-fugitive)
-- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-- [gitv](https://github.com/gregsexton/gitv)
-- [agit](https://github.com/cohama/agit.vim)
+- [vim-jp](http://vim-jp.org/)
+
+<meta name="keywords" content="*memo_vim_keymap*">
+## vim keymap
 
 ~~~
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'cohama/agit.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'will133/vim-dirdiff'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'tyru/eskk.vim'
+:help index.txt
 ~~~
 
-## vimrcを読み込まずに起動する
+## insert mode vim keymap
 
-~~~
-$ vim -u NONE
-~~~
+  | Key    | Original                | Map      | New
+--|--------|-------------------------|----------|---
+  | CTRL-A |                         | Home     | the begining of the line
+  | CTRL-E |                         | End      | the end of the line
+  | CTRL-B |                         | Left     | move left
+  | CTRL-F |                         | Right    | move right
+  | CTRL-D |                         | Del      | delete
+  | CTRL-P | prev match
+  | CTRL-N | next match
+  | CTRL-J |                         |          | skk mode
 
-<meta name="keywords" content="*memo_eskk*">
-## eskk
+## normal mode vim keymap
 
-- [SKK Manual](http://skk-dev.github.io/ddskk/skk.html)
-- [SKK日本語入力FEP](http://coexe.web.fc2.com/skkfep.html)
-- [SKK辞書](http://openlab.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1)
-
-~~~
-NeoBundle 'tyru/eskk.vim'
-if neobundle#is_installed('eskk.vim')
-  let g:eskk#directory = "~/.eskk"
-  let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
-  let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
-endif
-~~~
-
-注意
-
-- gzip圧縮した辞書は使用不可
-- sortedは0で使用
-
-Termuxで使用するときの注意
-
-- 辞書のエンコーディングをEUC-JPからUTF-8に変換が必要
-
-<meta name="keywords" content="*memo_skk*">
-### 基本操作
-Mode     | Command              | Description
----------|----------------------|---
-n <-> k  | C-j                  | かな入力へ
-k <-> K  | q                    | カタカナ入力へ
-k  -> a  | l                    | 半角英数入力へ
-k  -> A  | L                    | 全角英数入力へ
-k  -> R  | アルファベット大文字 | 漢字開始、送りがな開始
-R  -> J  | SPACE                | 変換
-J        | SPACE                | 次候補
-J        | x                    | 前候補
-RJ -> k  | C-g                  | 変換キャンセル
-   -> n  | ESC                  | normalモードへ
-
-************************************************************************
-*                      .----------.                                    *
-*                      | ascii    |                                    *
-*                      '----------'                                    *
-*                         ^  | C-j                                     *
-*                       l |  v                                         *
-* .--------.           .-------------------.    .-------.    .-------. *
-* | normal | <--C-j--> | kana <- q -> KANA |--> | Roman |--> | Kanji | *
-* '--------'           '-------------------'    '-------'    '-------' *
-*                       L |  ^                                         *
-*                         v  | C-j                                     *
-*                      .-------------.                                 *
-*                      | 2byte-Ascii |                                 *
-*                      '-------------'                                 *
-************************************************************************
-
-## encryption
-
-Command          | Description
------------------|---
-set cm=blowfish2 | set an encryption method
-:X               | set a new key
-:set key=        | unset a key
-:w               | write a encrypted file
-
-## vimgrep
-
-### サブディレクトリの検索
-~~~
-:vimgrep WORD **
-~~~
-
-## diff
-
-Command          | Description
------------------|---
-[c               | jump to the previous change
-]c               | jump to the next change
-[count]do        | :diffget
-[count]dp        | :diffput
-
-## netrwプラグイン
-
-~~~
-$ vim .
-~~~
-
-Command          | Description
------------------|---
-i                | 表示形式変更
-< cr >           | ファイルを開く
-o                | ウィンドウを水平に分割してファイルを開く
-v                | ウィンドウを垂直に分割してファイルを開く
-P                | 前回のウィンドウでファイルを開く
-p                | プレビュー
-
-## Keymap
+  | Key    | Original                | Map      | New
+--|--------|-------------------------|----------|---
+* | CTRL-A | add
+  | CTRL-B | one page scroll up
+  | CTRL-C | interrupt
+  | CTRL-D | half page scroll down   | :close CR| colose the current window
+  | CTRL-E | one line scroll down    | :only CR | only window
+  | CTRL-F | one page scroll down
+  | CTRL-G | display info
+* | CTRL-H | h                       |          | make hyper link
+* | CTRL-I | TAB                     |          | open the hyper link in W3m
+  | CTRL-J | j                       | 2 CTRL-E | two line scroll down
+  | CTRL-K | not used                | 2 CTRL-Y | two line scroll up
+  | CTRL-L | redraw screen
+  | CTRL-M | CR
+* | CTRL-N | j
+* | CTRL-O | prev in jump list
+* | CTRL-P | k
+  | CTRL-Q | terminal control
+  | CTRL-R | redo
+  | CTRL-S | terminal control
+  | CTRL-T | prev in tag list
+* | CTRL-U | half page scroll up     |          | open the hyper link in chrome
+  | CTRL-V | block visual mode
+  | CTRL-W | window command
+* | CTRL-X | subtract                |          | update date
+* | CTRL-Y | one line scroll up      |          | open the current file in chrome
+  | CTRL-Z | suspend
+  | Space  | l                       | CTRL-F   | one page scroll down
+  | BS     | h                       | CTRL-B   | one page scroll up
+  | Tab    | next in jump list
+  | NL     | j
+  | CR     | +
+  | CTRL-[ | ESC
+  | CTRL-] | :ta
 
 ~~~
 # *  : not oftenly used commands for me (candidates for remapping)
 # () : remaped commands
-
-* CTRL-E  one line scroll down
-* CTRL-Y  one line scroll up
-* CTRL-D  half page scroll down
-* CTRL-U  half page scroll up
-  CTRL-B  one page scroll up
-  CTRL-F  one page scroll down
-* CTRL-J  move down
-* CTRL-K  enter digraph
-* CTRL-A  add
-* CTRL-X  subtract
-  CTRL-[  ESC
 
   CTRL-W CTRL-X  exchange windows
   CTRL-W CTRL-Z  close the preview window
@@ -286,52 +214,173 @@ p                | プレビュー
   >
 ~~~
 
+## vimrcを読み込まずに起動する
+
+~~~
+$ vim -u NONE
+~~~
+
+## resize window
+~~~
+:res[ize] -N
+:res[ize] +N
+:res[ize]  N
+:vertical res[ize] -N
+:vertical res[ize] +N
+:vertical res[ize]  N
+~~~
+
+## プラグイン
+
+- [VimAwesome](https://vimawesome.com/)
+- [neobundle](https://github.com/Shougo/neobundle.vim)
+- [dein](https://github.com/Shougo/dein.vim)
+- [nerdtree](https://github.com/scrooloose/nerdtree)
+- [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
+- [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+- [gitv](https://github.com/gregsexton/gitv)
+- [agit](https://github.com/cohama/agit.vim)
+
+~~~
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'cohama/agit.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'will133/vim-dirdiff'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'tyru/eskk.vim'
+~~~
+
+<meta name="keywords" content="*memo_eskk*">
+## eskk
+
+- [SKK Manual](http://skk-dev.github.io/ddskk/skk.html)
+- [SKK日本語入力FEP](http://coexe.web.fc2.com/skkfep.html)
+- [SKK辞書](http://openlab.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1)
+
+~~~
+NeoBundle 'tyru/eskk.vim'
+if neobundle#is_installed('eskk.vim')
+  let g:eskk#directory = "~/.eskk"
+  let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
+  let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
+endif
+~~~
+
+注意
+
+- gzip圧縮した辞書は使用不可
+- sortedは0で使用
+
+Termuxで使用するときの注意
+
+- 辞書のエンコーディングをEUC-JPからUTF-8に変換が必要
+
+<meta name="keywords" content="*memo_skk*">
+### 基本操作
+Mode     | Command              | Description
+---------|----------------------|---
+n <-> k  | C-j                  | かな入力へ
+k <-> K  | q                    | カタカナ入力へ
+k  -> a  | l                    | 半角英数入力へ
+k  -> A  | L                    | 全角英数入力へ
+k  -> R  | アルファベット大文字 | 漢字開始、送りがな開始
+R  -> J  | SPACE                | 変換
+J        | SPACE                | 次候補
+J        | x                    | 前候補
+RJ -> k  | C-g                  | 変換キャンセル
+   -> n  | ESC                  | normalモードへ
+
+![SKK control flow](images/skk.svg)
+
+## encryption
+
+Command          | Description
+-----------------|---
+set cm=blowfish2 | set an encryption method
+:X               | set a new key
+:set key=        | unset a key
+:w               | write a encrypted file
+
+## vimgrep
+
+### サブディレクトリの検索
+~~~
+:vimgrep WORD **
+~~~
+
+## diff
+
+Command          | Description
+-----------------|---
+[c               | jump to the previous change
+]c               | jump to the next change
+[count]do        | :diffget
+[count]dp        | :diffput
+
+## netrwプラグイン
+
+~~~
+$ vim .
+~~~
+
+Command          | Description
+-----------------|---
+i                | 表示形式変更
+< cr >           | ファイルを開く
+o                | ウィンドウを水平に分割してファイルを開く
+v                | ウィンドウを垂直に分割してファイルを開く
+P                | 前回のウィンドウでファイルを開く
+p                | プレビュー
+
 <meta name="keywords" content="*memo_w3m*">
 w3m
-===========================================================================
+=======================================================
 
 - [w3m](http://w3m.sourceforge.net/index.ja.html)
 
-## Key map
-Command              | Description
----------------------|---
-ESC b                | bookmarks
-ESC a                | add the current page to bookmarks
-SPACE                | next page
-b                    | prev page
-ENTER                | go to the hyper link
-B                    | remove the current buffer
-s                    | select buffer
-TAB                  | select the next hyper link
-Shift + TAB          | select the prev hyper link
-Q                    | quit
+<meta name="keywords" content="*memo_w3m_keymap*">
+## w3m keymap
+  | Command              | Description
+--|----------------------|---
+B | ESC b                | bookmarks
+B | ESC a                | add the current page to bookmarks
+P | C-f, SPACE           | next page
+P | C-b, b               | prev page
+P | TAB                  | select the next hyper link
+P | Shift + TAB          | select the prev hyper link
+P | ENTER                | go to the hyper link
+P | hjkl                 | move cursor
+P | B                    | remove the current buffer
+P | s                    | select buffer
+P | U                    | open URL
+P | C-h                  | print history
+P | C-n                  | next history
+P | C-p                  | prev history
+P | H                    | help
+P | Q                    | quit
 
 <meta name="keywords" content="*memo_android*">
 android
-===========================================================================
+=======================================================
 Androidデバイスの
 設定 > 開発者向けオプション > USBデバッグを
 ONにする
 
-<meta name="keywords" content="*memo_unity*">
-Unity
-===========================================================================
-
-Key                    | Description
------------------------|-------------------------
-Ctrl + '               | Help
-Alt + 左マウスドラッグ | 注視点周りの回転
-F                      | Focus
-
-GetComponent<Rigidbody>()
-GetComponent<AudioSource>();
-
-Debug.Log("");
-
-Roll-a-Ball
-- UI新しい
-Space Shooter
-- UIが古い
+<meta name="keywords" content="*memo_draw*">
+<meta name="keywords" content="*memo_graphviz*">
+<meta name="keywords" content="*memo_dot*">
+<meta name="keywords" content="*memo_draw.io*">
+描画ツール
+=======================================================
+- [graphviz](https://www.graphviz.org/)
+- [Graphvizとdot言語でグラフを描く方法のまとめ](https://qiita.com/rubytomato@github/items/51779135bc4b77c8c20d)
+- [code snippets: graphviz](http://miffysora.wikidot.com/graphviz)
+- [draw.io](https://www.draw.io/)
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
 <meta vim:syntax=md

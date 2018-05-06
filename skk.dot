@@ -1,0 +1,33 @@
+// skk.dot
+digraph G {
+  graph [ fontsize=10, rankdir=LR, compound=true, newrank=true, nodesep=0.3, ranksep=0.75, splines=line ];
+  //node [ fontsize=10, shape=box, width=0.75, height=0.5, fixedsize=true ];
+  node [ fontsize=10, shape=box, style="solid,filled", fillcolor="#c0c0c0:#ffffff", gradientangle=90 ];
+  edge [ fontsize=10, labeldistance=3, labelangle=-45, labelloc="t" ];
+
+  zenkaku [ label="全角英数" ];
+  normal [ label="normal" ];
+  ascii [ label="半角英数" ];
+
+  subgraph cluster1 {
+    style=rounded;
+    hira [ label="ひらかな" ];
+    kata [ label="カタカナ" ];
+    hira -> kata [ label="q", dir=both ];
+  }
+  subgraph cluster2 {
+    style=rounded;
+    roman [ label="ローマ字" ];
+    kanji [ label="漢字" ];
+    roman -> kanji [ label="SPACE" ];
+    kanji:e -> kanji:e [ label="SPACE / x", dir=both ];
+  }
+
+  normal -> hira [ label="C-j", dir=both, lhead="cluster1" ];
+  kata -> roman [ headlabel="大文字", taillabel="C-g", dir=both, ltail="cluster1", lhead="cluster2" ];
+  hira -> ascii [ headlabel="l", taillabel="C-j", dir=both, ltail="cluster1" ];
+  hira -> zenkaku [ headlabel="L", taillabel="C-j", dir=both, ltail="cluster1" ];
+
+  { rank=same; hira; ascii; zenkaku; }
+}
+

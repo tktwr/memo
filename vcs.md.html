@@ -5,7 +5,7 @@
 
 <meta name="keywords" content="*memo_git*">
 git
-===========================================================================
+=======================================================
 
 ## Links
 
@@ -178,6 +178,16 @@ git branch -m {branch}  # 現在のブランチ名の変更
 git branch -a           # ブランチの表示
 ~~~
 
+<meta name="keywords" content="*memo_git-tag*">
+## tag
+~~~
+git tag    {name}         # タグの作成
+git tag -d {name}         # タグの削除
+git push origin {name}    # タグをリモートに反映
+git push origin --tags    # 全てのタグをリモートに反映
+git push origin :{name}   # リモートのタグを削除
+~~~
+
 <meta name="keywords" content="*memo_git-merge*">
 <meta name="keywords" content="*memo_git-rebase*">
 ## merge
@@ -218,7 +228,7 @@ git diff rev1 rev2 FILE|DIR
 
 <meta name="keywords" content="*memo_git-svn*">
 git-svn
-===========================================================================
+=======================================================
 
 コマンド        | svn                               | git                         | git-svn
 ----------------|-----------------------------------|-----------------------------|-------------------------
@@ -239,7 +249,7 @@ git-svn
 
 <meta name="keywords" content="*memo_svn*">
 svn
-===========================================================================
+=======================================================
 
 - [TortoiseSVN](https://tortoisesvn.net/)
   - [Doc](https://tortoisesvn.net/docs/release/TortoiseSVN_ja/index.html)
