@@ -3,13 +3,24 @@
 
 <meta name="keywords" content="*memo_dev*">
 
-<meta name="keywords" content="*memo_font*">
-Font
+<meta name="keywords" content="*memo_colors*">
+Settings 256 colors for vim, tmux, mintty
 =======================================================
-- [Best programming fonts](https://www.slant.co/topics/67/~best-programming-fonts)
-- [日本語等幅フォント](https://qiita.com/hamaguchitm/items/546d40b7777bd9242e78)
-- [Myrica](https://myrica.estable.jp/)
-- [Rounded Mgen+](http://jikasei.me/font/rounded-mgenplus/)
+## .tmux.conf
+~~~
+set -g default-terminal "xterm"
+~~~
+
+## .vimrc
+~~~
+set termguicolors
+set t_Co=256
+~~~
+
+## exec tmux with 256 colors
+~~~
+$ tmux -2
+~~~
 
 <meta name="keywords" content="*memo_keymap*">
 keymap
@@ -69,7 +80,11 @@ P *  | prefix [hjkl]   | move to a pane
 vim
 =======================================================
 
-- [vim-jp](http://vim-jp.org/)
+## vimrcを読み込まずに起動する
+
+~~~
+$ vim -u NONE
+~~~
 
 <meta name="keywords" content="*memo_vim_keymap*">
 ## vim keymap
@@ -214,47 +229,6 @@ vim
   >
 ~~~
 
-## vimrcを読み込まずに起動する
-
-~~~
-$ vim -u NONE
-~~~
-
-## resize window
-~~~
-:res[ize] -N
-:res[ize] +N
-:res[ize]  N
-:vertical res[ize] -N
-:vertical res[ize] +N
-:vertical res[ize]  N
-~~~
-
-## プラグイン
-
-- [VimAwesome](https://vimawesome.com/)
-- [neobundle](https://github.com/Shougo/neobundle.vim)
-- [dein](https://github.com/Shougo/dein.vim)
-- [nerdtree](https://github.com/scrooloose/nerdtree)
-- [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
-- [vim-fugitive](https://github.com/tpope/vim-fugitive)
-- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-- [gitv](https://github.com/gregsexton/gitv)
-- [agit](https://github.com/cohama/agit.vim)
-
-~~~
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'cohama/agit.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'will133/vim-dirdiff'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'tyru/eskk.vim'
-~~~
-
 <meta name="keywords" content="*memo_eskk*">
 ## eskk
 
@@ -297,6 +271,31 @@ RJ -> k  | C-g                  | 変換キャンセル
 
 ![SKK control flow](images/skk.svg)
 
+## netrwプラグイン
+
+~~~
+$ vim .
+~~~
+
+Command          | Description
+-----------------|---
+i                | 表示形式変更
+< cr >           | ファイルを開く
+o                | ウィンドウを水平に分割してファイルを開く
+v                | ウィンドウを垂直に分割してファイルを開く
+P                | 前回のウィンドウでファイルを開く
+p                | プレビュー
+
+## resize window
+~~~
+:res[ize] -N
+:res[ize] +N
+:res[ize]  N
+:vertical res[ize] -N
+:vertical res[ize] +N
+:vertical res[ize]  N
+~~~
+
 ## encryption
 
 Command          | Description
@@ -322,26 +321,9 @@ Command          | Description
 [count]do        | :diffget
 [count]dp        | :diffput
 
-## netrwプラグイン
-
-~~~
-$ vim .
-~~~
-
-Command          | Description
------------------|---
-i                | 表示形式変更
-< cr >           | ファイルを開く
-o                | ウィンドウを水平に分割してファイルを開く
-v                | ウィンドウを垂直に分割してファイルを開く
-P                | 前回のウィンドウでファイルを開く
-p                | プレビュー
-
 <meta name="keywords" content="*memo_w3m*">
 w3m
 =======================================================
-
-- [w3m](http://w3m.sourceforge.net/index.ja.html)
 
 <meta name="keywords" content="*memo_w3m_keymap*">
 ## w3m keymap
@@ -370,17 +352,6 @@ android
 Androidデバイスの
 設定 > 開発者向けオプション > USBデバッグを
 ONにする
-
-<meta name="keywords" content="*memo_draw*">
-<meta name="keywords" content="*memo_graphviz*">
-<meta name="keywords" content="*memo_dot*">
-<meta name="keywords" content="*memo_draw.io*">
-描画ツール
-=======================================================
-- [graphviz](https://www.graphviz.org/)
-- [Graphvizとdot言語でグラフを描く方法のまとめ](https://qiita.com/rubytomato@github/items/51779135bc4b77c8c20d)
-- [code snippets: graphviz](http://miffysora.wikidot.com/graphviz)
-- [draw.io](https://www.draw.io/)
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
 <meta vim:syntax=md

@@ -10,6 +10,7 @@ memo_c++	prog.md.html	/*memo_c++*
 memo_choco	os.md.html	/*memo_choco*
 memo_chocolatey	os.md.html	/*memo_chocolatey*
 memo_cmake	os.md.html	/*memo_cmake*
+memo_colors	dev.md.html	/*memo_colors*
 memo_convert	soft.md.html	/*memo_convert*
 memo_cpp	prog.md.html	/*memo_cpp*
 memo_csh	sh.md.html	/*memo_csh*
@@ -17,11 +18,7 @@ memo_cxx	prog.md.html	/*memo_cxx*
 memo_cygwin	os.md.html	/*memo_cygwin*
 memo_dev	dev.md.html	/*memo_dev*
 memo_dos	os.md.html	/*memo_dos*
-memo_dot	dev.md.html	/*memo_dot*
-memo_draw	dev.md.html	/*memo_draw*
-memo_draw.io	dev.md.html	/*memo_draw.io*
 memo_eskk	dev.md.html	/*memo_eskk*
-memo_font	dev.md.html	/*memo_font*
 memo_freecad	soft.md.html	/*memo_freecad*
 memo_gimp	soft.md.html	/*memo_gimp*
 memo_git	vcs.md.html	/*memo_git*
@@ -46,7 +43,6 @@ memo_git-status	vcs.md.html	/*memo_git-status*
 memo_git-svn	vcs.md.html	/*memo_git-svn*
 memo_git-tag	vcs.md.html	/*memo_git-tag*
 memo_git-worktree	vcs.md.html	/*memo_git-worktree*
-memo_graphviz	dev.md.html	/*memo_graphviz*
 memo_grep	sh.md.html	/*memo_grep*
 memo_imagemagick	soft.md.html	/*memo_imagemagick*
 memo_keymap	dev.md.html	/*memo_keymap*

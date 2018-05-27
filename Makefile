@@ -6,3 +6,4 @@ helptags:
 
 g:
 	dot -T svg -o images/skk.svg skk.dot
+	dot -T svg -o images/git.svg git.dot

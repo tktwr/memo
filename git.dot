@@ -1,0 +1,27 @@
+// skk.dot
+digraph G {
+  graph [ fontsize=10, rankdir=LR, compound=true, newrank=true, nodesep=0.3, ranksep=1.0, splines=ortho ];
+  //node [ fontsize=10, shape=box, width=0.75, height=0.5, fixedsize=true ];
+  node [ fontsize=10, shape=box, style="solid,filled", fillcolor="#c0c0c0:#ffffff", gradientangle=90 ];
+  edge [ fontsize=10, labeldistance=2, labelangle=-60, labelloc="t" ];
+
+  //stash [ label="stash" ];
+  //B [ label="B" ];
+  //work [ label="work" ];
+  //index [ label="index" ];
+  //local [ label="local" ];
+  //remote [ label="remote" ];
+
+  stash -> B [ xlabel="stash/stash pop", dir=both ];
+  remote -> C [ xlabel="push/pull", dir=both ];
+  A -> B
+  B -> C [ label="reset --hard HEAD^", dir=back, weight=10 ];
+  B -> work [ xlabel="MODIFY/checkout", dir=both ];
+  work -> index [ xlabel="add/reset", dir=both ];
+  C -> work [ xlabel="reset [--mixed] HEAD^" ];
+  C -> index [ xlabel="commit/reset --soft HEAD^", dir=both ];
+
+  { rank=same; stash; B; work; index; }
+  { rank=same; remote; C; }
+}
+

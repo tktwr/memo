@@ -17,24 +17,34 @@ git
 - [git manual](https://git.github.io/htmldocs/git.html)
 - [GitHub GIT CHEAT SHEET](files/github-git-cheat-sheet.pdf)
 
-## layers
-- Upstream repository
-  - push
-  - pull
-- Local repository
-  - commit
-- Index
-  - add
-  - reset
-- Workspace
-  - stash
-- Stash
-
 ## workflow
+
+![Git](images/git.svg)
+
+### add, commit, push
 ~~~
-git add .               # ステージング
+git add {file}          # ステージング
 git commit              # ローカルレポジトリにコミット
 git push origin master  # リモートレポジトリoriginにpush
+~~~
+
+### add a file / reset a file
+~~~
+git add {file}
+git reset {file}
+~~~
+
+### add and commit / reset
+~~~
+git add {file}
+git commit -m "message"
+
+git reset --soft HEAD^
+git reset {file}
+
+or
+
+git reset [--mixed] HEAD^
 ~~~
 
 <meta name="keywords" content="*memo_git-status*">
@@ -88,7 +98,7 @@ git remote add origin URL/myproj.git
 ~~~
 git remote add     origin URL  # connect oring to URL
 git remote set-url origin URL  # set origin to URL
-git remote rename src dst      # rename
+git remote rename {src} {dst}  # rename
 git remote rm origin           # disconnect origin
 git remote prune origin        # prune remote branches
 git remote show origin         # show info of the remote repository
@@ -104,7 +114,7 @@ git fetch
 git fetch --prune         # prune remote branches
 git pull                  # fetch + merge
 git push origin master
-git push origin :BRANCH   # remove the remote branch
+git push origin :{branch} # remove the remote branch
 ~~~
 
 <meta name="keywords" content="*memo_git-add*">
@@ -115,11 +125,15 @@ git add .        # カレントディレクトリのすべてのファイルをt
 git add -u       # add updated file
 ~~~
 
-## stage/unstage, discard
+## discard changes
+~~~
+git checkout [--] {paths}            # discard changes
+~~~
+
+## stage/unstage
 ~~~
 git add {file}                       # stage
 git reset [tree-ish] [--] {paths}    # unstage
-git checkout [--] {paths}            # discard changes
 ~~~
 
 ## track/untrack files
@@ -158,7 +172,10 @@ git commit --amend --author="name"  # 名前を変えてコミットしなおす
 ## reset
 ~~~
 git reset [tree-ish] [--] {paths}  # unstage
-git reset --hard [commit]          # reset work directory to commit
+git reset --hard    [commit]       # reset [work, add, commit]
+git reset [--mixed] [commit]       # reset [add, commit]
+git reset --soft    [commit]       # reset [commit]
+git reflog
 ~~~
 
 <meta name="keywords" content="*memo_git-checkout*">
@@ -195,12 +212,17 @@ git push origin :{name}   # リモートのタグを削除
 git merge {branch}  # 指定したブランチを現在のブランチに統合する
 git rebase {branch} # 現在のブランチの派生元を指定したブランチに変更する
 git rebase -i
+
+git rebase --continue
+git rebase --skip
+git rebase --abort
+git merge --abort
 ~~~
 
 <meta name="keywords" content="*memo_git-cherry-pick*">
 ## cherry-pick
 ~~~
-git cherry-pick
+git cherry-pick {commit}
 ~~~
 
 <meta name="keywords" content="*memo_git-stash*">
@@ -223,7 +245,7 @@ git worktree list                      # list worktrees
 <meta name="keywords" content="*memo_git-diff*">
 ## diff
 ~~~
-git diff rev1 rev2 FILE|DIR
+git diff rev1 rev2 {file}|{dir}
 ~~~
 
 <meta name="keywords" content="*memo_git-svn*">
