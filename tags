@@ -40,6 +40,7 @@ memo_git-remote	vcs.md.html	/*memo_git-remote*
 memo_git-reset	vcs.md.html	/*memo_git-reset*
 memo_git-stash	vcs.md.html	/*memo_git-stash*
 memo_git-status	vcs.md.html	/*memo_git-status*
+memo_git-submodule	vcs.md.html	/*memo_git-submodule*
 memo_git-svn	vcs.md.html	/*memo_git-svn*
 memo_git-tag	vcs.md.html	/*memo_git-tag*
 memo_git-worktree	vcs.md.html	/*memo_git-worktree*
