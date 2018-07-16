@@ -223,6 +223,8 @@ Option              | 説明
 -Si [package]       | print information
 -Sl                 | print list
 -Ss [pattern]       | search packages
+-Qi package         | info of the package
+-Ql package         | list files in the package
 
 ## Installed
 ~~~
@@ -252,6 +254,17 @@ pacman -S mingw-w64-x86_64-graphviz
 pacman -S subversion
 pacman -S msys2-devel
 pacman -S mingw-w64-i686-toolchain
+~~~
+
+<meta name="keywords" content="*memo_python*">
+<meta name="keywords" content="*memo_pip*">
+~~~
+pip3 -V                       # show version
+pip3 list
+pip3 search package_name
+pip3 install package_name
+pip3 install -U package_name  # update
+pip3 uninstall package_name
 ~~~
 
 <meta name="keywords" content="*memo_cygwin*">

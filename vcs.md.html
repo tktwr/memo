@@ -54,10 +54,11 @@ git status
 git status -sb            # show status in short format
 git log                   # show commit log
 git ls-files              # list tracked files
-git branch -a             # list local and remote branches
-git branch -vv -a         # show default upstream
+git branch -a [-vv]       # list local and remote branches [verbose]
 git remote -v             # list remote repositories
 git rev-parse --show-cdup
+git rev-parse --abbrev-ref HEAD  # branch name
+git rev-parse --short HEAD       # commit hash
 ~~~
 
 <meta name="keywords" content="*memo_git-config*">
@@ -200,9 +201,12 @@ git branch -a           # ブランチの表示
 ~~~
 git tag    {name}         # タグの作成
 git tag -d {name}         # タグの削除
+git tag                   # タグ一覧
+git show {name}           # タグ情報
 git push origin {name}    # タグをリモートに反映
 git push origin --tags    # 全てのタグをリモートに反映
-git push origin :{name}   # リモートのタグを削除
+git push origin :{name}   # リモートタグ削除
+git ls-remote --tags      # リモートタグ一覧
 ~~~
 
 <meta name="keywords" content="*memo_git-merge*">
