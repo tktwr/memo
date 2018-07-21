@@ -28,12 +28,6 @@ git commit              # ローカルレポジトリにコミット
 git push origin master  # リモートレポジトリoriginにpush
 ~~~
 
-### add a file / reset a file
-~~~
-git add {file}
-git reset {file}
-~~~
-
 ### add and commit / reset
 ~~~
 git add {file}
@@ -45,6 +39,32 @@ git reset {file}
 or
 
 git reset [--mixed] HEAD^
+~~~
+
+### discard changes
+~~~
+git checkout [--] {paths}            # discard changes
+~~~
+
+### stage/unstage
+~~~
+git add {file}                       # stage
+git reset [tree-ish] [--] {paths}    # unstage
+~~~
+
+### track/untrack files
+~~~
+git add {file}
+git rm --cached    {file} # untrack file
+git rm --cached -r {dir}  # untrack dir
+git ls-files              # list tracked files
+~~~
+
+### chmod (Windows)
+~~~
+git update-index --add --chmod=(+|-)x {file}  # add|remove exec permission
+git ls-files -s                               # show filemode of tracked files
+git config -l | grep filemode                 # show filemode setting
 ~~~
 
 <meta name="keywords" content="*memo_git-status*">
@@ -126,30 +146,14 @@ git add .        # カレントディレクトリのすべてのファイルをt
 git add -u       # add updated file
 ~~~
 
-## discard changes
+<meta name="keywords" content="*memo_git-reset*">
+## reset
 ~~~
-git checkout [--] {paths}            # discard changes
-~~~
-
-## stage/unstage
-~~~
-git add {file}                       # stage
-git reset [tree-ish] [--] {paths}    # unstage
-~~~
-
-## track/untrack files
-~~~
-git add {file}
-git rm --cached    {file} # untrack file
-git rm --cached -r {dir}  # untrack dir
-git ls-files              # list tracked files
-~~~
-
-## chmod (Windows)
-~~~
-git update-index --add --chmod=(+|-)x {file}  # add|remove exec permission
-git ls-files -s                               # show filemode of tracked files
-git config -l | grep filemode                 # show filemode setting
+git reset [tree-ish] [--] {paths}  # unstage
+git reset --hard    [commit]       # reset [work, add, commit]
+git reset [--mixed] [commit]       # reset [add, commit]
+git reset --soft    [commit]       # reset [commit]
+git reflog
 ~~~
 
 <meta name="keywords" content="*memo_git-commit*">
@@ -167,16 +171,6 @@ git commit --amend --author="name"  # 名前を変えてコミットしなおす
 二行目は空行
 三行目以降に詳細
 - 現在形で記述する
-~~~
-
-<meta name="keywords" content="*memo_git-reset*">
-## reset
-~~~
-git reset [tree-ish] [--] {paths}  # unstage
-git reset --hard    [commit]       # reset [work, add, commit]
-git reset [--mixed] [commit]       # reset [add, commit]
-git reset --soft    [commit]       # reset [commit]
-git reflog
 ~~~
 
 <meta name="keywords" content="*memo_git-checkout*">
@@ -213,9 +207,9 @@ git ls-remote --tags      # リモートタグ一覧
 <meta name="keywords" content="*memo_git-rebase*">
 ## merge
 ~~~
-git merge {branch}  # 指定したブランチを現在のブランチに統合する
-git rebase {branch} # 現在のブランチの派生元を指定したブランチに変更する
-git rebase -i
+git merge {branch}      # 指定したブランチを現在のブランチに統合する
+git rebase {branch}     # 現在のブランチの派生元を指定したブランチに変更する
+git rebase -i {branch}  # コミット編集
 
 git rebase --continue
 git rebase --skip
@@ -248,9 +242,21 @@ git worktree list                      # list worktrees
 
 <meta name="keywords" content="*memo_git-submodule*">
 ## submodule
+### add submodule
 ~~~
 git submodule add URL [dir]
+~~~
+
+### update submodule
+~~~
+git submodule init
 git submodule update
+~~~
+
+### remove submodule
+~~~
+git submodule deinit {module}
+git rm {module}
 ~~~
 
 <meta name="keywords" content="*memo_git-diff*">
