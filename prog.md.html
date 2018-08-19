@@ -3,41 +3,6 @@
 
 <meta name="keywords" content="*memo_prog*">
 
-Reference
-
-- [cpprefjp](https://cpprefjp.github.io/)
-- [ja.cppreference.com](http://ja.cppreference.com/w/)
-- [en.cppreference.com](http://en.cppreference.com/w/) [offline](http://en.cppreference.com/w/Cppreference:Archives)
-- [cpp-pocketref](https://github.com/cpp-pocketref/sample-code)
-- [C++11 - Wikipedia](https://ja.wikipedia.org/wiki/C%2B%2B11)
-- [C++11, C++14 新機能まとめ ～使いそうなものだけ](https://qiita.com/leon-joel/items/81415c1ef355c6246280)
-- [C++11スマートポインタ入門](https://qiita.com/hmito/items/db3b14917120b285112f)
-
-<meta name="keywords" content="*memo_lib*">
-
-Library
-
-- [glm](https://glm.g-truc.net/)
-  | [doc](https://glm.g-truc.net/0.9.8/api/modules.html)
-- [dlib](http://dlib.net/)
-- [Eigen](http://eigen.tuxfamily.org/)
-- [OpenCV](https://opencv.org/)
-  | [doc](https://docs.opencv.org/master/)
-- [stb](https://github.com/nothings/stb)
-- [nanoflann](https://github.com/jlblancoc/nanoflann)
-- [nanort](https://github.com/lighttransport/nanort)
-- [picojson](https://github.com/kazuho/picojson)
-
-~~~
-git submodule add https://github.com/kazuho/picojson.git
-git submodule add https://github.com/ocornut/imgui.git
-git submodule add https://github.com/nothings/stb.git
-~~~
-
-Library doc
-
-- [glm - グラフィックスプログラミングのためのC++数学系ライブラリー](https://qiita.com/usagi/items/f34976a3d3011506ff7d)
-
 <meta name="keywords" content="*memo_c*">
 <meta name="keywords" content="*memo_c++*">
 <meta name="keywords" content="*memo_cxx*">
@@ -45,11 +10,21 @@ Library doc
 C++
 =======================================================
 
+<meta name="keywords" content="*memo_submodule*">
+## Submodule
 ~~~
-*cpphelp.txt*      プログラミング言語 C++ 第３版     Last Change: Sep 27, 2003
+git submodule add https://github.com/g-truc/glm.git
+git submodule add https://github.com/ocornut/imgui.git
+git submodule add https://github.com/mlabbe/nativefiledialog.git
+git submodule add https://github.com/nothings/stb.git
+git submodule add https://github.com/tanakh/cmdline.git
+git submodule add https://github.com/gabime/spdlog.git
+git submodule add https://github.com/USCiLab/cereal.git
+git submodule add https://github.com/kazuho/picojson.git
+~~~
 
-The C++ Programming Language Third Edition
-
+## プログラミング言語 C++ 第３版 - The C++ Programming Language Third Edition
+~~~
 Bjarne Stroustrup 著
 株式会社 ロングテール / 長尾高弘 訳
 アジソン・ウェスレイ
@@ -252,6 +227,32 @@ template<class For, class For2, class BinPred>
 For search(For first, For last, For2 first2, For2 last2, BinPred p);
 ~~~
 
+<meta name="keywords" content="*memo_opencv*">
+OpenCV
+=======================================================
+## Type
+         | description
+---------|---------------------------
+CV_8UC1  | 8bit unsigned 1 channel
+CV_32FC2 | 32bit float 2 channel
+
+<meta name="keywords" content="*memo_python*">
+Python
+=======================================================
+
+<meta name="keywords" content="*memo_anaconda*">
+<meta name="keywords" content="*memo_pytorch*">
+## install pytorch
+~~~
+conda install pytorch-cpu -c pytorch 
+pip3 install torchvision
+~~~
+
+<meta name="keywords" content="*memo_tensorflow*">
+## install tensorflow
+~~~
+pip3 install --upgrade tensorflow
+~~~
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
 <meta vim:syntax=md
