@@ -1,4 +1,7 @@
+<meta vim:set syntax=markdown:>
 <meta charset="utf-8">
+<link rel="stylesheet" href="default.css">
+
 **Programming**
 
 <meta name="keywords" content="*memo_prog*">
@@ -240,7 +243,38 @@ CV_32FC2 | 32bit float 2 channel
 Python
 =======================================================
 
+<meta name="keywords" content="*memo_pip*">
+~~~
+pip3 -V                       # show version
+pip3 list
+pip3 search package_name
+pip3 install package_name
+pip3 install -U package_name  # update
+pip3 uninstall package_name
+python -m pip install --upgrade pip  # upgrade pip
+~~~
+
 <meta name="keywords" content="*memo_anaconda*">
+<meta name="keywords" content="*memo_conda*">
+## update conda
+~~~
+conda list
+conda update -n base conda
+~~~
+
+## install
+~~~
+conda install {pkg}
+conda uninstall {pkg}
+~~~
+
+## installed
+~~~
+conda install opencv
+conda install scikit-image
+#conda install -c conda-forge opencv
+~~~
+
 <meta name="keywords" content="*memo_pytorch*">
 ## install pytorch
 ~~~
@@ -254,6 +288,6 @@ pip3 install torchvision
 pip3 install --upgrade tensorflow
 ~~~
 
-<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
-<meta vim:syntax=md
->
+<style class="fallback">body{visibility:hidden}</style>
+<script src="markdeep.min.js"></script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>

@@ -1,4 +1,7 @@
+<meta vim:set syntax=markdown:>
 <meta charset="utf-8">
+<link rel="stylesheet" href="default.css">
+
 **OS**
 
 <meta name="keywords" content="*memo_os*">
@@ -36,13 +39,23 @@ choco install -y meshlab fsviewer
 - PACKAGE.install use native installer
 
 ## Shortcut
-Shortcut    | Description
-------------|-------------------------------
-Alt + `     | 日本語入力 [英語キーボード]
-Windows + L | 画面ロック
+Shortcut        | Description
+----------------|-------------------------------
+Alt + `         | 日本語入力 [英語キーボード]
+Alt + Tab       | ウィンドウを切り替える
+Windows + L     | 画面ロック
+Windows + Up    | ウィンドウの最大化
+Windows + Down  | ウィンドウの最小化
+Windows + Left  | ウィンドウを左半分に最大化
+Windows + Right | ウィンドウを右半分に最大化
+Ctrl + W        | ウィンドウを閉じる
+
+## Windows ExplorerでPDFのプレビューを表示する
+- Adobe Acrobat Reader DCをインストール
+- [編集] -> [環境設定] -> [一般] -> [Windows ExplorerでPDFサムネールのプレビューを有効にする]
 
 ## パーティションの変更
-コンピュータ (右クリックメニュー) -> 管理 -> ディスクの管理
+- [コンピュータ (右クリックメニュー)] -> [管理] -> [ディスクの管理]
 
 ## Installed
 ~~~
@@ -92,6 +105,7 @@ ITK
 Steam
 ~~~
 
+<!--
 ## Not installed
 ~~~
 MS Office
@@ -103,6 +117,7 @@ HDRShop
 
 Skype
 ~~~
+-->
 
 <meta name="keywords" content="*memo_dos*">
 <meta name="keywords" content="*memo_bat*">
@@ -256,17 +271,6 @@ pacman -S msys2-devel
 pacman -S mingw-w64-i686-toolchain
 ~~~
 
-<meta name="keywords" content="*memo_pip*">
-~~~
-pip3 -V                       # show version
-pip3 list
-pip3 search package_name
-pip3 install package_name
-pip3 install -U package_name  # update
-pip3 uninstall package_name
-python -m pip install --upgrade pip  # upgrade pip
-~~~
-
 <meta name="keywords" content="*memo_cygwin*">
 Cygwin
 =======================================================
@@ -364,8 +368,6 @@ misc
 ## NTP Server
 ntp.nict.jp
 
-
-
-<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
-<meta vim:syntax=md
->
+<style class="fallback">body{visibility:hidden}</style>
+<script src="markdeep.min.js"></script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>

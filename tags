@@ -12,6 +12,7 @@ memo_choco	os.md.html	/*memo_choco*
 memo_chocolatey	os.md.html	/*memo_chocolatey*
 memo_cmake	os.md.html	/*memo_cmake*
 memo_colors	dev.md.html	/*memo_colors*
+memo_conda	prog.md.html	/*memo_conda*
 memo_convert	soft.md.html	/*memo_convert*
 memo_cpp	prog.md.html	/*memo_cpp*
 memo_csh	sh.md.html	/*memo_csh*
@@ -59,7 +60,7 @@ memo_msys2	os.md.html	/*memo_msys2*
 memo_opencv	prog.md.html	/*memo_opencv*
 memo_os	os.md.html	/*memo_os*
 memo_pacman	os.md.html	/*memo_pacman*
-memo_pip	os.md.html	/*memo_pip*
+memo_pip	prog.md.html	/*memo_pip*
 memo_prog	prog.md.html	/*memo_prog*
 memo_python	prog.md.html	/*memo_python*
 memo_pytorch	prog.md.html	/*memo_pytorch*
