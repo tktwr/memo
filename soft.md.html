@@ -16,7 +16,7 @@ Word
 <meta name="keywords" content="*memo_convert*">
 ImageMagick
 =======================================================
-## size
+## resize
 ~~~
 convert -geometry {width}x{height} input_image output_image
 convert -geometry {width}          input_image output_image
@@ -56,6 +56,10 @@ convert -append image1 image2 image3 output_image
 ## 横に結合
 ~~~
 convert +append image1 image2 image3 output_image
+~~~
+## combine color and alpha images
+~~~
+convert rgb.jpg ( alpha.png -colorspace gray -alpha off ) -compose copy-opacity -composite rgba.png
 ~~~
 
 <meta name="keywords" content="*memo_gimp*">

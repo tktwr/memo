@@ -353,9 +353,25 @@ P | Q                    | quit
 <meta name="keywords" content="*memo_android*">
 android
 =======================================================
-Androidデバイスの
-設定 > 開発者向けオプション > USBデバッグを
-ONにする
+## デバイスの設定
+- 設定 > 開発者向けオプション > USBデバッグをONにする
+
+<meta name="keywords" content="*memo_adb*">
+## adb
+- https://developer.android.com/studio/command-line/adb?hl=ja
+
+~~~
+adb devices
+adb shell
+adb shell {cmd}
+adb push {local} {remote}
+adb pull {remote} {local}
+adb install {apk}
+adb logcat -c
+adb logcat
+adb kill-server
+adb start-server
+~~~
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="markdeep.min.js"></script>
