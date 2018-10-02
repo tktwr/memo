@@ -109,6 +109,7 @@ $ vim -u NONE
   | CTRL-P | prev match
   | CTRL-N | next match
   | CTRL-J |                         |          | skk mode
+  | CTRL-X CTRL-F | file completion
 
 ## normal mode vim keymap
 
@@ -147,13 +148,12 @@ $ vim -u NONE
   | CR     | +
   | CTRL-[ | ESC
   | CTRL-] | :ta
+  | CTRL-W CTRL-X | exchange windows
+  | CTRL-W CTRL-Z | close the preview window
 
 ~~~
 # *  : not oftenly used commands for me (candidates for remapping)
 # () : remaped commands
-
-  CTRL-W CTRL-X  exchange windows
-  CTRL-W CTRL-Z  close the preview window
 
   a  add
 * b  backward
@@ -291,14 +291,14 @@ P                | 前回のウィンドウでファイルを開く
 p                | プレビュー
 
 ## resize window
-~~~
-:res[ize] -N
-:res[ize] +N
-:res[ize]  N
-:vertical res[ize] -N
-:vertical res[ize] +N
-:vertical res[ize]  N
-~~~
+Command               | Description
+----------------------|---
+:res[ize] -N          | decrease window height
+:res[ize] +N          | increase window height
+:res[ize]  N          | set window height
+:vertical res[ize] -N | decrease window width
+:vertical res[ize] +N | increase window width
+:vertical res[ize]  N | set window width
 
 ## encryption
 
