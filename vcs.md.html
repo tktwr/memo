@@ -108,6 +108,7 @@ git init --bare
 ### clone
 ~~~
 git clone URL/myproj.git [work_dir]
+git clone X:/path/test.git [work_dir]
 ~~~
 
 ### init
@@ -267,35 +268,56 @@ git rm {module}
 ## diff
 ~~~
 git diff rev1 rev2 {file}|{dir}
+git diff [--cached] [<commit>]
 ~~~
 
 <meta name="keywords" content="*memo_git-svn*">
 git-svn
 =======================================================
 
-コマンド        | svn                               | git                         | git-svn
-----------------|-----------------------------------|-----------------------------|-------------------------
-チェックアウト  | svn checkout URL                  | git clone URL               | git svn clone URL
-更新            | svn update                        | git pull                    | git svn rebase
-コミット        | svn commit                        | git commit -a<br> git push  | git commit -a<br> git svn dcommit
-追加            | svn add FILE/DIR                  | git add FILE/DIR            |
-削除            | svn rm FILE/DIR                   | git rm FILE                 |
-移動            | svn mv FILE/DIR                   | git mv FILE                 |
-変更取り消し    | svn revert FILE                   | git checkout -- FILE        |
-スイッチ        | svn switch URL                    | git checkout BRANCH         |
-状態            | svn status                        | git status                  |
-ログ            | svn log                           | git log                     |
-差分            | svn diff                          | git diff                    |
-ブランチ作成    | svn copy URL URL                  | git branch BRANCH           | git svn branch BRANCH
-タグ作成        | svn copy URL URL                  | git tag TAG                 | git svn tag TAG
-マージ          | svn merge -r REV1:REV2 URL        | git merge BRANCH            |
+git                         | git-svn                      | svn                               
+----------------------------|------------------------------|-----------------------------------
+git clone URL               | git svn clone URL            | svn checkout URL                  
+git fetch                   | git svn fetch                |
+git pull                    | git svn rebase               | svn update                        
+git commit                  |                              |
+git push                    | git svn dcommit              | svn commit                        
+git add FILE/DIR            |                              | svn add FILE/DIR                  
+git rm FILE                 |                              | svn rm FILE/DIR                   
+git rm -r DIR               |                              |
+git mv SRC DST              |                              | svn mv SRC DST
+git checkout -- FILE        |                              | svn revert FILE                   
+git checkout BRANCH         |                              | svn switch URL                    
+git branch BRANCH           | git svn branch BRANCH        | svn copy URL URL                  
+git tag TAG                 | git svn tag TAG              | svn copy URL URL                  
+git merge BRANCH            |                              | svn merge -r REV1:REV2 URL        
+git remote -v               | git svn info                 |                                   
+git status                  |                              | svn status                        
+git log                     |                              | svn log                           
+git diff                    |                              | svn diff                          
 
 <meta name="keywords" content="*memo_svn*">
 svn
 =======================================================
 
-- [TortoiseSVN](https://tortoisesvn.net/)
-  - [Doc](https://tortoisesvn.net/docs/release/TortoiseSVN_ja/index.html)
+## create repositry by TortoiseSVN
+
+1. create directory
+2. TortoiseSVN > Create repositry here
+
+## checkout by TortoiseSVN
+SVN Checkout...
+~~~
+URL of repositry:
+  file:///X:/svn/test
+Checkout directory:
+  C:\path\test
+~~~
+
+## git-svn
+~~~
+git svn clone file:///X/svn/test
+~~~
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="markdeep.min.js"></script>

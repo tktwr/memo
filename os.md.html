@@ -10,6 +10,25 @@
 Windows
 =======================================================
 
+## 共有
+ディレクトリを選択して右クリック:
+- プロパティ > 共有タブ > 共有...
+- プロパティ > 共有タブ > 詳細な共有... > このフォルダーを共有するをチェック
+- プロパティ > 共有タブ > 詳細な共有... > アクセス許可 > 追加
+
+ネットワークディレクトリを選択して右クリック:
+- ネットワークドライブの割り当て...
+
+## 共有フォルダを表示
+~~~
+net share
+~~~
+
+## ネットワークドライブ割り当てを表示
+~~~
+net use
+~~~
+
 <meta name="keywords" content="*memo_chocolatey*">
 <meta name="keywords" content="*memo_choco*">
 ## Chocolatey
@@ -39,16 +58,21 @@ choco install -y meshlab fsviewer
 - PACKAGE.install use native installer
 
 ## Shortcut
-Shortcut        | Description
-----------------|-------------------------------
-Alt + `         | 日本語入力 [英語キーボード]
-Alt + Tab       | ウィンドウを切り替える
-Windows + L     | 画面ロック
-Windows + Up    | ウィンドウの最大化
-Windows + Down  | ウィンドウの最小化
-Windows + Left  | ウィンドウを左半分に最大化
-Windows + Right | ウィンドウを右半分に最大化
-Ctrl + W        | ウィンドウを閉じる
+Shortcut               | Description
+-----------------------|-------------------------------
+Ctrl + W               | ウィンドウを閉じる
+Alt + `                | 日本語入力 [英語キーボード]
+Alt + Tab              | ウィンドウを切り替える
+Windows + L            | 画面ロック
+Windows + D            | デスクトップを表示
+Windows + E            | エクスプローラーを開く
+Windows + Up           | ウィンドウの最大化
+Windows + Down         | ウィンドウの最小化
+Windows + Left         | ウィンドウを左半分に最大化
+Windows + Right        | ウィンドウを右半分に最大化
+Windows + Tab          | タスクビューを開く
+Windows + Ctrl + Left  | 左の仮想デスクトップへ移動
+Windows + Ctrl + Right | 右の仮想デスクトップへ移動
 
 ## Windows ExplorerでPDFのプレビューを表示する
 - Adobe Acrobat Reader DCをインストール
