@@ -13,19 +13,6 @@
 C++
 =======================================================
 
-<meta name="keywords" content="*memo_submodule*">
-## Submodule
-~~~
-git submodule add https://github.com/g-truc/glm.git
-git submodule add https://github.com/ocornut/imgui.git
-git submodule add https://github.com/mlabbe/nativefiledialog.git
-git submodule add https://github.com/nothings/stb.git
-git submodule add https://github.com/tanakh/cmdline.git
-git submodule add https://github.com/gabime/spdlog.git
-git submodule add https://github.com/USCiLab/cereal.git
-git submodule add https://github.com/kazuho/picojson.git
-~~~
-
 ## プログラミング言語 C++ 第３版 - The C++ Programming Language Third Edition
 ~~~
 Bjarne Stroustrup 著
@@ -286,6 +273,42 @@ pip3 install torchvision
 ## install tensorflow
 ~~~
 pip3 install --upgrade tensorflow
+~~~
+
+<meta name="keywords" content="*memo_make*">
+Make
+=======================================================
+## for
+~~~
+loop:
+	@for i in "$(DIRS)"; do\
+		echo "=== [$$i] ===";\
+		cd "$$i" && echo "$$i" && cd ..;\
+	done
+~~~
+
+<meta name="keywords" content="*memo_cmake*">
+CMake
+=======================================================
+## Unix Makefiles
+~~~
+mkdir build
+cd build
+cmake .. -G "Unix Makefiles"
+~~~
+
+## Visual Studio 2017
+~~~
+mkdir build
+cd build
+cmake .. -G "Visual Studio 15 2017 Win64"
+~~~
+
+## add_custom_command
+~~~
+add_custom_command(TARGET sample POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${FILES} $<TARGET_FILE_DIR:sample>
+  )
 ~~~
 
 <style class="fallback">body{visibility:hidden}</style>

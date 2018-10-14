@@ -11,7 +11,7 @@ memo_c	prog.md.html	/*memo_c*
 memo_c++	prog.md.html	/*memo_c++*
 memo_choco	os.md.html	/*memo_choco*
 memo_chocolatey	os.md.html	/*memo_chocolatey*
-memo_cmake	os.md.html	/*memo_cmake*
+memo_cmake	prog.md.html	/*memo_cmake*
 memo_colors	dev.md.html	/*memo_colors*
 memo_conda	prog.md.html	/*memo_conda*
 memo_convert	soft.md.html	/*memo_convert*
@@ -55,6 +55,7 @@ memo_lib	links.md.html	/*memo_lib*
 memo_links	links.md.html	/*memo_links*
 memo_linux	os.md.html	/*memo_linux*
 memo_mac	os.md.html	/*memo_mac*
+memo_make	prog.md.html	/*memo_make*
 memo_misc	os.md.html	/*memo_misc*
 memo_msys	os.md.html	/*memo_msys*
 memo_msys2	os.md.html	/*memo_msys2*
@@ -71,7 +72,6 @@ memo_sh	sh.md.html	/*memo_sh*
 memo_skk	dev.md.html	/*memo_skk*
 memo_soft	soft.md.html	/*memo_soft*
 memo_stock	stock.md.html	/*memo_stock*
-memo_submodule	prog.md.html	/*memo_submodule*
 memo_svn	vcs.md.html	/*memo_svn*
 memo_tensorflow	prog.md.html	/*memo_tensorflow*
 memo_termux	os.md.html	/*memo_termux*
