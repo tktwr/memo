@@ -1,5 +1,7 @@
-memotags:
-	memotags.sh *.html > tags
+.PHONY: tags tags.memo
+
+tags.memo:
+	memotags.sh *.html > tags.memo
 
 helptags:
 	vim -e -c "helptags . | quit"
