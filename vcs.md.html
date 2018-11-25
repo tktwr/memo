@@ -24,6 +24,12 @@ git
 
 ![Git](images/git.svg)
 
+### HEAD
+~~~
+HEAD^n   # n番目の親
+HEAD~n   # n世代前の親
+~~~
+
 ### add, commit, push
 ~~~
 git add {file}          # ステージング
@@ -209,17 +215,20 @@ git ls-remote --tags      # リモートタグ一覧
 ~~~
 
 <meta name="keywords" content="*memo_git-merge*">
-<meta name="keywords" content="*memo_git-rebase*">
 ## merge
 ~~~
 git merge {branch}      # 指定したブランチを現在のブランチに統合する
+git merge --abort
+~~~
+
+<meta name="keywords" content="*memo_git-rebase*">
+## rebase
+~~~
 git rebase {branch}     # 現在のブランチの派生元を指定したブランチに変更する
 git rebase -i {branch}  # コミット編集
-
-git rebase --continue
-git rebase --skip
-git rebase --abort
-git merge --abort
+git rebase --continue   # after resolving conflicts
+git rebase --abort      # cancel
+git rebase --skip       # discard commit
 ~~~
 
 <meta name="keywords" content="*memo_git-cherry-pick*">
@@ -296,6 +305,12 @@ git status                  |                              | svn status
 git log                     |                              | svn log                           
 git diff                    |                              | svn diff                          
 
+## git-svn
+~~~
+git svn clone file:///x/repo/svn/test   # msys2
+git svn clone X:/repo/svn/test          # gitbash
+~~~
+
 <meta name="keywords" content="*memo_svn*">
 svn
 =======================================================
@@ -312,11 +327,6 @@ URL of repositry:
   file:///X:/svn/test
 Checkout directory:
   C:\path\test
-~~~
-
-## git-svn
-~~~
-git svn clone file:///X/svn/test
 ~~~
 
 <style class="fallback">body{visibility:hidden}</style>
