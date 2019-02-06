@@ -52,6 +52,7 @@ memo_grep	sh.md.html	/*memo_grep*
 memo_gtags	dev.md.html	/*memo_gtags*
 memo_gtags.vim	dev.md.html	/*memo_gtags.vim*
 memo_imagemagick	soft.md.html	/*memo_imagemagick*
+memo_imgui	prog.md.html	/*memo_imgui*
 memo_keymap	dev.md.html	/*memo_keymap*
 memo_less	sh.md.html	/*memo_less*
 memo_lib	links.md.html	/*memo_lib*
