@@ -10,24 +10,63 @@
 Windows
 =======================================================
 
-## 共有
-ディレクトリを選択して右クリック:
-- プロパティ > 共有タブ > 共有...
-- プロパティ > 共有タブ > 詳細な共有... > このフォルダーを共有するをチェック
-- プロパティ > 共有タブ > 詳細な共有... > アクセス許可 > 追加
+## Installed
+~~~
+# Tool
+Chrome
+Firefox
+Google Drive
+Dropbox
+TeX Live
+LibreOffice
+7-Zip
+CrystalDiskMark
+Ctrl2cap
+Process Explorer
+Dependency Walker
 
-ネットワークディレクトリを選択して右クリック:
-- ネットワークドライブの割り当て...
+# Graphics Tool
+Blender
+gimp
+inkscape
+FreeCAD
+MeshLab
+FastStone
+ロイロゲームレコーダー
 
-## 共有フォルダを表示
-~~~
-net share
+# Development
+Visual Studio 2017
+androidstudio
+gvim
+CMake
+Git
+TortoiseGit
+TortoiseSVN
+SourceTree
+Unity
+
+# Lib
+Qt
+OpenCV
+ITK
+
+# misc
+Steam
 ~~~
 
-## ネットワークドライブ割り当てを表示
+<!--
+## Not installed
 ~~~
-net use
+MS Office
+
+ITK-SNAP
+IrfanView
+djv_view
+HDRShop
+
+Skype
 ~~~
+-->
 
 <meta name="keywords" content="*memo_chocolatey*">
 <meta name="keywords" content="*memo_choco*">
@@ -74,74 +113,31 @@ Windows + Tab          | タスクビューを開く
 Windows + Ctrl + Left  | 左の仮想デスクトップへ移動
 Windows + Ctrl + Right | 右の仮想デスクトップへ移動
 
-## Windows ExplorerでPDFのプレビューを表示する
-- Adobe Acrobat Reader DCをインストール
-- [編集] -> [環境設定] -> [一般] -> [Windows ExplorerでPDFサムネールのプレビューを有効にする]
+## 共有
+ディレクトリを選択して右クリック:
+- プロパティ > 共有タブ > 共有...
+- プロパティ > 共有タブ > 詳細な共有... > このフォルダーを共有するをチェック
+- プロパティ > 共有タブ > 詳細な共有... > アクセス許可 > 追加
+
+ネットワークディレクトリを選択して右クリック:
+- ネットワークドライブの割り当て...
+
+## 共有フォルダを表示
+~~~
+net share
+~~~
+
+## ネットワークドライブ割り当てを表示
+~~~
+net use
+~~~
 
 ## パーティションの変更
 - [コンピュータ (右クリックメニュー)] -> [管理] -> [ディスクの管理]
 
-## Installed
-~~~
-# Tool
-Chrome
-Firefox
-Google Drive
-Dropbox
-TeX Live
-LibreOffice
-7-Zip
-CrystalDiskMark
-Ctrl2cap
-Process Explorer
-Dependency Walker
-
-# Graphics Tool
-Blender
-gimp
-inkscape
-FreeCAD
-MeshLab
-FastStone
-ロイロゲームレコーダー
-
-# Development
-Visual Studio 2017
-androidstudio
-cygwin
-- vim lv diff patch gnuplot bc make curl
-- clang git git-svn subversion man-pages-posix doxygen
-- ctags cmake
-gvim
-CMake
-Git
-TortoiseGit
-TortoiseSVN
-SourceTree
-Unity
-
-# Lib
-Qt
-OpenCV
-ITK
-
-# misc
-Steam
-~~~
-
-<!--
-## Not installed
-~~~
-MS Office
-
-ITK-SNAP
-IrfanView
-djv_view
-HDRShop
-
-Skype
-~~~
--->
+## Windows ExplorerでPDFのプレビューを表示する
+- Adobe Acrobat Reader DCをインストール
+- [編集] -> [環境設定] -> [一般] -> [Windows ExplorerでPDFサムネールのプレビューを有効にする]
 
 <meta name="keywords" content="*memo_dos*">
 <meta name="keywords" content="*memo_bat*">
@@ -218,28 +214,6 @@ MSYS2
 - http://www.msys2.org/
 - https://wiki.archlinux.org/index.php/pacman
 
-## stdc++ man pages
-
-- https://github.com/jeaye/stdman
-
-ファイル名にstd::...を使用しているのでMSYS2のgitを使う
-~~~
-/usr/bin/git clone https://github.com/jeaye/stdman.git
-~~~
-
-## disable POSIX-to-Windows path conversion
-以下のいずれかの方法がある
-
-- パスの先頭の'/'を'//'に変更する
-- MSYS_NO_PATHCONVを設定する
-~~~
-MSYS_NO_PATHCONV=1
-~~~
-- MSYS2_ARG_CONV_EXCLを設定する
-~~~
-MSYS2_ARG_CONV_EXCL="*"
-~~~
-
 <meta name="keywords" content="*memo_pacman*">
 ## pacman
 
@@ -267,18 +241,22 @@ pacman -S tmux winpty
 pacman -S zip unzip
 pacman -S man-pages-posix
 pacman -S base-devel
+
 pacman -S mingw-w64-x86_64-toolchain
 pacman -S mingw-w64-x86_64-clang
 pacman -S mingw-w64-x86_64-cmake
-pacman -S mingw-w64-x86_64-imagemagick
-pacman -S mingw-w64-x86_64-gnuplot
+pacman -S mingw-w64-x86_64-universal-ctags-git
+
+pacman -S mingw-w64-x86_64-glfw
+pacman -S mingw-w64-x86_64-glew
+pacman -S mingw-w64-x86_64-freeglut
+pacman -S mingw-w64-x86_64-glm
+pacman -S mingw-w64-x86_64-opencv
+
 pacman -S mingw-w64-x86_64-python3-pip
 pacman -S mingw-w64-x86_64-python2-pip
-pacman -S mingw-w64-x86_64-glew
-pacman -S mingw-w64-x86_64-glfw
-pacman -S mingw-w64-x86_64-glm
-pacman -S mingw-w64-x86_64-freeglut
-pacman -S mingw-w64-x86_64-opencv
+pacman -S mingw-w64-x86_64-imagemagick
+pacman -S mingw-w64-x86_64-gnuplot
 pacman -S mingw-w64-x86_64-graphviz
 ~~~
 
@@ -288,11 +266,43 @@ pacman -S msys2-devel
 pacman -S mingw-w64-i686-toolchain
 ~~~
 
+## disable POSIX-to-Windows path conversion
+以下のいずれかの方法がある
+
+- パスの先頭の'/'を'//'に変更する
+- MSYS_NO_PATHCONVを設定する
+~~~
+MSYS_NO_PATHCONV=1
+~~~
+- MSYS2_ARG_CONV_EXCLを設定する
+~~~
+MSYS2_ARG_CONV_EXCL="*"
+~~~
+
+## stdc++ man pages
+
+- https://github.com/jeaye/stdman
+
+ファイル名にstd::...を使用しているのでMSYS2のgitを使う
+~~~
+/usr/bin/git clone https://github.com/jeaye/stdman.git
+~~~
+
 <meta name="keywords" content="*memo_cygwin*">
 Cygwin
 =======================================================
+## Installed
+~~~
+cygwin
+- vim lv diff patch gnuplot bc make curl
+- clang git git-svn subversion man-pages-posix doxygen
+- ctags cmake
+~~~
+
 ## DLLの読み込みに失敗する場合
-C:¥cygwin¥bin¥dash.exe -c '/usr/bin/rebaseall -v'
+~~~
+C:\cygwin\bin\dash.exe -c '/usr/bin/rebaseall -v'
+~~~
 
 ## X serverのインストール
 - xorg-server
@@ -305,7 +315,9 @@ C:¥cygwin¥bin¥dash.exe -c '/usr/bin/rebaseall -v'
 UTF8, DOS形式
 
 ## 現在のパスをWindows形式の絶対パスに変換
+~~~
 cygpath -am `pwd`
+~~~
 
 <meta name="keywords" content="*memo_bootcamp*">
 BootCamp
