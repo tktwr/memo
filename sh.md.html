@@ -8,6 +8,20 @@
 <meta name="keywords" content="*memo_bash*">
 bash
 =======================================================
+## 環境変数
+~~~
+HISTCONTROL=ignoreboth
+FIGNORE=.o
+~~~
+
+## ヒアドキュメント heredoc
+~~~
+cat << END
+...
+...
+END
+~~~
+
 ## get lines and columns in a shell script
 ~~~
 #!/bin/bash
@@ -17,12 +31,6 @@ columns=$(tput cols)
 
 echo "Lines: " $lines
 echo "Columns: " $columns
-~~~
-
-## 環境変数
-~~~
-HISTCONTROL=ignoreboth
-FIGNORE=.o
 ~~~
 
 ## 引数 year/month/day の切り出し

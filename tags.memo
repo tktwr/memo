@@ -2,6 +2,7 @@
 memo_adb	dev.md.html	/*memo_adb*
 memo_anaconda	prog.md.html	/*memo_anaconda*
 memo_android	dev.md.html	/*memo_android*
+memo_android_studio	dev.md.html	/*memo_android_studio*
 memo_awk	sh.md.html	/*memo_awk*
 memo_bash	sh.md.html	/*memo_bash*
 memo_bat	os.md.html	/*memo_bat*
@@ -87,6 +88,8 @@ memo_vcs	vcs.md.html	/*memo_vcs*
 memo_vi	dev.md.html	/*memo_vi*
 memo_vim	dev.md.html	/*memo_vim*
 memo_vim_keymap	dev.md.html	/*memo_vim_keymap*
+memo_visual_studio	dev.md.html	/*memo_visual_studio*
+memo_vs	dev.md.html	/*memo_vs*
 memo_w3m	dev.md.html	/*memo_w3m*
 memo_w3m_keymap	dev.md.html	/*memo_w3m_keymap*
 memo_windows	os.md.html	/*memo_windows*

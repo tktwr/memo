@@ -10,6 +10,12 @@
 Windows
 =======================================================
 
+## 設定
+- control panel
+- device manager
+- disk manager
+- credential manager
+
 ## Installed
 ~~~
 # Tool
@@ -215,6 +221,13 @@ MSYS2
 - https://wiki.archlinux.org/index.php/pacman
 
 <meta name="keywords" content="*memo_pacman*">
+
+## /etc/pacman.conf
+~~~
+#XferCommand = /usr/bin/curl -C - -f %u > %o
+XferCommand = /c/Windows/System32/curl -C - -f %u > %o
+~~~
+
 ## pacman
 
 Option              | 説明
