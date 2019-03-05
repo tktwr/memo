@@ -83,6 +83,7 @@ git config -l | grep filemode                 # show filemode setting
 git status
 git status -sb            # show status in short format
 git log                   # show commit log
+git reflog                # show reflog
 git ls-files              # list tracked files
 git branch -a [-vv]       # list local and remote branches [verbose]
 git remote -v             # list remote repositories
@@ -113,8 +114,10 @@ git init --bare
 <meta name="keywords" content="*memo_git-clone*">
 ### clone
 ~~~
-git clone URL/myproj.git [work_dir]
-git clone X:/path/test.git [work_dir]
+git clone URL [work_dir]
+
+URL=https://path/myproj.git
+URL=X:/path/myproj.git
 ~~~
 
 ### init
@@ -122,7 +125,7 @@ git clone X:/path/test.git [work_dir]
 mkdir myproj
 cd myproj
 git init
-git remote add origin URL/myproj.git
+git remote add origin URL
 ~~~
 
 <meta name="keywords" content="*memo_git-remote*">
@@ -144,8 +147,8 @@ git remote -v                  # list remote repositories
 ~~~
 git fetch
 git fetch --prune         # prune remote branches
-git pull                  # fetch + merge
-git push origin master
+git pull [origin master]  # fetch + merge
+git push [origin master]
 git push origin :{branch} # remove the remote branch
 ~~~
 
@@ -164,7 +167,6 @@ git reset [tree-ish] [--] {paths}  # unstage
 git reset --hard    [commit]       # reset [work, add, commit]
 git reset [--mixed] [commit]       # reset [add, commit]
 git reset --soft    [commit]       # reset [commit]
-git reflog
 ~~~
 
 <meta name="keywords" content="*memo_git-commit*">
@@ -187,7 +189,8 @@ git commit --amend --author="name"  # 名前を変えてコミットしなおす
 <meta name="keywords" content="*memo_git-checkout*">
 ## checkout
 ~~~
-git checkout    {branch}                 # ブランチの移動
+git checkout    {branch}                 # ブランチへ移動
+git checkout -b {branch}                 # ブランチを作成して移動
 git checkout -b {branch} {origin/branch} # リモートブランチをチェックアウト
 git checkout [--] {paths}                # ファイルをリポジトリから取り出す -- 以降はファイル名として扱う (ファイル名がブランチ名と被るのを避ける)
 ~~~
@@ -218,7 +221,19 @@ git ls-remote --tags      # リモートタグ一覧
 ## merge
 ~~~
 git merge {branch}      # 指定したブランチを現在のブランチに統合する
-git merge --abort
+git merge --continue    # after resolving conflicts
+git merge --abort       # cancel
+
+[master] --o--H
+            \
+[branch]     o--B
+
+git merge B
+
+[master] --o--o---H
+            \    /
+[branch]     o--B
+
 ~~~
 
 <meta name="keywords" content="*memo_git-rebase*">
@@ -228,7 +243,17 @@ git rebase {branch}     # 現在のブランチの派生元を指定したブラ
 git rebase -i {branch}  # コミット編集
 git rebase --continue   # after resolving conflicts
 git rebase --abort      # cancel
-git rebase --skip       # discard commit
+
+[master] --o--M
+            \
+[branch]     o--H
+
+git rebase M
+
+[master] --o--M
+               \ 
+[branch]        o--H
+
 ~~~
 
 <meta name="keywords" content="*memo_git-cherry-pick*">
@@ -308,8 +333,8 @@ git diff                    |                              | svn diff
 
 ## git-svn
 ~~~
-git svn clone file:///x/repo/svn/test   # msys2
-git svn clone X:/repo/svn/test          # gitbash
+git svn clone file:///x/path/myproj   # msys2
+git svn clone X:/path/myproj          # gitbash
 ~~~
 
 <meta name="keywords" content="*memo_svn*">
@@ -325,9 +350,9 @@ svn
 SVN Checkout...
 ~~~
 URL of repositry:
-  file:///X:/svn/test
+  file:///X:/path/myproj
 Checkout directory:
-  C:\path\test
+  X:\path\myproj
 ~~~
 
 <style class="fallback">body{visibility:hidden}</style>
