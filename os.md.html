@@ -145,6 +145,18 @@ net use
 - Adobe Acrobat Reader DCをインストール
 - [編集] -> [環境設定] -> [一般] -> [Windows ExplorerでPDFサムネールのプレビューを有効にする]
 
+## リモートデスクトップ接続でサーバー上のOpenGLアプリケーションを起動する
+### セッションIDを調べる
+~~~
+query session
+~~~
+### 管理者権限で実行
+~~~
+tscon 1 /dest:console 
+cd /d D:\work
+start opengl_prog.exe
+~~~
+
 <meta name="keywords" content="*memo_dos*">
 <meta name="keywords" content="*memo_bat*">
 DOSコマンド
@@ -161,6 +173,14 @@ rm file                 | del file
 rm -r dir               | rmdir(rd) /s dir
 ln -s src_file dst_file | mklink dst_file src_file
 ln -s src_dir dst_dir   | mklink /d dst_dir src_dir
+
+## task
+~~~
+tasklist
+taskkill /?
+taskkill /IM notepad.exe [/T] [/F]
+taskkill /PID PID
+~~~
 
 ## HDDの廃棄
 1. NTFSでフォーマット

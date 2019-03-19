@@ -284,6 +284,13 @@ pip3 install --upgrade tensorflow
 <meta name="keywords" content="*memo_make*">
 Makefile
 =======================================================
+## if
+~~~
+ifeq ($(VAR),var)
+else
+endif
+~~~
+
 ## for
 ~~~
 loop:
@@ -291,6 +298,13 @@ loop:
 		echo "=== [$$i] ===";\
 		cd "$$i" && echo "$$i" && cd ..;\
 	done
+~~~
+
+## PHONY
+~~~
+.PHONY: tags
+tags:
+	ctags -R .
 ~~~
 
 <meta name="keywords" content="*memo_cmake*">
