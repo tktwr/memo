@@ -26,8 +26,16 @@ git
 
 ### HEAD
 ~~~
-HEAD^n   # n番目の親
 HEAD~n   # n世代前の親
+
+[HEAD~~] --- [HEAD~] --- [HEAD]
+[HEAD~2]
+
+HEAD^n   # n番目の親
+
+[HEAD^^] --- [HEAD^ ] -+- [HEAD]
+                       |
+             [HEAD^2] -+
 ~~~
 
 ### add, commit, push
@@ -64,10 +72,10 @@ git reset [tree-ish] [--] {paths}    # unstage
 ### track/untrack files
 ~~~
 git add {file}
-git rm --cached    {file} # untrack file
-git rm --cached -r {dir}  # untrack dir
-git ls-files              # list tracked files
-git ls-files -o --directory # list untracked files
+git rm --cached    {file}    # untrack file
+git rm --cached -r {dir}     # untrack dir
+git ls-files                 # list tracked files
+git ls-files -o --directory  # list untracked files
 ~~~
 
 ### chmod (Windows)
@@ -146,10 +154,10 @@ git remote -v                  # list remote repositories
 ## remote branch
 ~~~
 git fetch
-git fetch --prune         # prune remote branches
-git pull [origin master]  # fetch + merge
-git push [origin master]
-git push origin :{branch} # remove the remote branch
+git fetch --prune           # prune remote branches
+git pull [origin] [master]  # fetch + merge
+git push [origin] [master]
+git push origin :{branch}   # remove the remote branch
 ~~~
 
 <meta name="keywords" content="*memo_git-add*">
@@ -176,6 +184,7 @@ git commit
 git commit -a                       # 変更されたtraced fileをaddしてcommit
 git commit -m "message"             # メッセージをつけてコミット
 git commit --amend --author="name"  # 名前を変えてコミットしなおす
+git commit --amend -m "message"     # コミットメッセージを変更
 ~~~
 
 ## commit message
@@ -241,6 +250,7 @@ git merge B
 ~~~
 git rebase {branch}     # 現在のブランチの派生元を指定したブランチに変更する
 git rebase -i {branch}  # コミット編集
+git rebase -i {commit}  # コミット編集
 git rebase --continue   # after resolving conflicts
 git rebase --abort      # cancel
 
@@ -255,6 +265,31 @@ git rebase M
 [branch]        o--H
 
 ~~~
+
+## rebase -i {commit} でコミットを１つにまとめる
+~~~
+[master] --C--M
+            \
+[branch]     1--2--H
+              \   /
+               3-4
+
+git rebase -i C
+pick 1
+pick 2
+pick 3
+pick 4
+
+pick 1
+s 2
+s 3
+s 4
+
+[master] --C--M
+            \
+[branch]     H
+~~~
+元のブランチの履歴を残しておくには新しいブランチを作っておく
 
 <meta name="keywords" content="*memo_git-cherry-pick*">
 ## cherry-pick
