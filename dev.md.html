@@ -96,6 +96,12 @@ C    | prefix ]        | paste
 vim
 =======================================================
 
+## スタートアップ時間計測
+
+~~~
+$ vim --startuptime log.txt
+~~~
+
 ## vimrcを読み込まずに起動する
 
 ~~~
@@ -162,88 +168,82 @@ $ vim -u NONE
   | CTRL-] | :ta
   | CTRL-W CTRL-X | exchange windows
   | CTRL-W CTRL-Z | close the preview window
+  | a      | add
+* | b      | backward
+  | c      | change
+  | d      | delete
+* | e      | end
+  | f      | find
+  | g
+  | h      | move left
+  | i      | insert
+  | j      | move down
+  | k      | move up
+  | l      | move right
+  | m      | mark
+  | n      | serch next
+  | o      | insert
+  | p      | put
+  | q
+  | r      | replace
+  | s      | substitute
+  | t      | find till
+  | u      | undo
+  | v      | visual mode
+  | w      | word
+  | x      | remove
+  | y      | yank
+  | z
+  | A      | add
+* | B      | backward
+  | C      | change
+  | D      | delete
+* | E      | end
+  | F      | find
+  | G      | goto
+  | H      | home
+  | I      | insert
+  | J      | join
+  | K      | keyword
+  | L      | last
+  | M      | middle
+  | N      | search previous
+  | O      | insert
+  | P      | put
+  | Q      | ex mode    | | quit
+  | R      | replace
+* | S      | substitute | | easymotion
+  | T      | find till
+  | U      | undo
+  | V      | visual mode
+* | W      | word
+* | X      | remove
+* | Y      | yanc
+* | Z      |
+* | -      | move previous line
+* | +      | move next line
+* | _      | move next line
+* | =      | format text
+* | [      |
+* | ]      |
+* | {      |
+* | }      |
+  | "      | register
+  | '      | jump to a mark
+  | `      | jump to a mark
+  | ~      | switch case
+* | |      |
+  | \      |
+  | /      | search forward
+  | ?      | search backward
+  | :      | ex mode
+  | ;      | repeat find
+* | ,      | repeat find
+  | .      | repeat
+  | <      |
+  | >      |
 
-~~~
-# *  : not oftenly used commands for me (candidates for remapping)
-# () : remaped commands
-
-  a  add
-* b  backward
-  c  change
-  d  delete
-* e  end
-  f  find
-  g
-  h  move left
-  i  insert
-  j  move down
-  k  move up
-  l  move right
-  m  mark
-  n  serch next
-  o  insert
-  p  put
-  q
-  r  replace
-  s  substitute
-  t  find till
-  u  undo
-  v  visual mode
-  w  word
-  x  remove
-  y  yank
-  z
-
-  A  add
-* B  backward
-  C  change
-  D  delete
-* E  end
-  F  find
-  G  goto
-  H  home
-  I  insert
-  J  join
-  K  keyword
-  L  last
-  M  middle
-  N  search previous
-  O  insert
-  P  put
-  Q  ex mode (quit)
-  R  replace
-* S  substitute
-  T  find till
-  U  undo
-  V  visual mode
-* W  word
-* X  remove
-* Y  yanc
-* Z
-
-* -  move previous line
-* +  move next line
-* _  move next line
-* =  format text
-* [
-* ]
-* {
-* }
-  "  register
-  '  jump to a mark
-  `  jump to a mark
-  ~  switch case
-* |
-  \
-  /  search forward
-  ?  search backward
-  :  ex mode
-  ;  repeat find
-* ,  repeat find
-  .  repeat
-  <
-  >
-~~~
+- *: not oftenly used commands for me (candidates for remapping)
 
 <meta name="keywords" content="*memo_eskk*">
 ## eskk
@@ -337,6 +337,14 @@ Command          | Description
 [count]do        | :diffget
 [count]dp        | :diffput
 :diffupdate      | update
+
+## nerdtree
+Command          | Description
+-----------------|---
+I                | toggle dot files
+cd               | change dir
+r                | refresh dir
+m                | menu
 
 <meta name="keywords" content="*memo_gtags*">
 gtags

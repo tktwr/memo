@@ -8,6 +8,11 @@
 <meta name="keywords" content="*memo_bash*">
 bash
 =======================================================
+## sourceで読み込まれたファイルのディレクトリを取得
+~~~
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+~~~
+
 ## 環境変数
 ~~~
 HISTCONTROL=ignoreboth
@@ -119,12 +124,16 @@ echo ${#a[*]}
 while [ ]; do
 done
 
+for i in $list; do
+  echo $i
+done
+
 if [ ]; then
 elif [ ]; then
 else
 fi
 
-case i in $*
+case $i in
 *word1|*word2)
   ;;
 esac
