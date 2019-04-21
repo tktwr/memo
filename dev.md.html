@@ -5,7 +5,7 @@
 **Develop**
 
 <meta name="keywords" content="*memo_dev*">
-Dev
+Binaries
 =======================================================
       | msys2-32 | msys2-64 | native
 ------|----------|----------|--------
@@ -33,37 +33,62 @@ set t_Co=256
 $ tmux -2
 ~~~
 
+<meta name="keywords" content="*memo_mintty*">
+mintty
+=======================================================
+~~~
+ForegroundColour=208,208,208    # 0xD0D0D0FF
+BackgroundColour=70,70,70       # 0x464646FF
+CursorColour=253,157,79
+Black=50,50,50                  # 0x323232FF
+BoldBlack=50,50,50              # 0x323232FF
+Red=172,65,66
+BoldRed=194,94,94
+Green=144,169,89                # 0x90A959FF
+BoldGreen=166,187,123
+Yellow=244,191,117
+BoldYellow=248,213,165
+Blue=106,159,181
+BoldBlue=140,181,198
+Magenta=170,117,159
+BoldMagenta=190,149,181
+Cyan=117,181,170
+BoldCyan=151,199,190
+White=208,208,208
+BoldWhite=245,245,245
+~~~
+
 <meta name="keywords" content="*memo_keymap*">
 my keymap
 =======================================================
-App  | Command         | Description
------|-----------------|---
-tmux | F1              | prefix
-vim  | F2              | nerdtree
-vim  | F3              | fugitive
-vim  | F4              | agit
-vim  | F5              | close tab
-vim  | F6              | next tab
-tmux | F7              | toggle left pane width 60/80
-tmux | F8              | maximize pane
-tmux | F9              | copy in tmux
-tmux | F10             | paste in tmux
-vim  | F11             | copy in vim
-vim  | F12             | paste in vim
-tmux | F1 m            | open man pane
-tmux | F1 t            | open trans pane
-tmux | F1 p            | open python pane
-vim  | C-h             | make hyper link
-vim  | C-y             | open the current file in chrome
-vim  | C-u             | open the hyper link in chrome
-vim  | C-i             | open the hyper link in W3m
-vim  | C-x             | update date
+App      | Command         | Description
+---------|-----------------|---
+**tmux** | F1              | prefix
+vim      | F2              | nerdtree
+vim      | F3              | fugitive
+vim      | F4              | agit
+vim      | F5              | close tab
+vim      | F6              | next tab
+**tmux** | F7              | toggle left pane width 60/80
+**tmux** | F8              | maximize pane
+**tmux** | F9              | copy in tmux
+**tmux** | F10             | paste in tmux
+vim      | F11             | copy in vim
+vim      | F12             | paste in vim
+**tmux** | F1 m            | open man pane
+**tmux** | F1 t            | open trans pane
+**tmux** | F1 p            | open python pane
+vim      | C-h             | make hyper link
+vim      | C-y             | open the current file in chrome
+vim      | C-u             | open the hyper link in chrome
+vim      | C-i             | open the hyper link in W3m
+vim      | C-x             | update date
 
 <meta name="keywords" content="*memo_tmux*">
 tmux
 =======================================================
 
-<meta name="keywords" content="*memo_tmux_keymap*">
+<meta name="keywords" content="*memo_tmux.keymap*">
 ## tmux keymap
 Mode | Command         | Description
 -----|-----------------|---
@@ -89,13 +114,16 @@ C    | V               | start copy
 C    | ENTER           | end copy
 C    | prefix ]        | paste
 
+- R: root
+- W: window
+- P: pane
+- C: copy mode
 - * my key maps
 
 <meta name="keywords" content="*memo_vi*">
 <meta name="keywords" content="*memo_vim*">
 vim
 =======================================================
-
 ## スタートアップ時間計測
 
 ~~~
@@ -108,28 +136,15 @@ $ vim --startuptime log.txt
 $ vim -u NONE
 ~~~
 
-<meta name="keywords" content="*memo_vim_keymap*">
+<meta name="keywords" content="*memo_vim.keymap*">
 ## vim keymap
 
 ~~~
-:help index.txt
+:help index
 ~~~
 
-## insert mode vim keymap
-
-  | Key    | Original                | Map      | New
---|--------|-------------------------|----------|---
-  | CTRL-A |                         | Home     | the begining of the line
-  | CTRL-E |                         | End      | the end of the line
-  | CTRL-B |                         | Left     | move left
-  | CTRL-F |                         | Right    | move right
-  | CTRL-D |                         | Del      | delete
-  | CTRL-P | prev match
-  | CTRL-N | next match
-  | CTRL-J |                         |          | skk mode
-  | CTRL-X CTRL-F | file completion
-
-## normal mode vim keymap
+<meta name="keywords" content="*memo_vim.nmap*">
+### normal mode vim keymap
 
   | Key    | Original                | Map      | New
 --|--------|-------------------------|----------|---
@@ -174,7 +189,7 @@ $ vim -u NONE
   | d      | delete
 * | e      | end
   | f      | find
-  | g
+  | g      | g commands
   | h      | move left
   | i      | insert
   | j      | move down
@@ -184,7 +199,7 @@ $ vim -u NONE
   | n      | serch next
   | o      | insert
   | p      | put
-  | q
+* | q      | record            | @q | execute commands in the register q
   | r      | replace
   | s      | substitute
   | t      | find till
@@ -193,7 +208,7 @@ $ vim -u NONE
   | w      | word
   | x      | remove
   | y      | yank
-  | z
+  | z      | z commands
   | A      | add
 * | B      | backward
   | C      | change
@@ -229,7 +244,7 @@ $ vim -u NONE
 * | {      |
 * | }      |
   | "      | register
-  | '      | jump to a mark
+  | '      | jump to the first CHAR on the line with a mark | ` | jump to a mark
   | `      | jump to a mark
   | ~      | switch case
 * | |      |
@@ -238,15 +253,122 @@ $ vim -u NONE
   | ?      | search backward
   | :      | ex mode
   | ;      | repeat find
-* | ,      | repeat find
+* | ,      | repeat find      | <Leader> | leader
   | .      | repeat
   | <      |
   | >      |
 
 - *: not oftenly used commands for me (candidates for remapping)
 
+<meta name="keywords" content="*memo_vim.vmap*">
+### visual mode vim keymap
+
+  | Key    | Original                | Map      | New
+--|--------|-------------------------|----------|---
+  | C      |                         |          | nerd commenter
+
+<meta name="keywords" content="*memo_vim.imap*">
+### insert mode vim keymap
+
+  | Key    | Original                | Map      | New
+--|--------|-------------------------|----------|---
+  | CTRL-A |                         | Home     | the begining of the line
+  | CTRL-E |                         | End      | the end of the line
+  | CTRL-B |                         | Left     | move left
+  | CTRL-F |                         | Right    | move right
+  | CTRL-D |                         | Del      | delete
+  | CTRL-P | prev match
+  | CTRL-N | next match
+  | CTRL-J |                         |          | skk mode
+  | CTRL-X CTRL-F | file completion
+
+## vimgrep
+
+### サブディレクトリの検索
+~~~
+:vimgrep WORD **/*.h **/*.cpp
+~~~
+
+## diff
+
+Command          | Description
+-----------------|---
+[c               | jump to the previous change
+]c               | jump to the next change
+[count]do        | :diffget
+[count]dp        | :diffput
+:diffupdate      | update
+
+## resize window
+Command               | Description
+----------------------|---
+:res[ize] -N          | decrease window height
+:res[ize] +N          | increase window height
+:res[ize]  N          | set window height
+:vertical res[ize] -N | decrease window width
+:vertical res[ize] +N | increase window width
+:vertical res[ize]  N | set window width
+
+## encryption
+
+Command          | Description
+-----------------|---
+set cm=blowfish2 | set an encryption method
+:X               | set a new key
+:set key=        | unset a key
+:w               | write a encrypted file
+
+## Plugin
+
+<meta name="keywords" content="*memo_vim-plug*">
+### vim-plug
+Command          | Description
+-----------------|---
+:PlugInstall     | install plugins
+:PlugUpdate      | update plugins
+
+### fugitive
+Command          | Description
+-----------------|---
+-                | toggle stage / unstage
+R                | reload the status buffer
+
+<!--
+### netrw
+
+Command          | Description
+-----------------|---
+i                | 表示形式変更
+< cr >           | ファイルを開く
+o                | ウィンドウを水平に分割してファイルを開く
+v                | ウィンドウを垂直に分割してファイルを開く
+P                | 前回のウィンドウでファイルを開く
+p                | プレビュー
+-->
+
+<meta name="keywords" content="*memo_nerdtree*">
+### nerdtree
+Command          | Description
+-----------------|---
+I                | toggle dot files
+cd               | change dir
+r                | refresh dir
+m                | menu
+
+### nerd commenter
+Command          | Description
+-----------------|---
+<Leader>c<Space> | toggle comment
+
+<meta name="keywords" content="*memo_gtags.vim*">
+### gtags.vim
+~~~
+:Gtags <func>
+:Gtags -r <func>     # go to the referenced point
+~~~
+
 <meta name="keywords" content="*memo_eskk*">
-## eskk
+### eskk
 
 - [SKK Manual](http://skk-dev.github.io/ddskk/skk.html)
 - [SKK日本語入力FEP](http://coexe.web.fc2.com/skkfep.html)
@@ -287,65 +409,6 @@ RJ -> k  | C-g                  | 変換キャンセル
 
 ![SKK control flow](images/skk.svg)
 
-## netrwプラグイン
-
-~~~
-$ vim .
-~~~
-
-Command          | Description
------------------|---
-i                | 表示形式変更
-< cr >           | ファイルを開く
-o                | ウィンドウを水平に分割してファイルを開く
-v                | ウィンドウを垂直に分割してファイルを開く
-P                | 前回のウィンドウでファイルを開く
-p                | プレビュー
-
-## resize window
-Command               | Description
-----------------------|---
-:res[ize] -N          | decrease window height
-:res[ize] +N          | increase window height
-:res[ize]  N          | set window height
-:vertical res[ize] -N | decrease window width
-:vertical res[ize] +N | increase window width
-:vertical res[ize]  N | set window width
-
-## encryption
-
-Command          | Description
------------------|---
-set cm=blowfish2 | set an encryption method
-:X               | set a new key
-:set key=        | unset a key
-:w               | write a encrypted file
-
-## vimgrep
-
-### サブディレクトリの検索
-~~~
-:vimgrep WORD **/*.h **/*.cpp
-~~~
-
-## diff
-
-Command          | Description
------------------|---
-[c               | jump to the previous change
-]c               | jump to the next change
-[count]do        | :diffget
-[count]dp        | :diffput
-:diffupdate      | update
-
-## nerdtree
-Command          | Description
------------------|---
-I                | toggle dot files
-cd               | change dir
-r                | refresh dir
-m                | menu
-
 <meta name="keywords" content="*memo_gtags*">
 gtags
 =======================================================
@@ -363,19 +426,11 @@ $ global -r func   # list reference files
 $ global -f files  # list functions
 ~~~
 
-<meta name="keywords" content="*memo_gtags.vim*">
-gtags.vim
-=======================================================
-~~~
-:Gtags <func>
-:Gtags -r <func>     # go to the referenced point
-~~~
-
 <meta name="keywords" content="*memo_w3m*">
 w3m
 =======================================================
 
-<meta name="keywords" content="*memo_w3m_keymap*">
+<meta name="keywords" content="*memo_w3m.keymap*">
 ## w3m keymap
   | Command              | Description
 --|----------------------|---
@@ -400,34 +455,22 @@ P | Q                    | quit
 <meta name="keywords" content="*memo_vs*">
 Visual Studio
 =======================================================
-
 ## plugin
 Tool > Extension
+
 - VsVim
+
+<meta name="keywords" content="*memo_vscode*">
+Visual Studio Code
+=======================================================
+## plugin
+- vscodevim
 
 <meta name="keywords" content="*memo_android*">
 Android
 =======================================================
 ## デバイスの設定
 - 設定 > 開発者向けオプション > USBデバッグをONにする
-
-<meta name="keywords" content="*memo_android_studio*">
-Android Studio
-=======================================================
-
-## plugin
-Settings > Plugins > Install JetBrains plugin...
-- IdeaVim
-
-## build
-~~~
-gradlew tasks
-gradlew build
-gradlew assemble
-gradlew clean
-gradlew installDebug
-gradlew uninstallDebug
-~~~
 
 <meta name="keywords" content="*memo_adb*">
 ## adb
@@ -444,6 +487,24 @@ adb logcat -c
 adb logcat
 adb kill-server
 adb start-server
+~~~
+
+<meta name="keywords" content="*memo_android_studio*">
+Android Studio
+=======================================================
+## plugin
+Settings > Plugins > Install JetBrains plugin...
+
+- IdeaVim
+
+## build
+~~~
+gradlew tasks
+gradlew build
+gradlew assemble
+gradlew clean
+gradlew installDebug
+gradlew uninstallDebug
 ~~~
 
 <style class="fallback">body{visibility:hidden}</style>
