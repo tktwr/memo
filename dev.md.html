@@ -382,6 +382,25 @@ Command          | Description
 -----------------|---
 :UltiSnipsEdit   | edit snippets
 
+### vim-lsp
+
+### ccls
+#### install
+~~~
+$ pacman -S mingw-w64-x86_64-clang
+$ pacman -S mingw-w64-x86_64-clang-tools-extra
+$ pacman -S mingw-w64-x86_64-cmake
+$ pacman -S mingw-w64-x86_64-ninja
+$ pacman -S mingw-w64-x86_64-polly
+$ pacman -S mingw-w64-x86_64-jq
+$ pacman -S mingw-w64-x86_64-ncurses
+
+$ git clone --depth=1 --recursive https://github.com/MaskRay/ccls
+$ cd ccls
+$ cmake -S. -Bbuild.ninja/Release -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_CXX_FLAGS=-D__STDC_FORMAT_MACROS
+$ cmake --build build.ninja/Release
+~~~
+
 <meta name="keywords" content="*memo_gtags.vim*">
 ### gtags.vim
 ~~~
