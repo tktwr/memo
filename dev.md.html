@@ -124,10 +124,17 @@ C    | prefix ]        | paste
 <meta name="keywords" content="*memo_vim*">
 vim
 =======================================================
+## Windows settings
+
+Control panel > Keyboard
+
+- set key delay to short
+- set key repeat to maximum
+
 ## スタートアップ時間計測
 
 ~~~
-$ vim --startuptime log.txt
+$ vim -c "q" --startuptime log.txt
 ~~~
 
 ## vimrcを読み込まずに起動する
@@ -143,46 +150,54 @@ $ vim -u NONE
 :help index
 ~~~
 
+## insert mode <tab>のmappingを確認する
+~~~
+:verbose imap <tab>
+~~~
+
 <meta name="keywords" content="*memo_vim.nmap*">
 ### normal mode vim keymap
 
   | Key    | Original                | Map      | New
 --|--------|-------------------------|----------|---
-* | CTRL-A | add
+* | CTRL-A | add                     |          | make a hyper link in the markdown format
   | CTRL-B | one page scroll up
   | CTRL-C | interrupt
-  | CTRL-D | half page scroll down   | :close CR| colose the current window
-  | CTRL-E | one line scroll down    | :only CR | only window
+* | CTRL-D | half page scroll down   | :close CR| delete the current window
+* | CTRL-E | one line scroll down    | :only CR | expand the current window
   | CTRL-F | one page scroll down
   | CTRL-G | display info
-* | CTRL-H | h                       |          | make hyper link
-* | CTRL-I | TAB                     |          | open the hyper link in W3m
-  | CTRL-J | j                       | 2 CTRL-E | two line scroll down
-  | CTRL-K | not used                | 2 CTRL-Y | two line scroll up
+* | CTRL-H | h                       |          | quickhl
+* | CTRL-I | TAB                     |          |
+* | CTRL-J | j                       | 2 CTRL-E | two line scroll down
+* | CTRL-K | not used                | 2 CTRL-Y | two line scroll up
   | CTRL-L | redraw screen
   | CTRL-M | CR
-* | CTRL-N | j
-* | CTRL-O | prev in jump list
-* | CTRL-P | k
+* | CTRL-N | j                       |          |
+* | CTRL-O | prev in jump list       |          | open the current file in chrome
+* | CTRL-P | k                       |          |
   | CTRL-Q | terminal control
   | CTRL-R | redo
   | CTRL-S | terminal control
   | CTRL-T | prev in tag list
-* | CTRL-U | half page scroll up     |          | open the hyper link in chrome
+* | CTRL-U | half page scroll up     |          | open an URL in the markdown format by chrome
   | CTRL-V | block visual mode
   | CTRL-W | window command
-* | CTRL-X | subtract                |          | update date
-* | CTRL-Y | one line scroll up      |          | open the current file in chrome
+* | CTRL-X | subtract                |          | easymotion
+* | CTRL-Y | one line scroll up      |          | quickhl reset
   | CTRL-Z | suspend
-  | Space  | l                       | CTRL-F   | one page scroll down
-  | BS     | h                       | CTRL-B   | one page scroll up
+* | Space  | l                       | CTRL-F   | one page scroll down
+* | BS     | h                       | CTRL-B   | one page scroll up
   | Tab    | next in jump list
   | NL     | j
   | CR     | +
   | CTRL-[ | ESC
   | CTRL-] | :ta
-  | CTRL-W CTRL-X | exchange windows
-  | CTRL-W CTRL-Z | close the preview window
+  | CTRL-W_CTRL-X | exchange windows
+  | CTRL-W_CTRL-Z | close the preview window
+
+  | Key    | Original                | Map      | New
+--|--------|-------------------------|----------|---
   | a      | add
 * | b      | backward
   | c      | change
@@ -225,9 +240,9 @@ $ vim -u NONE
   | N      | search previous
   | O      | insert
   | P      | put
-  | Q      | ex mode    | | quit
+  | Q      | ex mode           | | quit
   | R      | replace
-* | S      | substitute | | easymotion
+* | S      | substitute        | |
   | T      | find till
   | U      | undo
   | V      | visual mode
@@ -253,7 +268,7 @@ $ vim -u NONE
   | ?      | search backward
   | :      | ex mode
   | ;      | repeat find
-* | ,      | repeat find      | <Leader> | leader
+* | ,      | repeat find       | <Leader> | leader
   | .      | repeat
   | <      |
   | >      |
@@ -270,17 +285,19 @@ $ vim -u NONE
 <meta name="keywords" content="*memo_vim.imap*">
 ### insert mode vim keymap
 
-  | Key    | Original                | Map      | New
---|--------|-------------------------|----------|---
-  | CTRL-A |                         | Home     | the begining of the line
-  | CTRL-E |                         | End      | the end of the line
-  | CTRL-B |                         | Left     | move left
-  | CTRL-F |                         | Right    | move right
-  | CTRL-D |                         | Del      | delete
-  | CTRL-P | prev match
-  | CTRL-N | next match
-  | CTRL-J |                         |          | skk mode
-  | CTRL-X CTRL-F | file completion
+  | Key             | Original                | Map      | New
+--|-----------------|-------------------------|----------|---
+  | i_CTRL-A        |                         | Home     | the begining of the line
+  | i_CTRL-E        |                         | End      | the end of the line
+  | i_CTRL-B        |                         | Left     | move left
+  | i_CTRL-F        |                         | Right    | move right
+  | i_CTRL-D        |                         | Del      | delete
+  | i_CTRL-P        | prev match
+  | i_CTRL-N        | next match
+  | i_CTRL-X_CTRL-P | prev completion
+  | i_CTRL-X_CTRL-N | next completion
+  | i_CTRL-X_CTRL-F | file completion
+  | i_CTRL-J        |                         |          | skk mode
 
 ## vimgrep
 
@@ -359,6 +376,11 @@ m                | menu
 Command          | Description
 -----------------|---
 <Leader>c<Space> | toggle comment
+
+### UltiSnips
+Command          | Description
+-----------------|---
+:UltiSnipsEdit   | edit snippets
 
 <meta name="keywords" content="*memo_gtags.vim*">
 ### gtags.vim
