@@ -16,49 +16,76 @@ Windows
 - disk manager
 - credential manager
 
+### キーボード配列変更
+- 設定 > 日付と時刻 > 地域と言語 > 日本語 > オプション > ハードウェアキーボードレイアウト
+
+### Key delay
+- Control panel > Keyboard
+  - set key delay to short
+  - set key repeat to maximum
+
+### パーティションの変更
+- [コンピュータ (右クリックメニュー)] -> [管理] -> [ディスクの管理]
+
+## 共有
+ディレクトリを選択して右クリック:
+- プロパティ > 共有タブ > 共有...
+- プロパティ > 共有タブ > 詳細な共有... > このフォルダーを共有するをチェック
+- プロパティ > 共有タブ > 詳細な共有... > アクセス許可 > 追加
+
+ネットワークディレクトリを選択して右クリック:
+- ネットワークドライブの割り当て...
+
+## Windows ExplorerでPDFのプレビューを表示する
+- Adobe Acrobat Reader DCをインストール
+- [編集] -> [環境設定] -> [一般] -> [Windows ExplorerでPDFサムネールのプレビューを有効にする]
+
 ## Installed
-~~~
-# Tool
-Chrome
-Firefox
-Google Drive
-Dropbox
-TeX Live
-LibreOffice
-7-Zip
-CrystalDiskMark
-Ctrl2cap
-Process Explorer
-Dependency Walker
+<div id="col2">
+### App
+- Chrome
+- Firefox
+- Google Drive
+- Dropbox
+- 7-Zip
+- Ctrl2cap
+- LibreOffice
+- TeX Live
 
-# Graphics Tool
-Blender
-gimp
-inkscape
-FreeCAD
-MeshLab
-FastStone
-ロイロゲームレコーダー
+### Tool
+- CrystalDiskMark
+- Process Explorer
+- Dependency Walker
 
-# Development
-Visual Studio 2017
-androidstudio
-gvim
-CMake
-Git
-TortoiseGit
-TortoiseSVN
-SourceTree
-Unity
+### Graphics Tool
+- Blender
+- gimp
+- inkscape
+- FreeCAD
+- MeshLab
+- FastStone
+- Loilo Game Recorder
 
-# Lib
-Qt
-OpenCV
-ITK
+### Development
+- gvim
+- Visual Studio Code
+- Visual Studio 2017
+- Android Studio
+- CMake
+- Git
+- TortoiseGit
+- TortoiseSVN
+- SourceTree
+- Unity
 
-# misc
-Steam
-~~~
+### Lib
+- Qt
+- OpenCV
+- ITK
+
+### Game
+- Steam
+</div>
 
 <!--
 ## Not installed
@@ -95,14 +122,17 @@ choco list PACKAGE
 # list local
 choco list -l
 
-choco install -y jdk8
-choco install -y opencv
 choco install -y meshlab fsviewer windirstat
+choco install -y neovim
 ~~~
 
-- PACKAGE.install use native installer
+- PACKAGE: virtual package
+  - PACKAGE.install: native installer
+  - PACKAGE.portable: portable package
 
 ## Shortcut
+- [Windows Keyboard Shortcut](https://support.microsoft.com/ja-jp/help/12445/windows-keyboard-shortcuts)
+
 Shortcut               | Description
 -----------------------|-------------------------------
 Ctrl + W               | ウィンドウを閉じる
@@ -118,44 +148,6 @@ Windows + Right        | ウィンドウを右半分に最大化
 Windows + Tab          | タスクビューを開く
 Windows + Ctrl + Left  | 左の仮想デスクトップへ移動
 Windows + Ctrl + Right | 右の仮想デスクトップへ移動
-
-## 共有
-ディレクトリを選択して右クリック:
-- プロパティ > 共有タブ > 共有...
-- プロパティ > 共有タブ > 詳細な共有... > このフォルダーを共有するをチェック
-- プロパティ > 共有タブ > 詳細な共有... > アクセス許可 > 追加
-
-ネットワークディレクトリを選択して右クリック:
-- ネットワークドライブの割り当て...
-
-## 共有フォルダを表示
-~~~
-net share
-~~~
-
-## ネットワークドライブ割り当てを表示
-~~~
-net use
-~~~
-
-## パーティションの変更
-- [コンピュータ (右クリックメニュー)] -> [管理] -> [ディスクの管理]
-
-## Windows ExplorerでPDFのプレビューを表示する
-- Adobe Acrobat Reader DCをインストール
-- [編集] -> [環境設定] -> [一般] -> [Windows ExplorerでPDFサムネールのプレビューを有効にする]
-
-## リモートデスクトップ接続でサーバー上のOpenGLアプリケーションを起動する
-### セッションIDを調べる
-~~~
-query session
-~~~
-### 管理者権限で実行
-~~~
-tscon 1 /dest:console 
-cd /d D:\work
-start opengl_prog.exe
-~~~
 
 <meta name="keywords" content="*memo_dos*">
 <meta name="keywords" content="*memo_bat*">
@@ -174,28 +166,6 @@ rm -r dir               | rmdir(rd) /s dir
 ln -s src_file dst_file | mklink dst_file src_file
 ln -s src_dir dst_dir   | mklink /d dst_dir src_dir
 
-## task
-~~~
-tasklist
-taskkill /?
-taskkill /IM notepad.exe [/T] [/F]
-taskkill /PID PID
-~~~
-
-## HDDの廃棄
-1. NTFSでフォーマット
-2. f:ドライブを消去 (0を書込み -> 1を書込み -> 乱数を書込み)
-~~~
-cipher /w:f:
-~~~
-
-## ミラーリング (管理者権限で実行)
-~~~
-robocopy C:¥srcdir D:¥dstdir /mir /sl
-robocopy srcdir D:¥dstdir /mir /sl
-robocopy /?
-~~~
-
 ## シンボリックリンクの作成と削除
      | 作成                    | 削除
 -----|-------------------------|----
@@ -207,6 +177,51 @@ file | mklink dstfile srcfile  | del dstfile
 - シンボリックリンク作成には管理者権限が必要。コマンドプロンプト(cmd.exe)を管理者権限で起動する。
 - mklink は ln と書き順が逆。
 - delでディレクトリへのシンボリックリンクは削除できない。del dir/* と解釈されてリンク先のディレクトリ内のファイルが削除される。
+
+## ミラーリング (管理者権限で実行)
+~~~
+robocopy C:¥srcdir D:¥dstdir /mir /sl
+robocopy srcdir D:¥dstdir /mir /sl
+robocopy /?
+~~~
+
+## HDDの廃棄
+1. NTFSでフォーマット
+2. f:ドライブを消去 (0を書込み -> 1を書込み -> 乱数を書込み)
+~~~
+cipher /w:f:
+~~~
+
+## task
+~~~
+tasklist
+taskkill /?
+taskkill /IM notepad.exe [/T] [/F]
+taskkill /PID PID
+~~~
+
+## 共有
+### 共有フォルダを表示
+~~~
+net share
+~~~
+
+### ネットワークドライブ割り当てを表示
+~~~
+net use
+~~~
+
+## リモートデスクトップ接続でサーバー上のOpenGLアプリケーションを起動する
+### セッションIDを調べる
+~~~
+query session
+~~~
+### 管理者権限で実行
+~~~
+tscon 1 /dest:console 
+cd /d D:\work
+start opengl_prog.exe
+~~~
 
 ## sample.bat
 ~~~

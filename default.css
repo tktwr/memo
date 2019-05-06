@@ -1,5 +1,6 @@
 .md h2, .md div.nonumberh2 {
     border: none;
+    background: #eee;
 }
 
 #col2 {

@@ -4,15 +4,117 @@
 
 **Develop**
 
+<meta name="keywords" content="*memo_autohotkey*">
+<meta name="keywords" content="*memo_ahk*">
+
+AutoHotKey
+=======================================================
+
+## HHK 60 Key
+
+*****************************************************************
+* +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+* |ESC|F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Ins|Del|
+* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
+* |Tab  |   |   |   |   |   |   |   |   |   |   | U |   |   BS|
+* +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
+* |Ctrl   |   |   |   |   |   |   |   |   |   | L | R | Return|
+* +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
+* |Shift    |   |   |   |   |   |   |   |   |   | D |Shift| Fn|
+* +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
+*         |F1 |Alt|                       | LWin  |Zen|
+*         +---+---+-----------------------+-------+---+
+*****************************************************************
+
+App      | Key             | Description
+---------|-----------------|---
+Windows  | LAlt            | F1
+Windows  | LMeta           | LAlt
+Windows  | RMeta           | LWin
+Windows  | RAlt            | Hankaku/Zenkaku
+mintty   | RShift          | Hankaku/Zenkaku Esc
+mintty   | Del             | right half window
+mintty   | Ins             | maximize window
+
+<meta name="keywords" content="*memo_keymap*">
+My Keymap
+=======================================================
+*****************************************************************
+* +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+* |ESC|   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
+* |Tab  |   |   | E |   |   | Y | U |   | O | P |   |   |   BS|
+* +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
+* |Ctrl   | A |   | D |   |   | H | J | K | L |   |   | Return|
+* +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
+* |Shift    |   | X |   |   |   | N |   |   |   |   |Shift| Fn|
+* +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
+*         |F1 |Alt|                       | LWin  |Zen|
+*         +---+---+-----------------------+-------+---+
+*****************************************************************
+
+<div id="col2">
+App      | Key             | Description
+---------|-----------------|---
+**tmux** | F1              | prefix
+vim      | F2              | nerdtree
+vim      | F3              | fugitive
+vim      | F4              | agit
+vim      | F5              | close tab
+vim      | F6              | next tab
+**tmux** | F7              | toggle left pane width 60/80
+**tmux** | F8              | maximize pane
+**tmux** | F9              | copy in tmux
+**tmux** | F10             | paste in tmux
+vim      | F11             | copy in vim
+vim      | F12             | paste in vim
+
+App      | Key             | Description
+---------|-----------------|---
+**tmux** | F1 0            | split 2 panes
+**tmux** | F1 9            | split 3 panes
+**tmux** | F1 8            | split 4 panes
+**tmux** | F1 m            | open man pane
+**tmux** | F1 t            | open trans pane
+**tmux** | F1 p            | open python pane
+**tmux** | M-h             | pane left
+**tmux** | M-j             | pane down
+**tmux** | M-k             | pane up
+**tmux** | M-l             | pane right
+
+App      | Key             | Description
+---------|-----------------|---
+vim      | C-A             | make a hyper link in the markdown format
+vim      | C-D             | delete the current window
+vim      | C-E             | expand the current window
+vim      | C-H             | window left
+vim      | C-J             | window down
+vim      | C-K             | window up
+vim      | C-L             | window right
+vim      | C-N             | redraw screen
+vim      | C-O             | open the current file in chrome
+vim      | C-P             | open an URL in the markdown format by chrome
+vim      | C-U             | quickhl
+vim      | C-X             | easymotion
+vim      | C-Y             | quickhl reset
+</div>
+
 <meta name="keywords" content="*memo_dev*">
 Binaries
 =======================================================
-      | msys2-32 | msys2-64 | native
-------|----------|----------|--------
-cmake | o        | o        | o
-git   | o        |          | o
-vim   | o        |          |  
-gvim  |          |          | o
+        | msys     | mingw32  | mingw64  | gitbash | native
+--------|----------|----------|----------|---------|--------
+gvim    |          |          |          |         | o
+git     | i        |          |          | o       |
+cmake   | i        |          | o        |         | i
+vim     | o        |          |          | i       |  
+tmux    | o        |          |          |         |  
+python  | o 3.7.3  |          | i 2.7.16 |         | o 3.6.4 anaconda
+python2 | o 2.7.16 |          | i 2.7.16 |         |
+python3 | o 3.7.3  |          | i 3.7.3  |         |
+
+- i: installed
+- o: use
 
 <meta name="keywords" content="*memo_colors*">
 Settings 256 colors for vim, tmux, mintty
@@ -32,57 +134,6 @@ set t_Co=256
 ~~~
 $ tmux -2
 ~~~
-
-<meta name="keywords" content="*memo_mintty*">
-mintty
-=======================================================
-~~~
-ForegroundColour=208,208,208    # 0xD0D0D0FF
-BackgroundColour=70,70,70       # 0x464646FF
-CursorColour=253,157,79
-Black=50,50,50                  # 0x323232FF
-BoldBlack=50,50,50              # 0x323232FF
-Red=172,65,66
-BoldRed=194,94,94
-Green=144,169,89                # 0x90A959FF
-BoldGreen=166,187,123
-Yellow=244,191,117
-BoldYellow=248,213,165
-Blue=106,159,181
-BoldBlue=140,181,198
-Magenta=170,117,159
-BoldMagenta=190,149,181
-Cyan=117,181,170
-BoldCyan=151,199,190
-White=208,208,208
-BoldWhite=245,245,245
-~~~
-
-<meta name="keywords" content="*memo_keymap*">
-my keymap
-=======================================================
-App      | Command         | Description
----------|-----------------|---
-**tmux** | F1              | prefix
-vim      | F2              | nerdtree
-vim      | F3              | fugitive
-vim      | F4              | agit
-vim      | F5              | close tab
-vim      | F6              | next tab
-**tmux** | F7              | toggle left pane width 60/80
-**tmux** | F8              | maximize pane
-**tmux** | F9              | copy in tmux
-**tmux** | F10             | paste in tmux
-vim      | F11             | copy in vim
-vim      | F12             | paste in vim
-**tmux** | F1 m            | open man pane
-**tmux** | F1 t            | open trans pane
-**tmux** | F1 p            | open python pane
-vim      | C-h             | make hyper link
-vim      | C-y             | open the current file in chrome
-vim      | C-u             | open the hyper link in chrome
-vim      | C-i             | open the hyper link in W3m
-vim      | C-x             | update date
 
 <meta name="keywords" content="*memo_tmux*">
 tmux
@@ -124,13 +175,6 @@ C    | prefix ]        | paste
 <meta name="keywords" content="*memo_vim*">
 vim
 =======================================================
-## Windows settings
-
-Control panel > Keyboard
-
-- set key delay to short
-- set key repeat to maximum
-
 ## スタートアップ時間計測
 
 ~~~
@@ -160,34 +204,34 @@ $ vim -u NONE
 
   | Key    | Original                | Map      | New
 --|--------|-------------------------|----------|---
-* | CTRL-A | add                     |          | make a hyper link in the markdown format
-  | CTRL-B | one page scroll up
-  | CTRL-C | interrupt
-* | CTRL-D | half page scroll down   | :close CR| delete the current window
-* | CTRL-E | one line scroll down    | :only CR | expand the current window
-  | CTRL-F | one page scroll down
+o | CTRL-A | add                     |          | make a hyper link in the markdown format
+ !| CTRL-B | one page scroll up
+ !| CTRL-C | interrupt
+o!| CTRL-D | half page scroll down   | :close CR| delete the current window
+o!| CTRL-E | one line scroll down    | :only CR | expand the current window
+ !| CTRL-F | one page scroll down
   | CTRL-G | display info
-* | CTRL-H | h                       |          | quickhl
-* | CTRL-I | TAB                     |          |
-* | CTRL-J | j                       | 2 CTRL-E | two line scroll down
-* | CTRL-K | not used                | 2 CTRL-Y | two line scroll up
-  | CTRL-L | redraw screen
+o | CTRL-H | h                       | C-W h    | window left
+o | CTRL-I | TAB                     |          |
+o | CTRL-J | j                       | C-W j    | window down
+o | CTRL-K | not used                | C-W k    | window up
+  | CTRL-L | redraw screen           | C-W l    | window right
   | CTRL-M | CR
-* | CTRL-N | j                       |          |
-* | CTRL-O | prev in jump list       |          | open the current file in chrome
-* | CTRL-P | k                       |          |
+o | CTRL-N | j                       |          | redraw screen
+o | CTRL-O | prev in jump list       |          | open the current file in chrome
+o | CTRL-P | k                       |          | open an URL in the markdown format by chrome
   | CTRL-Q | terminal control
-  | CTRL-R | redo
+ !| CTRL-R | redo
   | CTRL-S | terminal control
-  | CTRL-T | prev in tag list
-* | CTRL-U | half page scroll up     |          | open an URL in the markdown format by chrome
-  | CTRL-V | block visual mode
-  | CTRL-W | window command
-* | CTRL-X | subtract                |          | easymotion
-* | CTRL-Y | one line scroll up      |          | quickhl reset
-  | CTRL-Z | suspend
-* | Space  | l                       | CTRL-F   | one page scroll down
-* | BS     | h                       | CTRL-B   | one page scroll up
+ !| CTRL-T | prev in tag list
+o | CTRL-U | half page scroll up     |          | quickhl
+ !| CTRL-V | block visual mode
+ !| CTRL-W | window command
+o | CTRL-X | subtract                |          | easymotion
+o | CTRL-Y | one line scroll up      |          | quickhl reset
+ !| CTRL-Z | suspend
+o | Space  | l                       | CTRL-F   | one page scroll down
+o | BS     | h                       | CTRL-B   | one page scroll up
   | Tab    | next in jump list
   | NL     | j
   | CR     | +
@@ -382,6 +426,14 @@ Command          | Description
 -----------------|---
 :UltiSnipsEdit   | edit snippets
 
+Key  | Description
+-----|---
+Tab  | expand snippet
+C-N  | next item on menu
+C-P  | prev item on menu
+C-J  | next place
+C-K  | prev place
+
 ### vim-lsp
 
 ### ccls
@@ -399,6 +451,11 @@ $ git clone --depth=1 --recursive https://github.com/MaskRay/ccls
 $ cd ccls
 $ cmake -S. -Bbuild.ninja/Release -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_CXX_FLAGS=-D__STDC_FORMAT_MACROS
 $ cmake --build build.ninja/Release
+~~~
+
+#### generate compile_commands.json
+~~~
+$ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
 ~~~
 
 <meta name="keywords" content="*memo_gtags.vim*">
@@ -450,6 +507,13 @@ RJ -> k  | C-g                  | 変換キャンセル
 
 ![SKK control flow](images/skk.svg)
 
+<meta name="keywords" content="*memo_ctags*">
+ctags
+=======================================================
+~~~
+$ ctags -f out_tag_file -R dir
+~~~
+
 <meta name="keywords" content="*memo_gtags*">
 gtags
 =======================================================
@@ -492,6 +556,12 @@ P | C-p                  | prev history
 P | H                    | help
 P | Q                    | quit
 
+<meta name="keywords" content="*memo_vscode*">
+Visual Studio Code
+=======================================================
+## plugin
+- vscodevim
+
 <meta name="keywords" content="*memo_visual_studio*">
 <meta name="keywords" content="*memo_vs*">
 Visual Studio
@@ -501,11 +571,23 @@ Tool > Extension
 
 - VsVim
 
-<meta name="keywords" content="*memo_vscode*">
-Visual Studio Code
+<meta name="keywords" content="*memo_android_studio*">
+Android Studio
 =======================================================
 ## plugin
-- vscodevim
+Settings > Plugins > Install JetBrains plugin...
+
+- IdeaVim
+
+## build
+~~~
+gradlew tasks
+gradlew build
+gradlew assemble
+gradlew clean
+gradlew installDebug
+gradlew uninstallDebug
+~~~
 
 <meta name="keywords" content="*memo_android*">
 Android
@@ -528,24 +610,6 @@ adb logcat -c
 adb logcat
 adb kill-server
 adb start-server
-~~~
-
-<meta name="keywords" content="*memo_android_studio*">
-Android Studio
-=======================================================
-## plugin
-Settings > Plugins > Install JetBrains plugin...
-
-- IdeaVim
-
-## build
-~~~
-gradlew tasks
-gradlew build
-gradlew assemble
-gradlew clean
-gradlew installDebug
-gradlew uninstallDebug
 ~~~
 
 <style class="fallback">body{visibility:hidden}</style>

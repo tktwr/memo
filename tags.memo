@@ -1,8 +1,10 @@
 !_TAG_FILE_ENCODING	utf-8	//
 memo_adb	dev.md.html	/*memo_adb*
+memo_ahk	dev.md.html	/*memo_ahk*
 memo_anaconda	prog.md.html	/*memo_anaconda*
 memo_android	dev.md.html	/*memo_android*
 memo_android_studio	dev.md.html	/*memo_android_studio*
+memo_autohotkey	dev.md.html	/*memo_autohotkey*
 memo_awk	sh.md.html	/*memo_awk*
 memo_bash	sh.md.html	/*memo_bash*
 memo_bat	os.md.html	/*memo_bat*
@@ -18,6 +20,7 @@ memo_conda	prog.md.html	/*memo_conda*
 memo_convert	soft.md.html	/*memo_convert*
 memo_cpp	prog.md.html	/*memo_cpp*
 memo_csh	sh.md.html	/*memo_csh*
+memo_ctags	dev.md.html	/*memo_ctags*
 memo_cxx	prog.md.html	/*memo_cxx*
 memo_cygwin	os.md.html	/*memo_cygwin*
 memo_dev	dev.md.html	/*memo_dev*
@@ -64,7 +67,6 @@ memo_links	links.md.html	/*memo_links*
 memo_linux	os.md.html	/*memo_linux*
 memo_mac	os.md.html	/*memo_mac*
 memo_make	prog.md.html	/*memo_make*
-memo_mintty	dev.md.html	/*memo_mintty*
 memo_misc	os.md.html	/*memo_misc*
 memo_msys	os.md.html	/*memo_msys*
 memo_msys2	os.md.html	/*memo_msys2*

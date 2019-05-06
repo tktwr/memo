@@ -8,15 +8,15 @@
 <meta name="keywords" content="*memo_bash*">
 bash
 =======================================================
-## sourceで読み込まれたファイルのディレクトリを取得
-~~~
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-~~~
-
 ## 環境変数
 ~~~
 HISTCONTROL=ignoreboth
 FIGNORE=.o
+~~~
+
+## sourceで読み込まれたファイルのディレクトリを取得
+~~~
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ~~~
 
 ## ヒアドキュメント heredoc
@@ -90,7 +90,6 @@ ${変数名%%パターン}                  | 後方一致でのマッチ部分�
 ${変数名/置換前文字列/置換後文字列}  | 文字列置換 (最初にマッチしたもののみ)
 ${変数名//置換前文字列/置換後文字列} | 文字列置換 (マッチしたものすべて)
 
-## 変数置換
 ~~~
 x=foo.bar
 echo $x
@@ -116,22 +115,23 @@ echo ${#a[*]}
 
 ## date
 ~~~
-`date '+%Y%m%d'`
+env LC_TIME=C date '+%Y/%m/%d (%a)'
+env LC_TIME=C date '+%H:%M:%S'
 ~~~
 
-## 文法
+## syntax
 ~~~
-while [ ]; do
-done
+if [ EXPR ]; then
+elif [ EXPR ]; then
+else
+fi
 
 for i in $list; do
   echo $i
 done
 
-if [ ]; then
-elif [ ]; then
-else
-fi
+while [ EXPR ]; do
+done
 
 case $i in
 *word1|*word2)
@@ -143,7 +143,7 @@ esac
 ~~~
 while [ true ]; do
   read line
-  if [ -z $line ]; then
+  if [ -z "$line" ]; then
     break;
   else
     echo $line
@@ -159,7 +159,7 @@ csh
 % command >& foo.txt
 ~~~
 
-## 文法
+## syntax
 ~~~
 while ()
 end
@@ -180,11 +180,6 @@ endsw
 <meta name="keywords" content="*memo_awk*">
 awk
 =======================================================
-## counter
-~~~
-ls -l | grep -v '^total' | awk '{c[$6]++} END {for(m in c) print m,c[m]}'
-~~~
-
 ## define the field separator to ';'
 ~~~
 awk -F ';' '{print $1}'
@@ -194,6 +189,11 @@ awk -F ';' '{print $1}'
 awk '{print "' + "$1" + ':" $1}' と考える
 ~~~
 awk '{print "'"$1"':" $1}'
+~~~
+
+## counter
+~~~
+ls -l | grep -v '^total' | awk '{c[$6]++} END {for(m in c) print m,c[m]}'
 ~~~
 
 <meta name="keywords" content="*memo_sed*">
