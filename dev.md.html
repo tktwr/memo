@@ -2,14 +2,15 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="default.css">
 
+<meta name="keywords" content="*memo_dev*">
 **Develop**
 
 <meta name="keywords" content="*memo_autohotkey*">
 <meta name="keywords" content="*memo_ahk*">
-
 AutoHotKey
 =======================================================
 
+<meta name="keywords" content="*memo_hhk*">
 ## HHK 60 Key
 
 *****************************************************************
@@ -39,13 +40,51 @@ mintty   | Ins             | maximize window
 <meta name="keywords" content="*memo_keymap*">
 My Keymap
 =======================================================
+<div id="col2">
+## function keymap
+App        | Key             | Description
+-----------|-----------------|---
+tmux       | F1              | prefix
+vim.plugin | F2              | nerdtree
+           | F3              | fugitive
+           | F4              | agit
+vim.tab    | F5              | close tab
+           | F6              | next tab
+tmux.pane  | F7              | toggle left pane width 60/80
+           | F8              | maximize pane
+tmux.copy  | F9              | copy in tmux
+           | F10             | paste in tmux
+vim.copy   | F11             | copy in vim
+           | F12             | paste in vim
+
+## tmux keymap
+App        | Key             | Description
+-----------|-----------------|---
+tmux.pane  | M-h             | pane left
+           | M-j             | pane down
+           | M-k             | pane up
+           | M-l             | pane right
+           | F1 [hjkl]       | move to a pane
+           | F1 [HJKL]       | resize the current pane
+tmux.split | F1 -            | hrizontal split pane
+           | F1 `|`          | vertical split pane
+           | F1 0            | split 2 panes
+           | F1 9            | split 3 panes
+           | F1 8            | split 4 panes
+tmux.open  | F1 r            | reload ~/.tmux.conf
+           | F1 m            | open man pane
+           | F1 t            | open trans pane
+           | F1 p            | open python pane
+</div>
+
+## vim keymap
 *****************************************************************
 * +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
 * |ESC|   |   |   |   |   |   |   |   |   |   |   |   |   |   |
 * +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
 * |Tab  |   |   | E |   |   | Y | U |   | O | P |   |   |   BS|
 * +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
-* |Ctrl   | A |   | D |   |   | H | J | K | L |   |   | Return|
+* |Ctrl   | A |   | D |   | G | H | J | K | L |   |   | Return|
 * +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
 * |Shift    |   | X |   |   |   | N |   |   |   |   |Shift| Fn|
 * +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
@@ -53,53 +92,26 @@ My Keymap
 *         +---+---+-----------------------+-------+---+
 *****************************************************************
 
-<div id="col2">
-App      | Key             | Description
----------|-----------------|---
-**tmux** | F1              | prefix
-vim      | F2              | nerdtree
-vim      | F3              | fugitive
-vim      | F4              | agit
-vim      | F5              | close tab
-vim      | F6              | next tab
-**tmux** | F7              | toggle left pane width 60/80
-**tmux** | F8              | maximize pane
-**tmux** | F9              | copy in tmux
-**tmux** | F10             | paste in tmux
-vim      | F11             | copy in vim
-vim      | F12             | paste in vim
+App        | Key             | Description
+-----------|-----------------|---
+vim.win    | C-H             | window left
+           | C-J             | window down
+           | C-K             | window up
+           | C-L             | window right
+           | C-E             | expand the current window
+           | C-X             | delete the current window
+           | C-N             | redraw screen
+vim.open   | C-A             | make a hyper link in the markdown format
+           | C-P             | open an URL in the markdown format by chrome
+           | C-O             | open the current file in chrome
+vim.hl     | C-U             | quickhl
+           | C-Y             | quickhl reset
+vim.move   | C-F             | page down
+           | C-D             | page up
+           | Space           | page down
+           | BS              | page up
+           | C-G             | easymotion
 
-App      | Key             | Description
----------|-----------------|---
-**tmux** | F1 0            | split 2 panes
-**tmux** | F1 9            | split 3 panes
-**tmux** | F1 8            | split 4 panes
-**tmux** | F1 m            | open man pane
-**tmux** | F1 t            | open trans pane
-**tmux** | F1 p            | open python pane
-**tmux** | M-h             | pane left
-**tmux** | M-j             | pane down
-**tmux** | M-k             | pane up
-**tmux** | M-l             | pane right
-
-App      | Key             | Description
----------|-----------------|---
-vim      | C-A             | make a hyper link in the markdown format
-vim      | C-D             | delete the current window
-vim      | C-E             | expand the current window
-vim      | C-H             | window left
-vim      | C-J             | window down
-vim      | C-K             | window up
-vim      | C-L             | window right
-vim      | C-N             | redraw screen
-vim      | C-O             | open the current file in chrome
-vim      | C-P             | open an URL in the markdown format by chrome
-vim      | C-U             | quickhl
-vim      | C-X             | easymotion
-vim      | C-Y             | quickhl reset
-</div>
-
-<meta name="keywords" content="*memo_dev*">
 Binaries
 =======================================================
         | msys     | mingw32  | mingw64  | gitbash | native
@@ -155,11 +167,13 @@ W    | prefix n        | move to the next window
 W    | prefix p        | move to the prev window
 P    | prefix z        | maximize the current pane / return
 P    | prefix o        | move to the next pane
-P *  | prefix 0        | my favorite split pane
 P *  | prefix -        | hrizontal split pane
-P *  | prefix &brvbar; | vertical split pane
-P *  | prefix [HJKL]   | resize the current pane
+P *  | prefix `|`      | vertical split pane
+P *  | prefix 0        | split 2 panes
+P *  | prefix 9        | split 3 panes
+P *  | prefix 8        | split 4 panes
 P *  | prefix [hjkl]   | move to a pane
+P *  | prefix [HJKL]   | resize the current pane
 C    | prefix [        | enter copy mode
 C    | V               | start copy
 C    | ENTER           | end copy
@@ -175,70 +189,71 @@ C    | prefix ]        | paste
 <meta name="keywords" content="*memo_vim*">
 vim
 =======================================================
-## スタートアップ時間計測
+## basic
 
+### スタートアップ時間計測
 ~~~
 $ vim -c "q" --startuptime log.txt
 ~~~
 
-## vimrcを読み込まずに起動する
-
+### vimrcを読み込まずに起動する
 ~~~
 $ vim -u NONE
 ~~~
 
-<meta name="keywords" content="*memo_vim.keymap*">
-## vim keymap
-
+### index of keymap
 ~~~
 :help index
 ~~~
 
-## insert mode <tab>のmappingを確認する
+### insert mode <tab>のmappingを確認する
 ~~~
 :verbose imap <tab>
 ~~~
 
-<meta name="keywords" content="*memo_vim.nmap*">
-### normal mode vim keymap
+<meta name="keywords" content="*memo_vim.keymap*">
+## keymap
 
-  | Key    | Original                | Map      | New
---|--------|-------------------------|----------|---
-o | CTRL-A | add                     |          | make a hyper link in the markdown format
- !| CTRL-B | one page scroll up
- !| CTRL-C | interrupt
-o!| CTRL-D | half page scroll down   | :close CR| delete the current window
-o!| CTRL-E | one line scroll down    | :only CR | expand the current window
- !| CTRL-F | one page scroll down
-  | CTRL-G | display info
-o | CTRL-H | h                       | C-W h    | window left
-o | CTRL-I | TAB                     |          |
-o | CTRL-J | j                       | C-W j    | window down
-o | CTRL-K | not used                | C-W k    | window up
-  | CTRL-L | redraw screen           | C-W l    | window right
-  | CTRL-M | CR
-o | CTRL-N | j                       |          | redraw screen
-o | CTRL-O | prev in jump list       |          | open the current file in chrome
-o | CTRL-P | k                       |          | open an URL in the markdown format by chrome
-  | CTRL-Q | terminal control
- !| CTRL-R | redo
-  | CTRL-S | terminal control
- !| CTRL-T | prev in tag list
-o | CTRL-U | half page scroll up     |          | quickhl
- !| CTRL-V | block visual mode
- !| CTRL-W | window command
-o | CTRL-X | subtract                |          | easymotion
-o | CTRL-Y | one line scroll up      |          | quickhl reset
- !| CTRL-Z | suspend
-o | Space  | l                       | CTRL-F   | one page scroll down
-o | BS     | h                       | CTRL-B   | one page scroll up
-  | Tab    | next in jump list
-  | NL     | j
-  | CR     | +
-  | CTRL-[ | ESC
-  | CTRL-] | :ta
-  | CTRL-W_CTRL-X | exchange windows
-  | CTRL-W_CTRL-Z | close the preview window
+<meta name="keywords" content="*memo_vim.nmap*">
+### normal mode keymap
+
+  | Key     | Original                | Map      | New
+--|---------|-------------------------|----------|---
+o | C-A     | add                     |          | make a hyper link in the markdown format
+ !| C-B     | one page scroll up
+ !| C-C     | interrupt
+o!| C-D     | half page scroll down   | C-B      | one page scroll up
+o!| C-E     | one line scroll down    | :only    | expand the current window
+ !| C-F     | one page scroll down
+  | C-G     | display info            |          | easymotion
+o | C-H     | h                       | C-W h    | window left
+  | C-I     | TAB
+o | C-J     | j                       | C-W j    | window down
+o | C-K     | not used                | C-W k    | window up
+  | C-L     | redraw screen           | C-W l    | window right
+  | C-M     | CR
+o | C-N     | j                       |          | redraw screen
+o | C-O     | prev in jump list       |          | open the current file in chrome
+o | C-P     | k                       |          | open an URL in the markdown format by chrome
+  | C-Q     | terminal control
+ !| C-R     | redo
+  | C-S     | terminal control
+ !| C-T     | prev in tag list
+o | C-U     | half page scroll up     |          | quickhl
+ !| C-V     | block visual mode
+ !| C-W     | window command
+o | C-X     | subtract                | :close   | delete the current window
+o | C-Y     | one line scroll up      |          | quickhl reset
+ !| C-Z     | suspend
+o | Space   | l                       | C-F      | one page scroll down
+o | BS      | h                       | C-B      | one page scroll up
+  | Tab     | next in jump list
+  | NL      | j
+  | CR      | +
+  | C-[     | ESC
+  | C-]     | :ta
+  | C-W C-X | exchange windows
+  | C-W C-Z | close the preview window
 
   | Key    | Original                | Map      | New
 --|--------|-------------------------|----------|---
@@ -286,7 +301,7 @@ o | BS     | h                       | CTRL-B   | one page scroll up
   | P      | put
   | Q      | ex mode           | | quit
   | R      | replace
-* | S      | substitute        | |
+* | S      | substitute
   | T      | find till
   | U      | undo
   | V      | visual mode
@@ -303,10 +318,10 @@ o | BS     | h                       | CTRL-B   | one page scroll up
 * | {      |
 * | }      |
   | "      | register
-  | '      | jump to the first CHAR on the line with a mark | ` | jump to a mark
-  | `      | jump to a mark
+  | '      | jump to the first CHAR on the line with a mark | ``` | jump to a mark
+  | ```    | jump to a mark
   | ~      | switch case
-* | |      |
+* | `|`    |
   | \      |
   | /      | search forward
   | ?      | search backward
@@ -320,46 +335,30 @@ o | BS     | h                       | CTRL-B   | one page scroll up
 - *: not oftenly used commands for me (candidates for remapping)
 
 <meta name="keywords" content="*memo_vim.vmap*">
-### visual mode vim keymap
+### visual mode keymap
 
   | Key    | Original                | Map      | New
 --|--------|-------------------------|----------|---
   | C      |                         |          | nerd commenter
 
 <meta name="keywords" content="*memo_vim.imap*">
-### insert mode vim keymap
+### insert mode keymap
 
-  | Key             | Original                | Map      | New
---|-----------------|-------------------------|----------|---
-  | i_CTRL-A        |                         | Home     | the begining of the line
-  | i_CTRL-E        |                         | End      | the end of the line
-  | i_CTRL-B        |                         | Left     | move left
-  | i_CTRL-F        |                         | Right    | move right
-  | i_CTRL-D        |                         | Del      | delete
-  | i_CTRL-P        | prev match
-  | i_CTRL-N        | next match
-  | i_CTRL-X_CTRL-P | prev completion
-  | i_CTRL-X_CTRL-N | next completion
-  | i_CTRL-X_CTRL-F | file completion
-  | i_CTRL-J        |                         |          | skk mode
+  | Key     | Original                | Map      | New
+--|---------|-------------------------|----------|---
+  | C-A     |                         | Home     | the begining of the line
+  | C-E     |                         | End      | the end of the line
+  | C-B     |                         | Left     | move left
+  | C-F     |                         | Right    | move right
+  | C-D     |                         | Del      | delete
+  | C-P     | prev match
+  | C-N     | next match
+  | C-X C-P | prev completion
+  | C-X C-N | next completion
+  | C-X C-F | file completion
+  | C-J     |                         |          | skk mode
 
-## vimgrep
-
-### サブディレクトリの検索
-~~~
-:vimgrep WORD **/*.h **/*.cpp
-~~~
-
-## diff
-
-Command          | Description
------------------|---
-[c               | jump to the previous change
-]c               | jump to the next change
-[count]do        | :diffget
-[count]dp        | :diffput
-:diffupdate      | update
-
+<meta name="keywords" content="*memo_vim.resize*">
 ## resize window
 Command               | Description
 ----------------------|---
@@ -370,24 +369,59 @@ Command               | Description
 :vertical res[ize] +N | increase window width
 :vertical res[ize]  N | set window width
 
+<meta name="keywords" content="*memo_vim.encryption*">
 ## encryption
-
 Command          | Description
 -----------------|---
 set cm=blowfish2 | set an encryption method
 :X               | set a new key
 :set key=        | unset a key
-:w               | write a encrypted file
 
-## Plugin
+### write as an encrypted file
+~~~
+" set an encryption key
+:X
+:w
+~~~
 
-<meta name="keywords" content="*memo_vim-plug*">
+### write as a normal file
+~~~
+" unset an encryption key
+:set key=
+:w
+~~~
+
+<meta name="keywords" content="*memo_vim.grep*">
+<meta name="keywords" content="*memo_vim.vimgrep*">
+## vimgrep
+
+### サブディレクトリの検索
+~~~
+:vimgrep WORD **/*.h **/*.cpp
+~~~
+
+<meta name="keywords" content="*memo_vim.diff*">
+## diff
+
+Command          | Description
+-----------------|---
+[c               | jump to the previous change
+]c               | jump to the next change
+[count]do        | :diffget
+[count]dp        | :diffput
+:diffupdate      | update
+
+<meta name="keywords" content="*memo_vim.plugin*">
+## plugin
+
+<meta name="keywords" content="*memo_vim.vim-plug*">
 ### vim-plug
 Command          | Description
 -----------------|---
 :PlugInstall     | install plugins
 :PlugUpdate      | update plugins
 
+<meta name="keywords" content="*memo_vim.fugitive*">
 ### fugitive
 Command          | Description
 -----------------|---
@@ -407,7 +441,7 @@ P                | 前回のウィンドウでファイルを開く
 p                | プレビュー
 -->
 
-<meta name="keywords" content="*memo_nerdtree*">
+<meta name="keywords" content="*memo_vim.nerdtree*">
 ### nerdtree
 Command          | Description
 -----------------|---
@@ -421,6 +455,7 @@ Command          | Description
 -----------------|---
 <Leader>c<Space> | toggle comment
 
+<meta name="keywords" content="*memo_vim.ultisnips*">
 ### UltiSnips
 Command          | Description
 -----------------|---
@@ -458,14 +493,14 @@ $ cmake --build build.ninja/Release
 $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
 ~~~
 
-<meta name="keywords" content="*memo_gtags.vim*">
+<meta name="keywords" content="*memo_vim.gtags*">
 ### gtags.vim
 ~~~
 :Gtags <func>
 :Gtags -r <func>     # go to the referenced point
 ~~~
 
-<meta name="keywords" content="*memo_eskk*">
+<meta name="keywords" content="*memo_vim.eskk*">
 ### eskk
 
 - [SKK Manual](http://skk-dev.github.io/ddskk/skk.html)
@@ -491,7 +526,10 @@ Termuxで使用するときの注意
 - 辞書のエンコーディングをEUC-JPからUTF-8に変換が必要
 
 <meta name="keywords" content="*memo_skk*">
-### 基本操作
+skk
+=======================================================
+
+## 基本操作
 Mode     | Command              | Description
 ---------|----------------------|---
 n <-> k  | C-j                  | かな入力へ
