@@ -418,10 +418,18 @@ Termux
 - [The Termux Wiki](https://wiki.termux.com/wiki/Main_Page)
 - Hacker's Keyboard
 
-## update, upgrade
+## apt
 ~~~
 apt update
 apt upgrade
+~~~
+
+## pkg [recommended]
+~~~
+pkg help
+pkg upgrade
+pkg install PACKAGE
+pkg search PACKAGE
 ~~~
 
 ## setup storage
@@ -438,8 +446,12 @@ pkg install termux-exec
 
 ## Installed
 ~~~
-pkg install git vim ctags clang cmake tmux
+pkg install git ctags clang cmake tmux
 pkg install diffutils
+pkg install python
+pkg install vim-python
+pkg install ncurses-utils   # tput
+pkg install util-linux      # column
 ~~~
 
 <meta name="keywords" content="*memo_misc*">
