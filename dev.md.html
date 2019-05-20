@@ -412,24 +412,30 @@ Command          | Description
 :diffupdate      | update
 
 <meta name="keywords" content="*memo_vim.plugin*">
-## plugin
-
 <meta name="keywords" content="*memo_vim.vim-plug*">
-### vim-plug
+## vim-plug
 Command          | Description
 -----------------|---
 :PlugInstall     | install plugins
 :PlugUpdate      | update plugins
 
 <meta name="keywords" content="*memo_vim.fugitive*">
-### fugitive
+## fugitive
 Command          | Description
 -----------------|---
 -                | toggle stage / unstage
+X                | discard the change
 R                | reload the status buffer
 
+### git add --patch
+- :Gdiff
+- old (left window), new (right window)
+- copy lines from the right to the left window (do, dp)
+- save in the left window (staged)
+- :Gcommit
+
 <!--
-### netrw
+## netrw
 
 Command          | Description
 -----------------|---
@@ -442,7 +448,7 @@ p                | プレビュー
 -->
 
 <meta name="keywords" content="*memo_vim.nerdtree*">
-### nerdtree
+## nerdtree
 Command          | Description
 -----------------|---
 I                | toggle dot files
@@ -450,13 +456,13 @@ cd               | change dir
 r                | refresh dir
 m                | menu
 
-### nerd commenter
+## nerd commenter
 Command          | Description
 -----------------|---
 <Leader>c<Space> | toggle comment
 
 <meta name="keywords" content="*memo_vim.ultisnips*">
-### UltiSnips
+## UltiSnips
 Command          | Description
 -----------------|---
 :UltiSnipsEdit   | edit snippets
@@ -469,10 +475,10 @@ C-P  | prev item on menu
 C-J  | next place
 C-K  | prev place
 
-### vim-lsp
+## vim-lsp
 
-### ccls
-#### install
+## ccls
+### install
 ~~~
 $ pacman -S mingw-w64-x86_64-clang
 $ pacman -S mingw-w64-x86_64-clang-tools-extra
@@ -488,20 +494,20 @@ $ cmake -S. -Bbuild.ninja/Release -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INS
 $ cmake --build build.ninja/Release
 ~~~
 
-#### generate compile_commands.json
+### generate compile_commands.json
 ~~~
 $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
 ~~~
 
 <meta name="keywords" content="*memo_vim.gtags*">
-### gtags.vim
+## gtags.vim
 ~~~
 :Gtags <func>
 :Gtags -r <func>     # go to the referenced point
 ~~~
 
 <meta name="keywords" content="*memo_vim.eskk*">
-### eskk
+## eskk
 
 - [SKK Manual](http://skk-dev.github.io/ddskk/skk.html)
 - [SKK日本語入力FEP](http://coexe.web.fc2.com/skkfep.html)
