@@ -452,6 +452,55 @@ pkg install python
 pkg install vim-python
 pkg install ncurses-utils   # tput
 pkg install util-linux      # column
+pkg install openssh
+~~~
+
+## sshd
+
+- [Termux on AndroidのSSHサーバに接続する方法](https://linuxfan.info/termux-sshd)
+
+### generate key
+~~~
+pc$ ssh-keygen
+~~~
+
+### generated files
+~~~
+~/.ssh/id_rsa
+~/.ssh/id_rsa.pub
+~~~
+
+### print key info
+~~~
+pc$ ssh-keygen -l -f id_rsa.pub
+~~~
+
+### push id_rsa.pub by adb
+~~~
+pc$ adb push id_rsa.pub //sdcard/Download
+~~~
+
+### authorized_keys
+~~~
+termux$ mkdir ~/.ssh
+termux$ cat ~/storage/downloads/id_rsa.pub >> ~/.ssh/authorized_keys
+termux$ chmod 600 ~/.ssh/authorized_keys
+termux$ chmod 700 ~/.ssh
+~~~
+
+### run sshd server
+~~~
+termux$ sshd
+~~~
+
+### check ip address on termux
+~~~
+termux$ ip -4 a
+~~~
+
+### connect by ssh via 8022 port
+~~~
+pc$ ssh -p 8022 192.168.XXX.XXX
 ~~~
 
 <meta name="keywords" content="*memo_misc*">
