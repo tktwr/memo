@@ -29,9 +29,9 @@
 <polygon fill="url(#l_0)" stroke="#000000" points="180,-36 121,-36 121,0 180,0 180,-36"/>
 <text text-anchor="middle" x="150.5" y="-15.5" font-family="Times-Roman" font-size="10.00" fill="#000000">全角英数</text>
 </g>
-<!-- normal -->
+<!-- insert -->
 <g id="node2" class="node">
-<title>normal</title>
+<title>insert</title>
 <defs>
 <linearGradient id="l_1" gradientUnits="userSpaceOnUse" x1="27" y1="-80" x2="27" y2="-116" >
 <stop offset="0" style="stop-color:#c0c0c0;stop-opacity:1.;"/>
@@ -39,7 +39,7 @@
 </linearGradient>
 </defs>
 <polygon fill="url(#l_1)" stroke="#000000" points="54,-116 0,-116 0,-80 54,-80 54,-116"/>
-<text text-anchor="middle" x="27" y="-95.5" font-family="Times-Roman" font-size="10.00" fill="#000000">normal</text>
+<text text-anchor="middle" x="27" y="-95.5" font-family="Times-Roman" font-size="10.00" fill="#000000">insert</text>
 </g>
 <!-- hira -->
 <g id="node4" class="node">
@@ -53,9 +53,9 @@
 <polygon fill="url(#l_2)" stroke="#000000" points="180,-116 121,-116 121,-80 180,-80 180,-116"/>
 <text text-anchor="middle" x="150.5" y="-95.5" font-family="Times-Roman" font-size="10.00" fill="#000000">ひらかな</text>
 </g>
-<!-- normal&#45;&gt;hira -->
+<!-- insert&#45;&gt;hira -->
 <g id="edge4" class="edge">
-<title>normal&#45;&gt;hira</title>
+<title>insert&#45;&gt;hira</title>
 <path fill="none" stroke="#000000" d="M64.3228,-98C78.8995,-98 95.6413,-98 110.4685,-98"/>
 <polygon fill="#000000" stroke="#000000" points="64.1026,-94.5001 54.1026,-98 64.1026,-101.5001 64.1026,-94.5001"/>
 <polygon fill="#000000" stroke="#000000" points="103.0001,-101.5004 113,-98 102.9999,-94.5004 103.0001,-101.5004"/>

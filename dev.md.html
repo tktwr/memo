@@ -508,18 +508,11 @@ $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
 
 <meta name="keywords" content="*memo_vim.eskk*">
 ## eskk
-
-- [SKK Manual](http://skk-dev.github.io/ddskk/skk.html)
-- [SKK日本語入力FEP](http://coexe.web.fc2.com/skkfep.html)
-- [SKK辞書](http://openlab.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1)
-
 ~~~
-NeoBundle 'tyru/eskk.vim'
-if neobundle#is_installed('eskk.vim')
-  let g:eskk#directory = "~/.eskk"
-  let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
-  let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
-endif
+Plug 'tyru/eskk.vim'
+let g:eskk#directory = "~/.eskk"
+let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
+let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
 ~~~
 
 注意
@@ -535,10 +528,14 @@ Termuxで使用するときの注意
 skk
 =======================================================
 
+- [SKK Manual](http://skk-dev.github.io/ddskk/skk.html)
+- [SKK日本語入力FEP](http://coexe.web.fc2.com/skkfep.html)
+- [SKK辞書](http://openlab.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1)
+
 ## 基本操作
 Mode     | Command              | Description
 ---------|----------------------|---
-n <-> k  | C-j                  | かな入力へ
+i <-> k  | C-j                  | かな入力へ
 k <-> K  | q                    | カタカナ入力へ
 k  -> a  | l                    | 半角英数入力へ
 k  -> A  | L                    | 全角英数入力へ
@@ -547,9 +544,25 @@ R  -> J  | SPACE                | 変換
 J        | SPACE                | 次候補
 J        | x                    | 前候補
 RJ -> k  | C-g                  | 変換キャンセル
-   -> n  | ESC                  | normalモードへ
+   -> n  | ESC                  | vim normalモードへ
 
 ![SKK control flow](images/skk.svg)
+
+## 送り仮名なし
+~~~
+i
+C-j
+Kanji
+SPACE
+~~~
+
+## 送り仮名あり
+~~~
+i
+C-j
+UgoKu
+SPACE
+~~~
 
 <meta name="keywords" content="*memo_ctags*">
 ctags

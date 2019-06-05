@@ -6,7 +6,7 @@ digraph G {
   edge [ fontsize=10, labeldistance=3, labelangle=-45, labelloc="t" ];
 
   zenkaku [ label="全角英数" ];
-  normal [ label="normal" ];
+  insert [ label="insert" ];
   ascii [ label="半角英数" ];
 
   subgraph cluster1 {
@@ -23,7 +23,7 @@ digraph G {
     kanji:e -> kanji:e [ label="SPACE / x", dir=both ];
   }
 
-  normal -> hira [ label="C-j", dir=both, lhead="cluster1" ];
+  insert -> hira [ label="C-j", dir=both, lhead="cluster1" ];
   kata -> roman [ headlabel="大文字", taillabel="C-g", dir=both, ltail="cluster1", lhead="cluster2" ];
   hira -> ascii [ headlabel="l", taillabel="C-j", dir=both, ltail="cluster1" ];
   hira -> zenkaku [ headlabel="L", taillabel="C-j", dir=both, ltail="cluster1" ];
