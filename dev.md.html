@@ -358,6 +358,18 @@ o | BS      | h                       | C-B      | one page scroll up
   | C-X C-F | file completion
   | C-J     |                         |          | skk mode
 
+<meta name="keywords" content="*memo_vim.commands*">
+## commands
+
+Command          | Description
+-----------------|---
+:[N]b[uffer]     | edit buffer [N] from the buffer list
+:ls              | show all buffers
+:%bdelete        | delete all buffers
+:sp[lit]         | horizontally split the current window
+:vsp[lit]        | vertically split the current window
+:noh[lsearch]    | stop the highlighting
+
 <meta name="keywords" content="*memo_vim.resize*">
 ## resize window
 Command               | Description
@@ -429,9 +441,9 @@ R                | reload the status buffer
 
 ### git add --patch
 - :Gdiff
-- old (left window), new (right window)
-- copy lines from the right to the left window (do, dp)
-- save in the left window (staged)
+  - index (left window), working copy (right window)
+  - copy lines from the right to the left window (do, dp)
+  - save in the left window (staged)
 - :Gcommit
 
 <!--
@@ -453,7 +465,8 @@ Command          | Description
 -----------------|---
 I                | toggle dot files
 cd               | change dir
-r                | refresh dir
+r                | refresh the current dir
+R                | refresh the current root
 m                | menu
 
 ## nerd commenter

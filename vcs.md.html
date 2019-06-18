@@ -337,8 +337,15 @@ git rm {module}
 <meta name="keywords" content="*memo_git-diff*">
 ## diff
 ~~~
-git diff rev1 rev2 {file}|{dir}
+git diff from_commit to_commit > diff_file
 git diff [--cached] [<commit>]
+~~~
+
+<meta name="keywords" content="*memo_git-apply*">
+## apply
+~~~
+git apply [--check] diff_file
+patch -p1 < diff_file
 ~~~
 
 <meta name="keywords" content="*memo_git-svn*">
