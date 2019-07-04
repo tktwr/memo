@@ -84,7 +84,7 @@ tmux.open  | F1 r            | reload ~/.tmux.conf
 * +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
 * |Tab  |   |   | E |   |   | Y | U |   | O | P |   |   |   BS|
 * +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
-* |Ctrl   | A |   | D |   | G | H | J | K | L |   |   | Return|
+* |Ctrl   | A |   | D | F | G | H | J | K | L |   |   | Return|
 * +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
 * |Shift    |   | X |   |   |   | N |   |   |   |   |Shift| Fn|
 * +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
@@ -423,6 +423,19 @@ Command          | Description
 [count]dp        | :diffput
 :diffupdate      | update
 
+<!--
+## netrw
+
+Command          | Description
+-----------------|---
+i                | 表示形式変更
+< cr >           | ファイルを開く
+o                | ウィンドウを水平に分割してファイルを開く
+v                | ウィンドウを垂直に分割してファイルを開く
+P                | 前回のウィンドウでファイルを開く
+p                | プレビュー
+-->
+
 <meta name="keywords" content="*memo_vim.plugin*">
 <meta name="keywords" content="*memo_vim.vim-plug*">
 ## vim-plug
@@ -437,6 +450,7 @@ Command          | Description
 -----------------|---
 -                | toggle stage / unstage
 X                | discard the change
+D                | diff
 R                | reload the status buffer
 
 ### git add --patch
@@ -446,18 +460,12 @@ R                | reload the status buffer
   - save in the left window (staged)
 - :Gcommit
 
-<!--
-## netrw
-
+<meta name="keywords" content="*memo_vim.gv*">
+## gv
 Command          | Description
 -----------------|---
-i                | 表示形式変更
-< cr >           | ファイルを開く
-o                | ウィンドウを水平に分割してファイルを開く
-v                | ウィンドウを垂直に分割してファイルを開く
-P                | 前回のウィンドウでファイルを開く
-p                | プレビュー
--->
+O                | diff in a new tab
+C-X              | :tabclose
 
 <meta name="keywords" content="*memo_vim.nerdtree*">
 ## nerdtree
