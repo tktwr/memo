@@ -6,6 +6,56 @@
 
 <meta name="keywords" content="*memo_prog*">
 
+<meta name="keywords" content="*memo_make*">
+Makefile
+=======================================================
+## if
+~~~
+ifeq ($(VAR),var)
+else
+endif
+~~~
+
+## for
+~~~
+loop:
+	@for i in "$(DIRS)"; do\
+		echo "=== [$$i] ===";\
+		cd "$$i" && echo "$$i" && cd ..;\
+	done
+~~~
+
+## PHONY
+~~~
+.PHONY: tags
+tags:
+	ctags -R .
+~~~
+
+<meta name="keywords" content="*memo_cmake*">
+CMakeLists.txt
+=======================================================
+## Unix Makefiles
+~~~
+mkdir build
+cd build
+cmake .. -G "Unix Makefiles"
+~~~
+
+## Visual Studio 2017
+~~~
+mkdir build
+cd build
+cmake .. -G "Visual Studio 15 2017 Win64"
+~~~
+
+## add_custom_command
+~~~
+add_custom_command(TARGET sample POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${FILES} $<TARGET_FILE_DIR:sample>
+  )
+~~~
+
 <meta name="keywords" content="*memo_ref.c*">
 <meta name="keywords" content="*memo_ref.cpp*">
 C++
@@ -270,28 +320,33 @@ Python
 
 <meta name="keywords" content="*memo_pip*">
 ~~~
-pip3 -V                       # show version
-pip3 list
-pip3 search package_name
-pip3 install package_name
-pip3 install -U package_name  # update
-pip3 uninstall package_name
+pip -V                       # show version
+pip list
+pip search package_name
+pip install package_name
+pip install -U package_name  # update
+pip uninstall package_name
 python -m pip install --upgrade pip  # upgrade pip
+~~~
+
+## installed
+~~~
+pip install opencv-python
 ~~~
 
 <meta name="keywords" content="*memo_anaconda*">
 <meta name="keywords" content="*memo_conda*">
-## update conda
-~~~
-conda list
-conda update -n base conda
-~~~
+Anaconda
+=======================================================
 
-## install
-~~~
-conda install {pkg}
-conda uninstall {pkg}
-~~~
+Command                    | Description
+---------------------------|---
+conda list                 | list packages
+conda update -n base conda | update conda
+conda update --all         | update all packages
+conda update {pkg}         | update package
+conda install {pkg}        | install
+conda uninstall {pkg}      | uninstall
 
 ## installed
 ~~~
@@ -300,67 +355,27 @@ conda install scikit-image
 #conda install -c conda-forge opencv
 ~~~
 
+<meta name="keywords" content="*memo_numpy*">
+Numpy
+=======================================================
+
 <meta name="keywords" content="*memo_pytorch*">
+Pytorch
+=======================================================
+
 ## install pytorch
 ~~~
 conda install pytorch-cpu -c pytorch 
-pip3 install torchvision
+pip install torchvision
 ~~~
 
 <meta name="keywords" content="*memo_tensorflow*">
+Tensorflow
+=======================================================
+
 ## install tensorflow
 ~~~
-pip3 install --upgrade tensorflow
-~~~
-
-<meta name="keywords" content="*memo_make*">
-Makefile
-=======================================================
-## if
-~~~
-ifeq ($(VAR),var)
-else
-endif
-~~~
-
-## for
-~~~
-loop:
-	@for i in "$(DIRS)"; do\
-		echo "=== [$$i] ===";\
-		cd "$$i" && echo "$$i" && cd ..;\
-	done
-~~~
-
-## PHONY
-~~~
-.PHONY: tags
-tags:
-	ctags -R .
-~~~
-
-<meta name="keywords" content="*memo_cmake*">
-CMakeLists.txt
-=======================================================
-## Unix Makefiles
-~~~
-mkdir build
-cd build
-cmake .. -G "Unix Makefiles"
-~~~
-
-## Visual Studio 2017
-~~~
-mkdir build
-cd build
-cmake .. -G "Visual Studio 15 2017 Win64"
-~~~
-
-## add_custom_command
-~~~
-add_custom_command(TARGET sample POST_BUILD
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${FILES} $<TARGET_FILE_DIR:sample>
-  )
+pip install --upgrade tensorflow
 ~~~
 
 <style class="fallback">body{visibility:hidden}</style>
