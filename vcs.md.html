@@ -266,7 +266,7 @@ git rebase M
 
 ~~~
 
-## rebase -i {commit} でコミットを１つにまとめる
+### rebase -i {commit} でコミットを１つにまとめる
 ~~~
 [master] --C--M
             \
@@ -290,6 +290,15 @@ s 4
 [branch]     H
 ~~~
 元のブランチの履歴を残しておくには新しいブランチを作っておく
+
+### 2つ前のコミットメッセージを書き換える
+~~~
+git rebase -i HEAD~2
+変更したい行のpickをeditに変更
+git commit --amend -m "message"
+git rebase --continue
+git push -f origin master  # 上書きに注意
+~~~
 
 <meta name="keywords" content="*memo_git-cherry-pick*">
 ## cherry-pick

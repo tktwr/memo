@@ -61,6 +61,7 @@ memo_make	prog.md.html	/*memo_make*
 memo_misc	os.md.html	/*memo_misc*
 memo_msys	os.md.html	/*memo_msys*
 memo_msys2	os.md.html	/*memo_msys2*
+memo_numpy	prog.md.html	/*memo_numpy*
 memo_os	os.md.html	/*memo_os*
 memo_pacman	os.md.html	/*memo_pacman*
 memo_pip	prog.md.html	/*memo_pip*
