@@ -42,7 +42,7 @@ HEAD^n   # n番目の親
 ~~~
 git add {file}          # ステージング
 git commit              # ローカルレポジトリにコミット
-git push origin master  # リモートレポジトリoriginにpush
+git push origin master  # リモートレポジトリoriginにmasterブランチをpush
 ~~~
 
 ### add and commit / reset
@@ -89,12 +89,13 @@ git config -l | grep filemode                 # show filemode setting
 ## information
 ~~~
 git status
-git status -sb            # show status in short format
-git log                   # show commit log
-git reflog                # show reflog
-git ls-files              # list tracked files
-git branch -a [-vv]       # list local and remote branches [verbose]
-git remote -v             # list remote repositories
+git status -sb                   # show status in short format
+git log                          # show commit log
+git reflog                       # show reflog
+git ls-files                     # list tracked files
+git ls-files -o --directory      # list untracked files
+git branch -a [-vv]              # list local and remote branches [verbose]
+git remote -v                    # list remote repositories
 git rev-parse --show-cdup
 git rev-parse --abbrev-ref HEAD  # branch name
 git rev-parse --short HEAD       # commit hash
@@ -266,7 +267,7 @@ git rebase M
 
 ~~~
 
-### rebase -i {commit} でコミットを１つにまとめる
+### [example] rebase -i {commit} でコミットを１つにまとめる (stash)
 ~~~
 [master] --C--M
             \
@@ -280,6 +281,7 @@ pick 2
 pick 3
 pick 4
 
+# pick を stash に変更
 pick 1
 s 2
 s 3
@@ -291,7 +293,7 @@ s 4
 ~~~
 元のブランチの履歴を残しておくには新しいブランチを作っておく
 
-### 2つ前のコミットメッセージを書き換える
+### [example] 2つ前のコミットメッセージを書き換える
 ~~~
 git rebase -i HEAD~2
 変更したい行のpickをeditに変更
@@ -334,6 +336,9 @@ git submodule add URL [dir]
 ~~~
 git submodule init
 git submodule update
+
+or
+
 git submodule update --init --recursive
 ~~~
 
@@ -343,10 +348,22 @@ git submodule deinit [-f] {module}
 git rm {module}
 ~~~
 
+### [example] change submodule URL
+~~~
+git submodule deinit third_party/{module}
+git rm third_party/{module}
+git commit -m "remove submodule {module}"
+
+cd third_party
+git submodule add --force URL [dir]
+git commit -m "add submodule {module}"
+cd ..
+~~~
+
 <meta name="keywords" content="*memo_git-diff*">
 ## diff
 ~~~
-git diff from_commit to_commit > diff_file
+git diff [--binary] from_commit [to_commit=HEAD] > diff_file
 git diff [--cached] [<commit>]
 ~~~
 
@@ -354,6 +371,9 @@ git diff [--cached] [<commit>]
 ## apply
 ~~~
 git apply [--check] diff_file
+
+or
+
 patch -p1 < diff_file
 ~~~
 
