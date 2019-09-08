@@ -10,19 +10,9 @@
 git
 =======================================================
 
-## Links
+## Workflow
 
-- [Git](https://git-scm.com/)
-- [GitHub](https://github.com/)
-- [GitLab](https://about.gitlab.com/)
-- [サルでもわかるGit入門](https://www.backlog.jp/git-guide/)
-- [TortoiseGit](https://tortoisegit.org/)
-- [git manual](https://git.github.io/htmldocs/git.html)
-- [GitHub GIT CHEAT SHEET](files/github-git-cheat-sheet.pdf)
-
-## workflow
-
-![Git](images/git.svg)
+![Git workflow](images/git.svg)
 
 ### HEAD
 ~~~
@@ -38,44 +28,89 @@ HEAD^n   # n番目の親
              [HEAD^2] -+
 ~~~
 
+<meta name="keywords" content="*memo_git-init*">
+### make a remote repository
+~~~
+mkdir myproj.git
+cd myproj.git
+git init --bare
+~~~
+
+### make a local repository
+
+- URL=https://path/myproj.git
+- URL=X:/path/myproj.git
+
+<meta name="keywords" content="*memo_git-clone*">
+#### clone
+~~~
+git clone URL [work_dir]
+~~~
+
+#### init
+~~~
+mkdir myproj
+cd myproj
+git init
+git remote add origin URL
+~~~
+
 ### add, commit, push
 ~~~
-git add {file}          # ステージング
-git commit              # ローカルレポジトリにコミット
-git push origin master  # リモートレポジトリoriginにmasterブランチをpush
-~~~
-
-### add and commit / reset
-~~~
-git add {file}
-git commit -m "message"
-
-git reset --soft HEAD^
-git reset {file}
-
-or
-
-git reset [--mixed] HEAD^
+git add {files}              # stage files
+git commit -m "message"      # commit changes to the local repository
+git push origin master       # push the "master" branch to the "origin" remote repository
 ~~~
 
 ### discard changes
 ~~~
-git checkout [--] {paths}            # discard changes
+git checkout [--] {file}     # discard chenges of a file
+git reset --hard             # discard all changes
 ~~~
 
-### stage/unstage
+### add / reset files
 ~~~
-git add {file}                       # stage
-git reset [tree-ish] [--] {paths}    # unstage
+git add {files}              # stage
+git reset {files}            # unstage
 ~~~
 
-### track/untrack files
+### commit / reset --soft
 ~~~
-git add {file}
+git commit -m "message"
+git reset --soft HEAD^       # reset the last commit
+~~~
+
+### track / untrack files
+~~~
+git add {files}
 git rm --cached    {file}    # untrack file
 git rm --cached -r {dir}     # untrack dir
 git ls-files                 # list tracked files
 git ls-files -o --directory  # list untracked files
+~~~
+
+### create / delete a branch
+~~~
+git branch    {branch}       # create a branch
+git branch -d {branch}       # delete a branch
+~~~
+
+### push / delete a branch to a remote repository
+~~~
+git push origin {branch}     # push a branch to a remote repository
+git push origin :{branch}    # delete a branch to a remote repository
+~~~
+
+### create / delete a tag
+~~~
+git tag    {tag}             # create a tag
+git tag -d {tag}             # delete a tag
+~~~
+
+### push / delete a tag to a remote repository
+~~~
+git push origin {tag}        # push a tag to a remote repository
+git push origin :{tag}       # delete a tag to a remote repository
 ~~~
 
 ### chmod (Windows)
@@ -85,6 +120,15 @@ git ls-files -s                               # show filemode of tracked files
 git config -l | grep filemode                 # show filemode setting
 ~~~
 
+<meta name="keywords" content="*memo_git-config*">
+## config
+~~~
+git config --global user.name {name}
+git config --global user.email {email}
+git config --global core.autocrlf input
+git config -l                             # list config
+~~~
+
 <meta name="keywords" content="*memo_git-status*">
 ## information
 ~~~
@@ -92,49 +136,13 @@ git status
 git status -sb                   # show status in short format
 git log                          # show commit log
 git reflog                       # show reflog
-git ls-files                     # list tracked files
+git ls-files -s                  # list tracked files with filemode
 git ls-files -o --directory      # list untracked files
 git branch -a [-vv]              # list local and remote branches [verbose]
 git remote -v                    # list remote repositories
 git rev-parse --show-cdup
 git rev-parse --abbrev-ref HEAD  # branch name
 git rev-parse --short HEAD       # commit hash
-~~~
-
-<meta name="keywords" content="*memo_git-config*">
-## config
-~~~
-git config --global user.name {name}
-git config --global user.email {email}
-git config --global core.autocrlf input
-git config -l       # list config
-~~~
-
-<meta name="keywords" content="*memo_git-init*">
-## make a remote repository
-~~~
-mkdir myproj.git
-cd myproj.git
-git init --bare
-~~~
-
-## make a local repository
-
-<meta name="keywords" content="*memo_git-clone*">
-### clone
-~~~
-git clone URL [work_dir]
-
-URL=https://path/myproj.git
-URL=X:/path/myproj.git
-~~~
-
-### init
-~~~
-mkdir myproj
-cd myproj
-git init
-git remote add origin URL
 ~~~
 
 <meta name="keywords" content="*memo_git-remote*">
@@ -155,27 +163,27 @@ git remote -v                  # list remote repositories
 ## remote branch
 ~~~
 git fetch
-git fetch --prune           # prune remote branches
-git pull [origin] [master]  # fetch + merge
-git push [origin] [master]
-git push origin :{branch}   # remove the remote branch
+git fetch --prune              # prune remote branches
+git pull origin {branch}       # fetch + merge
+git push origin {branch}
+git push origin :{branch}      # remove the remote branch
 ~~~
 
 <meta name="keywords" content="*memo_git-add*">
 ## add
 ~~~
-git add {file}   # ファイルをtraced fileにする
+git add {files}  # ファイルをtraced fileにする
 git add .        # カレントディレクトリのすべてのファイルをtraced fileにする
-git add -u       # add updated file
+git add -u       # add updated files
 ~~~
 
 <meta name="keywords" content="*memo_git-reset*">
 ## reset
 ~~~
-git reset [tree-ish] [--] {paths}  # unstage
-git reset --hard    [commit]       # reset [work, add, commit]
-git reset [--mixed] [commit]       # reset [add, commit]
-git reset --soft    [commit]       # reset [commit]
+git reset [tree-ish] [--] {files}   # unstage
+git reset --hard    [commit]        # reset [commit, add, work]
+git reset [--mixed] [commit]        # reset [commit, add]
+git reset --soft    [commit]        # reset [commit]
 ~~~
 
 <meta name="keywords" content="*memo_git-commit*">
@@ -202,7 +210,7 @@ git commit --amend -m "message"     # コミットメッセージを変更
 git checkout    {branch}                 # ブランチへ移動
 git checkout -b {branch}                 # ブランチを作成して移動
 git checkout -b {branch} {origin/branch} # リモートブランチをチェックアウト
-git checkout [--] {paths}                # ファイルをリポジトリから取り出す -- 以降はファイル名として扱う (ファイル名がブランチ名と被るのを避ける)
+git checkout [--] {files}                # ファイルをリポジトリから取り出す -- 以降はファイル名として扱う (ファイル名がブランチ名と被るのを避ける)
 ~~~
 
 <meta name="keywords" content="*memo_git-branch*">
@@ -336,9 +344,11 @@ git submodule add URL [dir]
 ~~~
 git submodule init
 git submodule update
+~~~
 
 or
 
+~~~
 git submodule update --init --recursive
 ~~~
 
@@ -371,11 +381,23 @@ git diff [--cached] [<commit>]
 ## apply
 ~~~
 git apply [--check] diff_file
+~~~
 
 or
 
+~~~
 patch -p1 < diff_file
 ~~~
+
+## Links
+
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
+- [GitLab](https://about.gitlab.com/)
+- [サルでもわかるGit入門](https://www.backlog.jp/git-guide/)
+- [TortoiseGit](https://tortoisegit.org/)
+- [git manual](https://git.github.io/htmldocs/git.html)
+- [GitHub GIT CHEAT SHEET](files/github-git-cheat-sheet.pdf)
 
 <meta name="keywords" content="*memo_git-svn*">
 git-svn
