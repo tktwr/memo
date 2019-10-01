@@ -201,6 +201,11 @@ $ vim -c "q" --startuptime log.txt
 $ vim -u NONE
 ~~~
 
+### エラーメッセージを再表示
+~~~
+:messages
+~~~
+
 ### index of keymap
 ~~~
 :help index
@@ -491,6 +496,13 @@ p                | プレビュー
   | <Leader>c<Space> | toggle comment
 * | C                | toggle comment
 
+## surround
+  | Command          | Description
+--|------------------|---
+  | ds"              | delete surrounding ""
+  | cs"'             | change surrounding "" to ''
+  | ys2w)            | surround two words by ()
+
 <meta name="keywords" content="*memo_vim.ultisnips*">
 ## UltiSnips
 Command          | Description
@@ -507,8 +519,8 @@ C-K  | prev place
 
 ## vim-lsp
 
-## ccls
-### install
+### ccls
+#### install
 ~~~
 $ pacman -S mingw-w64-x86_64-clang
 $ pacman -S mingw-w64-x86_64-clang-tools-extra
@@ -524,7 +536,7 @@ $ cmake -S. -Bbuild.ninja/Release -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INS
 $ cmake --build build.ninja/Release
 ~~~
 
-### generate compile_commands.json
+#### generate compile_commands.json
 ~~~
 $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
 ~~~
