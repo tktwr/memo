@@ -92,6 +92,7 @@ memo_trans	sh.md.html	/*memo_trans*
 memo_vcs	vcs.md.html	/*memo_vcs*
 memo_vi	dev.md.html	/*memo_vi*
 memo_vim	dev.md.html	/*memo_vim*
+memo_vim.agit	dev.md.html	/*memo_vim.agit*
 memo_vim.commands	dev.md.html	/*memo_vim.commands*
 memo_vim.diff	dev.md.html	/*memo_vim.diff*
 memo_vim.encryption	dev.md.html	/*memo_vim.encryption*
