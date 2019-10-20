@@ -1,5 +1,7 @@
 .PHONY: tags.memo
 
+tags: tags.memo
+
 tags.memo:
 	memotags.sh *.html > tags.memo
 

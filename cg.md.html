@@ -1,0 +1,135 @@
+<meta vim:set syntax=markdown:>
+<meta charset="utf-8">
+<link rel="stylesheet" href="default.css">
+
+**CG**
+
+- [Column-major, Row-major](https://qiita.com/suzuryo3893/items/9e543cdf8bc64dc7002a)
+- [Unity matrix](http://edom18.hateblo.jp/entry/2019/01/04/153205)
+
+<meta name="keywords" content="*memo_glsl*">
+GLSL
+=======================================================
+
+<meta name="keywords" content="*memo_opengl*">
+OpenGL
+=======================================================
+- Right-handed coordinate system
+- X-right
+- Y-up
+- Z-front
+- Matrix
+    - Column order memory
+~~~
+M = M_n * ... * M_0 * v
+
+M =
+    0 4  8 12
+    1 5  9 13
+    2 6 10 14
+    3 7 11 15
+
+T =
+    1 0 0 x
+    0 1 0 y
+    0 0 1 z
+    0 0 0 1
+~~~
+
+<meta name="keywords" content="*memo_unity*">
+Unity
+=======================================================
+- Left-handed coordinate system
+- X-left
+- Y-up
+- Z-front
+- Matrix
+    - Column order memory
+
+![unity](images/model_unity.jpg)
+
+DirectX
+=======================================================
+- Left-handed coordinate system
+- Matrix
+    - Row order memory
+
+MeshLab
+=======================================================
+- Right-handed coordinate system
+- X-right
+- Y-up
+- Z-front
+
+![meshlab](images/model_meshlab.jpg)
+
+<meta name="keywords" content="*memo_blender*">
+Blender
+=======================================================
+- Right-handed coordinate system
+- X-right
+- Y-back
+- Z-up
+![blender](images/model_blender.jpg)
+
+<meta name="keywords" content="*memo_eigen*">
+Eigen
+=======================================================
+- Column order memory
+- Row major calc
+
+## the order of multiplying matrix
+\begin{equation}
+v' = M_n * M_{n-1} * ... * M_2 * M_1 * v
+\end{equation}
+
+## Matrix
+- Matrix3f m(row, col)
+- m(row, col)
+- column-major storage order
+
+## Vector
+- Vector3f(row)
+- RowVector3f(col)
+
+~~~
+typedef Matrix<float, 3, 1> Vector3f;
+typedef Matrix<float, 1, 3> RowVector3f;
+~~~
+
+<meta name="keywords" content="*memo_glm*">
+glm
+=======================================================
+~~~
+# uninitialized matrix
+glm::mat4 m;
+
+# identity matrix
+glm::mat4 m(1.0f);
+
+# pointer to data
+float* p = &(m[0][0])
+
+# ortho proj
+glm::mat4 proj = glm::ortho<float>(0, w, 0, h);
+(0, 0) (w, h) -> (-1, -1) (1, 1)
+~~~
+
+<meta name="keywords" content="*memo_opencv*">
+OpenCV
+=======================================================
+## Type
+         | description
+---------|---------------------------
+CV_8UC1  | 8bit unsigned 1 channel
+CV_32FC2 | 32bit float 2 channel
+
+<meta name="keywords" content="*memo_imgui*">
+imgui
+=======================================================
+## demo
+- ShowDemoWindow()
+
+<style class="fallback">body{visibility:hidden}</style>
+<script src="markdeep.min.js"></script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>

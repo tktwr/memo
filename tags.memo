@@ -8,7 +8,7 @@ memo_autohotkey	dev.md.html	/*memo_autohotkey*
 memo_awk	sh.md.html	/*memo_awk*
 memo_bash	sh.md.html	/*memo_bash*
 memo_bat	os.md.html	/*memo_bat*
-memo_blender	soft.md.html	/*memo_blender*
+memo_blender	cg.md.html	/*memo_blender*
 memo_bootcamp	os.md.html	/*memo_bootcamp*
 memo_choco	os.md.html	/*memo_choco*
 memo_chocolatey	os.md.html	/*memo_chocolatey*
@@ -21,6 +21,7 @@ memo_ctags	dev.md.html	/*memo_ctags*
 memo_cygwin	os.md.html	/*memo_cygwin*
 memo_dev	dev.md.html	/*memo_dev*
 memo_dos	os.md.html	/*memo_dos*
+memo_eigen	cg.md.html	/*memo_eigen*
 memo_freecad	soft.md.html	/*memo_freecad*
 memo_gimp	soft.md.html	/*memo_gimp*
 memo_git	vcs.md.html	/*memo_git*
@@ -47,11 +48,14 @@ memo_git-submodule	vcs.md.html	/*memo_git-submodule*
 memo_git-svn	vcs.md.html	/*memo_git-svn*
 memo_git-tag	vcs.md.html	/*memo_git-tag*
 memo_git-worktree	vcs.md.html	/*memo_git-worktree*
+memo_glm	cg.md.html	/*memo_glm*
 memo_global	dev.md.html	/*memo_global*
+memo_glsl	cg.md.html	/*memo_glsl*
 memo_grep	sh.md.html	/*memo_grep*
 memo_gtags	dev.md.html	/*memo_gtags*
 memo_hhk	dev.md.html	/*memo_hhk*
 memo_imagemagick	soft.md.html	/*memo_imagemagick*
+memo_imgui	cg.md.html	/*memo_imgui*
 memo_keymap	dev.md.html	/*memo_keymap*
 memo_less	sh.md.html	/*memo_less*
 memo_links	links.md.html	/*memo_links*
@@ -62,6 +66,8 @@ memo_misc	os.md.html	/*memo_misc*
 memo_msys	os.md.html	/*memo_msys*
 memo_msys2	os.md.html	/*memo_msys2*
 memo_numpy	prog.md.html	/*memo_numpy*
+memo_opencv	cg.md.html	/*memo_opencv*
+memo_opengl	cg.md.html	/*memo_opengl*
 memo_os	os.md.html	/*memo_os*
 memo_pacman	os.md.html	/*memo_pacman*
 memo_pip	prog.md.html	/*memo_pip*
@@ -71,16 +77,11 @@ memo_pytorch	prog.md.html	/*memo_pytorch*
 memo_readline	sh.md.html	/*memo_readline*
 memo_ref.c	prog.md.html	/*memo_ref.c*
 memo_ref.cpp	prog.md.html	/*memo_ref.cpp*
-memo_ref.eigen	prog.md.html	/*memo_ref.eigen*
-memo_ref.glm	prog.md.html	/*memo_ref.glm*
-memo_ref.glsl	prog.md.html	/*memo_ref.glsl*
-memo_ref.imgui	prog.md.html	/*memo_ref.imgui*
-memo_ref.opencv	prog.md.html	/*memo_ref.opencv*
-memo_ref.opengl	prog.md.html	/*memo_ref.opengl*
 memo_sed	sh.md.html	/*memo_sed*
 memo_sh	sh.md.html	/*memo_sh*
 memo_skk	dev.md.html	/*memo_skk*
 memo_soft	soft.md.html	/*memo_soft*
+memo_soft.blender	soft.md.html	/*memo_soft.blender*
 memo_stock	stock.md.html	/*memo_stock*
 memo_svn	vcs.md.html	/*memo_svn*
 memo_tensorflow	prog.md.html	/*memo_tensorflow*
@@ -89,6 +90,7 @@ memo_tmux	dev.md.html	/*memo_tmux*
 memo_tmux.keymap	dev.md.html	/*memo_tmux.keymap*
 memo_top	memo.md.html	/*memo_top*
 memo_trans	sh.md.html	/*memo_trans*
+memo_unity	cg.md.html	/*memo_unity*
 memo_vcs	vcs.md.html	/*memo_vcs*
 memo_vi	dev.md.html	/*memo_vi*
 memo_vim	dev.md.html	/*memo_vim*
