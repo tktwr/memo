@@ -5,7 +5,7 @@
 **Shell**
 
 <meta name="keywords" content="*memo_sh*">
-<meta name="keywords" content="*memo_bash*">
+<meta name="keywords" content="*memo_sh.bash*">
 bash
 =======================================================
 ## 環境変数
@@ -151,7 +151,7 @@ while [ true ]; do
 done
 ~~~
 
-<meta name="keywords" content="*memo_csh*">
+<meta name="keywords" content="*memo_sh.csh*">
 csh
 =======================================================
 ## redirect stderr and stdout
@@ -177,7 +177,7 @@ default:
 endsw
 ~~~
 
-<meta name="keywords" content="*memo_awk*">
+<meta name="keywords" content="*memo_sh.awk*">
 awk
 =======================================================
 ## define the field separator to ';'
@@ -196,7 +196,7 @@ awk '{print "'"$1"':" $1}'
 ls -l | grep -v '^total' | awk '{c[$6]++} END {for(m in c) print m,c[m]}'
 ~~~
 
-<meta name="keywords" content="*memo_sed*">
+<meta name="keywords" content="*memo_sh.sed*">
 sed
 =======================================================
 ## 複数のコマンドを実行
@@ -234,7 +234,7 @@ sed 's/aaa/' + "$1" + '/' と考える
 sed 's/aaa/'"$1"'/'
 ~~~
 
-<meta name="keywords" content="*memo_grep*">
+<meta name="keywords" content="*memo_sh.grep*">
 grep
 =======================================================
 ## NOT
@@ -260,7 +260,7 @@ grep '\<hoge\>' file
 - \<  the begining of a word
 - \>  the end of a word
 
-<meta name="keywords" content="*memo_readline*">
+<meta name="keywords" content="*memo_sh.readline*">
 readline
 =======================================================
 
@@ -290,7 +290,7 @@ M-b | backward-word
 M-d | kill-word
 C-w | unix-word-rubout
 
-<meta name="keywords" content="*memo_less*">
+<meta name="keywords" content="*memo_sh.less*">
 less
 =======================================================
 Option | Description
@@ -301,7 +301,7 @@ Option | Description
 -S     | chop long lines
 -X     | no init
 
-<meta name="keywords" content="*memo_trans*">
+<meta name="keywords" content="*memo_sh.trans*">
 translate-shell
 =======================================================
 - [translate-shell](https://www.soimort.org/translate-shell/)
