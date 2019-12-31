@@ -5,13 +5,10 @@
 <meta name="keywords" content="*memo_dev*">
 **Develop**
 
-<meta name="keywords" content="*memo_dev.autohotkey*">
-<meta name="keywords" content="*memo_dev.ahk*">
-AutoHotKey
-=======================================================
-
+<meta name="keywords" content="*memo_dev.keymap*">
 <meta name="keywords" content="*memo_dev.hhk*">
-## HHK 60 Key
+HHK 60 Key
+=======================================================
 
 *****************************************************************
 * +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
@@ -27,6 +24,10 @@ AutoHotKey
 *         +---+---+-----------------------+-------+---+
 *****************************************************************
 
+<meta name="keywords" content="*memo_dev.autohotkey*">
+<meta name="keywords" content="*memo_dev.ahk*">
+## AutoHotKey
+
 App      | Key             | Description
 ---------|-----------------|---
 Windows  | LAlt            | F1
@@ -34,22 +35,18 @@ Windows  | LMeta           | LAlt
 Windows  | RMeta           | LWin
 Windows  | RAlt            | Hankaku/Zenkaku
 mintty   | RShift          | Hankaku/Zenkaku Esc
-mintty   | Del             | right half window
-mintty   | Ins             | maximize window
+mintty   | Ins             | one window
+mintty   | Del             | recover windows
 
-<meta name="keywords" content="*memo_dev.keymap*">
-My Keymap
-=======================================================
-<div id="col2">
-## function keymap
+## Function keymap
 App        | Key             | Description
 -----------|-----------------|---
 tmux       | F1              | prefix
 vim.plugin | F2              | nerdtree
            | F3              | fugitive
-           | F4              | agit
-vim.tab    | F5              | close tab
-           | F6              | next tab
+           | F4              | GV
+           | F5              | make
+           | F6              | Ggrep
 tmux.pane  | F7              | toggle left pane width 60/80
            | F8              | maximize pane
 tmux.copy  | F9              | copy in tmux
@@ -75,7 +72,6 @@ tmux.open  | F1 r            | reload ~/.tmux.conf
            | F1 m            | open man pane
            | F1 t            | open trans pane
            | F1 p            | open python pane
-</div>
 
 ## vim keymap
 *****************************************************************
@@ -84,7 +80,7 @@ tmux.open  | F1 r            | reload ~/.tmux.conf
 * +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
 * |Tab  |   |   | E |   |   | Y | U |   | O | P |   |   |   BS|
 * +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
-* |Ctrl   | A |   | D | F | G | H | J | K | L |   |   | Return|
+* |Ctrl   | A |   | D | F |   | H | J | K | L |   |   | Return|
 * +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
 * |Shift    |   | X |   |   |   | N |   |   |   |   |Shift| Fn|
 * +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
@@ -102,7 +98,7 @@ vim.win    | C-H             | window left
            | C-X             | delete the current window
            | C-N             | redraw screen
 vim.open   | C-O             | make a hyper link in the markdown format
-           | C-P             | open an URL in the markdown format by chrome
+           | C-P             | open an URL under the cursor by chrome
 vim.hl     | C-U             | quickhl
            | C-Y             | quickhl reset
 vim.move   | C-F             | page down
@@ -151,7 +147,7 @@ tmux
 =======================================================
 
 <meta name="keywords" content="*memo_dev.tmux.keymap*">
-## tmux keymap
+## keymap
 Mode | Command         | Description
 -----|-----------------|---
 R    | prefix :        | command-prompt
@@ -210,8 +206,9 @@ $ vim -u NONE
 :help index
 ~~~
 
-### insert mode <tab>のmappingを確認する
+### mappingを確認する
 ~~~
+:map <C-A>
 :verbose imap <tab>
 ~~~
 
@@ -226,22 +223,22 @@ $ vim -u NONE
 
   | Key     | Original                | Map      | New
 --|---------|-------------------------|----------|---
-o | C-A     | add                     |          | make a hyper link in the markdown format
+o | C-A     | add                     |          | easymotion
  !| C-B     | one page scroll up
  !| C-C     | interrupt
 o!| C-D     | half page scroll down   | C-B      | one page scroll up
 o!| C-E     | one line scroll down    | :only    | expand the current window
  !| C-F     | one page scroll down
-  | C-G     | display info            |          | easymotion
+  | C-G     | display info
 o | C-H     | h                       | C-W h    | window left
   | C-I     | TAB
 o | C-J     | j                       | C-W j    | window down
 o | C-K     | not used                | C-W k    | window up
   | C-L     | redraw screen           | C-W l    | window right
   | C-M     | CR
-o | C-N     | j                       |          | redraw screen
-o | C-O     | prev in jump list
-o | C-P     | k                       |          | open an URL in the markdown format by chrome
+o | C-N     | j                       | C-L      | redraw screen
+o | C-O     | prev in jump list       |          | make a hyper link in the markdown format
+o | C-P     | k                       |          | open an URL under the cursor by chrome
   | C-Q     | terminal control
  !| C-R     | redo
   | C-S     | terminal control

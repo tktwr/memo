@@ -113,10 +113,11 @@ echo ${a[@]}
 echo ${#a[*]}
 ~~~
 
-## date
+## arithmetic
 ~~~
-env LC_TIME=C date '+%Y/%m/%d (%a)'
-env LC_TIME=C date '+%H:%M:%S'
+n=1
+n=`expr $n + 1`
+n=$((n + 1))
 ~~~
 
 ## syntax
@@ -149,6 +150,12 @@ while [ true ]; do
     echo $line
   fi
 done
+~~~
+
+## date
+~~~
+env LC_TIME=C date '+%Y/%m/%d (%a)'
+env LC_TIME=C date '+%H:%M:%S'
 ~~~
 
 <meta name="keywords" content="*memo_sh.csh*">
@@ -199,6 +206,27 @@ ls -l | grep -v '^total' | awk '{c[$6]++} END {for(m in c) print m,c[m]}'
 <meta name="keywords" content="*memo_sh.sed*">
 sed
 =======================================================
+<meta name="keywords" content="*memo_sh.regex*">
+## 正規表現
+~~~
+正規表現      | 意味                                         |
+--------------|----------------------------------------------|--
+.             | 任意の文字                                   |
+*             | 直前の文字の0個以上にマッチ                  |
+\+            | 直前の文字の1個以上にマッチ                  |
+\?            | 直前の文字の0個または1個にマッチ             |
+\{n\}         | 直前の文字のn個にマッチ                      |
+[0-9]         | 数字                                         |
+[^0-9]        | 数字以外の文字                               |
+[a-zA-Z_0-9]  | アルファベット、数字、アンダーバー           |
+[^a-zA-Z_0-9] | アルファベット、数字、アンダーバー以外の文字 |
+[ \f\n\r\t]   | 空白文字                                     |
+[^ \f\n\r\t]  | 空白文字以外                                 |
+\(foo\)       | グループ化                                   |
+^             | 行頭                                         |
+$             | 行末                                         |
+~~~
+
 ## 複数のコマンドを実行
 ~~~
 sed -e '...' -e '...'
