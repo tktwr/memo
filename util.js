@@ -23,7 +23,10 @@ function f_get_time() {
 function f_to_jpyear(year) {
   var nenngo = "西暦";
   var jpyear = year;
-  if (year > 1988) {
+  if (year > 2018) {
+    nenngo = "令和";
+    jpyear = year - 2018;
+  } else if (year > 1988) {
     nenngo = "平成";
     jpyear = year - 1988;
   } else if (year > 1925) {
