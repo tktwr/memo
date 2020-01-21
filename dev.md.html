@@ -212,6 +212,13 @@ $ vim -u NONE
 :verbose imap <tab>
 ~~~
 
+### record
+Key | Description
+----|---
+qq  | start recording into register 'q'
+q   | end recording
+@q  | execute the contents of register 'q'
+
 <meta name="keywords" content="*memo_vim.keymap*">
 ## keymap
 
@@ -277,7 +284,7 @@ o | BS      | h                       | C-B      | one page scroll up
   | n      | serch next
   | o      | insert
   | p      | put
-* | q      | record            | @q | execute commands in the register q
+  | q      | record
   | r      | replace
   | s      | substitute
   | t      | find till
