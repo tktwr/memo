@@ -283,11 +283,16 @@ pip search package_name
 pip install package_name
 pip install -U package_name  # update
 pip uninstall package_name
-python -m pip install --upgrade pip  # upgrade pip
+~~~
+
+## upgrade pip
+~~~
+python -m pip install --upgrade pip
 ~~~
 
 ## installed
 ~~~
+pip install numpy
 pip install opencv-python
 ~~~
 
@@ -303,6 +308,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+~~~
+
+## print sys.path
+~~~
+>>> import sys
+>>> sys.path
 ~~~
 
 <meta name="keywords" content="*memo_prog.anaconda*">

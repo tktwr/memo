@@ -97,8 +97,8 @@ vim.win    | C-H             | window left
            | C-E             | expand the current window
            | C-X             | delete the current window
            | C-N             | redraw screen
-vim.open   | C-O             | make a hyper link in the markdown format
-           | C-P             | open an URL under the cursor by chrome
+vim.open   | C-O             | open an URL under the cursor by chrome
+           | C-P             | make a hyper link in the markdown format
 vim.hl     | C-U             | quickhl
            | C-Y             | quickhl reset
 vim.move   | C-F             | page down
@@ -237,15 +237,15 @@ o!| C-D     | half page scroll down   | C-B      | one page scroll up
 o!| C-E     | one line scroll down    | :only    | expand the current window
  !| C-F     | one page scroll down
   | C-G     | display info
-o | C-H     | h                       | C-W h    | window left
+o!| C-H     | h                       | C-W h    | window left
   | C-I     | TAB
-o | C-J     | j                       | C-W j    | window down
-o | C-K     | not used                | C-W k    | window up
-  | C-L     | redraw screen           | C-W l    | window right
+o!| C-J     | j                       | C-W j    | window down
+o!| C-K     | not used                | C-W k    | window up
+ !| C-L     | redraw screen           | C-W l    | window right
   | C-M     | CR
 o | C-N     | j                       | C-L      | redraw screen
-o | C-O     | prev in jump list       |          | make a hyper link in the markdown format
-o | C-P     | k                       |          | open an URL under the cursor by chrome
+o | C-O     | prev in jump list       |          | open an URL under the cursor by chrome
+o | C-P     | k                       |          | make a hyper link in the markdown format
   | C-Q     | terminal control
  !| C-R     | redo
   | C-S     | terminal control
@@ -371,7 +371,6 @@ o | BS      | h                       | C-B      | one page scroll up
 
 <meta name="keywords" content="*memo_vim.commands*">
 ## commands
-
 Command          | Description
 -----------------|---
 :[N]b[uffer]     | edit buffer [N] from the buffer list
