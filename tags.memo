@@ -88,6 +88,7 @@ memo_sh.csh	sh.md.html	/*memo_sh.csh*
 memo_sh.grep	sh.md.html	/*memo_sh.grep*
 memo_sh.less	sh.md.html	/*memo_sh.less*
 memo_sh.readline	sh.md.html	/*memo_sh.readline*
+memo_sh.regex	sh.md.html	/*memo_sh.regex*
 memo_sh.sed	sh.md.html	/*memo_sh.sed*
 memo_sh.trans	sh.md.html	/*memo_sh.trans*
 memo_soft	soft.md.html	/*memo_soft*
