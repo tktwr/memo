@@ -54,6 +54,13 @@ tmux.copy  | F9              | copy in tmux
 vim.copy   | F11             | copy in vim
            | F12             | paste in vim
 
+## mintty keymap
+App        | Key             | Description
+-----------|-----------------|---
+mintty     | C-0             | scale reset
+mintty     | C--             | scale -
+mintty     | C-=             | scale +
+
 ## tmux keymap
 App        | Key             | Description
 -----------|-----------------|---
@@ -98,14 +105,14 @@ vim.win    | C-H             | window left
            | C-X             | delete the current window
            | C-N             | redraw screen
 vim.open   | C-O             | open an URL under the cursor by chrome
-           | C-P             | make a hyper link in the markdown format
+           | C-A             | make a hyper link in the markdown format
 vim.hl     | C-U             | quickhl
            | C-Y             | quickhl reset
 vim.move   | C-F             | page down
            | C-D             | page up
            | Space           | page down
            | BS              | page up
-           | C-A             | easymotion
+           | C-P             | easymotion
 
 Binaries
 =======================================================
@@ -126,9 +133,14 @@ python3 | o 3.7.3  |          | i 3.7.3  |         |
 <meta name="keywords" content="*memo_dev.colors*">
 Settings 256 colors for vim, tmux, mintty
 =======================================================
+## .minttyrc
+~~~
+Term=xterm-256color
+~~~
+
 ## .tmux.conf
 ~~~
-set -g default-terminal "xterm"
+set -g default-terminal "xterm-256color"
 ~~~
 
 ## .vimrc
@@ -180,6 +192,55 @@ C    | prefix ]        | paste
 - C: copy mode
 - * my key maps
 
+<meta name="keywords" content="*memo_vifm*">
+vifm
+=======================================================
+## Key
+Key   | Description
+------|---
+h     | upper directory
+j     | move down
+k     | move up
+l     | enter the directory / edit the file
+V     | visual mode
+t     | select
+ENTER | filetype
+e     | fileviewer
+C     | clone
+dd    | delete to trash
+DD    | delete
+yy    | yank
+p     | paste
+cw    | rename
+cW    | rename except ext
+m[a-z]| mark dir
+'[a-z]| jump to the marked dir
+''    | jump to the prev dir
+za    | toggle dot files
+zo    | show dot files
+zm    | hide dot files
+SPACE | 反対側のペインへ
+TAB   | 反対側のペインへ
+C-g   | file info
+
+## Command
+Command       | Description
+--------------|---
+:help         | help
+:q            | quit
+:cd dir       | cd
+:mkdir dir... | make directory
+:move         | move files to directory of other pane
+:copy         | copy files to directory of other pane
+:clone        | clone
+:sync         | 反対側のペインを同じディレクトリに移動
+:only         | 1ペインにする
+:sp[lit]      | 水平分割
+:vsp[lit]     | 垂直分割
+:empty        | empty trash
+:lstrash      | list in trash
+:trashes      | list trash directories
+
 <meta name="keywords" content="*memo_vi*">
 <meta name="keywords" content="*memo_vim*">
 vim
@@ -230,7 +291,7 @@ q   | end recording
 
   | Key     | Original                | Map      | New
 --|---------|-------------------------|----------|---
-o | C-A     | add                     |          | easymotion
+o | C-A     | add                     |          | make a hyper link in the markdown format
  !| C-B     | one page scroll up
  !| C-C     | interrupt
 o!| C-D     | half page scroll down   | C-B      | one page scroll up
@@ -245,7 +306,7 @@ o!| C-K     | not used                | C-W k    | window up
   | C-M     | CR
 o | C-N     | j                       | C-L      | redraw screen
 o | C-O     | prev in jump list       |          | open an URL under the cursor by chrome
-o | C-P     | k                       |          | make a hyper link in the markdown format
+o | C-P     | k                       |          | easymotion
   | C-Q     | terminal control
  !| C-R     | redo
   | C-S     | terminal control

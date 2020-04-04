@@ -103,6 +103,7 @@ memo_svn	vcs.md.html	/*memo_svn*
 memo_top	memo.md.html	/*memo_top*
 memo_vcs	vcs.md.html	/*memo_vcs*
 memo_vi	dev.md.html	/*memo_vi*
+memo_vifm	dev.md.html	/*memo_vifm*
 memo_vim	dev.md.html	/*memo_vim*
 memo_vim.agit	dev.md.html	/*memo_vim.agit*
 memo_vim.commands	dev.md.html	/*memo_vim.commands*
