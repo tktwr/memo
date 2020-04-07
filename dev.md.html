@@ -5,9 +5,47 @@
 <meta name="keywords" content="*memo_dev*">
 **Develop**
 
-<meta name="keywords" content="*memo_dev.keymap*">
+<meta name="keywords" content="*memo_dev.niz*">
+Niz 84 Key
+=======================================================
+
+*********************************************************************
+* +---+ +---+---+---+---+ +---+---+---+---+ +---+---+---+---+ +---+
+* |ESC| |F1 |F2 |F3 |F4 | |F5 |F6 |F7 |F8 | |F9 |F10|F11|F12| |Del|
+* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
+* | ` | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | - | = |  BS   |Hom|
+* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
+* |Tab  | Q | W | E | R | T | Y | U | I | O | P | [ | ] | \   |PgU|
+* +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+-+-----+---+
+* |Caps   | A | S | D | F | G | H | J | K | L | ; | ' | Enter |PgD|
+* +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+---+
+* |Shift    | Z | X | C | V | B | N | M | , | . | / |Shift| U |End|
+* +-----+---+---+---+---+---+---+---+-+-+-+-+---+-+-+-+---+---+---+
+* |Ctrl |Fn |Win|Alt|                 |Fn |Alt|App|Ctl| L | D | R |
+* +-----+---+---+---+-----------------+---+---+---+---+---+---+---+
+*********************************************************************
+
+
 <meta name="keywords" content="*memo_dev.hhk*">
 HHK 60 Key
+=======================================================
+
+*****************************************************************
+* +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+* |ESC| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | - | = | \ | ` |
+* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
+* |Tab  |   |   |   |   |   |   |   |   |   |   | [ | ] |   BS|
+* +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+-+-----+
+* |Ctrl   |   |   |   |   |   |   |   |   |   | ; | ' | Return|
+* +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
+* |Shift    |   |   |   |   |   |   |   | , | . | / |Shift| Fn|
+* +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
+*         |Alt|Met|                       | Meta  |Alt|
+*         +---+---+-----------------------+-------+---+
+*****************************************************************
+
+<meta name="keywords" content="*memo_dev.keymap*">
+Keymap
 =======================================================
 
 *****************************************************************
@@ -35,8 +73,8 @@ Windows  | LMeta           | LAlt
 Windows  | RMeta           | LWin
 Windows  | RAlt            | Hankaku/Zenkaku
 mintty   | RShift          | Hankaku/Zenkaku Esc
-mintty   | Ins             | one window
-mintty   | Del             | recover windows
+mintty   | F5              | maximize the tmux pane, minimize the window
+mintty   | F6              | maximize the window, restore tmux panes
 
 ## Function keymap
 App        | Key             | Description
@@ -45,9 +83,9 @@ tmux       | F1              | prefix
 vim.plugin | F2              | nerdtree
            | F3              | fugitive
            | F4              | GV
-           | F5              | make
-           | F6              | Ggrep
-tmux.pane  | F7              | toggle left pane width 60/80
+tmux.pane  | F5              | maximize the tmux pane, minimize the window
+           | F6              | maximize the window, restore tmux panes
+           | F7              | toggle left pane width 60/80
            | F8              | maximize pane
 tmux.copy  | F9              | copy in tmux
            | F10             | paste in tmux
@@ -104,8 +142,8 @@ vim.win    | C-H             | window left
            | C-E             | expand the current window
            | C-X             | delete the current window
            | C-N             | redraw screen
-vim.open   | C-O             | open an URL under the cursor by chrome
-           | C-A             | make a hyper link in the markdown format
+vim.url    | C-A             | make a hyper link in the markdown format
+           | C-O             | open an URL under the cursor by chrome
 vim.hl     | C-U             | quickhl
            | C-Y             | quickhl reset
 vim.move   | C-F             | page down
