@@ -20,6 +20,7 @@ memo_dev.global	dev.md.html	/*memo_dev.global*
 memo_dev.gtags	dev.md.html	/*memo_dev.gtags*
 memo_dev.hhk	dev.md.html	/*memo_dev.hhk*
 memo_dev.keymap	dev.md.html	/*memo_dev.keymap*
+memo_dev.niz	dev.md.html	/*memo_dev.niz*
 memo_dev.skk	dev.md.html	/*memo_dev.skk*
 memo_dev.tmux	dev.md.html	/*memo_dev.tmux*
 memo_dev.tmux.keymap	dev.md.html	/*memo_dev.tmux.keymap*
@@ -76,6 +77,7 @@ memo_prog.cmake	prog.md.html	/*memo_prog.cmake*
 memo_prog.conda	prog.md.html	/*memo_prog.conda*
 memo_prog.cpp	prog.md.html	/*memo_prog.cpp*
 memo_prog.make	prog.md.html	/*memo_prog.make*
+memo_prog.miniconda	prog.md.html	/*memo_prog.miniconda*
 memo_prog.numpy	prog.md.html	/*memo_prog.numpy*
 memo_prog.pip	prog.md.html	/*memo_prog.pip*
 memo_prog.python	prog.md.html	/*memo_prog.python*

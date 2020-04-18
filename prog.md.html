@@ -276,14 +276,15 @@ Python
 
 ## pip
 <meta name="keywords" content="*memo_prog.pip*">
-~~~
-pip -V                       # show version
-pip list
-pip search package_name
-pip install package_name
-pip install -U package_name  # update
-pip uninstall package_name
-~~~
+
+Command                          | Description
+---------------------------------|---
+pip -V                           | show version
+pip list                         | list installed packages
+pip search {pkg}                 | search package
+pip install {pkg}                | install package
+pip install -U {pkg}             | update package
+pip uninstall {pkg}              | uninstall package
 
 ## upgrade pip
 ~~~
@@ -317,24 +318,38 @@ if __name__ == "__main__":
 ~~~
 
 <meta name="keywords" content="*memo_prog.anaconda*">
+<meta name="keywords" content="*memo_prog.miniconda*">
 <meta name="keywords" content="*memo_prog.conda*">
-Anaconda
+Anaconda / Miniconda
 =======================================================
 
-Command                    | Description
----------------------------|---
-conda info                 | print info
-conda list                 | list packages
-conda update -n base conda | update conda
-conda update --all         | update all packages
-conda update {pkg}         | update package
-conda install {pkg}        | install
-conda uninstall {pkg}      | uninstall
+Command                          | Description
+---------------------------------|---
+conda info                       | print info
+conda info -e                    | print environment
+conda list                       | list installed packages
+conda update --all               | update all packages
+conda update {pkg}               | update package
+conda search {pkg}               | search packages
+conda install {pkg}              | install
+conda uninstall {pkg}            | uninstall
+conda create -n {env} python=3.7 | create env
+conda activate {env}             | activate env
+conda deactivate                 | deactivate
+
+## update conda
+~~~
+conda update -n base -c defaults conda
+~~~
 
 ## installed
 ~~~
+conda install numpy
 conda install opencv
+conda install matplotlib
 conda install scikit-image
+conda install scikit-learn
+conda install pillow
 #conda install -c conda-forge opencv
 ~~~
 
@@ -348,8 +363,11 @@ Pytorch
 
 ## install pytorch
 ~~~
-conda install pytorch-cpu -c pytorch 
-pip install torchvision
+#conda install pytorch-cpu -c pytorch 
+#pip install torchvision
+
+conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
+conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 ~~~
 
 <meta name="keywords" content="*memo_prog.tensorflow*">
