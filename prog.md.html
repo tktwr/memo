@@ -323,23 +323,29 @@ if __name__ == "__main__":
 Anaconda / Miniconda
 =======================================================
 
-Command                          | Description
----------------------------------|---
-conda info                       | print info
-conda info -e                    | print environment
-conda list                       | list installed packages
-conda update --all               | update all packages
-conda update {pkg}               | update package
-conda search {pkg}               | search packages
-conda install {pkg}              | install
-conda uninstall {pkg}            | uninstall
-conda create -n {env} python=3.7 | create env
-conda activate {env}             | activate env
-conda deactivate                 | deactivate
+Command                                          | Description
+-------------------------------------------------|---
+conda info                                       | print info
+conda info -e                                    | print environments
+conda list                                       | list installed packages
+conda update --all                               | update all packages
+conda update {pkg}                               | update package
+conda search {pkg}                               | search packages
+conda install {pkg}                              | install
+conda uninstall {pkg}                            | uninstall
+conda init bash                                  | init bash
+conda create -n {env} python[=3.7]               | create env
+conda create -n {new env} --clone {existing env} | clone env
+conda remove -n {env} --all                      | remove env
+conda activate {env}                             | activate env
+conda deactivate                                 | deactivate
 
-## update conda
+## init
 ~~~
 conda update -n base -c defaults conda
+conda init bash
+conda create -n {env} python
+conda activate {env}
 ~~~
 
 ## installed
@@ -350,6 +356,8 @@ conda install matplotlib
 conda install scikit-image
 conda install scikit-learn
 conda install pillow
+conda install json5
+conda install python-graphviz graphviz
 #conda install -c conda-forge opencv
 ~~~
 
