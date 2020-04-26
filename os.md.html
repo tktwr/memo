@@ -374,20 +374,31 @@ UTF8, DOS形式
 cygpath -am `pwd`
 ~~~
 
-<meta name="keywords" content="*memo_os.bootcamp*">
-BootCamp
+<meta name="keywords" content="*memo_os.virtualbox*">
+VirtualBox
 =======================================================
-## Shortcut
-Shortcut               | Description
------------------------|-------------------------------------
-option長押し           | OSの選択 [起動時]
-      Shift + Fn + F11 | スクリーンキャプチャ
-Alt + Shift + Fn + F11 | 選択されたウィンドウのキャプチャ
 
+Shortcut | Description
+---------|---
+Host     | Right Control
+Host + F | full screen
+Host + M | minimize
+Host + H | main menu
+Host + C | menu bar
+
+## Shared Folder
+
+### set a shared folder in a host os
+
+### mount a shared folder in a guest os
+~~~
+sudo mount -t vboxsf share /mnt/vbox/share
+~~~
 
 <meta name="keywords" content="*memo_os.linux*">
 Linux
 =======================================================
+
 ## Shortcut [X Window]
 Shortcut            | Description
 --------------------|-------------------------------------
@@ -403,6 +414,29 @@ Ctrl + Alt + Delete | reboot
 SysRq + s           | sync
 SysRq + u           | unmount
 SysRq + b           | reboot
+
+<meta name="keywords" content="*memo_os.mxlinux*">
+MX Linux
+=======================================================
+## MX Package Installer
+- Japanese_Fonts
+- Japanese_Input_fcitx
+
+## Installed
+~~~
+sudo apt install vim
+sudo apt install vifm
+~~~
+
+<meta name="keywords" content="*memo_os.bootcamp*">
+BootCamp
+=======================================================
+## Shortcut
+Shortcut               | Description
+-----------------------|-------------------------------------
+option長押し           | OSの選択 [起動時]
+      Shift + Fn + F11 | スクリーンキャプチャ
+Alt + Shift + Fn + F11 | 選択されたウィンドウのキャプチャ
 
 <meta name="keywords" content="*memo_os.mac*">
 Mac
