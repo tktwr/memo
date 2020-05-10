@@ -55,6 +55,7 @@ memo_git-tag	vcs.md.html	/*memo_git-tag*
 memo_git	vcs.md.html	/*memo_git*
 memo_git-worktree	vcs.md.html	/*memo_git-worktree*
 memo_links	links.md.html	/*memo_links*
+memo_os.apt	os.md.html	/*memo_os.apt*
 memo_os.bat	os.md.html	/*memo_os.bat*
 memo_os.bootcamp	os.md.html	/*memo_os.bootcamp*
 memo_os.chocolatey	os.md.html	/*memo_os.chocolatey*
@@ -69,6 +70,7 @@ memo_os.msys	os.md.html	/*memo_os.msys*
 memo_os.mxlinux	os.md.html	/*memo_os.mxlinux*
 memo_os	os.md.html	/*memo_os*
 memo_os.pacman	os.md.html	/*memo_os.pacman*
+memo_os.pkg	os.md.html	/*memo_os.pkg*
 memo_os.termux	os.md.html	/*memo_os.termux*
 memo_os.virtualbox	os.md.html	/*memo_os.virtualbox*
 memo_os.windows10	os.md.html	/*memo_os.windows10*
