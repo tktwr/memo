@@ -12,6 +12,8 @@ Keyboard
 <meta name="keywords" content="*memo_dev.niz*">
 ## Niz 84 Key
 
+### Original Keymap
+
 *********************************************************************
 * +---+ +---+---+---+---+ +---+---+---+---+ +---+---+---+---+ +---+
 * |ESC| |F1 |F2 |F3 |F4 | |F5 |F6 |F7 |F8 | |F9 |F10|F11|F12| |Del|
@@ -28,9 +30,38 @@ Keyboard
 * +-----+---+---+---+-----------------+---+---+---+---+---+---+---+
 *********************************************************************
 
+<meta name="keywords" content="*memo_dev.autohotkey*">
+<meta name="keywords" content="*memo_dev.ahk*">
+### AutoHotKey Keymap
+
+*********************************************************************
+* +---+ +---+---+---+---+ +---+---+---+---+ +---+---+---+---+ +---+
+* |ESC| |F1 |F2 |F3 |F4 | |F5 |F6 |F7 |F8 | |F9 |F10|F11|F12| |Del|
+* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
+* | ` | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | - | = |  BS   |Hom|
+* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
+* |Tab  | Q | W | E | R | T | Y | U | I | O | P | [ | ] | \   |PgU|
+* +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+-+-----+---+
+* |Caps   | A | S | D | F | G | H | J | K | L | ; | ' | Enter |PgD|
+* +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+---+
+* |Shift    | Z | X | C | V | B | N | M | , | . | / |Zen  | U |End|
+* +-----+---+---+---+---+---+---+---+-+-+-+-+---+-+-+-+---+---+---+
+* |Ctrl |Fn |Win|Alt|                 |Fn |Alt|App|Ctl| L | D | R |
+* +-----+---+---+---+-----------------+---+---+---+---+---+---+---+
+*********************************************************************
+
+App      | Key             | Description
+---------|-----------------|---
+Windows  | RShift          | Hankaku/Zenkaku
+mintty   | F5              | maximize the tmux pane, minimize the window
+mintty   | F6              | maximize the window, restore tmux panes
+
+- [KeyList](http://ahkwiki.net/KeyList)
 
 <meta name="keywords" content="*memo_dev.hhk*">
 ## HHK 60 Key
+
+### Original Keymap
 
 *****************************************************************
 * +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
@@ -46,9 +77,7 @@ Keyboard
 *         +---+---+-----------------------+-------+---+
 *****************************************************************
 
-<meta name="keywords" content="*memo_dev.autohotkey*">
-<meta name="keywords" content="*memo_dev.ahk*">
-### AutoHotKey
+### AutoHotKey Keymap
 
 *****************************************************************
 * +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
@@ -58,9 +87,9 @@ Keyboard
 * +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
 * |Ctrl   |   |   |   |   |   |   |   |   |   | L | R | Return|
 * +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
-* |Shift    |   |   |   |   |   |   |   |   |   | D |Shift| Fn|
+* |Shift    |   |   |   |   |   |   |   |   |   | D |Zen  | Fn|
 * +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
-*         |F1 |Alt|                       | LWin  |Zen|
+*         |F1 |Alt|                       | LWin  |Ctl|
 *         +---+---+-----------------------+-------+---+
 *****************************************************************
 
@@ -69,8 +98,8 @@ App      | Key             | Description
 Windows  | LAlt            | F1
 Windows  | LMeta           | LAlt
 Windows  | RMeta           | LWin
-Windows  | RAlt            | Hankaku/Zenkaku
-mintty   | RShift          | Hankaku/Zenkaku Esc
+Windows  | RAlt            | RCtrl
+mintty   | RShift          | Hankaku/Zenkaku
 mintty   | F5              | maximize the tmux pane, minimize the window
 mintty   | F6              | maximize the window, restore tmux panes
 
