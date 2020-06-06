@@ -121,19 +121,53 @@ n=$((n + 1))
 ~~~
 
 ## syntax
+### if
 ~~~
 if [ EXPR ]; then
 elif [ EXPR ]; then
 else
 fi
+~~~
 
+EXPRESSION                 | Description
+---------------------------|---
+( EXPR )                   | EXPR is true
+! EXPR                     | EXPR is false
+EXPR -a EXPR               | both EXPR and EXPR are true
+EXPR -o EXPR               | either EXPR or EXPR is true
+-n STRING                  | the length of STRING is nonzero
+-z STRING                  | the length of STRING is zero
+STRING1 = STRING2          | the strings are equal
+STRING1 != STRING2         | the strings are not equal
+INT1 -eq INT2              | INT1 is equal to INT2
+INT1 -ge INT2              | INT1 is greater than or equal to INT2
+INT1 -gt INT2              | INT1 is greater than INT2
+INT1 -le INT2              | INT1 is less than or equal to INT2
+INT1 -lt INT2              | INT1 is less than INT2
+INT1 -ne INT2              | INT1 is not equal to INT2
+-d FILE                    | FILE exists and is a directory
+-e FILE                    | FILE exists
+-f FILE                    | FILE exists and is a regular file
+-s FILE                    | FILE exists and has a size greater than zero
+-r FILE                    | FILE exists and read permission is granted
+-w FILE                    | FILE exists and write permission is granted
+-x FILE                    | FILE exists and execute (or search) permission is granted
+
+### for
+~~~
 for i in $list; do
   echo $i
 done
+~~~
 
+### while
+~~~
 while [ EXPR ]; do
 done
+~~~
 
+### case
+~~~
 case $i in
 *word1|*word2)
   ;;
@@ -167,15 +201,22 @@ csh
 ~~~
 
 ## syntax
+### while
 ~~~
 while ()
 end
+~~~
 
+### if
+~~~
 if () then
 else if () then
 else
 endif
+~~~
 
+### switch
+~~~
 switch ()
 case <label>:
   breaksw

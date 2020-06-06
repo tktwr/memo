@@ -143,6 +143,9 @@ git remote -v                    # list remote repositories
 git rev-parse --show-cdup
 git rev-parse --abbrev-ref HEAD  # branch name
 git rev-parse --short HEAD       # commit hash
+
+git symbolic-ref --short HEAD    # branch name (git > 1.8)
+git branch --show-current        # branch name
 ~~~
 
 <meta name="keywords" content="*memo_git-remote*">
