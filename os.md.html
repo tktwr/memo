@@ -248,6 +248,56 @@ if "%str%" == "A" (
 )
 ~~~
 
+<meta name="keywords" content="*memo_os.gitbash*">
+Git for Windows (gitbash)
+=======================================================
+## Update
+~~~
+git update-git-for-windows
+~~~
+
+## ssh server
+
+gitbashを管理者権限で起動する
+
+### Server
+#### host key 作成
+~~~
+[SERVER]$ ssh-keygen -A
+~~~
+- /etc/ssh/ssh_host_*_key[.pub]が作成される
+
+#### ssh server 起動
+~~~
+[SERVER]$ /usr/bin/sshd
+~~~
+
+### Client
+~~~
+[CLIENT]$ ssh-keygen
+~~~
+- ~/.ssh/id_rsa[.pub]が作成される
+
+クライアントの~/.ssh/id_rsa.pubをサーバーの~/.ssh/authorized_keysに追加する
+
+## ssh-agent
+~~~
+$ ssh-agent $SHELL
+~~~
+
+Option | Description
+-------|---
+-k     | kill ssh-agent
+
+## ssh-add
+~~~
+$ ssh-add
+~~~
+
+Option | Description
+-------|---
+-l     | list fingerprints of private keys
+
 <meta name="keywords" content="*memo_os.msys*">
 <meta name="keywords" content="*memo_os.msys2*">
 MSYS2
