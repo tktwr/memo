@@ -281,9 +281,11 @@ Command                          | Description
 ---------------------------------|---
 pip -V                           | show version
 pip list                         | list installed packages
+pip freeze                       | list required packages
 pip search {pkg}                 | search package
 pip install {pkg}                | install package
 pip install -U {pkg}             | update package
+pip install -r requirements.txt  | install packages listed in requirements.txt
 pip uninstall {pkg}              | uninstall package
 
 ## upgrade pip
@@ -295,6 +297,12 @@ python -m pip install --upgrade pip
 ~~~
 pip install numpy
 pip install opencv-python
+~~~
+
+## list / install requrired packages
+~~~
+pip freeze > requirements.txt
+pip install -r requirements.txt
 ~~~
 
 ## script
