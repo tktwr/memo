@@ -253,10 +253,24 @@ Git for Windows (gitbash)
 =======================================================
 ## Update
 ~~~
-git update-git-for-windows
+$ git update-git-for-windows
 ~~~
 
-## ssh server
+<meta name="keywords" content="*memo_os.scp*">
+## scp
+~~~
+$ scp [-P PORT] USER@HOST:SRC DST
+$ scp [-P PORT] SRC USER@HOST:DST
+~~~
+
+<meta name="keywords" content="*memo_os.ssh*">
+## ssh
+~~~
+$ ssh [-p PORT] USER@HOST
+~~~
+
+<meta name="keywords" content="*memo_os.sshd*">
+## ssh server (sshd)
 
 gitbashを管理者権限で起動する
 
@@ -271,14 +285,14 @@ gitbashを管理者権限で起動する
 ~~~
 [SERVER]$ /usr/bin/sshd
 ~~~
+- absolute pathで起動
 
 ### Client
 ~~~
 [CLIENT]$ ssh-keygen
 ~~~
 - ~/.ssh/id_rsa[.pub]が作成される
-
-クライアントの~/.ssh/id_rsa.pubをサーバーの~/.ssh/authorized_keysに追加する
+- クライアントの~/.ssh/id_rsa.pubをサーバーの~/.ssh/authorized_keysに追加する
 
 ## ssh-agent
 ~~~

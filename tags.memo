@@ -72,6 +72,9 @@ memo_os.msys2	os.md.html	/*memo_os.msys2*
 memo_os.mxlinux	os.md.html	/*memo_os.mxlinux*
 memo_os.pacman	os.md.html	/*memo_os.pacman*
 memo_os.pkg	os.md.html	/*memo_os.pkg*
+memo_os.scp	os.md.html	/*memo_os.scp*
+memo_os.ssh	os.md.html	/*memo_os.ssh*
+memo_os.sshd	os.md.html	/*memo_os.sshd*
 memo_os.termux	os.md.html	/*memo_os.termux*
 memo_os.virtualbox	os.md.html	/*memo_os.virtualbox*
 memo_os.windows	os.md.html	/*memo_os.windows*
