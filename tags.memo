@@ -108,6 +108,8 @@ memo_soft.convert	soft.md.html	/*memo_soft.convert*
 memo_soft.freecad	soft.md.html	/*memo_soft.freecad*
 memo_soft.gimp	soft.md.html	/*memo_soft.gimp*
 memo_soft.imagemagick	soft.md.html	/*memo_soft.imagemagick*
+memo_soft.meshlab	soft.md.html	/*memo_soft.meshlab*
+memo_soft.powerpoint	soft.md.html	/*memo_soft.powerpoint*
 memo_soft.word	soft.md.html	/*memo_soft.word*
 memo_stock	stock.md.html	/*memo_stock*
 memo_svn	vcs.md.html	/*memo_svn*

@@ -6,12 +6,6 @@
 
 <meta name="keywords" content="*memo_soft*">
 
-<meta name="keywords" content="*memo_soft.word*">
-Word
-=======================================================
-## 図、表の説明文の入れ方
-テキストボックスを作成し、図、表をテキストボックス内にドラッグ・ドロップする。
-
 <meta name="keywords" content="*memo_soft.imagemagick*">
 <meta name="keywords" content="*memo_soft.convert*">
 ImageMagick
@@ -32,6 +26,10 @@ convert input_image png24:output_image
 ## png32
 ~~~
 convert input_image png32:output_image
+~~~
+## 8bit
+~~~
+convert input_image -depth 8 output_image
 ~~~
 ## 上下反転
 ~~~
@@ -83,6 +81,21 @@ FreeCAD
 2. Filletというモデルが生成される
 
 ## Mesh Design
+
+<meta name="keywords" content="*memo_soft.meshlab*">
+MeshLab
+=======================================================
+## UV表示
+- Render > Show UV Tex Param
+
+## 法線表示
+- Render > Show Normal
+
+## Bounding Boxの情報表示
+- Render > Show Box Corners
+
+## 法線をそろえる
+- Filters > Normals, ... > Re-Orient all faces coherently
 
 <meta name="keywords" content="*memo_soft.blender*">
 Blender
@@ -163,6 +176,18 @@ Ctrl + R
 
 ## 法線の反転
 選択 > Faces > Flip Normals
+
+<meta name="keywords" content="*memo_soft.word*">
+Word
+=======================================================
+## 図、表の説明文の入れ方
+テキストボックスを作成し、図、表をテキストボックス内にドラッグ・ドロップする。
+
+<meta name="keywords" content="*memo_soft.powerpoint*">
+PowerPoint
+=======================================================
+- Insert > Object
+  - Check Show as an icon
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="markdeep.min.js"></script>
