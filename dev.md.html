@@ -58,6 +58,15 @@ mintty   | F6              | maximize the window, restore tmux panes
 
 - [KeyList](http://ahkwiki.net/KeyList)
 
+### Bluetooth接続
+
+1. 接続済みのすべてのPC, smartphone等のBluetoothをOFFにする
+2. F9, F10, F11の内、接続したいキーを長押しする
+3. キーが素早く点滅する
+4. PC, smartphone側でキーボードを追加する
+5. キーボード側でパスコードを入力してEnterキーを押す
+6. 接続完了
+
 <meta name="keywords" content="*memo_dev.hhk*">
 ## HHK 60 Key
 
@@ -108,20 +117,20 @@ Keymap
 =======================================================
 
 ## Function keymap
-App        | Key             | Description
------------|-----------------|---
-tmux       | F1              | prefix
-vim.plugin | F2              | nerdtree
-           | F3              | fugitive
-           | F4              | GV
-tmux.pane  | F5              | maximize the tmux pane, minimize the window
-           | F6              | maximize the window, restore tmux panes
-           | F7              | toggle left pane width 60/80
-           | F8              | maximize pane
-tmux.copy  | F9              | copy in tmux
-           | F10             | paste in tmux
-vim.copy   | F11             | copy in vim
-           | F12             | paste in vim
+Key | Description
+----|---
+F1  | tmux.prefix
+F2  | vim.nerdtree
+F3  | vim.fugitive.Gstatus
+F4  | vim.fugitive.Ggrep
+F5  | ahk.one pane
+F6  | ahk.restore
+F7  | tmux.toggle left pane width 60/80
+F8  | tmux.maximize pane
+F9  | tmux.copy
+F10 | tmux.paste
+F11 | vim.copy
+F12 | vim.paste
 
 ## mintty keymap
 App        | Key             | Description
@@ -342,13 +351,6 @@ $ vim -u NONE
 :verbose imap <tab>
 ~~~
 
-### record
-Key | Description
-----|---
-qq  | start recording into register 'q'
-q   | end recording
-@q  | execute the contents of register 'q'
-
 <meta name="keywords" content="*memo_vim.keymap*">
 ## keymap
 
@@ -524,13 +526,21 @@ Command               | Description
 :vertical res[ize] +N | increase window width
 :vertical res[ize]  N | set window width
 
+<meta name="keywords" content="*memo_vim.record*">
+## record
+Key | Description
+----|---
+qq  | start recording into register 'q'
+q   | end recording
+@q  | execute the contents of register 'q'
+
 <meta name="keywords" content="*memo_vim.encryption*">
 ## encryption
-Command          | Description
------------------|---
-set cm=blowfish2 | set an encryption method
-:X               | set a new key
-:set key=        | unset a key
+Command           | Description
+------------------|---
+:set cm=blowfish2 | set an encryption method
+:X                | set a new key
+:set key=         | unset a key
 
 ### write as an encrypted file
 ~~~
@@ -579,6 +589,20 @@ P                | 前回のウィンドウでファイルを開く
 p                | プレビュー
 -->
 
+<meta name="keywords" content="*memo_vim.term*">
+## terminal
+
+Command      | Description
+-------------|---
+:term [bash] | start terminal
+C-D          | end terminal
+C-W C-W      | next window
+C-W :        | Ex command
+C-W N        | terminal-normal mode
+i            | terminal mode
+C-W "{reg}   | paste register {reg}
+C-W ""       | paste the unnamed register
+
 <meta name="keywords" content="*memo_vim.plugin*">
 <meta name="keywords" content="*memo_vim.vim-plug*">
 ## vim-plug
@@ -622,10 +646,16 @@ p                | プレビュー
 ## nerdtree
   | Command          | Description
 --|------------------|---
+  | <CR>             | open
+  | o                | open
+  | go               | view
   | I                | toggle dot files
-  | cd               | change dir
+  | C                | change tree root here
+  | u                | tree root up (close)
+  | U                | tree root up
   | r                | refresh the current dir
   | R                | refresh the current root
+  | cd               | change dir here
   | m                | menu
 
 ## nerd commenter

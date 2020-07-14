@@ -92,6 +92,7 @@ memo_prog.pip	prog.md.html	/*memo_prog.pip*
 memo_prog.python	prog.md.html	/*memo_prog.python*
 memo_prog.pytorch	prog.md.html	/*memo_prog.pytorch*
 memo_prog.tensorflow	prog.md.html	/*memo_prog.tensorflow*
+memo_prog.venv	prog.md.html	/*memo_prog.venv*
 memo_sh	sh.md.html	/*memo_sh*
 memo_sh.awk	sh.md.html	/*memo_sh.awk*
 memo_sh.bash	sh.md.html	/*memo_sh.bash*
@@ -101,6 +102,7 @@ memo_sh.less	sh.md.html	/*memo_sh.less*
 memo_sh.readline	sh.md.html	/*memo_sh.readline*
 memo_sh.regex	sh.md.html	/*memo_sh.regex*
 memo_sh.sed	sh.md.html	/*memo_sh.sed*
+memo_sh.syntax	sh.md.html	/*memo_sh.syntax*
 memo_sh.trans	sh.md.html	/*memo_sh.trans*
 memo_soft	soft.md.html	/*memo_soft*
 memo_soft.blender	soft.md.html	/*memo_soft.blender*
@@ -132,7 +134,9 @@ memo_vim.keymap	dev.md.html	/*memo_vim.keymap*
 memo_vim.nerdtree	dev.md.html	/*memo_vim.nerdtree*
 memo_vim.nmap	dev.md.html	/*memo_vim.nmap*
 memo_vim.plugin	dev.md.html	/*memo_vim.plugin*
+memo_vim.record	dev.md.html	/*memo_vim.record*
 memo_vim.resize	dev.md.html	/*memo_vim.resize*
+memo_vim.term	dev.md.html	/*memo_vim.term*
 memo_vim.ultisnips	dev.md.html	/*memo_vim.ultisnips*
 memo_vim.vimgrep	dev.md.html	/*memo_vim.vimgrep*
 memo_vim.vim-plug	dev.md.html	/*memo_vim.vim-plug*

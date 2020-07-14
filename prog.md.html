@@ -274,6 +274,32 @@ For search(For first, For last, For2 first2, For2 last2, BinPred p);
 Python
 =======================================================
 
+<meta name="keywords" content="*memo_prog.venv*">
+## venv
+
+### install
+~~~
+$ apt install python3-venv
+~~~
+
+### create
+~~~
+$ python3 -m venv {venvname}
+~~~
+
+### activate
+~~~
+[Linux]
+$ source {venvname}/bin/activate
+[Windows]
+$ .\[venvname]\Scripts\activate
+~~~
+
+### deactivate
+~~~
+$ deactivate
+~~~
+
 ## pip
 <meta name="keywords" content="*memo_prog.pip*">
 
@@ -297,6 +323,8 @@ python -m pip install --upgrade pip
 ~~~
 pip install numpy
 pip install opencv-python
+pip install wheel
+pip install python-language-server
 ~~~
 
 ## list / install requrired packages
