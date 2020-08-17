@@ -121,6 +121,7 @@ memo_vi	dev.md.html	/*memo_vi*
 memo_vifm	dev.md.html	/*memo_vifm*
 memo_vim	dev.md.html	/*memo_vim*
 memo_vim.agit	dev.md.html	/*memo_vim.agit*
+memo_vim.coc	dev.md.html	/*memo_vim.coc*
 memo_vim.commands	dev.md.html	/*memo_vim.commands*
 memo_vim.diff	dev.md.html	/*memo_vim.diff*
 memo_vim.encryption	dev.md.html	/*memo_vim.encryption*
@@ -139,5 +140,6 @@ memo_vim.resize	dev.md.html	/*memo_vim.resize*
 memo_vim.term	dev.md.html	/*memo_vim.term*
 memo_vim.ultisnips	dev.md.html	/*memo_vim.ultisnips*
 memo_vim.vimgrep	dev.md.html	/*memo_vim.vimgrep*
+memo_vim.vim-lsp	dev.md.html	/*memo_vim.vim-lsp*
 memo_vim.vim-plug	dev.md.html	/*memo_vim.vim-plug*
 memo_vim.vmap	dev.md.html	/*memo_vim.vmap*

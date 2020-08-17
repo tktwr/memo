@@ -649,14 +649,16 @@ C-W ""       | paste the unnamed register
   | <CR>             | open
   | o                | open
   | go               | view
+  | m                | menu
   | I                | toggle dot files
-  | C                | change tree root here
   | u                | tree root up (close)
   | U                | tree root up
   | r                | refresh the current dir
   | R                | refresh the current root
-  | cd               | change dir here
-  | m                | menu
+  | C                | change tree root here
+* | <Tab>            | C
+  | cd               | change CWD to here
+  | CD               | change the root to CWD
 
 ## nerd commenter
   | Command          | Description
@@ -685,7 +687,34 @@ C-P  | prev item on menu
 C-J  | next place
 C-K  | prev place
 
+<meta name="keywords" content="*memo_vim.coc*">
+## coc
+
+### install
+~~~
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+~~~
+
+### install LSP
+~~~
+:CocInstall coc-json coc-tsserver
+:CocInstall coc-python
+:CocInstall coc-clangd
+:CocInstall coc-snippets
+:CocConfig
+:CocInfo
+~~~
+
+<meta name="keywords" content="*memo_vim.vim-lsp*">
 ## vim-lsp
+
+Key       | Description
+----------|---
+LspStatus | print status
+
+### pyls
+
+### clangd
 
 ### ccls
 #### install
