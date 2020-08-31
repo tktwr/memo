@@ -270,7 +270,7 @@ C    | prefix ]        | paste
 - C: copy mode
 - * my key maps
 
-<meta name="keywords" content="*memo_vifm*">
+<meta name="keywords" content="*memo_dev.vifm*">
 vifm
 =======================================================
 ## Key
@@ -701,8 +701,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 :CocInstall coc-python
 :CocInstall coc-clangd
 :CocInstall coc-snippets
-:CocConfig
+:CocUpdate
+
 :CocInfo
+:CocOpenLog
+:CocDiagnostics
+
+:CocConfig
+:CocLocalConfig
+
+:CocCommand python.setInterpreter
+:CocCommand python.setLinter
 ~~~
 
 <meta name="keywords" content="*memo_vim.vim-lsp*">
@@ -857,6 +866,10 @@ Visual Studio Code
 =======================================================
 ## plugin
 - vscodevim
+- shell launcher
+- Git History
+- C/C++
+- Python
 
 ## keymap
 Key                  | Description
