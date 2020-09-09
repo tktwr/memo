@@ -2,9 +2,74 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="default.css">
 
+<meta name="keywords" content="*memo_os*">
 **OS**
 
-<meta name="keywords" content="*memo_os*">
+<meta name="keywords" content="*memo_os.setup*">
+Setup (bash/python/vim)
+=======================================================
+## node.js
+### windows
+use installer
+
+### linux
+~~~
+apt install nodejs npm
+~~~
+
+## network
+- .ssh/config
+- HTTP_PROXY
+- HTTPS_PROXY
+
+## dot files
+- ~/.gitconfig
+- ~/.my/hostname
+
+## bash
+~~~
+make all
+~~~
+
+## python
+~~~
+python-venv-create torch
+mypython-set-python-win torch   (windows)
+mypython-set-python torch       (linux)
+s
+pip-upgrade
+pip-install-vim
+pip-install-torch
+~~~
+
+## vim
+~~~
+make all
+~~~
+
+### g:coc_config_home
+~~~
+~/.vim/coc-settings.json               (local)
+$MY_VIM/coc/win/coc-settings.json      (windows)
+$MY_VIM/coc/linux/coc-settings.json    (linux)
+~~~
+
+### g:coc_data_home
+~~~
+$MY_VIM/coc_data/win   (windows)
+~/.config/coc          (linux)
+~~~
+
+### PlugInstall
+~~~
+:PlugInstall
+~~~
+
+### CocInstall
+~~~
+:CocInstall coc-json coc-tsserver coc-python coc-clangd coc-snippets
+~~~
+
 <meta name="keywords" content="*memo_os.windows*">
 <meta name="keywords" content="*memo_os.windows10*">
 Windows
