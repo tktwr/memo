@@ -451,14 +451,19 @@ pacman -S mingw-w64-i686-toolchain
 ## disable POSIX-to-Windows path conversion
 以下のいずれかの方法がある
 
-- パスの先頭の'/'を'//'に変更する
-- MSYS_NO_PATHCONVを設定する
+1. パスの先頭の'/'を'//'に変更して記述する
 ~~~
-MSYS_NO_PATHCONV=1
+//c/dir/fname
 ~~~
-- MSYS2_ARG_CONV_EXCLを設定する
+
+2. MSYS_NO_PATHCONVを設定する
 ~~~
-MSYS2_ARG_CONV_EXCL="*"
+export MSYS_NO_PATHCONV=1
+~~~
+
+3. MSYS2_ARG_CONV_EXCLを設定する
+~~~
+export MSYS2_ARG_CONV_EXCL="*"
 ~~~
 
 ## stdc++ man pages
@@ -570,6 +575,7 @@ sudo apt install vim
 sudo apt install vim-gtk3
 sudo apt install vifm
 sudo apt install universal-ctags
+sudo apt install cmake
 sudo apt install clang
 sudo apt install clang-tools-7
 sudo apt install python3-venv
