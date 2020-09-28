@@ -292,7 +292,7 @@ $ python3 -m venv {venvname}
 [Linux]
 $ source {venvname}/bin/activate
 [Windows]
-$ .\[venvname]\Scripts\activate
+$ .\{venvname}\Scripts\activate
 ~~~
 
 ### deactivate
@@ -361,6 +361,21 @@ if __name__ == "__main__":
 ~~~
 >>> import sys
 >>> sys.path
+~~~
+
+## import
+~~~
+import <modeule>
+import <modeule> as <new_name>
+from <package> import <symbol>
+from <package> import <symbol> as <new_name>
+~~~
+
+## examples of import
+~~~
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 ~~~
 
 <meta name="keywords" content="*memo_prog.python.anaconda*">
