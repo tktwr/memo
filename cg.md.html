@@ -5,9 +5,6 @@
 <meta name="keywords" content="*memo_cg*">
 **CG**
 
-- [Column-major, Row-major](https://qiita.com/suzuryo3893/items/9e543cdf8bc64dc7002a)
-- [Unity matrix](http://edom18.hateblo.jp/entry/2019/01/04/153205)
-
 <meta name="keywords" content="*memo_cg.glsl*">
 GLSL
 =======================================================
@@ -21,6 +18,8 @@ OpenGL
 - Z-front
 - Matrix
     - Column order memory
+- [Column-major, Row-major](https://qiita.com/suzuryo3893/items/9e543cdf8bc64dc7002a)
+
 ~~~
 M = M_n * ... * M_0 * v
 
@@ -46,6 +45,7 @@ Unity
 - Z-front
 - Matrix
     - Column order memory
+- [Unity matrix](http://edom18.hateblo.jp/entry/2019/01/04/153205)
 
 ![unity](images/model_unity.jpg)
 
@@ -67,11 +67,87 @@ MeshLab
 <meta name="keywords" content="*memo_cg.blender*">
 Blender
 =======================================================
+## Coordinate System
 - Right-handed coordinate system
 - X-right
 - Y-back
 - Z-up
 ![blender](images/model_blender.jpg)
+
+## Key
+### View
+key                  | command
+---                  | ---
+Shift + Middle Mouse | translation
+Middle Mouse         | rotation
+wheel                | zoom
+
+### Object
+key                  | command
+---                  | ---
+x                    | delete
+g                    | translate in x, y, z axis
+gx                   | translate along x axis
+gy                   | translate along y axis
+gz                   | translate along z axis
+gX                   | translate except x axis
+gY                   | translate except y axis
+gZ                   | translate except z axis
+s                    | scale
+r                    | rotate
+
+### Camera
+key         | command
+---         | ---
+camera view | カメラアイコン, Num0, View > View Point > Camera
+g??         | translate in local axis
+gzz         | zoom in/out
+gZZ         | pan
+rxx         | pitch
+ryy         | yaw
+rzz         | roll
+
+### Others
+key                  | command
+---                  | ---
+ESC                  | cancel
+F12                  | rendering
+
+## Property
+### Render
+- Render Engine: Cycles
+- Device: GPU
+- Motion Blur
+
+### View
+- Denoising
+
+### World
+- Environment Texture
+
+### Particle
+- Children > Simple
+  - Display Amount
+  - Render Amount
+- Kink
+- Hair Dynamics
+
+## AO
+- 「AOベイク」で3Dモデルのクオリティを上げよう！
+  - https://virtualcast.jp/blog/2020/04/blender_bake_ao/
+  - https://github.com/SavMartin/TexTools-Blender
+  - https://github.com/SavMartin/TexTools-Blender/releases
+- 手順
+  - Window > UV Editor
+  - 右上Tab > TexTools
+  - Baking
+  - AO
+  - Size
+  - Samples
+
+## Python API
+- https://docs.blender.org/api/current/index.html
+- https://docs.blender.org/api/2.83
 
 <meta name="keywords" content="*memo_cg.eigen*">
 Eigen
