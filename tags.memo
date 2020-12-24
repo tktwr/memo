@@ -139,6 +139,7 @@ memo_vim.plugin	dev.md.html	/*memo_vim.plugin*
 memo_vim.record	dev.md.html	/*memo_vim.record*
 memo_vim.resize	dev.md.html	/*memo_vim.resize*
 memo_vim.term	dev.md.html	/*memo_vim.term*
+memo_vim.tips	dev.md.html	/*memo_vim.tips*
 memo_vim.ultisnips	dev.md.html	/*memo_vim.ultisnips*
 memo_vim.vimgrep	dev.md.html	/*memo_vim.vimgrep*
 memo_vim.vim-lsp	dev.md.html	/*memo_vim.vim-lsp*
