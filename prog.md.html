@@ -289,9 +289,9 @@ $ python3 -m venv {venvname}
 
 ### activate
 ~~~
-[Linux]
+# Linux
 $ source {venvname}/bin/activate
-[Windows]
+# Windows
 $ .\{venvname}\Scripts\activate
 ~~~
 
@@ -317,24 +317,6 @@ pip uninstall {pkg}              | uninstall package
 ## upgrade pip
 ~~~
 python -m pip install --upgrade pip
-~~~
-
-## installed
-~~~
-pip install wheel
-pip install python-language-server
-pip install pylint
-pip install flake8
-
-pip install opencv-python
-pip install matplotlib
-pip install numpy
-pip install scipy
-pip install sklearn
-pip install parse
-pip install tensorboard
-# pytorch with CUDA 10.2
-pip install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
 ~~~
 
 ## list / install requrired packages
@@ -407,19 +389,6 @@ conda update -n base -c defaults conda
 conda init bash
 conda create -n {env} python
 conda activate {env}
-~~~
-
-## installed
-~~~
-conda install numpy
-conda install opencv
-conda install matplotlib
-conda install scikit-image
-conda install scikit-learn
-conda install pillow
-conda install json5
-conda install python-graphviz graphviz
-#conda install -c conda-forge opencv
 ~~~
 
 <meta name="keywords" content="*memo_prog.python.numpy*">

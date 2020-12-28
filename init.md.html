@@ -1,0 +1,326 @@
+<meta vim:set syntax=markdown:>
+<meta charset="utf-8">
+<link rel="stylesheet" href="default.css">
+
+**Init**
+
+Binaries
+=======================================================
+        | msys2    | mingw32  | mingw64  | gitbash | native
+--------|----------|----------|----------|---------|--------
+gvim    |          |          |          |         | o
+git     | i        |          |          | o       |
+cmake   | i        |          | o        |         | i
+vim     | o        |          |          | i       |  
+tmux    | o        |          |          |         |  
+python  | i 3.7.3  |          | i 2.7.16 |         | o 3.8.5
+python2 | i 2.7.16 |          | i 2.7.16 |         |
+python3 | i 3.7.3  |          | i 3.7.3  |         |
+
+- i: installed
+- o: use
+
+<meta name="keywords" content="*memo_init.setup*">
+Setup (bash/python/vim)
+=======================================================
+## node.js
+### windows
+use installer
+
+### linux
+~~~
+apt install nodejs npm
+~~~
+
+## network
+- .ssh/config
+- HTTP_PROXY
+- HTTPS_PROXY
+
+## dot files
+- ~/.gitconfig
+- ~/.my/hostname
+
+## bash
+~~~
+make all
+~~~
+
+## python
+~~~
+mypython-venv-create torch
+mypip-upgrade
+mypip-install-vim
+mypip-install-torch
+~~~
+
+## vim
+~~~
+make all
+~~~
+
+### g:coc_config_home
+~~~
+~/.vim/coc-settings.json               (local)
+$MY_VIM/coc/win/coc-settings.json      (windows)
+$MY_VIM/coc/linux/coc-settings.json    (linux)
+~~~
+
+### g:coc_data_home
+~~~
+$MY_VIM/coc_data/win   (windows)
+~/.config/coc          (linux)
+~~~
+
+<meta name="keywords" content="*memo_init.colors*">
+Settings 256 colors for vim, tmux, mintty
+=======================================================
+## .minttyrc
+~~~
+Term=xterm-256color
+~~~
+
+## .tmux.conf
+~~~
+set -g default-terminal "xterm-256color"
+~~~
+
+## .vimrc
+~~~
+set termguicolors
+set t_Co=256
+~~~
+
+## exec tmux with 256 colors
+~~~
+$ tmux -2
+~~~
+
+<meta name="keywords" content="*memo_init.install*">
+Install
+=======================================================
+## Windows
+<div id="col2">
+### App
+- Chrome
+- Firefox
+- Google Drive
+- Dropbox
+- 7-Zip
+- Ctrl2cap
+- LibreOffice
+- TeX Live
+
+### Tool
+- CrystalDiskMark
+- Process Explorer
+- Dependency Walker
+
+### Graphics Tool
+- Blender
+- Gimp
+- Inkscape
+- MeshLab
+- FastStone
+- FreeCAD
+
+### Development
+- Gvim
+- Visual Studio Code
+- Visual Studio 2017
+- Android Studio
+- CMake
+- Git
+- Unity
+
+### Lib
+- Qt
+- OpenCV
+
+### Game
+- Steam
+</div>
+
+<!--
+## Not Install
+~~~
+- MS Office
+- ITK
+- ITK-SNAP
+- IrfanView
+- djv_view
+- HDRShop
+- Skype
+- Loilo Game Recorder
+- TortoiseGit
+- TortoiseSVN
+- SourceTree
+~~~
+-->
+
+## Chocolatey
+~~~
+choco install -y meshlab fsviewer windirstat
+choco install -y neovim
+~~~
+
+## MSYS2
+~~~
+pacman -S git
+pacman -S subversion
+pacman -S vim ctags vimpager
+pacman -S global
+pacman -S tmux winpty
+pacman -S zip unzip
+pacman -S man-pages-posix
+pacman -S base-devel
+pacman -S bc
+pacman -S python
+pacman -S vifm
+pacman -S fzy
+
+pacman -S mingw-w64-x86_64-toolchain
+pacman -S mingw-w64-x86_64-clang
+pacman -S mingw-w64-x86_64-cmake
+pacman -S mingw-w64-x86_64-universal-ctags-git
+
+pacman -S mingw-w64-x86_64-glfw
+pacman -S mingw-w64-x86_64-glew
+pacman -S mingw-w64-x86_64-freeglut
+pacman -S mingw-w64-x86_64-glm
+pacman -S mingw-w64-x86_64-opencv
+
+pacman -S mingw-w64-x86_64-python3-pip
+pacman -S mingw-w64-x86_64-python2-pip
+pacman -S mingw-w64-x86_64-imagemagick
+pacman -S mingw-w64-x86_64-gnuplot
+pacman -S mingw-w64-x86_64-graphviz
+
+pacman -S mingw-w64-x86_64-qpdf
+pacman -S mingw-w64-x86_64-ghostscript
+~~~
+
+<!--
+## Not Install
+~~~
+pacman -S msys2-devel
+pacman -S mingw-w64-i686-toolchain
+~~~
+-->
+
+<!--
+## Cygwin
+~~~
+cygwin
+- vim lv diff patch gnuplot bc make curl
+- clang git git-svn subversion man-pages-posix doxygen
+- ctags cmake
+~~~
+-->
+
+## MX Linux
+~~~
+sudo apt install vim
+sudo apt install vim-gtk3
+sudo apt install vifm
+sudo apt install universal-ctags
+sudo apt install cmake
+sudo apt install clang
+sudo apt install clang-tools-7
+sudo apt install python3-venv
+sudo apt install python3-dev
+sudo apt install nodejs npm
+sudo apt install fzf
+~~~
+
+## Termux
+~~~
+pkg install git
+pkg install vim
+pkg install tmux
+pkg install ncurses-utils   # tput
+pkg install util-linux      # column
+pkg install iconv
+pkg install ctags
+pkg install diffutils
+pkg install clang
+pkg install cmake
+pkg install python
+pkg install vim-python
+pkg install openssh
+~~~
+
+## Pip
+~~~
+pip install wheel
+pip install python-language-server
+pip install pylint
+pip install flake8
+
+pip install opencv-python
+pip install matplotlib
+pip install numpy
+pip install scipy
+pip install sklearn
+pip install parse
+pip install tensorboard
+# pytorch with CUDA 10.2
+pip install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
+~~~
+
+<!--
+## Conda
+~~~
+conda install numpy
+conda install opencv
+conda install matplotlib
+conda install scikit-image
+conda install scikit-learn
+conda install pillow
+conda install json5
+conda install python-graphviz graphviz
+#conda install -c conda-forge opencv
+~~~
+-->
+
+## Vim
+~~~
+:PlugInstall
+:CocInstall coc-json coc-tsserver coc-python coc-clangd coc-snippets
+~~~
+
+<meta name="keywords" content="*memo_init.update*">
+Update
+=======================================================
+## MSYS2
+~~~
+pacman -Syu
+~~~
+
+## gitbash
+~~~
+git update-git-for-windows
+~~~
+
+## Vim
+~~~
+:PlugUpdate
+:CocUpdate
+~~~
+
+<meta name="keywords" content="*memo_init.upgrade*">
+Upgrade
+=======================================================
+## Vim
+~~~
+:PlugUpgrade
+~~~
+
+## pip
+~~~
+python -m pip install --upgrade pip
+~~~
+
+<style class="fallback">body{visibility:hidden}</style>
+<script src="markdeep.min.js"></script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>

@@ -1,0 +1,180 @@
+<meta vim:set syntax=markdown:>
+<meta charset="utf-8">
+<link rel="stylesheet" href="default.css">
+
+<meta name="keywords" content="*memo_my*">
+**My**
+
+<meta name="keywords" content="*memo_autohotkey*">
+<meta name="keywords" content="*memo_ahk*">
+AutoHotKey Keymap
+=============================================
+
+- [KeyList](http://ahkwiki.net/KeyList)
+
+## HHK 60 Key
+
+*****************************************************************
+* +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+* |ESC|F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Ins|Del|
+* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
+* |Tab  |   |   |   |   |   |   |   |   |   |   | U |   |   BS|
+* +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
+* |Ctrl   |   |   |   |   |   |   |   |   |   | L | R | Return|
+* +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
+* |Shift    |   |   |   |   |   |   |   |   |   | D |Zen  | Fn|
+* +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
+*         |F1 |Alt|                       | LWin  |Ctl|
+*         +---+---+-----------------------+-------+---+
+*****************************************************************
+
+App      | Key             | Description
+---------|-----------------|---
+Windows  | LAlt            | F1
+Windows  | LMeta           | LAlt
+Windows  | RMeta           | LWin
+Windows  | RAlt            | RCtrl
+mintty   | RShift          | Hankaku/Zenkaku
+mintty   | F5              | side by side chrome and mintty windows
+mintty   | F6              | maximize chrome and mintty windows
+
+## Niz 84 Key
+
+*********************************************************************
+* +---+ +---+---+---+---+ +---+---+---+---+ +---+---+---+---+ +---+
+* |ESC| |F1 |F2 |F3 |F4 | |F5 |F6 |F7 |F8 | |F9 |F10|F11|F12| |Del|
+* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
+* | ` | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | - | = |  BS   |Hom|
+* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
+* |Tab  | Q | W | E | R | T | Y | U | I | O | P | [ | ] | \   |PgU|
+* +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+-+-----+---+
+* |Caps   | A | S | D | F | G | H | J | K | L | ; | ' | Enter |PgD|
+* +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+---+
+* |Shift    | Z | X | C | V | B | N | M | , | . | / |Zen  | U |End|
+* +-----+---+---+---+---+---+---+---+-+-+-+-+---+-+-+-+---+---+---+
+* |Ctrl |Fn |Win|Alt|                 |Fn |Alt|App|Ctl| L | D | R |
+* +-----+---+---+---+-----------------+---+---+---+---+---+---+---+
+*********************************************************************
+
+App      | Key             | Description
+---------|-----------------|---
+Windows  | RShift          | Hankaku/Zenkaku
+mintty   | F5              | side by side chrome and mintty windows
+mintty   | F6              | maximize chrome and mintty windows
+
+<meta name="keywords" content="*memo_my.keymap*">
+Keymap
+=======================================================
+
+## Function keymap
+Key | Description
+----|---
+F1  | tmux.prefix
+F2  | vim.nerdtree
+F3  | vim.fugitive.Gstatus
+F4  | vim.fugitive.Ggrep
+F5  | ahk.side by side
+F6  | ahk.restore
+F7  | tmux.toggle left pane width 60/80
+F8  | tmux.maximize pane
+F9  | tmux.copy
+F10 | tmux.paste
+F11 | vim.copy
+F12 | vim.paste
+
+## mintty keymap
+App        | Key             | Description
+-----------|-----------------|---
+mintty     | C-0             | scale reset
+mintty     | C--             | scale -
+mintty     | C-=             | scale +
+
+## tmux keymap
+App        | Key             | Description
+-----------|-----------------|---
+tmux.pane  | M-h             | pane left
+           | M-j             | pane down
+           | M-k             | pane up
+           | M-l             | pane right
+           | F1 [hjkl]       | move to a pane
+           | F1 [HJKL]       | resize the current pane
+tmux.split | F1 -            | hrizontal split pane
+           | F1 `|`          | vertical split pane
+           | F1 0            | split 2 panes
+           | F1 9            | split 3 panes
+           | F1 8            | split 4 panes
+tmux.open  | F1 r            | reload ~/.tmux.conf
+           | F1 m            | open a man pane
+           | F1 d            | open an ej pane
+           | F1 t            | open a trans pane
+           | F1 p            | open a python pane
+
+## vim keymap
+*****************************************************************
+* +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+* |ESC|   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
+* |Tab  |   |   | E |   |   | Y | U |   | O | P |   |   |   BS|
+* +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
+* |Ctrl   | A |   | D | F |   | H | J | K | L |   |   | Return|
+* +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
+* |Shift    |   | X |   |   |   | N |   |   |   |   |Shift| Fn|
+* +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
+*         |F1 |Alt|                       | LWin  |Zen|
+*         +---+---+-----------------------+-------+---+
+*****************************************************************
+
+App        | Key             | Description
+-----------|-----------------|---
+vim.win    | C-H             | window left
+           | C-J             | window down
+           | C-K             | window up
+           | C-L             | window right
+           | C-E             | expand the current window
+           | C-X             | delete the current window
+           | C-N             | redraw screen
+vim.url    | C-A             | make a hyper link in the markdown format
+           | C-O             | open an URL under the cursor by chrome
+vim.hl     | C-U             | quickhl
+           | C-Y             | quickhl reset
+vim.move   | C-F             | page down
+           | C-D             | page up
+           | Space           | page down
+           | BS              | page up
+           | C-P             | easymotion
+
+<meta name="keywords" content="*memo_my.vim.tips*">
+Vim Tips
+=======================================================
+
+Command         | Description
+---             | ---
+C-A             | make a link
+C-O             | open the link under the cursor
+C-P             | easymotion
+F4              | :GgrepHere
+:Tips           | open the tips window
+:RunVscode      | run vscode
+:Ggrep {word}   | Ggrep the word
+:GgrepHere      | Ggrep the word under the cursor
+:VimGrep {word} | vimgrep the word
+:VimGrepHere    | vimgrep the word under the cursor
+:Cdo            | apply the command '@q' to each entry in the quickfix list
+:Cfdo           | apply the command '@q' to each file in the quickfix list
+:ClangFormat    | apply clang-format to the current file
+:TabBar         | Tabularize for vertical bars
+:Dia            | open the diary window
+:Trans          | open the translator window (ESC, :en, :ja, :zh, :q)
+:EJ {word}      | English-Japanese dictionary
+:EE {word}      | English-English dictionary
+:GJ {word}      | German-Japanese dictionary
+:Dja {word}     | Any-Japanese dictionary
+:Den {word}     | Any-English dictionary
+:Dzh {word}     | Any-Chinese dictionary
+:Tja {word}     | Any-Japanese translation
+:Ten {word}     | Any-English translation
+:Tzh {word}     | Any-Chinese translation
+
+<style class="fallback">body{visibility:hidden}</style>
+<script src="markdeep.min.js"></script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>

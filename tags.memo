@@ -1,4 +1,6 @@
 !_TAG_FILE_ENCODING	utf-8	//
+memo_ahk	my.md.html	/*memo_ahk*
+memo_autohotkey	my.md.html	/*memo_autohotkey*
 memo_cg	cg.md.html	/*memo_cg*
 memo_cg.blender	cg.md.html	/*memo_cg.blender*
 memo_cg.eigen	cg.md.html	/*memo_cg.eigen*
@@ -10,17 +12,13 @@ memo_cg.opengl	cg.md.html	/*memo_cg.opengl*
 memo_cg.unity	cg.md.html	/*memo_cg.unity*
 memo_dev	dev.md.html	/*memo_dev*
 memo_dev.adb	dev.md.html	/*memo_dev.adb*
-memo_dev.ahk	dev.md.html	/*memo_dev.ahk*
 memo_dev.android	dev.md.html	/*memo_dev.android*
 memo_dev.android_studio	dev.md.html	/*memo_dev.android_studio*
-memo_dev.autohotkey	dev.md.html	/*memo_dev.autohotkey*
-memo_dev.colors	dev.md.html	/*memo_dev.colors*
 memo_dev.ctags	dev.md.html	/*memo_dev.ctags*
 memo_dev.global	dev.md.html	/*memo_dev.global*
 memo_dev.gtags	dev.md.html	/*memo_dev.gtags*
 memo_dev.hhk	dev.md.html	/*memo_dev.hhk*
 memo_dev.keyboard	dev.md.html	/*memo_dev.keyboard*
-memo_dev.keymap	dev.md.html	/*memo_dev.keymap*
 memo_dev.niz	dev.md.html	/*memo_dev.niz*
 memo_dev.skk	dev.md.html	/*memo_dev.skk*
 memo_dev.tmux	dev.md.html	/*memo_dev.tmux*
@@ -55,7 +53,15 @@ memo_git-submodule	vcs.md.html	/*memo_git-submodule*
 memo_git-svn	vcs.md.html	/*memo_git-svn*
 memo_git-tag	vcs.md.html	/*memo_git-tag*
 memo_git-worktree	vcs.md.html	/*memo_git-worktree*
+memo_init.colors	init.md.html	/*memo_init.colors*
+memo_init.install	init.md.html	/*memo_init.install*
+memo_init.setup	init.md.html	/*memo_init.setup*
+memo_init.update	init.md.html	/*memo_init.update*
+memo_init.upgrade	init.md.html	/*memo_init.upgrade*
 memo_links	links.md.html	/*memo_links*
+memo_my	my.md.html	/*memo_my*
+memo_my.keymap	my.md.html	/*memo_my.keymap*
+memo_my.vim.tips	my.md.html	/*memo_my.vim.tips*
 memo_os	os.md.html	/*memo_os*
 memo_os.apt	os.md.html	/*memo_os.apt*
 memo_os.bat	os.md.html	/*memo_os.bat*
@@ -74,7 +80,6 @@ memo_os.mxlinux	os.md.html	/*memo_os.mxlinux*
 memo_os.pacman	os.md.html	/*memo_os.pacman*
 memo_os.pkg	os.md.html	/*memo_os.pkg*
 memo_os.scp	os.md.html	/*memo_os.scp*
-memo_os.setup	os.md.html	/*memo_os.setup*
 memo_os.ssh	os.md.html	/*memo_os.ssh*
 memo_os.sshd	os.md.html	/*memo_os.sshd*
 memo_os.termux	os.md.html	/*memo_os.termux*
@@ -139,7 +144,6 @@ memo_vim.plugin	dev.md.html	/*memo_vim.plugin*
 memo_vim.record	dev.md.html	/*memo_vim.record*
 memo_vim.resize	dev.md.html	/*memo_vim.resize*
 memo_vim.term	dev.md.html	/*memo_vim.term*
-memo_vim.tips	dev.md.html	/*memo_vim.tips*
 memo_vim.ultisnips	dev.md.html	/*memo_vim.ultisnips*
 memo_vim.vimgrep	dev.md.html	/*memo_vim.vimgrep*
 memo_vim.vim-lsp	dev.md.html	/*memo_vim.vim-lsp*

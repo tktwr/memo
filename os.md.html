@@ -5,68 +5,6 @@
 <meta name="keywords" content="*memo_os*">
 **OS**
 
-<meta name="keywords" content="*memo_os.setup*">
-Setup (bash/python/vim)
-=======================================================
-## node.js
-### windows
-use installer
-
-### linux
-~~~
-apt install nodejs npm
-~~~
-
-## network
-- .ssh/config
-- HTTP_PROXY
-- HTTPS_PROXY
-
-## dot files
-- ~/.gitconfig
-- ~/.my/hostname
-
-## bash
-~~~
-make all
-~~~
-
-## python
-~~~
-mypython-venv-create torch
-mypip-upgrade
-mypip-install-vim
-mypip-install-torch
-~~~
-
-## vim
-~~~
-make all
-~~~
-
-### g:coc_config_home
-~~~
-~/.vim/coc-settings.json               (local)
-$MY_VIM/coc/win/coc-settings.json      (windows)
-$MY_VIM/coc/linux/coc-settings.json    (linux)
-~~~
-
-### g:coc_data_home
-~~~
-$MY_VIM/coc_data/win   (windows)
-~/.config/coc          (linux)
-~~~
-
-### PlugInstall
-~~~
-:PlugInstall
-~~~
-
-### CocInstall
-~~~
-:CocInstall coc-json coc-tsserver coc-python coc-clangd coc-snippets
-~~~
-
 <meta name="keywords" content="*memo_os.windows*">
 <meta name="keywords" content="*memo_os.windows10*">
 Windows
@@ -102,67 +40,6 @@ Windows
 - Adobe Acrobat Reader DCをインストール
 - [編集] -> [環境設定] -> [一般] -> [Windows ExplorerでPDFサムネールのプレビューを有効にする]
 
-## Installed
-<div id="col2">
-### App
-- Chrome
-- Firefox
-- Google Drive
-- Dropbox
-- 7-Zip
-- Ctrl2cap
-- LibreOffice
-- TeX Live
-
-### Tool
-- CrystalDiskMark
-- Process Explorer
-- Dependency Walker
-
-### Graphics Tool
-- Blender
-- gimp
-- inkscape
-- FreeCAD
-- MeshLab
-- FastStone
-- Loilo Game Recorder
-
-### Development
-- gvim
-- Visual Studio Code
-- Visual Studio 2017
-- Android Studio
-- CMake
-- Git
-- TortoiseGit
-- TortoiseSVN
-- SourceTree
-- Unity
-
-### Lib
-- Qt
-- OpenCV
-- ITK
-
-### Game
-- Steam
-</div>
-
-<!--
-## Not installed
-~~~
-MS Office
-
-ITK-SNAP
-IrfanView
-djv_view
-HDRShop
-
-Skype
-~~~
--->
-
 <meta name="keywords" content="*memo_os.chocolatey*">
 <meta name="keywords" content="*memo_os.choco*">
 ## Chocolatey
@@ -183,9 +60,6 @@ choco uninstall PACKAGE
 choco list PACKAGE
 # list local
 choco list -l
-
-choco install -y meshlab fsviewer windirstat
-choco install -y neovim
 ~~~
 
 - PACKAGE: virtual package
@@ -406,48 +280,6 @@ Option              | 説明
 -Qi package         | info of the package
 -Ql package         | list files in the package
 
-## Installed
-~~~
-pacman -S git
-pacman -S subversion
-pacman -S vim ctags vimpager
-pacman -S global
-pacman -S tmux winpty
-pacman -S zip unzip
-pacman -S man-pages-posix
-pacman -S base-devel
-pacman -S bc
-pacman -S python
-pacman -S vifm
-pacman -S fzy
-
-pacman -S mingw-w64-x86_64-toolchain
-pacman -S mingw-w64-x86_64-clang
-pacman -S mingw-w64-x86_64-cmake
-pacman -S mingw-w64-x86_64-universal-ctags-git
-
-pacman -S mingw-w64-x86_64-glfw
-pacman -S mingw-w64-x86_64-glew
-pacman -S mingw-w64-x86_64-freeglut
-pacman -S mingw-w64-x86_64-glm
-pacman -S mingw-w64-x86_64-opencv
-
-pacman -S mingw-w64-x86_64-python3-pip
-pacman -S mingw-w64-x86_64-python2-pip
-pacman -S mingw-w64-x86_64-imagemagick
-pacman -S mingw-w64-x86_64-gnuplot
-pacman -S mingw-w64-x86_64-graphviz
-
-pacman -S mingw-w64-x86_64-qpdf
-pacman -S mingw-w64-x86_64-ghostscript
-~~~
-
-## Not installed
-~~~
-pacman -S msys2-devel
-pacman -S mingw-w64-i686-toolchain
-~~~
-
 ## disable POSIX-to-Windows path conversion
 以下のいずれかの方法がある
 
@@ -478,14 +310,6 @@ export MSYS2_ARG_CONV_EXCL="*"
 <meta name="keywords" content="*memo_os.cygwin*">
 Cygwin
 =======================================================
-## Installed
-~~~
-cygwin
-- vim lv diff patch gnuplot bc make curl
-- clang git git-svn subversion man-pages-posix doxygen
-- ctags cmake
-~~~
-
 ## DLLの読み込みに失敗する場合
 ~~~
 C:\cygwin\bin\dash.exe -c '/usr/bin/rebaseall -v'
@@ -567,21 +391,6 @@ apt show pkg
 apt install pkg
 apt remove pkg
 apt search pkg
-~~~
-
-## Installed
-~~~
-sudo apt install vim
-sudo apt install vim-gtk3
-sudo apt install vifm
-sudo apt install universal-ctags
-sudo apt install cmake
-sudo apt install clang
-sudo apt install clang-tools-7
-sudo apt install python3-venv
-sudo apt install python3-dev
-sudo apt install nodejs npm
-sudo apt install fzf
 ~~~
 
 ## Setup
@@ -686,23 +495,6 @@ termux-setup-storage
 pkg install termux-exec
 ~~~
 - [termux-exec](https://wiki.termux.com/wiki/FAQ#Why_do_I_keep_getting_.27.2Fbin.2Fsh_bad_interpreter.27_error.3F)
-
-## Installed
-~~~
-pkg install git
-pkg install vim
-pkg install tmux
-pkg install ncurses-utils   # tput
-pkg install util-linux      # column
-pkg install iconv
-pkg install ctags
-pkg install diffutils
-pkg install clang
-pkg install cmake
-pkg install python
-pkg install vim-python
-pkg install openssh
-~~~
 
 ## sshd
 
