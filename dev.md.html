@@ -93,14 +93,14 @@ Key   | Description
 h     | upper directory
 j     | move down
 k     | move up
-l     | enter the directory / edit the file
+l     | enter the directory / open filetype
 V     | visual mode
 t     | select
-ENTER | filetype
-e     | fileviewer
-C     | clone
-dd    | delete to trash
-DD    | delete
+ENTER | open filetype
+e     | view in fileviewer
+C     | clone the file in the same directory
+dd    | delete the file to trash
+DD    | delete the file
 yy    | yank
 p     | paste
 cw    | rename
@@ -114,6 +114,28 @@ zm    | hide dot files
 SPACE | 反対側のペインへ
 TAB   | 反対側のペインへ
 C-g   | file info
+u     | undo
+
+## My Key
+Key       | Description
+---       | ---
+Q         | :quit<cr>
+K         | :mkdir<space>
+C         | :copy<cr>
+M         | :move<cr>
+R         | cw
+v         | :view<cr>
+B         | :bmarks<cr>
+T         | :lstrash<cr>
+I         | za
+u         | h
+C-U       | u
+C-S       | :sort<cr>
+C-E       | :OneCol<cr>
+`|`       | :TwoCol<cr>
+==        | :sync!<cr>
+x         | :!explorer.sh %d<cr>
+:clone[?] | clone files, "?" will open vi to edit filenames
 
 ## Command
 Command       | Description
