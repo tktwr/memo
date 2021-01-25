@@ -193,46 +193,43 @@ $ vim -u NONE
 <meta name="keywords" content="*memo_vim.nmap*">
 ### normal mode keymap
 
-- o: remap
-- !: fixed
-
-  | Key     | Original                | Map      | New
---|---------|-------------------------|----------|---
-o | C-A     | add                     |          | make a hyper link in the markdown format
- !| C-B     | one page scroll up
- !| C-C     | interrupt
-o!| C-D     | half page scroll down   | C-B      | one page scroll up
-o!| C-E     | one line scroll down    | :only    | expand the current window
- !| C-F     | one page scroll down
-  | C-G     | display info
-o!| C-H     | h                       | C-W h    | window left
-  | C-I     | TAB
-o!| C-J     | j                       | C-W j    | window down
-o!| C-K     | not used                | C-W k    | window up
- !| C-L     | redraw screen           | C-W l    | window right
-  | C-M     | CR
-o | C-N     | j                       | C-L      | redraw screen
-o | C-O     | prev in jump list       |          | open an URL under the cursor by chrome
-o | C-P     | k                       |          | easymotion
-  | C-Q     | terminal control
- !| C-R     | redo
-  | C-S     | terminal control
- !| C-T     | prev in tag list
-o | C-U     | half page scroll up     |          | quickhl
- !| C-V     | block visual mode
- !| C-W     | window command
-o | C-X     | subtract                | :close   | delete the current window
-o | C-Y     | one line scroll up      |          | quickhl reset
- !| C-Z     | suspend
-o | Space   | l                       | C-F      | one page scroll down
-o | BS      | h                       | C-B      | one page scroll up
-  | Tab     | next in jump list
-  | NL      | j
-  | CR      | +
-  | C-[     | ESC
-  | C-]     | :ta
-  | C-W C-X | exchange windows
-  | C-W C-Z | close the preview window
+| Fixed | Key       | Original                  | Map        | New
+| ---   | --------- | ------------------------- | ---------- | ---
+|       | C-A       | add                       | CMD        | make a hyper link in the markdown format
+|       | C-B       | one page scroll up        |            |
+| !!    | C-C       | interrupt                 |            |
+| !!    | C-D       | half page scroll down     | C-B        | one page scroll up
+| !!    | C-E       | one line scroll down      | :only      | expand the current window
+| !!    | C-F       | one page scroll down      |            |
+|       | C-G       | display info              |            |
+| !!    | C-H       | h                         | C-W h      | window left
+| !     | C-I       | TAB                       |            |
+| !!    | C-J       | j                         | C-W j      | window down
+| !!    | C-K       | not used                  | C-W k      | window up
+| !!    | C-L       | redraw screen             | C-W l      | window right
+| !     | C-M       | CR                        |            |
+| !!    | C-N       | j                         | C-L C-G    | redraw screen, display info
+|       | C-O       | prev in jump list         | CMD        | open an URL under the cursor by chrome
+|       | C-P       | k                         | CMD        | easymotion
+| !     | C-Q       | terminal control          |            |
+| !!    | C-R       | redo                      |            |
+| !     | C-S       | terminal control          |            |
+| !!    | C-T       | prev in tag list          |            |
+|       | C-U       | half page scroll up       | CMD        | quickhl
+| !!    | C-V       | block visual mode         |            |
+| !!    | C-W       | window command            |            |
+| !!    | C-X       | subtract                  | :close     | delete the current window
+|       | C-Y       | one line scroll up        | CMD        | quickhl reset
+| !!    | C-Z       | suspend                   |            |
+| !!    | Space     | l                         | C-F        | one page scroll down
+| !!    | BS        | h                         | C-B        | one page scroll up
+|       | Tab       | next in jump list         |            |
+|       | NL        | j                         |            |
+|       | CR        | +                         |            |
+|       | C-[       | ESC                       |            |
+|       | C-]       | :ta                       |            |
+|       | C-W C-X   | exchange windows          |            |
+|       | C-W C-Z   | close the preview window  |            |
 
   | Key    | Original                | Map      | New
 --|--------|-------------------------|----------|---
@@ -534,11 +531,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 ### install LSP
 ~~~
-:CocInstall coc-json coc-tsserver
+:CocInstall coc-tsserver
+:CocInstall coc-json
 :CocInstall coc-python
 :CocInstall coc-clangd
 :CocInstall coc-snippets
 :CocInstall coc-explorer
+:CocInstall coc-lists
 :CocUpdate
 
 :CocInfo
