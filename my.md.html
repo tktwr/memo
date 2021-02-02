@@ -70,17 +70,17 @@ Keymap
 Key | Description
 ----|---
 F1  | tmux.prefix
-F2  | vim.nerdtree
-F3  | vim.fugitive.Gstatus
-F4  | vim.fugitive.GgrepHere
+F2  | x
+F3  | x
+F4  | screenshot
 F5  | ahk.side by side
 F6  | ahk.restore
 F7  | tmux.toggle left pane width 60/80
 F8  | tmux.maximize pane
-F9  | tmux.copy
-F10 | tmux.paste
-F11 | vim.copy
-F12 | vim.paste
+F9  | x
+F10 | x
+F11 | x
+F12 | x
 
 ## mintty keymap
 App        | Key             | Description
@@ -104,10 +104,8 @@ tmux.split | F1 -            | hrizontal split pane
            | F1 9            | split 3 panes
            | F1 8            | split 4 panes
 tmux.open  | F1 r            | reload ~/.tmux.conf
-           | F1 m            | open a man pane
-           | F1 d            | open an ej pane
-           | F1 t            | open a trans pane
-           | F1 p            | open a python pane
+           | F1 y            | yank to the clipboard
+           | F1 p            | paste from the clipboard
 
 ## vim keymap
 *****************************************************************
@@ -133,15 +131,15 @@ vim.win    | C-H             | window left
            | C-E             | expand the current window
            | C-X             | delete the current window
            | C-N             | redraw screen, display info
-vim.url    | C-A             | make a hyper link in the markdown format
-           | C-O             | open an URL under the cursor by chrome
+vim.url    | C-A             | easymotion
 vim.hl     | C-U             | quickhl
            | C-Y             | quickhl reset
 vim.move   | C-F             | page down
            | C-D             | page up
-           | Space           | page down
-           | BS              | page up
-           | C-P             | easymotion
+           | Space           | whichkey
+           | BS              | x
+           | C-O             | x
+           | C-P             | x
 
 <meta name="keywords" content="*memo_my.vim.tips*">
 Vim Tips

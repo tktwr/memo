@@ -187,6 +187,15 @@ $ vim -u NONE
 :verbose imap <tab>
 ~~~
 
+<meta name="keywords" content="*memo_vim.script*">
+## script
+Word   | Description
+---    | ---
+q-args | one single value
+cward  | word under the cursor
+cWARD  | word under the cursor
+cfile  | file under the cursor
+
 <meta name="keywords" content="*memo_vim.keymap*">
 ## keymap
 
@@ -195,34 +204,34 @@ $ vim -u NONE
 
 | Fixed | Key       | Original                  | Map        | New
 | ---   | --------- | ------------------------- | ---------- | ---
-|       | C-A       | add                       | CMD        | make a hyper link in the markdown format
+|       | C-A       | add                       | Plugin     | easymotion
 |       | C-B       | one page scroll up        |            |
-| !!    | C-C       | interrupt                 |            |
-| !!    | C-D       | half page scroll down     | C-B        | one page scroll up
-| !!    | C-E       | one line scroll down      | :only      | expand the current window
-| !!    | C-F       | one page scroll down      |            |
+| o!    | C-C       | interrupt                 |            |
+| m!    | C-D       | half page scroll down     | C-B        | one page scroll up
+| m!    | C-E       | one line scroll down      | :only      | expand the current window
+| o!    | C-F       | one page scroll down      |            |
 |       | C-G       | display info              |            |
-| !!    | C-H       | h                         | C-W h      | window left
-| !     | C-I       | TAB                       |            |
-| !!    | C-J       | j                         | C-W j      | window down
-| !!    | C-K       | not used                  | C-W k      | window up
-| !!    | C-L       | redraw screen             | C-W l      | window right
-| !     | C-M       | CR                        |            |
-| !!    | C-N       | j                         | C-L C-G    | redraw screen, display info
-|       | C-O       | prev in jump list         | CMD        | open an URL under the cursor by chrome
-|       | C-P       | k                         | CMD        | easymotion
-| !     | C-Q       | terminal control          |            |
-| !!    | C-R       | redo                      |            |
-| !     | C-S       | terminal control          |            |
-| !!    | C-T       | prev in tag list          |            |
-|       | C-U       | half page scroll up       | CMD        | quickhl
-| !!    | C-V       | block visual mode         |            |
-| !!    | C-W       | window command            |            |
-| !!    | C-X       | subtract                  | :close     | delete the current window
-|       | C-Y       | one line scroll up        | CMD        | quickhl reset
-| !!    | C-Z       | suspend                   |            |
-| !!    | Space     | l                         | C-F        | one page scroll down
-| !!    | BS        | h                         | C-B        | one page scroll up
+| m!    | C-H       | h                         | C-W h      | window left
+| o     | C-I       | TAB                       |            |
+| m!    | C-J       | j                         | C-W j      | window down
+| m!    | C-K       | not used                  | C-W k      | window up
+| m!    | C-L       | redraw screen             | C-W l      | window right
+| o     | C-M       | CR                        |            |
+| m!    | C-N       | j                         | C-L C-G    | redraw screen, display info
+|       | C-O       | prev in jump list         |            |
+|       | C-P       | k                         |            |
+| o     | C-Q       | terminal control          |            |
+| o!    | C-R       | redo                      |            |
+| o     | C-S       | terminal control          |            |
+| o!    | C-T       | prev in tag list          |            |
+|       | C-U       | half page scroll up       | Plugin     | quickhl
+| o!    | C-V       | block visual mode         |            |
+| o!    | C-W       | window command            |            |
+| m!    | C-X       | subtract                  | :close     | delete the current window
+|       | C-Y       | one line scroll up        | Plugin     | quickhl reset
+| o!    | C-Z       | suspend                   |            |
+| m!    | Space     | l                         | Plugin     | whichkey
+|       | BS        | h                         |            |
 |       | Tab       | next in jump list         |            |
 |       | NL        | j                         |            |
 |       | CR        | +                         |            |
@@ -230,6 +239,10 @@ $ vim -u NONE
 |       | C-]       | :ta                       |            |
 |       | C-W C-X   | exchange windows          |            |
 |       | C-W C-Z   | close the preview window  |            |
+
+- o: original
+- m: mapped
+- !: fixed
 
   | Key    | Original                | Map      | New
 --|--------|-------------------------|----------|---
