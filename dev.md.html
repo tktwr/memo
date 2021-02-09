@@ -204,20 +204,20 @@ cfile  | file under the cursor
 
 | Fixed | Key       | Original                  | Map        | New
 | ---   | --------- | ------------------------- | ---------- | ---
-|       | C-A       | add                       | Plugin     | easymotion
+|       | C-A       | add                       |            |
 |       | C-B       | one page scroll up        |            |
 | o!    | C-C       | interrupt                 |            |
 | m!    | C-D       | half page scroll down     | C-B        | one page scroll up
 | m!    | C-E       | one line scroll down      | :only      | expand the current window
 | o!    | C-F       | one page scroll down      |            |
-|       | C-G       | display info              |            |
+|       | C-G       | display info              | C-L C-G    | redraw screen, display info
 | m!    | C-H       | h                         | C-W h      | window left
 | o     | C-I       | TAB                       |            |
 | m!    | C-J       | j                         | C-W j      | window down
 | m!    | C-K       | not used                  | C-W k      | window up
 | m!    | C-L       | redraw screen             | C-W l      | window right
 | o     | C-M       | CR                        |            |
-| m!    | C-N       | j                         | C-L C-G    | redraw screen, display info
+|       | C-N       | j                         | Plugin     | CocList vimcommands
 |       | C-O       | prev in jump list         |            |
 |       | C-P       | k                         |            |
 | m!    | C-Q       | terminal control          | @q         | exec the command in the register q
@@ -231,8 +231,8 @@ cfile  | file under the cursor
 |       | C-Y       | one line scroll up        | Plugin     | quickhl reset
 | o!    | C-Z       | suspend                   |            |
 | m!    | Space     | l                         | Plugin     | whichkey
-|       | BS        | h                         |            |
-|       | Tab       | next in jump list         |            |
+|       | BS        | h                         | Plugin     | easymotion
+|       | Tab       | next in jump list         | Plugin     | nerdtree
 |       | NL        | j                         |            |
 |       | CR        | +                         |            |
 |       | C-[       | ESC                       |            |
@@ -503,7 +503,7 @@ C-W ""       | paste the unnamed register
   | r                | refresh the current dir
   | R                | refresh the current root
   | C                | change tree root here
-* | Tab              | C
+* | .                | C
   | cd               | change CWD to here
   | CD               | change the root to CWD
 

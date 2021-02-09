@@ -122,6 +122,8 @@ tmux.open  | F1 r            | reload ~/.tmux.conf
 *         +---+---+-----------------------+-------+---+
 *****************************************************************
 
+<meta name="keywords" content="*memo_my.tips*">
+
 App        | Key             | Description
 -----------|-----------------|---
 vim.win    | C-H             | window left
@@ -130,29 +132,22 @@ vim.win    | C-H             | window left
            | C-L             | window right
            | C-E             | expand the current window
            | C-X             | delete the current window
-           | C-N             | redraw screen, display info
-vim.url    | C-A             | easymotion
 vim.hl     | C-U             | quickhl
            | C-Y             | quickhl reset
 vim.move   | C-F             | page down
            | C-D             | page up
+vim.other  | C-G             | redraw screen, display info
+           | C-Q             | exec the command in the register q
+           | C-N             | CocList vimcommands
            | Space           | whichkey
-           | BS              | x
+           | TAB             | nerdtree
+           | BS              | easymotion
+           | C-A             | x
            | C-O             | x
            | C-P             | x
 
-<meta name="keywords" content="*memo_my.vim.tips*">
-Vim Tips
-=======================================================
-
 Command         | Description
 ---             | ---
-C-A             | make a link
-C-O             | open the link under the cursor
-C-P             | easymotion
-F4              | :GgrepHere
-:Tips           | open the tips window
-:RunVscode      | run vscode
 :Ggrep {word}   | Ggrep the word
 :GgrepHere      | Ggrep the word under the cursor
 :VimGrep {word} | vimgrep the word
@@ -161,17 +156,6 @@ F4              | :GgrepHere
 :Cfdo           | apply the command '@q' to each file in the quickfix list
 :ClangFormat    | apply clang-format to the current file
 :TabBar         | Tabularize for vertical bars
-:Dia            | open the diary window
-:Trans          | open the translator window (ESC, :en, :ja, :zh, :q)
-:EJ {word}      | English-Japanese dictionary
-:EE {word}      | English-English dictionary
-:GJ {word}      | German-Japanese dictionary
-:Dja {word}     | Any-Japanese dictionary
-:Den {word}     | Any-English dictionary
-:Dzh {word}     | Any-Chinese dictionary
-:Tja {word}     | Any-Japanese translation
-:Ten {word}     | Any-English translation
-:Tzh {word}     | Any-Chinese translation
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="markdeep.min.js"></script>

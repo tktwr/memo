@@ -61,7 +61,7 @@ memo_init.upgrade	init.md.html	/*memo_init.upgrade*
 memo_links	links.md.html	/*memo_links*
 memo_my	my.md.html	/*memo_my*
 memo_my.keymap	my.md.html	/*memo_my.keymap*
-memo_my.vim.tips	my.md.html	/*memo_my.vim.tips*
+memo_my.tips	my.md.html	/*memo_my.tips*
 memo_os	os.md.html	/*memo_os*
 memo_os.apt	os.md.html	/*memo_os.apt*
 memo_os.bat	os.md.html	/*memo_os.bat*
@@ -143,6 +143,7 @@ memo_vim.nmap	dev.md.html	/*memo_vim.nmap*
 memo_vim.plugin	dev.md.html	/*memo_vim.plugin*
 memo_vim.record	dev.md.html	/*memo_vim.record*
 memo_vim.resize	dev.md.html	/*memo_vim.resize*
+memo_vim.script	dev.md.html	/*memo_vim.script*
 memo_vim.term	dev.md.html	/*memo_vim.term*
 memo_vim.ultisnips	dev.md.html	/*memo_vim.ultisnips*
 memo_vim.vimgrep	dev.md.html	/*memo_vim.vimgrep*
