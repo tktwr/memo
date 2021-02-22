@@ -53,6 +53,7 @@ memo_git-submodule	vcs.md.html	/*memo_git-submodule*
 memo_git-svn	vcs.md.html	/*memo_git-svn*
 memo_git-tag	vcs.md.html	/*memo_git-tag*
 memo_git-worktree	vcs.md.html	/*memo_git-worktree*
+memo_init	init.md.html	/*memo_init*
 memo_init.colors	init.md.html	/*memo_init.colors*
 memo_init.install	init.md.html	/*memo_init.install*
 memo_init.setup	init.md.html	/*memo_init.setup*
@@ -60,8 +61,14 @@ memo_init.update	init.md.html	/*memo_init.update*
 memo_init.upgrade	init.md.html	/*memo_init.upgrade*
 memo_links	links.md.html	/*memo_links*
 memo_my	my.md.html	/*memo_my*
+memo_my.fn.keymap	my.md.html	/*memo_my.fn.keymap*
 memo_my.keymap	my.md.html	/*memo_my.keymap*
+memo_my.mintty.keymap	my.md.html	/*memo_my.mintty.keymap*
 memo_my.tips	my.md.html	/*memo_my.tips*
+memo_my.tmux.keymap	my.md.html	/*memo_my.tmux.keymap*
+memo_my.vim.command	my.md.html	/*memo_my.vim.command*
+memo_my.vim.keymap	my.md.html	/*memo_my.vim.keymap*
+memo_my.win.keymap	my.md.html	/*memo_my.win.keymap*
 memo_os	os.md.html	/*memo_os*
 memo_os.apt	os.md.html	/*memo_os.apt*
 memo_os.bat	os.md.html	/*memo_os.bat*

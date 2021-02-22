@@ -217,9 +217,9 @@ cfile  | file under the cursor
 | m!    | C-K       | not used                  | C-W k      | window up
 | m!    | C-L       | redraw screen             | C-W l      | window right
 | o     | C-M       | CR                        |            |
-|       | C-N       | j                         | Plugin     | CocList vimcommands
+|       | C-N       | j                         |            |
 |       | C-O       | prev in jump list         |            |
-|       | C-P       | k                         |            |
+|       | C-P       | k                         | Plugin     | CocList vimcommands
 | m!    | C-Q       | terminal control          | @q         | exec the command in the register q
 | o!    | C-R       | redo                      |            |
 | o     | C-S       | terminal control          |            |
@@ -231,14 +231,18 @@ cfile  | file under the cursor
 |       | C-Y       | one line scroll up        | Plugin     | quickhl reset
 | o!    | C-Z       | suspend                   |            |
 | m!    | Space     | l                         | Plugin     | whichkey
-|       | BS        | h                         | Plugin     | easymotion
-|       | Tab       | next in jump list         | Plugin     | nerdtree
+| m!    | BS        | h                         | Plugin     | easymotion
+| m!    | Tab       | next in jump list         | Plugin     | nerdtree
 |       | NL        | j                         |            |
 |       | CR        | +                         |            |
 |       | C-[       | ESC                       |            |
 |       | C-]       | :ta                       |            |
 |       | C-W C-X   | exchange windows          |            |
 |       | C-W C-Z   | close the preview window  |            |
+| m!    | C-Left    |                           |            | tabprev
+| m!    | C-Right   |                           |            | tabnext
+| m!    | C-Up      |                           |            | tabedit
+| m!    | C-Down    |                           |            | new terminal
 
 - o: original
 - m: mapped
@@ -549,8 +553,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 :CocInstall coc-python
 :CocInstall coc-clangd
 :CocInstall coc-snippets
-:CocInstall coc-explorer
 :CocInstall coc-lists
+:CocInstall coc-explorer
 :CocUpdate
 
 :CocInfo

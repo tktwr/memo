@@ -7,10 +7,11 @@
 
 <meta name="keywords" content="*memo_autohotkey*">
 <meta name="keywords" content="*memo_ahk*">
-AutoHotKey Keymap
+AutoHotKey
 =============================================
 
 - [KeyList](http://ahkwiki.net/KeyList)
+- [Commands](http://ahkwiki.net/Commands_Category)
 
 ## HHK 60 Key
 
@@ -24,19 +25,17 @@ AutoHotKey Keymap
 * +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
 * |Shift    |   |   |   |   |   |   |   |   |   | D |Zen  | Fn|
 * +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
-*         |F1 |Alt|                       | LWin  |Ctl|
+*         |LM |Alt|                       | LWin  |RM |
 *         +---+---+-----------------------+-------+---+
 *****************************************************************
 
 App      | Key             | Description
 ---------|-----------------|---
-Windows  | LAlt            | F1
+Windows  | LAlt            | LMeta
 Windows  | LMeta           | LAlt
 Windows  | RMeta           | LWin
-Windows  | RAlt            | RCtrl
-mintty   | RShift          | Hankaku/Zenkaku
-mintty   | F5              | side by side chrome and mintty windows
-mintty   | F6              | maximize chrome and mintty windows
+Windows  | RAlt            | RMeta
+Windows  | RShift          | Hankaku/Zenkaku
 
 ## Niz 84 Key
 
@@ -59,93 +58,91 @@ mintty   | F6              | maximize chrome and mintty windows
 App      | Key             | Description
 ---------|-----------------|---
 Windows  | RShift          | Hankaku/Zenkaku
-mintty   | F5              | side by side chrome and mintty windows
-mintty   | F6              | maximize chrome and mintty windows
 
 <meta name="keywords" content="*memo_my.keymap*">
 Keymap
 =======================================================
 
-## Function keymap
-Key | Description
-----|---
-F1  | tmux.prefix
-F2  | x
-F3  | x
-F4  | screenshot
-F5  | ahk.side by side
-F6  | ahk.restore
-F7  | tmux.toggle left pane width 60/80
-F8  | tmux.maximize pane
-F9  | x
-F10 | x
-F11 | x
-F12 | x
-
-## mintty keymap
-App        | Key             | Description
------------|-----------------|---
-mintty     | C-0             | scale reset
-mintty     | C--             | scale -
-mintty     | C-=             | scale +
-
-## tmux keymap
-App        | Key             | Description
------------|-----------------|---
-tmux.pane  | M-h             | pane left
-           | M-j             | pane down
-           | M-k             | pane up
-           | M-l             | pane right
-           | F1 [hjkl]       | move to a pane
-           | F1 [HJKL]       | resize the current pane
-tmux.split | F1 -            | hrizontal split pane
-           | F1 `|`          | vertical split pane
-           | F1 0            | split 2 panes
-           | F1 9            | split 3 panes
-           | F1 8            | split 4 panes
-tmux.open  | F1 r            | reload ~/.tmux.conf
-           | F1 y            | yank to the clipboard
-           | F1 p            | paste from the clipboard
-
-## vim keymap
 *****************************************************************
 * +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
-* |ESC|   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+* |ESC|F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Ins|Del|
 * +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
 * |Tab  |   |   | E |   |   | Y | U |   | O | P |   |   |   BS|
 * +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
 * |Ctrl   | A |   | D | F |   | H | J | K | L |   |   | Return|
 * +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
-* |Shift    |   | X |   |   |   | N |   |   |   |   |Shift| Fn|
+* |Shift    |   | X |   |   |   | N |   |   |   |   |Zen  | Fn|
 * +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
-*         |F1 |Alt|                       | LWin  |Zen|
+*         |LM |Alt|                       | LWin  |RM |
 *         +---+---+-----------------------+-------+---+
 *****************************************************************
 
+<meta name="keywords" content="*memo_my.win.keymap*">
+<meta name="keywords" content="*memo_my.fn.keymap*">
+<meta name="keywords" content="*memo_my.mintty.keymap*">
+<meta name="keywords" content="*memo_my.vim.keymap*">
 <meta name="keywords" content="*memo_my.tips*">
 
-App        | Key             | Description
------------|-----------------|---
-vim.win    | C-H             | window left
-           | C-J             | window down
-           | C-K             | window up
-           | C-L             | window right
-           | C-E             | expand the current window
-           | C-X             | delete the current window
-vim.hl     | C-U             | quickhl
-           | C-Y             | quickhl reset
-vim.move   | C-F             | page down
-           | C-D             | page up
-vim.other  | C-G             | redraw screen, display info
-           | C-Q             | exec the command in the register q
-           | C-N             | CocList vimcommands
-           | Space           | whichkey
-           | TAB             | nerdtree
-           | BS              | easymotion
-           | C-A             | x
-           | C-O             | x
-           | C-P             | x
+App             | Key                 | Description
+---             | ---                 | ---
+--- Windows --- |                     |
+Windows         | Alt + `             | 日本語入力 [英語キーボード]
+Windows         | Alt + Tab           | App切り替え
+Windows         | Alt + Shift + Tab   | App切り替え（逆順）
+Windows         | Windows + D         | デスクトップを表示
+Windows         | Windows + Up        | ウィンドウの最大化
+Windows         | Windows + Left      | ウィンドウを左半分に最大化
+Windows         | Windows + Right     | ウィンドウを右半分に最大化
+Windows         | Windows + Shift + S | 範囲を指定してスクリーンショット
+--- FuncKey --- |                     |
+                | F1                  | x
+Windows         | F2                  | virtual desktop left
+Windows         | F3                  | virtual desktop right
+Windows         | F4                  | screenshot
+                | F5                  | x
+                | F6                  | x
+                | F7                  | x
+                | F8                  | x
+vim             | F9                  | tabprev
+vim             | F10                 | tabnext
+Windows         | F11                 | toggle maximize / half maximize window
+                | F12                 | x
+--- mintty ---  |                     |
+mintty          | C-0                 | scale reset
+mintty          | C--                 | scale -
+mintty          | C-=                 | scale +
+--- vim ---     |                     |
+vim.winmove     | C-H                 | window left
+                | C-J                 | window down
+                | C-K                 | window up
+                | C-L                 | window right
+vim.win         | C-E                 | expand the current window
+                | C-X                 | delete the current window
+vim.move        | C-F                 | page down
+                | C-D                 | page up
+vim.hl          | C-U                 | quickhl
+                | C-Y                 | quickhl reset
+vim.other       | C-G                 | redraw screen, display info
+                | C-Q                 | exec the command in the register q
+                | C-P                 | CocList vimcommands
+                | C-A                 | x
+                | C-N                 | x
+--- vim ---     |                     |
+vim.term        | C-O                 | terminal out
+vim.term        | i                   | terminal in
+vim.term        | C-Space             | whichkey in terminal
+vim             | Space               | whichkey
+vim             | TAB                 | nerdtree
+vim             | BS                  | easymotion
+--- vim ---     |                     |
+vim.tab         | LMeta               | toggle maximize / half maximize window
+vim.tab         | Insert              | tabedit
+vim.tab         | Del                 | new terminal
+Windows         | RMeta               | tabnext
 
+<meta name="keywords" content="*memo_my.vim.command*">
+Vim Command
+=======================================================
 Command         | Description
 ---             | ---
 :Ggrep {word}   | Ggrep the word
@@ -156,6 +153,30 @@ Command         | Description
 :Cfdo           | apply the command '@q' to each file in the quickfix list
 :ClangFormat    | apply clang-format to the current file
 :TabBar         | Tabularize for vertical bars
+
+<meta name="keywords" content="*memo_my.tmux.keymap*">
+Tmux Keymap
+=======================================================
+
+App         | Key                    | Description
+---         | ---                    | ---
+tmux        | F1                     | tmux.prefix
+tmux        | F7                     | tmux.toggle left pane width 60/80
+tmux        | F8                     | tmux.maximize pane
+tmux.pane   | M-h                    | pane left
+            | M-j                    | pane down
+            | M-k                    | pane up
+            | M-l                    | pane right
+            | F1 [hjkl]              | move to a pane
+            | F1 [HJKL]              | resize the current pane
+tmux.split  | F1 -                   | hrizontal split pane
+            | F1 `|`                 | vertical split pane
+            | F1 0                   | split 2 panes
+            | F1 9                   | split 3 panes
+            | F1 8                   | split 4 panes
+tmux.open   | F1 r                   | reload ~/.tmux.conf
+            | F1 y                   | yank to the clipboard
+            | F1 p                   | paste from the clipboard
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="markdeep.min.js"></script>

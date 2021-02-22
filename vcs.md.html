@@ -45,6 +45,8 @@ git init --bare
 #### clone
 ~~~
 git clone URL [work_dir]
+git clone -b branch_name URL          # specify branch
+git clone --recurse-submodules URL    # recursive
 ~~~
 
 #### init
@@ -208,12 +210,13 @@ git commit --amend -m "message"     # コミットメッセージを変更
 ~~~
 
 <meta name="keywords" content="*memo_git-checkout*">
-## checkout
+## checkout co
 ~~~
 git checkout    {branch}                 # ブランチへ移動
 git checkout -b {branch}                 # ブランチを作成して移動
 git checkout -b {branch} {origin/branch} # リモートブランチをチェックアウト
 git checkout [--] {files}                # ファイルをリポジトリから取り出す -- 以降はファイル名として扱う (ファイル名がブランチ名と被るのを避ける)
+git checkout --orphan {branch}           # 空ブランチを作成
 ~~~
 
 <meta name="keywords" content="*memo_git-branch*">

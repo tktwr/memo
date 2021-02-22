@@ -2,48 +2,48 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="default.css">
 
+<meta name="keywords" content="*memo_init*">
 **Init**
 
-Binaries
-=======================================================
-        | msys2    | mingw32  | mingw64  | gitbash | native
---------|----------|----------|----------|---------|--------
-gvim    |          |          |          |         | o
-git     | i        |          |          | o       |
-cmake   | i        |          | o        |         | i
-vim     | o        |          |          | i       |  
-tmux    | o        |          |          |         |  
-python  | i 3.7.3  |          | i 2.7.16 |         | o 3.8.5
-python2 | i 2.7.16 |          | i 2.7.16 |         |
-python3 | i 3.7.3  |          | i 3.7.3  |         |
-
-- i: installed
-- o: use
-
 <meta name="keywords" content="*memo_init.setup*">
-Setup (bash/python/vim)
+Setup (bash/vim/python)
 =======================================================
-## node.js
+## network
+- .ssh/config
+- HTTP_PROXY
+- HTTPS_PROXY
+
+## install
 ### windows
-use installer
+- git
+- cmake
+- python3-64bit
+- nodejs
+- vs2019
+- android studio
 
 ### linux
 ~~~
 apt install nodejs npm
 ~~~
 
-## network
-- .ssh/config
-- HTTP_PROXY
-- HTTPS_PROXY
-
-## dot files
-- ~/.gitconfig
-- ~/.my/hostname
+## symbolic links (admin on command prompt)
+- WinHome
+- Desktop
+- Downloads
+- Dropbox
+- GoogleDrive
+- MyConfig
+- MyShare
 
 ## bash
 ~~~
-make all
+pacman -S vim winpty
+./make.sh --init
+vim .my/hostname
+vim .my/pythonrc
+vim .gitconfig
+./make.sh --all
 ~~~
 
 ## python
@@ -55,10 +55,6 @@ mypip-install-torch
 ~~~
 
 ## vim
-~~~
-make all
-~~~
-
 ### g:coc_config_home
 ~~~
 ~/.vim/coc-settings.json               (local)
@@ -166,18 +162,23 @@ choco install -y neovim
 
 ## MSYS2
 ~~~
+pacman -S winpty
+pacman -S vim
+pacman -S tmux
+pacman -S ctags
+pacman -S fzy
+pacman -S zip unzip
+
+pacman -S base-devel
+
 pacman -S git
 pacman -S subversion
-pacman -S vim ctags vimpager
+pacman -S vimpager
 pacman -S global
-pacman -S tmux winpty
-pacman -S zip unzip
 pacman -S man-pages-posix
-pacman -S base-devel
 pacman -S bc
 pacman -S python
 pacman -S vifm
-pacman -S fzy
 
 pacman -S mingw-w64-x86_64-toolchain
 pacman -S mingw-w64-x86_64-clang
@@ -286,7 +287,7 @@ conda install python-graphviz graphviz
 ## Vim
 ~~~
 :PlugInstall
-:CocInstall coc-tsserver coc-json coc-python coc-clangd coc-snippets
+:CocInstall coc-tsserver coc-json coc-python coc-clangd coc-snippets coc-lists
 ~~~
 
 <meta name="keywords" content="*memo_init.update*">
