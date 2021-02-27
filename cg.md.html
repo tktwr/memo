@@ -64,14 +64,29 @@ MeshLab
 
 ![meshlab](images/model_meshlab.jpg)
 
+## UV表示
+- Render > Show UV Tex Param
+
+## 法線表示
+- Render > Show Normal
+
+## Bounding Boxの情報表示
+- Render > Show Box Corners
+
+## 法線をそろえる
+- Filters > Normals, ... > Re-Orient all faces coherently
+
 <meta name="keywords" content="*memo_cg.blender*">
 Blender
 =======================================================
 ## Coordinate System
 - Right-handed coordinate system
-- X-right
-- Y-back
-- Z-up
+  - X-right
+  - Y-back
+  - Z-up
+- blender = opengl
+  - x y z = x z -y
+
 ![blender](images/model_blender.jpg)
 
 ## Key
@@ -157,6 +172,83 @@ F12                  | rendering
 ## BSDF (Arnold)
 - https://docs.arnoldrenderer.com/display/A5AFMUG/Standard+Surface
 - https://docs.arnoldrenderer.com/display/A5AFMUG/Standard+Hair
+
+## 回転中心を指定
+1. 点を選択して、
+  Mesh > Snap > Cursor to Selected
+2. Object Modeにして、
+  Tools > Transform > Set Origin > Origin to 3D Cursor
+
+## 親子関係作成
+子, 子, 子, ..., 親の順に選択して、
+Ctrl + P > Object
+
+## 形状作成
+Create > Cube
+
+- 右マウスクリック ... オブジェクトの選択
+- Shift + 右マウスクリック ... オブジェクトの追加選択
+- Ctrl + マニュピレーター ... グリッド単位で移動
+
+Tools > Edit > Duplicate
+
+- Ctrl押しながら移動でグリッド単位の移動、左クリックで決定
+- 真ん中クリックで軸選択
+
+## Gridを作る
+TAB ... エディットモードに入る
+Tools > Loop Cut and Slide
+-> 等間隔にしか切れない
+
+## 数値パッドを表示
+N
+
+## ユーザー設定
+File > User Preferences...
+
+## カメラ
+- View > Persp/Ortho
+- View > Front
+
+## カメラ移動
+- 真ん中マウスドラッグ ... 回転
+- 左マウスドラッグ ... 移動
+- ホイール ... ズーム
+
+- 左マウスクリック ... カーソル配置
+
+## オブジェクトモード
+- 右マウスクリック ... オブジェクトの選択
+- Shift + 右マウスクリック ... オブジェクトの追加選択
+- A ... 全選択/解除
+- X ... 削除
+- Ctrl + マニュピレーター ... グリッド単位で移動
+- Shift + A ... Add
+
+## 他のレイヤへ移動
+オブジェクト選択 > M > 移動先レイヤ選択
+
+## エディットモード
+- TAB ... オブジェクトモード/エディットモード切替
+- B ... 矩形選択
+
+## 連続面選択
+面選択 > Select > Linked Flat Faces
+
+## 選択領域のオブジェクト分割
+選択 > P > Selection
+
+## 面張り
+選択 > F
+
+## 選択オブジェクトの保存
+選択 > Export > Selection Only (左のオプション)
+
+## 面分割
+Ctrl + R
+
+## 法線の反転
+選択 > Faces > Flip Normals
 
 <meta name="keywords" content="*memo_cg.eigen*">
 Eigen
