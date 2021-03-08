@@ -114,6 +114,14 @@ echo ${a[@]}
 echo ${#a[*]}
 ~~~
 
+## dict
+~~~
+declare -A DICT
+DICT["en"]="en_US"
+DICT["ja"]="ja_JP.UTF-8"
+echo ${DICT["ja"]}
+~~~
+
 ## arithmetic
 ~~~
 n=1

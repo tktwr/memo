@@ -179,6 +179,10 @@ $ vim -u NONE
 ### index of keymap
 ~~~
 :help index
+:help CTRL-
+:help c_CTRL-
+:help v_CTRL-
+:help t_CTRL-
 ~~~
 
 ### mappingを確認する
@@ -202,51 +206,48 @@ cfile  | file under the cursor
 <meta name="keywords" content="*memo_vim.nmap*">
 ### normal mode keymap
 
-| Fixed | Key       | Original                  | Map        | New
-| ---   | --------- | ------------------------- | ---------- | ---
-|       | C-A       | add                       |            |
-|       | C-B       | one page scroll up        |            |
-| o!    | C-C       | interrupt                 |            |
-| m!    | C-D       | half page scroll down     | C-B        | one page scroll up
-| m!    | C-E       | one line scroll down      | :only      | expand the current window
-| o!    | C-F       | one page scroll down      |            |
-|       | C-G       | display info              | C-L C-G    | redraw screen, display info
-| m!    | C-H       | h                         | C-W h      | window left
-| o     | C-I       | TAB                       |            |
-| m!    | C-J       | j                         | C-W j      | window down
-| m!    | C-K       | not used                  | C-W k      | window up
-| m!    | C-L       | redraw screen             | C-W l      | window right
-| o     | C-M       | CR                        |            |
-|       | C-N       | j                         |            |
-|       | C-O       | prev in jump list         |            |
-|       | C-P       | k                         | Plugin     | CocList vimcommands
-| m!    | C-Q       | terminal control          | @q         | exec the command in the register q
-| o!    | C-R       | redo                      |            |
-| o     | C-S       | terminal control          |            |
-| o!    | C-T       | prev in tag list          |            |
-|       | C-U       | half page scroll up       | Plugin     | quickhl
-| o!    | C-V       | block visual mode         |            |
-| o!    | C-W       | window command            |            |
-| m!    | C-X       | subtract                  | :close     | delete the current window
-|       | C-Y       | one line scroll up        | Plugin     | quickhl reset
-| o!    | C-Z       | suspend                   |            |
-| m!    | Space     | l                         | Plugin     | whichkey
-| m!    | BS        | h                         | Plugin     | easymotion
-| m!    | Tab       | next in jump list         | Plugin     | nerdtree
-|       | NL        | j                         |            |
-|       | CR        | +                         |            |
-|       | C-[       | ESC                       |            |
-|       | C-]       | :ta                       |            |
-|       | C-W C-X   | exchange windows          |            |
-|       | C-W C-Z   | close the preview window  |            |
-| m!    | C-Left    |                           |            | tabprev
-| m!    | C-Right   |                           |            | tabnext
-| m!    | C-Up      |                           |            | tabedit
-| m!    | C-Down    |                           |            | new terminal
-
-- o: original
-- m: mapped
-- !: fixed
+| Key       | Original                  | Map        | New
+| --------- | ------------------------- | ---------- | ---
+| C-A       | add                       |            | [MyOpenNERDTree]
+| C-B       | one page scroll up        |            | [CocListResume]
+| C-C       | interrupt                 |            | [=]
+| C-D       | half page scroll down     | C-B        | one page scroll up
+| C-E       | one line scroll down      | :only      | expand the current window
+| C-F       | one page scroll down      |            | [=]
+| C-G       | display info              | C-L C-G    | redraw screen, display info
+| C-H       | h                         | C-W h      | window left
+| C-I       | TAB                       |            | [=]
+| C-J       | j                         | C-W j      | window down
+| C-K       | not used                  | C-W k      | window up
+| C-L       | redraw screen             | C-W l      | window right
+| C-M       | CR                        |            | [=]
+| C-N       | j                         |            | [MyTermSendCd]
+| C-O       | prev in jump list         |            | [MyOpenDir]
+| C-P       | k                         |            | [quickhl]
+| C-Q       | terminal control          | @q         | exec the command in the register q
+| C-R       | redo                      |            | [=]
+| C-S       | terminal control          |            | [=]
+| C-T       | prev in tag list          |            | [=]
+| C-U       | half page scroll up       |            | [MyOpenURL]
+| C-V       | block visual mode         |            | [=]
+| C-W       | window command            |            | [=]
+| C-X       | subtract                  | :close     | delete the current window
+| C-Y       | one line scroll up        |            | quickhl reset
+| C-Z       | suspend                   |            | [=]
+| Space     | l                         |            | whichkey
+| BS        | h                         |            | easymotion
+| Tab       | next in jump list         |            | nerdtree
+| NL        | j                         |            | [=]
+| CR        | +                         |            | [=]
+| C-CR      |                           |            | [MyTermSendCmd]
+| C-[       | ESC                       |            | [=]
+| C-]       | :ta                       |            | [=]
+| C-W C-X   | exchange windows          |            | [=]
+| C-W C-Z   | close the preview window  |            | [=]
+| C-Left    |                           |            | tabprev
+| C-Right   |                           |            | tabnext
+| C-Up      |                           |            | tabedit
+| C-Down    |                           |            | new terminal
 
   | Key    | Original                | Map      | New
 --|--------|-------------------------|----------|---
@@ -320,7 +321,7 @@ cfile  | file under the cursor
   | ?      | search backward
   | :      | ex mode
   | ;      | repeat find
-* | ,      | repeat find       | <Leader> | leader
+* | ,      | repeat find
   | .      | repeat
   | <      |
   | >      |
@@ -377,7 +378,12 @@ Command          | Description
 Command | Description
 ---     | ---
 C-W r   | rotate windows downwards/rightwards
-C-W J   | bot window
+C-W R   | rotate windows upwards/leftwards
+C-W K   | move window to top
+C-W J   | move window to bot
+C-W H   | move window to left
+C-W L   | move window to right
+C-W T   | move window to a new tab
 
 <meta name="keywords" content="*memo_vim.resize*">
 ## resize window
@@ -511,6 +517,7 @@ C-W ""       | paste the unnamed register
 ## nerdtree
   | Command          | Description
 --|------------------|---
+  | B                | toggle bookmarks
   | CR               | open
   | o                | open
   | go               | view
