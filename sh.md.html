@@ -120,6 +120,9 @@ declare -A DICT
 DICT["en"]="en_US"
 DICT["ja"]="ja_JP.UTF-8"
 echo ${DICT["ja"]}
+echo ${DICT["de"]}  # return ""
+echo ${DICT["en"]}
+echo ${DICT[""]}    # error
 ~~~
 
 ## arithmetic

@@ -13,7 +13,7 @@ AutoHotKey
 - [KeyList](http://ahkwiki.net/KeyList)
 - [Commands](http://ahkwiki.net/Commands_Category)
 
-## HHK 60 Key
+## HHK 60 Key (AutoHotKey)
 
 *****************************************************************
 * +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
@@ -35,28 +35,6 @@ Windows  | LAlt            | LMeta
 Windows  | LMeta           | LAlt
 Windows  | RMeta           | LWin
 Windows  | RAlt            | RMeta
-Windows  | RShift          | Hankaku/Zenkaku
-
-## Niz 84 Key
-
-*********************************************************************
-* +---+ +---+---+---+---+ +---+---+---+---+ +---+---+---+---+ +---+
-* |ESC| |F1 |F2 |F3 |F4 | |F5 |F6 |F7 |F8 | |F9 |F10|F11|F12| |Del|
-* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
-* | ` | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | - | = |  BS   |Hom|
-* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
-* |Tab  | Q | W | E | R | T | Y | U | I | O | P | [ | ] | \   |PgU|
-* +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+-+-----+---+
-* |Caps   | A | S | D | F | G | H | J | K | L | ; | ' | Enter |PgD|
-* +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+---+
-* |Shift    | Z | X | C | V | B | N | M | , | . | / |Zen  | U |End|
-* +-----+---+---+---+---+---+---+---+-+-+-+-+---+-+-+-+---+---+---+
-* |Ctrl |Fn |Win|Alt|                 |Fn |Alt|App|Ctl| L | D | R |
-* +-----+---+---+---+-----------------+---+---+---+---+---+---+---+
-*********************************************************************
-
-App      | Key             | Description
----------|-----------------|---
 Windows  | RShift          | Hankaku/Zenkaku
 
 <meta name="keywords" content="*memo_my.keymap*">
@@ -83,64 +61,119 @@ Keymap
 <meta name="keywords" content="*memo_my.vim.keymap*">
 <meta name="keywords" content="*memo_my.tips*">
 
-App             | Key                 | Description
----             | ---                 | ---
---- Windows --- |                     |
-Windows         | Alt + `             | 日本語入力 [英語キーボード]
-Windows         | Alt + Tab           | App切り替え
-Windows         | Alt + Shift + Tab   | App切り替え（逆順）
-Windows         | Windows + D         | デスクトップを表示
-Windows         | Windows + Up        | ウィンドウの最大化
-Windows         | Windows + Left      | ウィンドウを左半分に最大化
-Windows         | Windows + Right     | ウィンドウを右半分に最大化
-Windows         | Windows + Shift + S | 範囲を指定してスクリーンショット
---- FuncKey --- |                     |
-                | F1                  | x
-Windows         | F2                  | virtual desktop left
-Windows         | F3                  | virtual desktop right
-Windows         | F4                  | screenshot
-                | F5                  | x
-                | F6                  | x
-                | F7                  | x
-                | F8                  | x
-vim             | F9                  | tabprev
-vim             | F10                 | tabnext
-Windows         | F11                 | toggle maximize / half maximize window
-                | F12                 | x
---- mintty ---  |                     |
-mintty          | C-0                 | scale reset
-mintty          | C--                 | scale -
-mintty          | C-=                 | scale +
---- vim ---     |                     |
-vim.winmove     | C-H                 | window left
-                | C-J                 | window down
-                | C-K                 | window up
-                | C-L                 | window right
-vim.win         | C-E                 | expand the current window
-                | C-X                 | delete the current window
-vim.move        | C-F                 | page down
-                | C-D                 | page up
-vim.other       | C-G                 | redraw screen, display info
-                | C-Q                 | exec the command in the register q
-                | C-A                 | [MyOpenNERDTree]
-                | C-B                 | [CocListResume]
-                | C-N                 | [MyTermSendCd]
-                | C-O                 | [MyOpenDir]
-                | C-U                 | [MyOpenURL]
-                | C-P                 | [quickhl]
-                | C-Y                 | [quickhl reset]
-vim             | Space               | whichkey
-vim             | TAB                 | nerdtree
-vim             | BS                  | easymotion
---- vim ---     |                     |
-vim.term        | C-O                 | terminal out
-vim.term        | i                   | terminal in
-vim.term        | C-Space             | whichkey in terminal
---- vim ---     |                     |
-vim.tab         | LMeta               | toggle maximize / half maximize window
-vim.tab         | Insert              | tabedit
-vim.tab         | Del                 | new terminal
-vim.tab         | RMeta               | tabnext
+App               | Key                 | Description
+---               | ---                 | ---
+[Windows]         |                     |
+Windows           | Alt + `             | 日本語入力 [英語キーボード]
+Windows           | Alt + Tab           | App切り替え
+Windows           | Alt + Shift + Tab   | App切り替え（逆順）
+Windows           | Windows + D         | デスクトップを表示
+Windows           | Windows + Up        | ウィンドウの最大化
+Windows           | Windows + Left      | ウィンドウを左半分に最大化
+Windows           | Windows + Right     | ウィンドウを右半分に最大化
+Windows           | Windows + Shift + S | 範囲を指定してスクリーンショット
+[mintty]          |                     |
+mintty            | C-0                 | scale reset
+mintty            | C--                 | scale -
+mintty            | C-=                 | scale +
+[FuncKey]         |                     |
+                  | F1                  | []
+Windows           | F2                  | virtual desktop left
+Windows           | F3                  | virtual desktop right
+Windows           | F4                  | screenshot
+                  | F5                  | []
+                  | F6                  | []
+                  | F7                  | []
+                  | F8                  | []
+vim               | F9                  | tabprev
+vim               | F10                 | tabnext
+Windows           | F11                 | toggle maximize / half maximize window
+                  | F12                 | []
+[vim]             |                     |
+                  | C-0                 | bot
+                  | C-1                 | top
+                  | C-2                 | [C-@: unable to map]
+                  | C-3                 | minimize
+                  | C-4                 | []
+                  | C-5                 | []
+                  | C-6                 | [C-^: unable to map] edit the alternate file
+                  | C-7                 | maximize x
+                  | C-8                 | maximize xy
+                  | C-9                 | maximize y
+[vim]             |                     |
+vim.winmove       | C-H                 | window left
+                  | C-J                 | window down
+                  | C-K                 | window up
+                  | C-L                 | window right
+vim.win           | C-E                 | expand the current window
+                  | C-X                 | delete the current window
+vim.page          | C-F                 | page down
+                  | C-D                 | page up
+vim.other         | C-Q                 | exec the command in the register q
+                  | C-N                 | [:cn]
+                  | C-P                 | [:cp]
+                  | C-.                 | change cwd
+                  | C-;                 | C-W:
+[vim.my]          |                     |
+                  | C-G                 | [MyRedraw]
+                  | C-O                 | [MyOpen]
+                  | C-Y                 | [MyTermSendCd]
+                  | C-CR                | [MyTermSendCmd]
+                  | C-A                 | [MyMakeLink]
+[vim.plugin]      |                     |
+                  | C-B                 | plugin [CocListResume]
+                  | C-U                 | plugin [quickhl]
+                  | TAB                 | plugin nerdtree
+                  | BS                  | plugin easymotion
+                  | Space               | plugin whichkey
+[vim.term]        |                     |
+                  | C-O                 | terminal out
+                  | i                   | terminal in
+                  | C-Space             | whichkey in terminal
+[vim.tab]         |                     |
+                  | LMeta               | toggle maximize / half maximize window
+                  | Insert              | tabedit
+                  | Del                 | new terminal
+                  | RMeta               | tabnext
+
+Vim next/prev
+=======================================================
+Mode            | Key | Description
+-               | -   | -
+search          | n   | next match
+                | N   | prev match
+diff            | C-N | next diff
+                | C-P | prev diff
+quickfix        | C-N | next error
+                | C-P | prev error
+terminal        | C-N | next history
+                | C-P | prev history
+command mode    | C-N | next history
+                | C-P | prev history
+completion      | C-N | next menu
+                | C-P | prev menu
+                | C-L | expand menu
+                | C-J | next arg
+                | C-K | prev arg
+CocList         | C-J | next
+                | C-K | prev
+
+Vim Interoperability
+=======================================================
+
+SrcWin   | DstWin   | Key   | Description                         |
+---      | ---      | ---   | ---                                 |
+terminal | editor   | e     | edit a file in the editor           |
+terminal | nerdtree | d     | cd PWD to nerdtree                  |
+---      | ---      | ---   | ---                                 |
+nerdtree | editor   | l     | preview                             |
+nerdtree | editor   | CR    | edit                                |
+nerdtree | editor   | Space | edit and close nerdtree             |
+---      | ---      | ---   | ---                                 |
+editor   | nerdtree | Tab   | cd cfile/file to nerdtree           |
+editor   | terminal | C-Y   | cd cfile/file to terminal           |
+editor   | terminal | C-CR  | exec line to terminal               |
+editor   | external | C-O   | open cfile/file to external program |
 
 <meta name="keywords" content="*memo_my.vim.command*">
 Vim Command
@@ -155,30 +188,6 @@ Command         | Description
 :Cfdo           | apply the command '@q' to each file in the quickfix list
 :ClangFormat    | apply clang-format to the current file
 :TabBar         | Tabularize for vertical bars
-
-<meta name="keywords" content="*memo_my.tmux.keymap*">
-Tmux Keymap
-=======================================================
-
-App         | Key                    | Description
----         | ---                    | ---
-tmux        | F1                     | tmux.prefix
-tmux        | F7                     | tmux.toggle left pane width 60/80
-tmux        | F8                     | tmux.maximize pane
-tmux.pane   | M-h                    | pane left
-            | M-j                    | pane down
-            | M-k                    | pane up
-            | M-l                    | pane right
-            | F1 [hjkl]              | move to a pane
-            | F1 [HJKL]              | resize the current pane
-tmux.split  | F1 -                   | hrizontal split pane
-            | F1 `|`                 | vertical split pane
-            | F1 0                   | split 2 panes
-            | F1 9                   | split 3 panes
-            | F1 8                   | split 4 panes
-tmux.open   | F1 r                   | reload ~/.tmux.conf
-            | F1 y                   | yank to the clipboard
-            | F1 p                   | paste from the clipboard
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="markdeep.min.js"></script>
