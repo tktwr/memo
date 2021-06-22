@@ -244,9 +244,10 @@ git ls-remote --tags      # リモートタグ一覧
 <meta name="keywords" content="*memo_git-merge*">
 ## merge
 ~~~
-git merge {branch}      # 指定したブランチを現在のブランチに統合する
-git merge --continue    # after resolving conflicts
-git merge --abort       # cancel
+git merge {branch}          # 指定したブランチを現在のブランチに統合する
+git merge {branch} --no-ff  # always create a merge commit
+git merge --continue        # after resolving conflicts
+git merge --abort           # cancel
 git checkout --ours {file}
 git checkout --theirs {file}
 
@@ -283,7 +284,7 @@ git rebase M
 
 ~~~
 
-### [example] rebase -i {commit} でコミットを１つにまとめる (stash)
+### [example] rebase -i {commit} でコミットを１つにまとめる (squash)
 ~~~
 [master] --C--M
             \
@@ -297,7 +298,7 @@ pick 2
 pick 3
 pick 4
 
-# pick を stash に変更
+# pick を squash に変更
 pick 1
 s 2
 s 3
