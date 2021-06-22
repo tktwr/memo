@@ -240,10 +240,26 @@ $ vim -u NONE
 ## script
 Word   | Description
 ---    | ---
+args   | 
+f-args | args to a function
 q-args | one single value
 cward  | word under the cursor
 cWARD  | word under the cursor
 cfile  | file under the cursor
+
+### autocmd
+- VimEnter
+  - FileType
+  - WinEnter             :new :sp
+    - BufRead            :e
+    - BufEnter
+      - proc modelines
+      - FileType
+        - BufWinEnter
+        - BufWinLeave
+    - BufLeave
+  - WinLeave
+- VimLeave
 
 <meta name="keywords" content="*memo_vim.keymap*">
 ## keymap
@@ -251,48 +267,55 @@ cfile  | file under the cursor
 <meta name="keywords" content="*memo_vim.nmap*">
 ### normal mode keymap
 
-| Key       | Original                  | Map        | New
-| --------- | ------------------------- | ---------- | ---
-| C-A       | add                       |            | [MyOpenNERDTree]
-| C-B       | one page scroll up        |            | [CocListResume]
-| C-C       | interrupt                 |            | [=]
-| C-D       | half page scroll down     | C-B        | one page scroll up
-| C-E       | one line scroll down      | :only      | expand the current window
-| C-F       | one page scroll down      |            | [=]
-| C-G       | display info              | C-L C-G    | redraw screen, display info
-| C-H       | h                         | C-W h      | window left
-| C-I       | TAB                       |            | [=]
-| C-J       | j                         | C-W j      | window down
-| C-K       | not used                  | C-W k      | window up
-| C-L       | redraw screen             | C-W l      | window right
-| C-M       | CR                        |            | [=]
-| C-N       | j                         |            | [MyTermSendCd]
-| C-O       | prev in jump list         |            | [MyOpenDir]
-| C-P       | k                         |            | [quickhl]
-| C-Q       | terminal control          | @q         | exec the command in the register q
-| C-R       | redo                      |            | [=]
-| C-S       | terminal control          |            | [=]
-| C-T       | prev in tag list          |            | [=]
-| C-U       | half page scroll up       |            | [MyOpenURL]
-| C-V       | block visual mode         |            | [=]
-| C-W       | window command            |            | [=]
-| C-X       | subtract                  | :close     | delete the current window
-| C-Y       | one line scroll up        |            | quickhl reset
-| C-Z       | suspend                   |            | [=]
-| Space     | l                         |            | whichkey
-| BS        | h                         |            | easymotion
-| Tab       | next in jump list         |            | nerdtree
-| NL        | j                         |            | [=]
-| CR        | +                         |            | [=]
-| C-CR      |                           |            | [MyTermSendCmd]
-| C-[       | ESC                       |            | [=]
-| C-]       | :ta                       |            | [=]
-| C-W C-X   | exchange windows          |            | [=]
-| C-W C-Z   | close the preview window  |            | [=]
-| C-Left    |                           |            | tabprev
-| C-Right   |                           |            | tabnext
-| C-Up      |                           |            | tabedit
-| C-Down    |                           |            | new terminal
+| Key     | Original                  | Map                     | New
+| ---     | ------------------------- | ----------              | ---
+| C-A     | add                       | :MyMakeLink             |
+| C-B     | one page scroll up        | :Bmk bmk.txt            |
+| C-C     | interrupt                 |                         | ==
+| C-D     | half page scroll down     | C-B                     | one page scroll up
+| C-E     | one line scroll down      | :WinBufHistClear        |
+| C-F     | one page scroll down      |                         | ==
+| C-G     | display info              | :MyRedraw               |
+| C-H     | h                         | C-W h                   | window left
+| C-I     | TAB                       | :WinBufHistPrint        |
+| C-J     | j                         | C-W w                   | window next
+| C-K     | not used                  | C-W W                   | window prev
+| C-L     | redraw screen             | C-W l                   | window right
+| C-M     | CR                        |                         | ==
+| C-N     | j                         | :cn                     |
+| C-O     | prev in jump list         | :WinBufHistPop          |
+| C-P     | k                         | :cp                     |
+| C-Q     | terminal control          | @q                      | exec the command in the register q
+| C-R     | redo                      |                         | ==
+| C-S     | terminal control          | :Bmk scratchpad.md.html |
+| C-T     | prev in tag list          |                         | ==
+| C-U     | half page scroll up       | quickhl                 |
+| C-V     | block visual mode         |                         | ==
+| C-W     | window command            |                         | ==
+| C-X     | subtract                  | :close                  | close the current window
+| C-Y     | one line scroll up        | :call MyIDESendCdE2T()  |
+| C-Z     | suspend                   |                         | ==
+| NL      | j                         |                         | ==
+| Space   | l                         | whichkey                |
+| Tab     | next in jump list         | :MyNERDTreeToggle       |
+| BS      | h                         | :MyTagbarToggle         |
+| CR      | +                         |                         | ==
+| C-CR    |                           | :call BmkOpenThis()     |
+| S-CR    |                           | :call BmkKeyCRThis()    |
+| C-;     |                           | C-W :                   | command mode
+| C-.     |                           | :MyLcdHere              |
+| C-[     | ESC                       |                         | ==
+| C-]     | :ta                       | g C-]                   | ==
+| C-W C-X | exchange windows          |                         | ==
+| C-W C-Z | close the preview window  |                         | ==
+| PageUp  |                           | :tabprev                |
+| PageDown|                           | :tabnext                |
+| C-Left  |                           | :tabprev                |
+| C-Right |                           | :tabnext                |
+| C-Up    |                           | :tabedit                |
+| C-Down  |                           | :MyTerm                 |
+| Insert  |                           | :tabedit                |
+| Del     |                           | :MyTabClosePrev         |
 
   | Key    | Original                | Map      | New
 --|--------|-------------------------|----------|---
@@ -420,10 +443,24 @@ Command          | Description
 :help CTRL-W_r
 ~~~
 
+## move cursor to a window
+Command | Description
+---     | ---
+C-W t   | move cursor to top-left window
+C-W p   | move cursor to previous window
+C-W h   | move cursor to left window
+C-W j   | move cursor to below window
+C-W k   | move cursor to above window
+C-W l   | move cursor to right window
+C-W w   | move cursor to next window
+C-W W   | move cursor to prev window
+
+## move window
 Command | Description
 ---     | ---
 C-W r   | rotate windows downwards/rightwards
 C-W R   | rotate windows upwards/leftwards
+C-W x   | exchange window
 C-W K   | move window to top
 C-W J   | move window to bot
 C-W H   | move window to left
@@ -785,11 +822,12 @@ P | Q                    | quit
 Visual Studio Code
 =======================================================
 ## plugin
-- vscodevim
-- shell launcher
-- Git History
+- Vim
 - C/C++
 - Python
+- glTF Tools
+- Git History
+- Shell launcher
 
 ## keymap
 Key                  | Description

@@ -9,6 +9,11 @@
 <meta name="keywords" content="*memo_prog.make*">
 Makefile
 =======================================================
+## include
+~~~
+-include local.mk
+~~~
+
 ## if
 ~~~
 ifeq ($(VAR),var)
@@ -38,6 +43,13 @@ CMakeLists.txt
 ## module list
 ~~~
 cmake --help-module-list
+~~~
+
+## include
+~~~
+if(EXISTS ${PROJECT_SOURCE_DIR}/local.cmake)
+    include(${PROJECT_SOURCE_DIR}/local.cmake)
+endif()
 ~~~
 
 ## 環境変数

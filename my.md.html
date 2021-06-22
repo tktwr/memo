@@ -61,80 +61,83 @@ Keymap
 <meta name="keywords" content="*memo_my.vim.keymap*">
 <meta name="keywords" content="*memo_my.tips*">
 
-App               | Key                 | Description
----               | ---                 | ---
-[Windows]         |                     |
-Windows           | Alt + `             | 日本語入力 [英語キーボード]
-Windows           | Alt + Tab           | App切り替え
-Windows           | Alt + Shift + Tab   | App切り替え（逆順）
-Windows           | Windows + D         | デスクトップを表示
-Windows           | Windows + Up        | ウィンドウの最大化
-Windows           | Windows + Left      | ウィンドウを左半分に最大化
-Windows           | Windows + Right     | ウィンドウを右半分に最大化
-Windows           | Windows + Shift + S | 範囲を指定してスクリーンショット
-[mintty]          |                     |
-mintty            | C-0                 | scale reset
-mintty            | C--                 | scale -
-mintty            | C-=                 | scale +
-[FuncKey]         |                     |
-                  | F1                  | []
-Windows           | F2                  | virtual desktop left
-Windows           | F3                  | virtual desktop right
-Windows           | F4                  | screenshot
-                  | F5                  | []
-                  | F6                  | []
-                  | F7                  | []
-                  | F8                  | []
-vim               | F9                  | tabprev
-vim               | F10                 | tabnext
-Windows           | F11                 | toggle maximize / half maximize window
-                  | F12                 | []
-[vim]             |                     |
-                  | C-0                 | bot
-                  | C-1                 | top
-                  | C-2                 | [C-@: unable to map]
-                  | C-3                 | minimize
-                  | C-4                 | []
-                  | C-5                 | []
-                  | C-6                 | [C-^: unable to map] edit the alternate file
-                  | C-7                 | maximize x
-                  | C-8                 | maximize xy
-                  | C-9                 | maximize y
-[vim]             |                     |
-vim.winmove       | C-H                 | window left
-                  | C-J                 | window down
-                  | C-K                 | window up
-                  | C-L                 | window right
-vim.win           | C-E                 | expand the current window
-                  | C-X                 | delete the current window
-vim.page          | C-F                 | page down
-                  | C-D                 | page up
-vim.other         | C-Q                 | exec the command in the register q
-                  | C-N                 | [:cn]
-                  | C-P                 | [:cp]
-                  | C-.                 | change cwd
-                  | C-;                 | C-W:
-[vim.my]          |                     |
-                  | C-G                 | [MyRedraw]
-                  | C-O                 | [MyOpen]
-                  | C-Y                 | [MyTermSendCd]
-                  | C-CR                | [MyTermSendCmd]
-                  | C-A                 | [MyMakeLink]
-[vim.plugin]      |                     |
-                  | C-B                 | plugin [CocListResume]
-                  | C-U                 | plugin [quickhl]
-                  | TAB                 | plugin nerdtree
-                  | BS                  | plugin easymotion
-                  | Space               | plugin whichkey
-[vim.term]        |                     |
-                  | C-O                 | terminal out
-                  | i                   | terminal in
-                  | C-Space             | whichkey in terminal
-[vim.tab]         |                     |
-                  | LMeta               | toggle maximize / half maximize window
-                  | Insert              | tabedit
-                  | Del                 | new terminal
-                  | RMeta               | tabnext
+App                | Key                 | Description
+---                | ---                 | ---
+[Windows]          |                     |
+Windows            | Alt + `             | 日本語入力 [英語キーボード]
+Windows            | Alt + Tab           | App切り替え
+Windows            | Alt + Shift + Tab   | App切り替え（逆順）
+Windows            | Windows + D         | デスクトップを表示
+Windows            | Windows + Up        | ウィンドウの最大化
+Windows            | Windows + Left      | ウィンドウを左半分に最大化
+Windows            | Windows + Right     | ウィンドウを右半分に最大化
+Windows            | Windows + Shift + S | 範囲を指定してスクリーンショット
+[mintty]           |                     |
+mintty             | C-0                 | scale reset
+mintty             | C--                 | scale -
+mintty             | C-=                 | scale +
+[AutoHotKey]       |                     |
+autohotkey         | LMeta               | toggle maximize / half maximize window (F11)
+autohotkey         | LAlt                | LAlt
+autohotkey         | RAlt                | LWin
+autohotkey         | RMeta               | tabnext (F10)
+autohotkey         | RShift              | Hankaku/Zenkaku
+[FuncKey]          |                     |
+                   | F1                  | []
+autohotkey         | F2                  | virtual desktop left
+autohotkey         | F3                  | virtual desktop right
+autohotkey         | F4                  | screenshot
+                   | F5                  | []
+                   | F6                  | []
+                   | F7                  | []
+                   | F8                  | []
+autohotkey         | F9                  | MsgBox
+autohotkey         | F10                 | tabnext
+autohotkey         | F11                 | toggle maximize / half maximize window
+                   | F12                 | []
+[vim]              |                     |
+                   | C-0                 | move to bottom
+                   | C-1                 | move to top
+                   | C-2                 | buffer exchange with win 2
+                   | C-3                 | buffer exchange with win 3
+                   | C-4                 | buffer exchange with win 4
+                   | C-5                 | buffer exchange with win 5
+                   | C-6                 | []
+                   | C-7                 | maximize x
+                   | C-8                 | maximize xy
+                   | C-9                 | maximize y
+[vim]              |                     |
+                   | C-H                 | window left
+                   | C-J                 | window down
+                   | C-K                 | window up
+                   | C-L                 | window right
+[vim.my]           |                     |
+                   | C-F                 | page down
+                   | C-D                 | page up
+                   | C-Q                 | exec the command in the register q
+                   | C-B                 | :Bmk bmk
+                   | C-X                 | :close
+                   | C-E                 | :only
+                   | C-P                 | :cp
+                   | C-N                 | :cn
+                   | C-Y                 | [MyTermSendCd]
+                   | C-A                 | [MyMakeLink]
+                   | C-.                 | [MyLcdHere]
+                   | TAB                 | :MyNERDTreeToggle
+                   | BS                  | :MyTagbarToggle
+                   | CR                  | [MyEdit]
+                   | C-CR                | [MyNERDTreeOpen]
+                   | S-CR                | [MyOpen]
+                   | C-U                 | plugin [quickhl]
+                   | C-;                 | C-W:
+                   | C-G                 | [:MyRedraw]
+                   | Insert              | :tabedit
+                   | Del                 | :tabclose
+                   | Space               | plugin whichkey
+[vim.term]         |                     |
+                   | C-O                 | terminal out
+                   | i                   | terminal in
+                   | C-Space             | whichkey in terminal
 
 Vim next/prev
 =======================================================
@@ -161,33 +164,40 @@ CocList         | C-J | next
 Vim Interoperability
 =======================================================
 
-SrcWin   | DstWin   | Key   | Description                         |
----      | ---      | ---   | ---                                 |
-terminal | editor   | e     | edit a file in the editor           |
-terminal | nerdtree | d     | cd PWD to nerdtree                  |
----      | ---      | ---   | ---                                 |
-nerdtree | editor   | l     | preview                             |
-nerdtree | editor   | CR    | edit                                |
-nerdtree | editor   | Space | edit and close nerdtree             |
----      | ---      | ---   | ---                                 |
-editor   | nerdtree | Tab   | cd cfile/file to nerdtree           |
-editor   | terminal | C-Y   | cd cfile/file to terminal           |
-editor   | terminal | C-CR  | exec line to terminal               |
-editor   | external | C-O   | open cfile/file to external program |
+SrcWin   | DstWin   | Key    | Description                         |
+---      | ---      | ---    | ---                                 |
+terminal | editor   | ,e     | edit a file in the editor           |
+terminal | nerdtree | d      | lcd PWD                             |
+terminal | nerdtree | D      | lcd PWD in nerdtree                 |
+---      | ---      | ---    | ---                                 |
+nerdtree | editor   | l      | preview                             |
+nerdtree | editor   | i      | split                               |
+nerdtree | editor   | [2345] | edit in window nr                   |
+nerdtree | editor   | CR     | edit                                |
+nerdtree | editor   | Space  | edit and close nerdtree             |
+nerdtree |          | C-.    | cd to the current entry             |
+---      | ---      | ---    | ---                                 |
+editor   | nerdtree | Tab    | toggle nerdtree                     |
+editor   | tagbar   | BS     | toggle tagbar                       |
+editor   |          | CR     | edit cfile                          |
+editor   | external | C-CR   | open cfile/file in external program |
+editor   | nerdtree | S-CR   | cd cfile/file in nerdtree           |
+editor   | terminal | C-Y    | cd cfile/file in terminal           |
+editor   |          | C-.    | cd to the current file              |
 
 <meta name="keywords" content="*memo_my.vim.command*">
 Vim Command
 =======================================================
-Command         | Description
----             | ---
-:Ggrep {word}   | Ggrep the word
-:GgrepHere      | Ggrep the word under the cursor
-:VimGrep {word} | vimgrep the word
-:VimGrepHere    | vimgrep the word under the cursor
-:Cdo            | apply the command '@q' to each entry in the quickfix list
-:Cfdo           | apply the command '@q' to each file in the quickfix list
-:ClangFormat    | apply clang-format to the current file
-:TabBar         | Tabularize for vertical bars
+Command                 | Description
+---                     | ---
+:MyGgrep {word} {files} | Ggrep the word
+:MyGgrepHere {files}    | Ggrep the word under the cursor
+:MyGrep {word} {files}  | vimgrep the word
+:MyGrepHere {files}     | vimgrep the word under the cursor
+:MyCdo                  | apply the command '@q' to each entry in the quickfix list
+:MyCfdo                 | apply the command '@q' to each file in the quickfix list
+:MyClangFormat          | apply clang-format to the current file
+:MyTabBar               | Tabularize for vertical bars
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="markdeep.min.js"></script>
