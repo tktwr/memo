@@ -425,14 +425,20 @@ cfile  | file under the cursor
 
 <meta name="keywords" content="*memo_vim.commands*">
 ## commands
-Command          | Description
------------------|---
-:[N]b[uffer]     | edit buffer [N] from the buffer list
-:ls              | show all buffers
-:%bdelete        | delete all buffers
-:sp[lit]         | horizontally split the current window
-:vsp[lit]        | vertically split the current window
-:noh[lsearch]    | stop the highlighting
+Command            | Description
+-----------------  | ---
+:ls                | list all buffers
+:[N]b[uffer] [N]   | edit buffer [N] from the buffer list
+:[N]bun[load] [N]  | unload buffer [N], remain in the buffer list
+:[N]bd[elete] [N]  | unload buffer [N], delete it from the buffer list
+:[N]bw[ipeout] [N] | really delete buffer [N]
+:%bdelete          | unload all buffers, delete them from the buffer list
+:%bwipeout         | really delete all buffers
+:sp[lit]           | horizontally split the current window
+:vsp[lit]          | vertically split the current window
+:noh[lsearch]      | stop the highlighting
+:enew              | new unnamed buffer
+:new               | new window and new unnamed buffer
 
 ## window
 ~~~
