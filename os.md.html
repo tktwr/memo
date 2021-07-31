@@ -280,20 +280,20 @@ XferCommand = /c/Windows/System32/curl -C - -f %u > %o
 
 ## pacman
 
-Option              | 説明
---------------------|-----------------
--S -h               | help
--Syu                | update database & update packages
--Sy                 | update database
--Su                 | update packages
--S package          | install
--R package          | uninstall
--Sg [package group] | print package group
--Si [package]       | print information
--Sl                 | print list
--Ss [pattern]       | search packages
--Qi package         | info of the package
--Ql package         | list files in the package
+Option                | 説明
+--------------------  | -----------------
+-S -h                 | help
+-Syu                  | update database & update packages
+-Sy                   | update database
+-Su                   | update packages
+-S package            | install
+-R package            | uninstall
+-Ss [pattern]         | search packages
+-Sg [package group]   | print package group
+-Si [package]         | print information
+-Sl                   | print list
+-Qi installed_package | info of the package
+-Ql installed_package | list files in the package
 
 ## disable POSIX-to-Windows path conversion
 以下のいずれかの方法がある
