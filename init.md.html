@@ -19,13 +19,31 @@ Setup (bash/vim/python)
 - cmake
 - python3-64bit
 - nodejs
-- vs2019
-- vscode
-- android studio
 
-### linux
 ~~~
-apt install nodejs npm
+pacman -S vim winpty
+~~~
+
+### MX linux
+~~~
+sudo apt install vim
+sudo apt install nodejs npm
+~~~
+
+### Manjaro linux
+~~~
+sudo pacman -Syu
+sudo pacman -S virtualbox-guest-utils
+sudo pacman -S vim
+sudo pacman -S nodejs npm
+~~~
+
+## 日本語フォルダを英語フォルダに変更
+
+### Manjaro linux
+~~~
+sudo pacman -S xdg-user-dirs-gtk
+LC_ALL=C xdg-user-dirs-gtk-update
 ~~~
 
 ## symbolic links (admin on command prompt)
@@ -39,22 +57,24 @@ apt install nodejs npm
 - GoogleDrive
 - Dropbox
 
+- .my.common
+
 ## bash
 ~~~
-pacman -S vim winpty
 ./make.sh --init
+
 vim .my/hostname
 vim .my/pythonrc
 vim .gitconfig
+
 ./make.sh --all
 ~~~
 
 ## python
 ~~~
 mypython-venv-create torch
-mypip-upgrade
-mypip-install-vim
-mypip-install-torch
+upgrade-pip.sh
+install-python-modules.sh
 ~~~
 
 ## vim
@@ -71,28 +91,9 @@ $MY_VIM/coc_data/win   (windows)
 ~/.config/coc          (linux)
 ~~~
 
-<meta name="keywords" content="*memo_init.colors*">
-Settings 256 colors for vim, tmux, mintty
-=======================================================
-## .minttyrc
+### coc install
 ~~~
-Term=xterm-256color
-~~~
-
-## .tmux.conf
-~~~
-set -g default-terminal "xterm-256color"
-~~~
-
-## .vimrc
-~~~
-set termguicolors
-set t_Co=256
-~~~
-
-## exec tmux with 256 colors
-~~~
-$ tmux -2
+:MyCocInstall
 ~~~
 
 <meta name="keywords" content="*memo_init.install*">
@@ -163,55 +164,6 @@ choco install -y meshlab fsviewer windirstat
 choco install -y neovim
 ~~~
 
-## MSYS2
-~~~
-pacman -S winpty
-pacman -S vim
-pacman -S tmux
-pacman -S ctags
-pacman -S fzy
-pacman -S zip unzip
-
-pacman -S base-devel
-
-pacman -S git
-pacman -S subversion
-pacman -S vimpager
-pacman -S global
-pacman -S man-pages-posix
-pacman -S bc
-pacman -S python
-pacman -S vifm
-
-pacman -S mingw-w64-x86_64-toolchain
-pacman -S mingw-w64-x86_64-clang
-pacman -S mingw-w64-x86_64-cmake
-pacman -S mingw-w64-x86_64-universal-ctags-git
-
-pacman -S mingw-w64-x86_64-glfw
-pacman -S mingw-w64-x86_64-glew
-pacman -S mingw-w64-x86_64-freeglut
-pacman -S mingw-w64-x86_64-glm
-pacman -S mingw-w64-x86_64-opencv
-
-pacman -S mingw-w64-x86_64-python3-pip
-pacman -S mingw-w64-x86_64-python2-pip
-pacman -S mingw-w64-x86_64-imagemagick
-pacman -S mingw-w64-x86_64-gnuplot
-pacman -S mingw-w64-x86_64-graphviz
-
-pacman -S mingw-w64-x86_64-qpdf
-pacman -S mingw-w64-x86_64-ghostscript
-~~~
-
-<!--
-## Not Install
-~~~
-pacman -S msys2-devel
-pacman -S mingw-w64-i686-toolchain
-~~~
--->
-
 <!--
 ## Cygwin
 ~~~
@@ -219,71 +171,6 @@ cygwin
 - vim lv diff patch gnuplot bc make curl
 - clang git git-svn subversion man-pages-posix doxygen
 - ctags cmake
-~~~
--->
-
-## MX Linux
-~~~
-sudo apt install vim
-sudo apt install vim-gtk3
-sudo apt install vifm
-sudo apt install universal-ctags
-sudo apt install cmake
-sudo apt install clang
-sudo apt install clang-tools-7
-sudo apt install python3-venv
-sudo apt install python3-dev
-sudo apt install nodejs npm
-sudo apt install fzf
-~~~
-
-## Termux
-~~~
-pkg install git
-pkg install vim
-pkg install tmux
-pkg install ncurses-utils   # tput
-pkg install util-linux      # column
-pkg install iconv
-pkg install ctags
-pkg install diffutils
-pkg install clang
-pkg install cmake
-pkg install python
-pkg install vim-python
-pkg install openssh
-~~~
-
-## Pip
-~~~
-pip install wheel
-pip install python-language-server
-pip install pylint
-pip install flake8
-
-pip install opencv-python
-pip install matplotlib
-pip install numpy
-pip install scipy
-pip install sklearn
-pip install parse
-pip install tensorboard
-# pytorch with CUDA 10.2
-pip install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
-~~~
-
-<!--
-## Conda
-~~~
-conda install numpy
-conda install opencv
-conda install matplotlib
-conda install scikit-image
-conda install scikit-learn
-conda install pillow
-conda install json5
-conda install python-graphviz graphviz
-#conda install -c conda-forge opencv
 ~~~
 -->
 

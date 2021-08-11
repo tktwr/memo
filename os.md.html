@@ -284,8 +284,6 @@ Option                | 説明
 --------------------  | -----------------
 -S -h                 | help
 -Syu                  | update database & update packages
--Sy                   | update database
--Su                   | update packages
 -S package            | install
 -R package            | uninstall
 -Ss [pattern]         | search packages
@@ -294,6 +292,14 @@ Option                | 説明
 -Sl                   | print list
 -Qi installed_package | info of the package
 -Ql installed_package | list files in the package
+
+## paccache
+
+最新の３つのバージョンを残してパッケージのキャッシュを削除
+
+~~~
+paccache -r
+~~~
 
 ## disable POSIX-to-Windows path conversion
 以下のいずれかの方法がある

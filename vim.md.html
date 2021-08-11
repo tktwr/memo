@@ -1,0 +1,608 @@
+<meta vim:set syntax=markdown:>
+<meta charset="utf-8">
+<link rel="stylesheet" href="default.css">
+
+<meta name="keywords" content="*memo_vi*">
+<meta name="keywords" content="*memo_vim*">
+**Vim**
+
+vim
+=======================================================
+## basic
+
+### スタートアップ時間計測
+~~~
+$ vim -c "q" --startuptime log.txt
+~~~
+
+### vimrcを読み込まずに起動する
+~~~
+$ vim -u NONE
+~~~
+
+### エラーメッセージを再表示
+~~~
+:messages
+~~~
+
+### index of keymap
+~~~
+:help index
+:help CTRL-
+:help c_CTRL-
+:help v_CTRL-
+:help t_CTRL-
+~~~
+
+### mappingを確認する
+~~~
+:map <C-A>
+:verbose imap <tab>
+~~~
+
+<meta name="keywords" content="*memo_vim.script*">
+## script
+Word   | Description
+---    | ---
+args   | 
+f-args | args to a function
+q-args | one single value
+cward  | word under the cursor
+cWARD  | word under the cursor
+cfile  | file under the cursor
+
+### autocmd
+- VimEnter
+  - FileType
+  - WinEnter             :new :sp
+    - BufRead            :e
+    - BufEnter
+      - proc modelines
+      - FileType
+        - BufWinEnter
+        - BufWinLeave
+    - BufLeave
+  - WinLeave
+- VimLeave
+
+<meta name="keywords" content="*memo_vim.keymap*">
+## keymap
+
+<meta name="keywords" content="*memo_vim.nmap*">
+### normal mode keymap
+
+| Key     | Original                  | Map                     | New
+| ---     | ------------------------- | ----------              | ---
+| C-A     | add                       | :MyMakeLink             |
+| C-B     | one page scroll up        | :Bmk bmk.txt            |
+| C-C     | interrupt                 |                         | ==
+| C-D     | half page scroll down     | C-B                     | one page scroll up
+| C-E     | one line scroll down      | :WinBufHistClear        |
+| C-F     | one page scroll down      |                         | ==
+| C-G     | display info              | :MyRedraw               |
+| C-H     | h                         | C-W h                   | window left
+| C-I     | TAB                       | :WinBufHistPrint        |
+| C-J     | j                         | C-W w                   | window next
+| C-K     | not used                  | C-W W                   | window prev
+| C-L     | redraw screen             | C-W l                   | window right
+| C-M     | CR                        |                         | ==
+| C-N     | j                         | :cn                     |
+| C-O     | prev in jump list         | :WinBufHistPop          |
+| C-P     | k                         | :cp                     |
+| C-Q     | terminal control          | @q                      | exec the command in the register q
+| C-R     | redo                      |                         | ==
+| C-S     | terminal control          | :Bmk scratchpad.md.html |
+| C-T     | prev in tag list          |                         | ==
+| C-U     | half page scroll up       | quickhl                 |
+| C-V     | block visual mode         |                         | ==
+| C-W     | window command            |                         | ==
+| C-X     | subtract                  | :close                  | close the current window
+| C-Y     | one line scroll up        | :call MyIDESendCdE2T()  |
+| C-Z     | suspend                   |                         | ==
+| NL      | j                         |                         | ==
+| Space   | l                         | whichkey                |
+| Tab     | next in jump list         | :MyNERDTreeToggle       |
+| BS      | h                         | :MyTagbarToggle         |
+| CR      | +                         |                         | ==
+| C-CR    |                           | :call BmkOpenThis()     |
+| S-CR    |                           | :call BmkKeyCRThis()    |
+| C-;     |                           | C-W :                   | command mode
+| C-.     |                           | :MyLcdHere              |
+| C-[     | ESC                       |                         | ==
+| C-]     | :ta                       | g C-]                   | ==
+| C-W C-X | exchange windows          |                         | ==
+| C-W C-Z | close the preview window  |                         | ==
+| PageUp  |                           | :tabprev                |
+| PageDown|                           | :tabnext                |
+| C-Left  |                           | :tabprev                |
+| C-Right |                           | :tabnext                |
+| C-Up    |                           | :tabedit                |
+| C-Down  |                           | :MyTerm                 |
+| Insert  |                           | :tabedit                |
+| Del     |                           | :MyTabClosePrev         |
+
+  | Key    | Original                | Map      | New
+--|--------|-------------------------|----------|---
+  | a      | add
+* | b      | backward
+  | c      | change
+  | d      | delete
+* | e      | end
+  | f      | find
+  | g      | g commands
+  | h      | move left
+  | i      | insert
+  | j      | move down
+  | k      | move up
+  | l      | move right
+  | m      | mark
+  | n      | serch next
+  | o      | insert
+  | p      | put
+  | q      | record
+  | r      | replace
+  | s      | substitute
+  | t      | find till
+  | u      | undo
+  | v      | visual mode
+  | w      | word
+  | x      | remove
+  | y      | yank
+  | z      | z commands
+  | A      | add
+* | B      | backward
+  | C      | change
+  | D      | delete
+* | E      | end
+  | F      | find
+  | G      | goto
+  | H      | home
+  | I      | insert
+  | J      | join
+  | K      | keyword
+  | L      | last
+  | M      | middle
+  | N      | search previous
+  | O      | insert
+  | P      | put
+  | Q      | ex mode           | | quit
+  | R      | replace
+* | S      | substitute
+  | T      | find till
+  | U      | undo
+  | V      | visual mode
+* | W      | word
+* | X      | remove
+* | Y      | yanc
+* | Z      |
+* | -      | move previous line
+* | +      | move next line
+* | _      | move next line
+* | =      | format text
+* | [      |
+* | ]      |
+* | {      |
+* | }      |
+  | "      | register
+  | '      | jump to the first CHAR on the line with a mark | ``` | jump to a mark
+  | ```    | jump to a mark
+  | ~      | switch case
+* | `|`    |
+  | \      |
+  | /      | search forward
+  | ?      | search backward
+  | :      | ex mode
+  | ;      | repeat find
+* | ,      | repeat find
+  | .      | repeat
+  | <      |
+  | >      |
+
+- *: not oftenly used commands for me (candidates for remapping)
+
+<meta name="keywords" content="*memo_vim.vmap*">
+### visual mode keymap
+
+  | Key    | Original                | Map      | New
+--|--------|-------------------------|----------|---
+  | C      |                         |          | nerd commenter
+
+<meta name="keywords" content="*memo_vim.imap*">
+### insert mode keymap
+
+  | Key     | Original                | Map      | New
+--|---------|-------------------------|----------|---
+  | C-A     |                         | Home     | the begining of the line
+  | C-E     |                         | End      | the end of the line
+  | C-B     |                         | Left     | move left
+  | C-F     |                         | Right    | move right
+  | C-D     |                         | Del      | delete
+  | C-P     | prev match
+  | C-N     | next match
+  | C-X C-P | prev completion
+  | C-X C-N | next completion
+  | C-X C-F | file completion
+  | C-X C-I | completion of keywords in the current and included files
+  | C-X C-D | completion of definitions or macros
+  | C-X C-] | completion of tags
+  | C-J     |                         |          | skk mode
+
+<meta name="keywords" content="*memo_vim.commands*">
+## commands
+Command            | Description
+-----------------  | ---
+:ls                | list all buffers
+:[N]b[uffer] [N]   | edit buffer [N] from the buffer list
+:[N]bun[load] [N]  | unload buffer [N], remain in the buffer list
+:[N]bd[elete] [N]  | unload buffer [N], delete it from the buffer list
+:[N]bw[ipeout] [N] | really delete buffer [N]
+:%bdelete          | unload all buffers, delete them from the buffer list
+:%bwipeout         | really delete all buffers
+:sp[lit]           | horizontally split the current window
+:vsp[lit]          | vertically split the current window
+:noh[lsearch]      | stop the highlighting
+:enew              | new unnamed buffer
+:new               | new window and new unnamed buffer
+
+## window
+~~~
+:above help
+:below help
+:top help
+:bot help
+:help CTRL-W_r
+~~~
+
+## move cursor to a window
+Command | Description
+---     | ---
+C-W t   | move cursor to top-left window
+C-W p   | move cursor to previous window
+C-W h   | move cursor to left window
+C-W j   | move cursor to below window
+C-W k   | move cursor to above window
+C-W l   | move cursor to right window
+C-W w   | move cursor to next window
+C-W W   | move cursor to prev window
+
+## move window
+Command | Description
+---     | ---
+C-W r   | rotate windows downwards/rightwards
+C-W R   | rotate windows upwards/leftwards
+C-W x   | exchange window
+C-W K   | move window to top
+C-W J   | move window to bot
+C-W H   | move window to left
+C-W L   | move window to right
+C-W T   | move window to a new tab
+
+<meta name="keywords" content="*memo_vim.resize*">
+## resize window
+Command               | Description
+----------------------|---
+:res[ize] -N          | decrease window height
+:res[ize] +N          | increase window height
+:res[ize]  N          | set window height
+:vertical res[ize] -N | decrease window width
+:vertical res[ize] +N | increase window width
+:vertical res[ize]  N | set window width
+
+<meta name="keywords" content="*memo_vim.record*">
+## record
+Key | Description
+----|---
+qq  | start recording into register 'q'
+q   | end recording
+@q  | execute the contents of register 'q'
+
+<meta name="keywords" content="*memo_vim.encryption*">
+## encryption
+Command           | Description
+------------------|---
+:set cm=blowfish2 | set an encryption method
+:X                | set a new key
+:set key=         | unset a key
+
+### write as an encrypted file
+~~~
+" set an encryption key
+:X
+:w
+~~~
+
+### write as a normal file
+~~~
+" unset an encryption key
+:set key=
+:w
+~~~
+
+<meta name="keywords" content="*memo_vim.grep*">
+<meta name="keywords" content="*memo_vim.vimgrep*">
+## vimgrep
+
+### サブディレクトリの検索
+~~~
+:vimgrep WORD **/*.h **/*.cpp
+~~~
+
+<meta name="keywords" content="*memo_vim.diff*">
+## diff
+
+Command          | Description
+-----------------|---
+[c               | jump to the previous change
+]c               | jump to the next change
+[count]do        | :diffget
+[count]dp        | :diffput
+:diffupdate      | update
+
+<!--
+## netrw
+
+Command          | Description
+-----------------|---
+i                | 表示形式変更
+< cr >           | ファイルを開く
+o                | ウィンドウを水平に分割してファイルを開く
+v                | ウィンドウを垂直に分割してファイルを開く
+P                | 前回のウィンドウでファイルを開く
+p                | プレビュー
+-->
+
+<meta name="keywords" content="*memo_vim.term*">
+## terminal
+
+Command      | Description
+-------------|---
+:term [bash] | start terminal
+C-D          | end terminal
+C-W C-W      | next window
+C-W :        | Ex command
+C-W N        | terminal-normal mode
+i            | terminal mode
+C-W "{reg}   | paste register {reg}
+C-W ""       | paste the unnamed register
+
+<meta name="keywords" content="*memo_vim.plugin*">
+<meta name="keywords" content="*memo_vim.vim-plug*">
+## vim-plug
+  | Command          | Description
+--|------------------|---
+  | :PlugUpgrade     | upgrade vim-plug itself
+  | :PlugInstall     | install plugins
+  | :PlugUpdate      | update plugins
+
+<meta name="keywords" content="*memo_vim.fugitive*">
+## fugitive
+  | Command          | Description
+--|------------------|---
+  | -                | toggle stage / unstage
+  | X                | discard the change
+  | D                | diff
+  | R                | reload the status buffer
+
+### git add --patch
+- :Gdiff
+  - index (left window), working copy (right window)
+  - copy lines from the right to the left window (do, dp)
+  - save in the left window (staged)
+- :Gcommit
+
+<meta name="keywords" content="*memo_vim.gv*">
+## gv
+  | Command          | Description
+--|------------------|---
+  | O                | diff in a new tab
+* | D                | diff in a new tab
+* | C-X              | :tabclose
+
+<meta name="keywords" content="*memo_vim.agit*">
+## agit
+  | Command          | Description
+--|------------------|---
+* | D                | diff in a new tab
+* | C-X              | :tabclose
+
+<meta name="keywords" content="*memo_vim.nerdtree*">
+## nerdtree
+  | Command          | Description
+--|------------------|---
+  | B                | toggle bookmarks
+  | CR               | open
+  | o                | open
+  | go               | view
+  | m                | menu
+  | I                | toggle dot files
+  | u                | tree root up (close)
+  | U                | tree root up
+  | r                | refresh the current dir
+  | R                | refresh the current root
+  | C                | change tree root here
+* | .                | C
+  | cd               | change CWD to here
+  | CD               | change the root to CWD
+
+## nerd commenter
+  | Command          | Description
+--|------------------|---
+  | <Leader>c<Space> | toggle comment
+* | C                | toggle comment
+
+## surround
+  | Command          | Description
+--|------------------|---
+  | ds"              | delete surrounding ""
+  | cs"'             | change surrounding "" to ''
+  | ys2w)            | surround two words by ()
+
+<meta name="keywords" content="*memo_vim.ultisnips*">
+## UltiSnips
+Command          | Description
+-----------------|---
+:UltiSnipsEdit   | edit snippets
+
+Key  | Description
+-----|---
+Tab  | expand snippet
+C-N  | next item on menu
+C-P  | prev item on menu
+C-J  | next place
+C-K  | prev place
+
+<meta name="keywords" content="*memo_vim.coc*">
+## coc
+
+### install
+~~~
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+~~~
+
+### install LSP
+~~~
+:CocInstall coc-tsserver
+:CocInstall coc-json
+:CocInstall coc-python
+:CocInstall coc-clangd
+:CocInstall coc-snippets
+:CocInstall coc-lists
+:CocInstall coc-explorer
+:CocUpdate
+
+:CocInfo
+:CocOpenLog
+:CocDiagnostics
+
+:CocConfig
+:CocLocalConfig
+
+:CocCommand python.setInterpreter
+:CocCommand python.setLinter
+~~~
+
+<meta name="keywords" content="*memo_vim.vim-lsp*">
+## vim-lsp
+
+Key       | Description
+----------|---
+LspStatus | print status
+
+### pyls
+
+### clangd
+
+### ccls
+#### install
+~~~
+$ pacman -S mingw-w64-x86_64-clang
+$ pacman -S mingw-w64-x86_64-clang-tools-extra
+$ pacman -S mingw-w64-x86_64-cmake
+$ pacman -S mingw-w64-x86_64-ninja
+$ pacman -S mingw-w64-x86_64-polly
+$ pacman -S mingw-w64-x86_64-jq
+$ pacman -S mingw-w64-x86_64-ncurses
+
+$ git clone --depth=1 --recursive https://github.com/MaskRay/ccls
+$ cd ccls
+$ cmake -S. -Bbuild.ninja/Release -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_CXX_FLAGS=-D__STDC_FORMAT_MACROS
+$ cmake --build build.ninja/Release
+~~~
+
+#### generate compile_commands.json
+~~~
+$ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
+~~~
+
+<meta name="keywords" content="*memo_vim.gtags*">
+## gtags.vim
+~~~
+:Gtags <func>
+:Gtags -r <func>     # go to the referenced point
+~~~
+
+<meta name="keywords" content="*memo_vim.eskk*">
+## eskk
+~~~
+Plug 'tyru/eskk.vim'
+let g:eskk#directory = "~/.eskk"
+let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
+let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
+~~~
+
+注意
+
+- gzip圧縮した辞書は使用不可
+- sortedは0で使用
+
+Termuxで使用するときの注意
+
+- 辞書のエンコーディングをEUC-JPからUTF-8に変換が必要
+
+<meta name="keywords" content="*memo_dev.skk*">
+skk
+=======================================================
+
+- [SKK Manual](http://skk-dev.github.io/ddskk/skk.html)
+- [SKK日本語入力FEP](http://coexe.web.fc2.com/skkfep.html)
+- [SKK辞書](http://openlab.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1)
+
+## 基本操作
+Mode     | Command              | Description
+---------|----------------------|---
+i <-> k  | C-j                  | かな入力へ
+k <-> K  | q                    | カタカナ入力へ
+k  -> a  | l                    | 半角英数入力へ
+k  -> A  | L                    | 全角英数入力へ
+k  -> R  | アルファベット大文字 | 漢字開始、送りがな開始
+R  -> J  | SPACE                | 変換
+J        | SPACE                | 次候補
+J        | x                    | 前候補
+RJ -> k  | C-g                  | 変換キャンセル
+   -> n  | ESC                  | vim normalモードへ
+
+![SKK control flow](images/skk.svg)
+
+## 送り仮名なし
+~~~
+i
+C-j
+Kanji
+SPACE
+~~~
+
+## 送り仮名あり
+~~~
+i
+C-j
+UgoKu
+SPACE
+~~~
+
+<meta name="keywords" content="*memo_dev.ctags*">
+ctags
+=======================================================
+~~~
+$ ctags -f out_tag_file -R dir
+~~~
+
+<meta name="keywords" content="*memo_dev.gtags*">
+gtags
+=======================================================
+~~~
+$ gtags -v
+~~~
+
+<meta name="keywords" content="*memo_dev.global*">
+global
+=======================================================
+~~~
+$ global func      # list files
+$ global -x func   # detailed list files
+$ global -r func   # list reference files 
+$ global -f files  # list functions
+~~~
+
+<style class="fallback">body{visibility:hidden}</style>
+<script src="markdeep.min.js"></script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>

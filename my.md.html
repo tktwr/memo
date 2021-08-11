@@ -5,38 +5,6 @@
 <meta name="keywords" content="*memo_my*">
 **My**
 
-<meta name="keywords" content="*memo_autohotkey*">
-<meta name="keywords" content="*memo_ahk*">
-AutoHotKey
-=============================================
-
-- [KeyList](http://ahkwiki.net/KeyList)
-- [Commands](http://ahkwiki.net/Commands_Category)
-
-## HHK 60 Key (AutoHotKey)
-
-*****************************************************************
-* +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
-* |ESC|F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Ins|Del|
-* +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
-* |Tab  |   |   |   |   |   |   |   |   |   |   | U |   |   BS|
-* +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
-* |Ctrl   |   |   |   |   |   |   |   |   |   | L | R | Return|
-* +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
-* |Shift    |   |   |   |   |   |   |   |   |   | D |Zen  | Fn|
-* +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
-*         |LM |Alt|                       | LWin  |RM |
-*         +---+---+-----------------------+-------+---+
-*****************************************************************
-
-App      | Key             | Description
----------|-----------------|---
-Windows  | LAlt            | LMeta
-Windows  | LMeta           | LAlt
-Windows  | RMeta           | LWin
-Windows  | RAlt            | RMeta
-Windows  | RShift          | Hankaku/Zenkaku
-
 <meta name="keywords" content="*memo_my.keymap*">
 Keymap
 =======================================================
@@ -51,7 +19,7 @@ Keymap
 * +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
 * |Shift    |   | X |   |   | B | N |   |   |   |   |Zen  | Fn|
 * +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
-*         |LM |Alt|                       | LWin  |RM |
+*         |PgU|Alt|                       | LWin  |PgD|
 *         +---+---+-----------------------+-------+---+
 *****************************************************************
 
@@ -76,12 +44,6 @@ Windows            | Windows + Shift + S | 範囲を指定してスクリーン�
 mintty             | C-0                 | scale reset
 mintty             | C--                 | scale -
 mintty             | C-=                 | scale +
-[AutoHotKey]       |                     |
-autohotkey         | LMeta               | toggle maximize / half maximize window (F11)
-autohotkey         | LAlt                | LAlt
-autohotkey         | RAlt                | LWin
-autohotkey         | RMeta               | tabnext (F10)
-autohotkey         | RShift              | Hankaku/Zenkaku
 [FuncKey]          |                     |
                    | F1                  | []
 autohotkey         | F2                  | virtual desktop left
@@ -89,19 +51,19 @@ autohotkey         | F3                  | virtual desktop right
 autohotkey         | F4                  | screenshot
                    | F5                  | []
                    | F6                  | []
-                   | F7                  | []
-                   | F8                  | []
-autohotkey         | F9                  | MsgBox
-autohotkey         | F10                 | tabnext
-autohotkey         | F11                 | toggle maximize / half maximize window
+autohotkey         | F7                  | MsgBox
+autohotkey         | F8                  | toggle maximize / half maximize window
+                   | F9                  | []
+                   | F10                 | []
+                   | F11                 | []
                    | F12                 | []
 [vim]              |                     |
                    | C-0                 | move to bottom
                    | C-1                 | move to top
-                   | C-2                 | buffer exchange with win 2
-                   | C-3                 | buffer exchange with win 3
-                   | C-4                 | buffer exchange with win 4
-                   | C-5                 | buffer exchange with win 5
+                   | C-2                 | move to winnr 2
+                   | C-3                 | []
+                   | C-4                 | []
+                   | C-5                 | []
                    | C-6                 | []
                    | C-7                 | maximize x
                    | C-8                 | maximize xy
@@ -111,33 +73,6 @@ autohotkey         | F11                 | toggle maximize / half maximize windo
                    | C-J                 | window down
                    | C-K                 | window up
                    | C-L                 | window right
-[vim.my]           |                     |
-                   | C-F                 | page down
-                   | C-D                 | page up
-                   | C-Q                 | exec the command in the register q
-                   | C-B                 | :Bmk bmk
-                   | C-X                 | :close
-                   | C-E                 | :only
-                   | C-P                 | :cp
-                   | C-N                 | :cn
-                   | C-Y                 | [MyTermSendCd]
-                   | C-A                 | [MyMakeLink]
-                   | C-.                 | [MyLcdHere]
-                   | TAB                 | :MyNERDTreeToggle
-                   | BS                  | :MyTagbarToggle
-                   | CR                  | [MyEdit]
-                   | C-CR                | [MyNERDTreeOpen]
-                   | S-CR                | [MyOpen]
-                   | C-U                 | plugin [quickhl]
-                   | C-;                 | C-W:
-                   | C-G                 | [:MyRedraw]
-                   | Insert              | :tabedit
-                   | Del                 | :tabclose
-                   | Space               | plugin whichkey
-[vim.term]         |                     |
-                   | C-O                 | terminal out
-                   | i                   | terminal in
-                   | C-Space             | whichkey in terminal
 
 Vim next/prev
 =======================================================
@@ -161,29 +96,12 @@ completion      | C-N | next menu
 CocList         | C-J | next
                 | C-K | prev
 
-Vim Interoperability
+Vim IDE
 =======================================================
 
-SrcWin   | DstWin   | Key    | Description                         |
----      | ---      | ---    | ---                                 |
-terminal | editor   | ,e     | edit a file in the editor           |
-terminal | nerdtree | d      | lcd PWD                             |
-terminal | nerdtree | D      | lcd PWD in nerdtree                 |
----      | ---      | ---    | ---                                 |
-nerdtree | editor   | l      | preview                             |
-nerdtree | editor   | i      | split                               |
-nerdtree | editor   | [2345] | edit in window nr                   |
-nerdtree | editor   | CR     | edit                                |
-nerdtree | editor   | Space  | edit and close nerdtree             |
-nerdtree |          | C-.    | cd to the current entry             |
----      | ---      | ---    | ---                                 |
-editor   | nerdtree | Tab    | toggle nerdtree                     |
-editor   | tagbar   | BS     | toggle tagbar                       |
-editor   |          | CR     | edit cfile                          |
-editor   | external | C-CR   | open cfile/file in external program |
-editor   | nerdtree | S-CR   | cd cfile/file in nerdtree           |
-editor   | terminal | C-Y    | cd cfile/file in terminal           |
-editor   |          | C-.    | cd to the current file              |
+## Flow
+![Vim IDE](images/vim-ide.svg)
+
 
 <meta name="keywords" content="*memo_my.vim.command*">
 Vim Command

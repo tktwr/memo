@@ -1,0 +1,23 @@
+// vim-ide.dot
+digraph G {
+  graph [ fontsize=10, rankdir=LR, compound=true, newrank=true, nodesep=0.3, ranksep=1.0, splines=ortho ];
+  //node [ fontsize=10, shape=box, width=0.75, height=0.5, fixedsize=true ];
+  node [ fontsize=10, shape=box, style="solid,filled", fillcolor="#c0c0c0:#ffffff", gradientangle=90 ];
+  edge [ fontsize=10, labeldistance=2, labelangle=-60, labelloc="t" ];
+
+  fern [ label="Fern" ];
+  edit [ label="Editor" ];
+  term [ label="Term" ];
+  tagbar [ label="Tagbar" ];
+  ext [ label="External" ];
+  tab [ label="Tab" ];
+
+  fern -> edit [ taillabel="l, [2-9]", headlabel="MyFernDrawer", dir=both, weight=10 ];
+  edit -> term [ taillabel="C-s", headlabel=",e", dir=both ];
+  term -> fern [ headlabel="D", taillabel="[2-9]", dir=both ];
+  edit -> tagbar [ taillabel="MyTagbarToggle", dir=both ];
+  ext -> edit [ taillabel="C-CR, S-CR", dir=back ];
+  term -> tab [ taillabel="Ins, Del, PgU, S-PgU", dir=both ];
+
+  { rank=same; ext; edit; term; tab; }
+}
