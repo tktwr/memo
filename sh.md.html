@@ -134,14 +134,7 @@ n=$((n + 1))
 
 <meta name="keywords" content="*memo_sh.syntax*">
 ## syntax
-### if
-~~~
-if [ EXPR ]; then
-elif [ EXPR ]; then
-else
-fi
-~~~
-
+### expr
 EXPRESSION                 | Description
 ---------------------------|---
 ( EXPR )                   | EXPR is true
@@ -165,6 +158,14 @@ INT1 -ne INT2              | INT1 is not equal to INT2
 -r FILE                    | FILE exists and read permission is granted
 -w FILE                    | FILE exists and write permission is granted
 -x FILE                    | FILE exists and execute (or search) permission is granted
+
+### if
+~~~
+if [ EXPR ]; then
+elif [ EXPR ]; then
+else
+fi
+~~~
 
 ### for
 ~~~
@@ -205,7 +206,7 @@ env LC_TIME=C date '+%Y/%m/%d (%a)'
 env LC_TIME=C date '+%H:%M:%S'
 ~~~
 
-<meta name="keywords" content="*memo_sh.csh*">
+<meta name="keywords" content="*memo_csh*">
 csh
 =======================================================
 ## redirect stderr and stdout
@@ -213,6 +214,7 @@ csh
 % command >& foo.txt
 ~~~
 
+<meta name="keywords" content="*memo_csh.syntax*">
 ## syntax
 ### while
 ~~~

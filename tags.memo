@@ -10,6 +10,8 @@ memo_cg.imgui	cg.md.html	/*memo_cg.imgui*
 memo_cg.opencv	cg.md.html	/*memo_cg.opencv*
 memo_cg.opengl	cg.md.html	/*memo_cg.opengl*
 memo_cg.unity	cg.md.html	/*memo_cg.unity*
+memo_csh	sh.md.html	/*memo_csh*
+memo_csh.syntax	sh.md.html	/*memo_csh.syntax*
 memo_dev	dev.md.html	/*memo_dev*
 memo_dev.adb	dev.md.html	/*memo_dev.adb*
 memo_dev.android	dev.md.html	/*memo_dev.android*
@@ -56,7 +58,10 @@ memo_git-tag	git.md.html	/*memo_git-tag*
 memo_git-worktree	git.md.html	/*memo_git-worktree*
 memo_init	init.md.html	/*memo_init*
 memo_init.install	init.md.html	/*memo_init.install*
+memo_init.install.min	init.md.html	/*memo_init.install.min*
+memo_init.proxy	init.md.html	/*memo_init.proxy*
 memo_init.setup	init.md.html	/*memo_init.setup*
+memo_init.shared_folder	init.md.html	/*memo_init.shared_folder*
 memo_init.update	init.md.html	/*memo_init.update*
 memo_init.upgrade	init.md.html	/*memo_init.upgrade*
 memo_links	links.md.html	/*memo_links*
@@ -72,6 +77,7 @@ memo_my.win.keymap	my.md.html	/*memo_my.win.keymap*
 memo_os	os.md.html	/*memo_os*
 memo_os.apt	os.md.html	/*memo_os.apt*
 memo_os.bat	os.md.html	/*memo_os.bat*
+memo_os.bat.syntax	os.md.html	/*memo_os.bat.syntax*
 memo_os.bootcamp	os.md.html	/*memo_os.bootcamp*
 memo_os.choco	os.md.html	/*memo_os.choco*
 memo_os.chocolatey	os.md.html	/*memo_os.chocolatey*
@@ -96,8 +102,10 @@ memo_os.windows10	os.md.html	/*memo_os.windows10*
 memo_prog	prog.md.html	/*memo_prog*
 memo_prog.c	prog.md.html	/*memo_prog.c*
 memo_prog.cmake	prog.md.html	/*memo_prog.cmake*
+memo_prog.cmake.syntax	prog.md.html	/*memo_prog.cmake.syntax*
 memo_prog.cpp	prog.md.html	/*memo_prog.cpp*
 memo_prog.make	prog.md.html	/*memo_prog.make*
+memo_prog.make.syntax	prog.md.html	/*memo_prog.make.syntax*
 memo_prog.python	prog.md.html	/*memo_prog.python*
 memo_prog.python.anaconda	prog.md.html	/*memo_prog.python.anaconda*
 memo_prog.python.conda	prog.md.html	/*memo_prog.python.conda*
@@ -105,12 +113,12 @@ memo_prog.python.miniconda	prog.md.html	/*memo_prog.python.miniconda*
 memo_prog.python.numpy	prog.md.html	/*memo_prog.python.numpy*
 memo_prog.python.pip	prog.md.html	/*memo_prog.python.pip*
 memo_prog.python.pytorch	prog.md.html	/*memo_prog.python.pytorch*
+memo_prog.python.syntax	prog.md.html	/*memo_prog.python.syntax*
 memo_prog.python.tensorflow	prog.md.html	/*memo_prog.python.tensorflow*
 memo_prog.python.venv	prog.md.html	/*memo_prog.python.venv*
 memo_sh	sh.md.html	/*memo_sh*
 memo_sh.awk	sh.md.html	/*memo_sh.awk*
 memo_sh.bash	sh.md.html	/*memo_sh.bash*
-memo_sh.csh	sh.md.html	/*memo_sh.csh*
 memo_sh.grep	sh.md.html	/*memo_sh.grep*
 memo_sh.less	sh.md.html	/*memo_sh.less*
 memo_sh.readline	sh.md.html	/*memo_sh.readline*
@@ -148,6 +156,7 @@ memo_vim.plugin	vim.md.html	/*memo_vim.plugin*
 memo_vim.record	vim.md.html	/*memo_vim.record*
 memo_vim.resize	vim.md.html	/*memo_vim.resize*
 memo_vim.script	vim.md.html	/*memo_vim.script*
+memo_vim.script.syntax	vim.md.html	/*memo_vim.script.syntax*
 memo_vim.term	vim.md.html	/*memo_vim.term*
 memo_vim.ultisnips	vim.md.html	/*memo_vim.ultisnips*
 memo_vim.vimgrep	vim.md.html	/*memo_vim.vimgrep*

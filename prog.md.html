@@ -7,21 +7,23 @@
 <meta name="keywords" content="*memo_prog*">
 
 <meta name="keywords" content="*memo_prog.make*">
+<meta name="keywords" content="*memo_prog.make.syntax*">
 Makefile
 =======================================================
-## include
+## syntax
+### include
 ~~~
 -include local.mk
 ~~~
 
-## if
+### if
 ~~~
 ifeq ($(VAR),var)
 else
 endif
 ~~~
 
-## for
+### for
 ~~~
 loop:
 	@for i in "$(DIRS)"; do\
@@ -30,7 +32,7 @@ loop:
 	done
 ~~~
 
-## PHONY
+### PHONY
 ~~~
 .PHONY: tags
 tags:
@@ -38,6 +40,7 @@ tags:
 ~~~
 
 <meta name="keywords" content="*memo_prog.cmake*">
+<meta name="keywords" content="*memo_prog.cmake.syntax*">
 CMakeLists.txt
 =======================================================
 ## module list
@@ -377,6 +380,7 @@ import matplotlib.pyplot as plt
 from matplotlib import pyplot as plt
 ~~~
 
+<meta name="keywords" content="*memo_prog.python.syntax*">
 ## syntax
 ~~~
 if expr and expr:

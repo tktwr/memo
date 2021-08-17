@@ -5,42 +5,57 @@
 <meta name="keywords" content="*memo_init*">
 **Init**
 
-<meta name="keywords" content="*memo_init.setup*">
-Setup (bash/vim/python)
+<meta name="keywords" content="*memo_init.proxy*">
+Proxy
 =======================================================
-## network
-- .ssh/config
-- HTTP_PROXY
-- HTTPS_PROXY
-
-## install
-### windows
-- git
-- cmake
-- python3-64bit
-- nodejs
-
+## Bash
 ~~~
-pacman -S vim winpty
+export HTTP_PROXY="http://USER:PASS@PROXY_SERVER:PORT"
+export HTTPS_PROXY="http://USER:PASS@PROXY_SERVER:PORT"
+export http_proxy="$HTTP_PROXY"
+export https_proxy="$HTTPS_PROXY"
+
+export GIT_SSL_NO_VERIFY=1
+export CURL_SSL_NO_VERIFY=1
+export NO_PROXY="localhost,127.0.0.1"
 ~~~
 
-### MX linux
+## /etc/apt/apt.conf
 ~~~
-sudo apt install vim
-sudo apt install nodejs npm
-~~~
-
-### Manjaro linux
-~~~
-sudo pacman -Syu
-sudo pacman -S virtualbox-guest-utils
-sudo pacman -S vim
-sudo pacman -S nodejs npm
+Acquire::http::Proxy "http://USER:PASS@PROXY_SERVER:PORT";
+Acquire::https::Proxy "http://USER:PASS@PROXY_SERVER:PORT";
 ~~~
 
-## 日本語フォルダを英語フォルダに変更
+<meta name="keywords" content="*memo_init.shared_folder*">
+Shared Folder
+=======================================================
+## add user to vboxsf group
+~~~
+sudo usermod -a -G vboxsf `whoami`
+~~~
 
-### Manjaro linux
+## mount (manual)
+~~~
+sudo mkdir -p /mnt/vbox/SHARE_FOLDER
+sudo mount -t vboxsf SHARE_FOLDER /mnt/vbox/SHARE_FOLDER
+~~~
+
+## /etc/fstab
+~~~
+SHARE_FOLDER /mnt/vbox/SHARE_FOLDER vboxsf defaults,noauto,iocharset=utf8,uid=1000,gid=1000 0 0
+~~~
+
+<meta name="keywords" content="*memo_init.setup*">
+Setup
+=======================================================
+- Displayの解像度変更
+- デスクトップ背景変更
+- ConkyToggleでConkyを非表示
+- Screen Saver OFF
+- 電源管理
+
+## 日本語フォルダを英語フォルダに変更 [Linux]
+
 ~~~
 sudo pacman -S xdg-user-dirs-gtk
 LC_ALL=C xdg-user-dirs-gtk-update
@@ -59,7 +74,51 @@ LC_ALL=C xdg-user-dirs-gtk-update
 
 - .my.common
 
-## bash
+<meta name="keywords" content="*memo_init.install.min*">
+Install (minimal)
+=======================================================
+## Windows (Msys2)
+- git
+- cmake
+- python3-64bit
+- nodejs
+
+~~~
+pacman -S vim winpty
+~~~
+
+## MX Linux
+~~~
+sudo apt update
+sudo apt upgrade
+sudo apt install vim
+sudo apt install nodejs npm
+~~~
+
+### Install Vim 8.2 [MX]
+~~~
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
+sudo apt install vim
+~~~
+
+### Uninstall Vim 8.2 [MX]
+~~~
+sudo apt install ppa-purge
+sudo ppa-purge ppa:jonathonf/vim
+sudo add-apt-repository --remove ppa:jonathonf/vim
+~~~
+
+## Manjaro Linux
+~~~
+sudo pacman -Syu
+sudo pacman -S virtualbox-guest-utils
+sudo pacman -S vim
+sudo pacman -S nodejs npm
+~~~
+
+Bash
+=============================================
 ~~~
 ./make.sh --init
 
@@ -70,34 +129,36 @@ vim .gitconfig
 ./make.sh --all
 ~~~
 
-## python
+Python
+=============================================
 ~~~
 mypython-venv-create torch
 upgrade-pip.sh
 install-python-modules.sh
 ~~~
 
-## vim
-### g:coc_config_home
+Vim
+=============================================
+## g:coc_config_home
 ~~~
 ~/.vim/coc-settings.json               (local)
 $MY_VIM/coc/win/coc-settings.json      (windows)
 $MY_VIM/coc/linux/coc-settings.json    (linux)
 ~~~
 
-### g:coc_data_home
+## g:coc_data_home
 ~~~
 $MY_VIM/coc_data/win   (windows)
 ~/.config/coc          (linux)
 ~~~
 
-### coc install
+## coc install
 ~~~
 :MyCocInstall
 ~~~
 
 <meta name="keywords" content="*memo_init.install*">
-Install
+Install packages
 =======================================================
 ## Windows
 <div id="col2">
