@@ -8,7 +8,7 @@
 <meta name="keywords" content="*memo_init.proxy*">
 Proxy
 =======================================================
-## Bash
+## ~/.bashrc
 ~~~
 export HTTP_PROXY="http://USER:PASS@PROXY_SERVER:PORT"
 export HTTPS_PROXY="http://USER:PASS@PROXY_SERVER:PORT"
@@ -26,8 +26,19 @@ Acquire::http::Proxy "http://USER:PASS@PROXY_SERVER:PORT";
 Acquire::https::Proxy "http://USER:PASS@PROXY_SERVER:PORT";
 ~~~
 
+<meta name="keywords" content="*memo_init.mirror*">
+Mirror
+=======================================================
+## /etc/pacman.conf
+~~~
+[mingw64]
+Server = https://MIRROR_SERVER/mingw/x86_64/
+
+...
+~~~
+
 <meta name="keywords" content="*memo_init.shared_folder*">
-Shared Folder
+Shared Folder [VirtualBox]
 =======================================================
 ## add user to vboxsf group
 ~~~
@@ -48,18 +59,44 @@ SHARE_FOLDER /mnt/vbox/SHARE_FOLDER vboxsf defaults,noauto,iocharset=utf8,uid=10
 <meta name="keywords" content="*memo_init.setup*">
 Setup
 =======================================================
+
 - Displayの解像度変更
 - デスクトップ背景変更
 - ConkyToggleでConkyを非表示
 - Screen Saver OFF
 - 電源管理
 
-## 日本語フォルダを英語フォルダに変更 [Linux]
+## Config Files
+https://unix.stackexchange.com/questions/312988/understanding-home-configuration-file-locations-config-and-local-sha
+
+### Linux
+env              | path               | description
+---              | ---                | ---
+$XDG_CONFIG_HOME | $HOME/.config      | per-user configuration files
+$XDG_DATA_HOME   | $HOME/.local/share | per-user data files
+$XDG_CACHE_HOME  | $HOME/.cache       | per-user cache files
+
+### Windows
+env            | path                              | description
+---            | ---                               | ---
+%APPDATA%      | %USERPROFILE%/AppData/Roaming/    | per-user data files that a roaming user can access from multiple machines
+%LOCALAPPDATA% | %USERPROFILE%/AppData/Local/      | per-user data files for this machine
+%TEMP%         | %USERPROFILE%/AppData/Local/Temp/ | per-user temporary files
+
+## フォルダ名を英語に変更 [Linux]
 
 ~~~
 sudo pacman -S xdg-user-dirs-gtk
 LC_ALL=C xdg-user-dirs-gtk-update
 ~~~
+
+<meta name="keywords" content="*memo_init.font*">
+## Font
+Windows:
+- フォントをダブルクリックしてインストール
+
+Linux:
+- フォントを~/.local/share/fontsにコピーする
 
 ## symbolic links (admin on command prompt)
 - WinHome
@@ -72,18 +109,19 @@ LC_ALL=C xdg-user-dirs-gtk-update
 - GoogleDrive
 - Dropbox
 
-- .my.common
-
 <meta name="keywords" content="*memo_init.install.min*">
 Install (minimal)
 =======================================================
 ## Windows (Msys2)
+
+Native:
 - git
 - cmake
 - python3-64bit
 - nodejs
 
 ~~~
+pacman -Syu
 pacman -S vim winpty
 ~~~
 
@@ -95,6 +133,8 @@ sudo apt install vim
 sudo apt install nodejs npm
 ~~~
 
+<details>
+<summary>Install/Uninstall Vim 8.2</summary>
 ### Install Vim 8.2 [MX]
 ~~~
 sudo add-apt-repository ppa:jonathonf/vim
@@ -108,6 +148,7 @@ sudo apt install ppa-purge
 sudo ppa-purge ppa:jonathonf/vim
 sudo add-apt-repository --remove ppa:jonathonf/vim
 ~~~
+</details>
 
 ## Manjaro Linux
 ~~~
@@ -120,13 +161,15 @@ sudo pacman -S nodejs npm
 Bash
 =============================================
 ~~~
-./make.sh --init
+cd etc
+
+./make_init.sh
 
 vim .my/hostname
 vim .my/pythonrc
 vim .gitconfig
 
-./make.sh --all
+./make.sh
 ~~~
 
 Python
@@ -136,6 +179,13 @@ mypython-venv-create torch
 upgrade-pip.sh
 install-python-modules.sh
 ~~~
+
+## pip.conf/pip.ini
+Linux:
+- $HOME/.config/pip/pip.conf
+
+Windows:
+- $APPDATA/pip/pip.ini
 
 Vim
 =============================================
@@ -150,11 +200,6 @@ $MY_VIM/coc/linux/coc-settings.json    (linux)
 ~~~
 $MY_VIM/coc_data/win   (windows)
 ~/.config/coc          (linux)
-~~~
-
-## coc install
-~~~
-:MyCocInstall
 ~~~
 
 <meta name="keywords" content="*memo_init.install*">
@@ -235,48 +280,40 @@ cygwin
 ~~~
 -->
 
-## Vim
-~~~
-:PlugInstall
-:CocInstall coc-tsserver coc-json coc-python coc-clangd coc-snippets coc-lists
-~~~
-
-<meta name="keywords" content="*memo_init.update*">
-Update
+<meta name="keywords" content="*memo_init.commands*">
+Install/Update/Upgrade
 =======================================================
-## MSYS2
-~~~
-pacman -Syu
-~~~
-
-## gitbash
-~~~
-git update-git-for-windows
-~~~
-
-## Vim
-~~~
-:PlugUpdate
-:CocUpdate
-~~~
-
-<meta name="keywords" content="*memo_init.upgrade*">
-Upgrade
-=======================================================
-## Vim
-~~~
-:PlugUpgrade
-~~~
-
-## pip
-~~~
-python -m pip install --upgrade pip
-~~~
-
-## termux
-~~~
-pkg upgrade
-~~~
+App          | Command                    | Description
+---          | ---                        | ---
+pacman       |                            |
+             | pacman -Syu                | update
+             | pacman -Ss pkg             | search
+             | pacman -S pkg              | install
+             | pacman -R pkg              | uninstall
+apt          |                            |
+             | apt update                 |
+             | apt upgrade                |
+             | apt search pkg             |
+             | apt install pkg            |
+             | apt remove pkg             |
+gitbash      |                            |
+             | git update-git-for-windows |
+termux       |                            |
+             | pkg upgrade                |
+             | pkg search pkg             |
+             | pkg install pkg            |
+vim.vim-plug |                            |
+             | :PlugInstall               |
+             | :PlugUpdate                |
+             | :PlugUpgrade               |
+vim.coc      |                            |
+             | :MyCocInstall              |
+             | :CocUpdate                 |
+pip          |                            |
+             | upgrade-pip.sh             |
+             | pip search pkg             |
+             | pip install pkg            |
+             | pip uninstall pkg          |
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="markdeep.min.js"></script>
