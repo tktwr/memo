@@ -1,0 +1,208 @@
+<meta vim:set syntax=markdown:>
+<meta charset="utf-8">
+<link rel="stylesheet" href="default.css">
+
+**Python**
+
+<meta name="keywords" content="*memo_prog.python*">
+Python
+=======================================================
+
+<meta name="keywords" content="*memo_prog.python.venv*">
+## venv
+
+### install
+~~~
+$ apt install python3-venv
+~~~
+
+### create
+~~~
+$ python3 -m venv {venvname}
+~~~
+
+### activate
+~~~
+# Linux
+$ source {venvname}/bin/activate
+# Windows
+$ .\{venvname}\Scripts\activate
+~~~
+
+### deactivate
+~~~
+$ deactivate
+~~~
+
+## pip
+<meta name="keywords" content="*memo_prog.python.pip*">
+
+Command                          | Description
+---------------------------------|---
+pip -V                           | show version
+pip list                         | list installed packages
+pip freeze                       | list required packages
+pip search {pkg}                 | search package
+pip install {pkg}                | install package
+pip install -U {pkg}             | update package
+pip install -r requirements.txt  | install packages listed in requirements.txt
+pip uninstall {pkg}              | uninstall package
+
+## upgrade pip
+~~~
+python -m pip install --upgrade pip
+~~~
+
+## list / install requrired packages
+~~~
+pip freeze > requirements.txt
+pip install -r requirements.txt
+~~~
+
+## script
+~~~
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import sys
+
+def main(argv):
+    print("Hello world.")
+
+if __name__ == "__main__":
+    main(sys.argv)
+~~~
+
+## print sys.path
+~~~
+>>> import sys
+>>> sys.path
+~~~
+
+## import
+~~~
+import <modeule>
+import <modeule> as <new_name>
+from <package> import <symbol>
+from <package> import <symbol> as <new_name>
+~~~
+
+## examples of import
+~~~
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
+~~~
+
+<meta name="keywords" content="*memo_prog.python.syntax*">
+## syntax
+### expr
+expr          | Description
+---           | ---
+expr and expr | logical AND
+expr or expr  | logical OR
+not expr      | not
+0 <= i < 2    | 0以上2より小さい
+i in l        | リストlの中にiがあるか
+
+### if
+~~~
+if expr:
+    statements
+elif expr:
+    statements
+else:
+    statements
+~~~
+
+### for
+~~~
+for i in range(5):
+    statements
+
+for i in range(0, 5):
+    statements
+
+for i in range(0, 5, 1):
+    statements
+
+list = [0, 1, 2, 3, 4]
+for i in list:
+    statements
+~~~
+
+### while
+~~~
+i = 0
+while i < 5:
+    statements
+    i += 1
+~~~
+
+<meta name="keywords" content="*memo_prog.python.anaconda*">
+<meta name="keywords" content="*memo_prog.python.miniconda*">
+<meta name="keywords" content="*memo_prog.python.conda*">
+Anaconda / Miniconda
+=======================================================
+
+Command                                          | Description
+-------------------------------------------------|---
+conda info                                       | print info
+conda info -e                                    | print environments
+conda list                                       | list installed packages
+conda update --all                               | update all packages
+conda update {pkg}                               | update package
+conda search {pkg}                               | search packages
+conda install {pkg}                              | install
+conda uninstall {pkg}                            | uninstall
+conda init bash                                  | init bash
+conda create -n {env} python[=3.7]               | create env
+conda create -n {new env} --clone {existing env} | clone env
+conda remove -n {env} --all                      | remove env
+conda activate {env}                             | activate env
+conda deactivate                                 | deactivate
+
+## init
+~~~
+conda update -n base -c defaults conda
+conda init bash
+conda create -n {env} python
+conda activate {env}
+~~~
+
+<meta name="keywords" content="*memo_prog.python.numpy*">
+Numpy
+=======================================================
+~~~
+ar = np.array(list)    # copy
+ar = np.array(ar)      # copy
+ar = np.asarray(list)  # copy
+ar = np.asarray(ar)    # no copy
+~~~
+
+<meta name="keywords" content="*memo_prog.python.pytorch*">
+PyTorch
+=======================================================
+
+<!--
+## install pytorch
+~~~
+#conda install pytorch-cpu -c pytorch 
+#pip install torchvision
+conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
+conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+~~~
+-->
+
+<meta name="keywords" content="*memo_prog.python.tensorflow*">
+TensorFlow
+=======================================================
+
+## install tensorflow
+~~~
+pip install --upgrade tensorflow
+~~~
+
+<style class="fallback">body{visibility:hidden}</style>
+<script src="markdeep.min.js"></script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>

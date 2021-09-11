@@ -5,77 +5,6 @@
 <meta name="keywords" content="*memo_cg*">
 **CG**
 
-<meta name="keywords" content="*memo_cg.glsl*">
-GLSL
-=======================================================
-
-<meta name="keywords" content="*memo_cg.opengl*">
-OpenGL
-=======================================================
-- Right-handed coordinate system
-- X-right
-- Y-up
-- Z-front
-- Matrix
-    - Column order memory
-- [Column-major, Row-major](https://qiita.com/suzuryo3893/items/9e543cdf8bc64dc7002a)
-
-~~~
-M = M_n * ... * M_0 * v
-
-M =
-    0 4  8 12
-    1 5  9 13
-    2 6 10 14
-    3 7 11 15
-
-T =
-    1 0 0 x
-    0 1 0 y
-    0 0 1 z
-    0 0 0 1
-~~~
-
-<meta name="keywords" content="*memo_cg.unity*">
-Unity
-=======================================================
-- Left-handed coordinate system
-- X-left
-- Y-up
-- Z-front
-- Matrix
-    - Column order memory
-- [Unity matrix](http://edom18.hateblo.jp/entry/2019/01/04/153205)
-
-![unity](images/model_unity.jpg)
-
-DirectX
-=======================================================
-- Left-handed coordinate system
-- Matrix
-    - Row order memory
-
-MeshLab
-=======================================================
-- Right-handed coordinate system
-- X-right
-- Y-up
-- Z-front
-
-![meshlab](images/model_meshlab.jpg)
-
-## UV表示
-- Render > Show UV Tex Param
-
-## 法線表示
-- Render > Show Normal
-
-## Bounding Boxの情報表示
-- Render > Show Box Corners
-
-## 法線をそろえる
-- Filters > Normals, ... > Re-Orient all faces coherently
-
 <meta name="keywords" content="*memo_cg.blender*">
 Blender
 =======================================================
@@ -257,63 +186,40 @@ Ctrl + R
 ## 法線の反転
 選択 > Faces > Flip Normals
 
-<meta name="keywords" content="*memo_cg.eigen*">
-Eigen
+<meta name="keywords" content="*memo_cg.unity*">
+Unity
 =======================================================
-- Column order memory
-- Row major calc
+- Left-handed coordinate system
+- X-left
+- Y-up
+- Z-front
+- Matrix
+    - Column order memory
+- [Unity matrix](http://edom18.hateblo.jp/entry/2019/01/04/153205)
 
-## the order of multiplying matrix
-\begin{equation}
-v' = M_n * M_{n-1} * ... * M_2 * M_1 * v
-\end{equation}
+![unity](images/model_unity.jpg)
 
-## Matrix
-- Matrix3f m(row, col)
-- m(row, col)
-- column-major storage order
-
-## Vector
-- Vector3f(row)
-- RowVector3f(col)
-
-~~~
-typedef Matrix<float, 3, 1> Vector3f;
-typedef Matrix<float, 1, 3> RowVector3f;
-~~~
-
-<meta name="keywords" content="*memo_cg.glm*">
-glm
+<meta name="keywords" content="*memo_cg.meshlab*">
+MeshLab
 =======================================================
-~~~
-# uninitialized matrix
-glm::mat4 m;
+- Right-handed coordinate system
+- X-right
+- Y-up
+- Z-front
 
-# identity matrix
-glm::mat4 m(1.0f);
+![meshlab](images/model_meshlab.jpg)
 
-# pointer to data
-float* p = &(m[0][0])
+## UV表示
+- Render > Show UV Tex Param
 
-# ortho proj
-glm::mat4 proj = glm::ortho<float>(0, w, 0, h);
-(0, 0) (w, h) -> (-1, -1) (1, 1)
-~~~
+## 法線表示
+- Render > Show Normal
 
-<meta name="keywords" content="*memo_cg.opencv*">
-OpenCV
-=======================================================
-## Type
-         | description
----------|---------------------------
-CV_8UC1  | 8bit unsigned 1 channel
-CV_32FC2 | 32bit float 2 channel
+## Bounding Boxの情報表示
+- Render > Show Box Corners
 
-<meta name="keywords" content="*memo_cg.imgui*">
-imgui
-=======================================================
-## demo
-- ShowDemoWindow()
+## 法線をそろえる
+- Filters > Normals, ... > Re-Orient all faces coherently
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="markdeep.min.js"></script>

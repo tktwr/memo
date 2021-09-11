@@ -43,20 +43,58 @@ $ vim -u NONE
 <meta name="keywords" content="*memo_vim.script*">
 <meta name="keywords" content="*memo_vim.script.syntax*">
 ## syntax
+
+### expr
+expr           | Description
+---            | ---
+expr `&&` expr | logical AND
+expr `||` expr | logical OR
+expr == expr   | equal
+expr != expr   | not equal
+expr >  expr   | greater than
+expr >= expr   | greater than or equal
+expr <  expr   | smaller than
+expr <= expr   | smaller than or equal
+! expr         | logical NOT
+
+~~~
+:help expression-syntax
+~~~
+
+### let
 ~~~
 let var = val
 let var_list = []
 let var_dict = {}
+~~~
 
+### if
+~~~
 if expr
   statements
 elseif expr
   statements
+else
+  statements
 endif
+~~~
 
+### for
+~~~
 for var in list
+  statements
 endfor
+~~~
 
+### while
+~~~
+while expr
+  statements
+endwhile
+~~~
+
+### func
+~~~
 func name(arg1, arg2)
   let var1 = a:arg1
   let var2 = a:arg2
