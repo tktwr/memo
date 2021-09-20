@@ -19,7 +19,7 @@ Keymap
 * +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
 * |Shift    |   | X |   |   | B | N |   |   |   |   |Zen  | Fn|
 * +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
-*         |PgU|Alt|                       | LWin  |PgD|
+*         |PgU|Alt|                       | End   |PgD|
 *         +---+---+-----------------------+-------+---+
 *****************************************************************
 
@@ -50,12 +50,12 @@ autohotkey         | F2                  | virtual desktop left
 autohotkey         | F3                  | virtual desktop right
 autohotkey         | F4                  | screenshot
                    | F5                  | []
-                   | F6                  | []
-autohotkey         | F7                  | MsgBox
-autohotkey         | F8                  | toggle maximize / half maximize window
-                   | F9                  | []
-                   | F10                 | []
-                   | F11                 | []
+autohotkey         | F6                  | MsgBox
+autohotkey         | F7                  | left maximize
+autohotkey         | F8                  | maximize
+autohotkey         | F9                  | right maximize
+autohotkey         | F10                 | display desktop
+autohotkey         | F11                 | auto maximize
                    | F12                 | []
 [vim]              |                     |
                    | C-0                 | move to bottom
@@ -73,6 +73,8 @@ autohotkey         | F8                  | toggle maximize / half maximize windo
                    | C-J                 | window down
                    | C-K                 | window up
                    | C-L                 | window right
+[vim]              |                     |
+                   | End                 | WblPrint
 
 Vim next/prev
 =======================================================
