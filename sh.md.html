@@ -8,6 +8,19 @@
 <meta name="keywords" content="*memo_sh.bash*">
 bash
 =======================================================
+## shell commands
+
+~~~
+Command                              | Description
+---                                  | ---
+zip -r out.zip file/dir...           | compress files
+unzip filename.zip                   | uncompress files
+unzip -l filename.zip                | list files
+find . -name '*word*'                | find files including a word
+find . -name '*word*' -exec rm {} \; | remove matched files
+tar czvf out.tar.gz file/dir...      | tar files
+~~~
+
 ## 環境変数
 ~~~
 HISTCONTROL=ignoreboth
