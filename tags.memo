@@ -162,7 +162,7 @@ memo_vim.script	vim.md.html	/*memo_vim.script*
 memo_vim.script.syntax	vim.md.html	/*memo_vim.script.syntax*
 memo_vim.term	vim.md.html	/*memo_vim.term*
 memo_vim.ultisnips	vim.md.html	/*memo_vim.ultisnips*
-memo_vim.vimgrep	vim.md.html	/*memo_vim.vimgrep*
 memo_vim.vim-lsp	vim.md.html	/*memo_vim.vim-lsp*
 memo_vim.vim-plug	vim.md.html	/*memo_vim.vim-plug*
+memo_vim.vimgrep	vim.md.html	/*memo_vim.vimgrep*
 memo_vim.vmap	vim.md.html	/*memo_vim.vmap*

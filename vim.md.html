@@ -40,6 +40,17 @@ $ vim -u NONE
 :verbose imap <tab>
 ~~~
 
+## vnoremap
+### 選択された行を標準入力としてcmdに渡す
+~~~
+vnoremap A y:'<,'>w !cmd<CR>
+~~~
+
+### 現在の行をcmdの引数として渡す
+~~~
+vnoremap A y:!cmd "<C-R>""<CR>
+~~~
+
 <meta name="keywords" content="*memo_vim.script*">
 <meta name="keywords" content="*memo_vim.script.syntax*">
 ## syntax
@@ -47,14 +58,16 @@ $ vim -u NONE
 ### expr
 expr           | Description
 ---            | ---
-expr `&&` expr | logical AND
 expr `||` expr | logical OR
+expr `&&` expr | logical AND
 expr == expr   | equal
 expr != expr   | not equal
 expr >  expr   | greater than
 expr >= expr   | greater than or equal
 expr <  expr   | smaller than
 expr <= expr   | smaller than or equal
+expr =~ expr   | regexp matches
+expr !~ expr   | regexp doesn't match
 ! expr         | logical NOT
 
 ~~~
