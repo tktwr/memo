@@ -27,26 +27,44 @@ Blender
 
 ## Key
 ### View
-key                  | command
----                  | ---
-Shift + Middle Mouse | translation
-Middle Mouse         | rotation
-wheel                | zoom
+key             | command
+---             | ---
+Shift + M-Drag  | translation
+M-Drag          | rotation
+Wheel           | zoom
+L-Click         | select
+Shift + L-Click | multiple select
+L-Drag          | multiple select
 
 ### Object
-key                  | command
----                  | ---
-A                    | add
-x                    | delete
-g                    | translate in x, y, z axis
-gx                   | translate along x axis
-gy                   | translate along y axis
-gz                   | translate along z axis
-gX                   | translate except x axis
-gY                   | translate except y axis
-gZ                   | translate except z axis
-s                    | scale
-r                    | rotate
+key              | command
+---              | ---
+ESC              | cancel
+Tab              | object/edit mode
+n                | toggle tool bar
+Ctrl + z         | undo
+Shift + Ctrl + z | redo
+a                | select all
+A                | add
+x                | delete
+Shift + d        | duplicate
+g[axis]          | grab
+gx               | translate along x axis
+gy               | translate along y axis
+gz               | translate along z axis
+gX               | translate except x axis
+gY               | translate except y axis
+gZ               | translate except z axis
+s[axis]          | scale
+r[axis]          | rotate
+
+### Edit
+mode    | key      | command
+---     | ---      | ---
+        | Ctrl + b | bevel
+bevel   | Wheel    | subdivision
+surface | i        | insert
+surface | e        | extrude
 
 ### Camera
 key         | command
@@ -59,10 +77,11 @@ rxx         | pitch
 ryy         | yaw
 rzz         | roll
 
+n > View > Camera to View
+
 ### Others
 key                  | command
 ---                  | ---
-ESC                  | cancel
 F12                  | rendering
 
 ## Property

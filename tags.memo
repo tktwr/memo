@@ -1,10 +1,10 @@
 !_TAG_FILE_ENCODING	utf-8	//
 memo_ahk	dev.md.html	/*memo_ahk*
 memo_autohotkey	dev.md.html	/*memo_autohotkey*
-memo_cg	cg.md.html	/*memo_cg*
-memo_cg.blender	cg.md.html	/*memo_cg.blender*
-memo_cg.meshlab	cg.md.html	/*memo_cg.meshlab*
-memo_cg.unity	cg.md.html	/*memo_cg.unity*
+memo_cg	blender.md.html	/*memo_cg*
+memo_cg.blender	blender.md.html	/*memo_cg.blender*
+memo_cg.meshlab	blender.md.html	/*memo_cg.meshlab*
+memo_cg.unity	blender.md.html	/*memo_cg.unity*
 memo_csh	sh.md.html	/*memo_csh*
 memo_csh.syntax	sh.md.html	/*memo_csh.syntax*
 memo_dev	dev.md.html	/*memo_dev*
