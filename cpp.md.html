@@ -330,10 +330,17 @@ endif
 
 ### for
 ~~~
-loop:
-	@for i in "$(DIRS)"; do\
+PROJ_DIR=$(shell pwd)
+
+APPS="a.exe \
+b.exe \
+c.exe"
+
+run:
+	@for i in "$(APPS)"; do\
 		echo "=== [$$i] ===";\
-		cd "$$i" && echo "$$i" && cd ..;\
+		cd $(PROJ_DIR)/$(BUILD_DIR);\
+		$(BUILD_CONFIG)/$$i;\
 	done
 ~~~
 
