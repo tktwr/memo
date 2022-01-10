@@ -37,6 +37,16 @@ Server = https://MIRROR_SERVER/mingw/x86_64/
 ...
 ~~~
 
+## setup mirrors [Manjaro]
+~~~
+sudo pacman-mirrors --country Japan && sudo pacman -Syy
+~~~
+
+## print mirrors
+~~~
+pacman-mirrors
+~~~
+
 <meta name="keywords" content="*memo_init.shared_folder*">
 Shared Folder [VirtualBox]
 =======================================================
@@ -176,8 +186,8 @@ Python
 =============================================
 ~~~
 mypython-venv-create torch
-upgrade-pip.sh
-install-python-modules.sh
+pip-upgrade.sh
+pip-install.sh
 ~~~
 
 ## pip.conf/pip.ini

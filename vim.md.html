@@ -146,39 +146,39 @@ cfile  | file under the cursor
 
 | Key     | Original                  | Map                     | New
 | ---     | ------------------------- | ----------              | ---
-| C-A     | add                       | :MyMakeLink             |
-| C-B     | one page scroll up        | :Bmk bmk.txt            |
+| C-A     | add                       | quickhl                 | quickhl
+| C-B     | one page scroll up        | :Bmk bmk.txt            | edit bmk
 | C-C     | interrupt                 |                         | ==
 | C-D     | half page scroll down     | C-B                     | one page scroll up
-| C-E     | one line scroll down      | :WinBufHistClear        |
+| C-E     | one line scroll down      | :close                  | close the current window
 | C-F     | one page scroll down      |                         | ==
-| C-G     | display info              | :MyRedraw               |
+| C-G     | display info              | :MyRedraw               | redraw
 | C-H     | h                         | C-W h                   | window left
-| C-I     | TAB                       | :WinBufHistPrint        |
+| C-I     | TAB                       |                         | ==
 | C-J     | j                         | C-W w                   | window next
 | C-K     | not used                  | C-W W                   | window prev
 | C-L     | redraw screen             | C-W l                   | window right
 | C-M     | CR                        |                         | ==
-| C-N     | j                         | :cn                     |
-| C-O     | prev in jump list         | :WinBufHistPop          |
-| C-P     | k                         | :cp                     |
+| C-N     | j                         | :cn                     | error next
+| C-O     | prev in jump list         | WblPop                  | WblPop
+| C-P     | k                         | :cp                     | error prev
 | C-Q     | terminal control          | @q                      | exec the command in the register q
 | C-R     | redo                      |                         | ==
-| C-S     | terminal control          | :Bmk scratchpad.md.html |
+| C-S     | terminal control          |                         | [to be assigned]
 | C-T     | prev in tag list          |                         | ==
-| C-U     | half page scroll up       | quickhl                 |
+| C-U     | half page scroll up       | WblNext                 | WblNext
 | C-V     | block visual mode         |                         | ==
 | C-W     | window command            |                         | ==
-| C-X     | subtract                  | :close                  | close the current window
-| C-Y     | one line scroll up        | :call MyIDESendCdE2T()  |
-| C-Z     | suspend                   |                         | ==
+| C-X     | subtract                  |                         | [to be assigned]
+| C-Y     | one line scroll up        | WblPrev                 | WblPrev
+| C-Z     | suspend                   |                         | menu ref
 | NL      | j                         |                         | ==
-| Space   | l                         | whichkey                |
-| Tab     | next in jump list         | :MyNERDTreeToggle       |
-| BS      | h                         | :MyTagbarToggle         |
+| Space   | l                         | :CpmOpen                | menu
+| Tab     | next in jump list         |                         | ==
+| BS      | h                         | C-B                     | page up
 | CR      | +                         |                         | ==
-| C-CR    |                           | :call BmkOpenThis()     |
-| S-CR    |                           | :call BmkKeyCRThis()    |
+| C-CR    |                           | :call BmkViewThis()     | view
+| S-CR    |                           | :call BmkOpenThis()     | open
 | C-;     |                           | C-W :                   | command mode
 | C-.     |                           | :MyLcdHere              |
 | C-[     | ESC                       |                         | ==
