@@ -36,6 +36,7 @@ FIGNORE=.o
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ~~~
 
+<meta name="keywords" content="*memo_sh.bash.heredoc*">
 ## ヒアドキュメント heredoc
 ~~~
 cat << END
@@ -97,6 +98,7 @@ echo "error" 1>&2
 % tar cf - dir | (cd /mirror; tar xf -)
 ~~~
 
+<meta name="keywords" content="*memo_sh.bash.var*">
 ## 変数置換
 変数                                 | 説明
 -------------------------------------|---
@@ -117,6 +119,7 @@ echo ${x/.bar/.com}
 echo a{d,c,b}e
 ~~~
 
+<meta name="keywords" content="*memo_sh.bash.array*">
 ## array
 ~~~
 a=(\
@@ -131,6 +134,7 @@ echo ${a[@]}
 echo ${#a[*]}
 ~~~
 
+<meta name="keywords" content="*memo_sh.bash.dict*">
 ## dict
 ~~~
 declare -A DICT
@@ -142,6 +146,7 @@ echo ${DICT["en"]}
 echo ${DICT[""]}    # error
 ~~~
 
+<meta name="keywords" content="*memo_sh.bash.arithmetic*">
 ## arithmetic
 ~~~
 n=1
@@ -150,6 +155,7 @@ n=$((n + 1))
 ~~~
 
 <meta name="keywords" content="*memo_sh.syntax*">
+<meta name="keywords" content="*memo_sh.syntax.expr*">
 ## syntax
 ### expr
 EXPRESSION                 | Description
@@ -176,6 +182,7 @@ INT1 -ne INT2              | INT1 is not equal to INT2
 -w FILE                    | FILE exists and write permission is granted
 -x FILE                    | FILE exists and execute (or search) permission is granted
 
+<meta name="keywords" content="*memo_sh.syntax.if*">
 ### if
 ~~~
 if [ EXPR ]; then
@@ -184,6 +191,7 @@ else
 fi
 ~~~
 
+<meta name="keywords" content="*memo_sh.syntax.for*">
 ### for
 ~~~
 for i in $list; do
@@ -191,12 +199,14 @@ for i in $list; do
 done
 ~~~
 
+<meta name="keywords" content="*memo_sh.syntax.while*">
 ### while
 ~~~
 while [ EXPR ]; do
 done
 ~~~
 
+<meta name="keywords" content="*memo_sh.syntax.case*">
 ### case
 ~~~
 case $i in
@@ -205,6 +215,7 @@ case $i in
 esac
 ~~~
 
+<meta name="keywords" content="*memo_sh.stdin*">
 ## read from stdin
 ~~~
 while [ true ]; do
@@ -217,6 +228,7 @@ while [ true ]; do
 done
 ~~~
 
+<meta name="keywords" content="*memo_sh.date*">
 ## date
 ~~~
 env LC_TIME=C date '+%Y/%m/%d (%a)'
