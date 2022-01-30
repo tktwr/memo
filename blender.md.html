@@ -2,12 +2,98 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="default.css">
 
-<meta name="keywords" content="*memo_cg*">
-**CG**
+<meta name="keywords" content="*memo_blender*">
+**Blender**
 
-<meta name="keywords" content="*memo_cg.blender*">
-Blender
-=======================================================
+# View
+key             | command
+---             | ---
+Shift + M-Drag  | translation
+M-Drag          | rotation
+Wheel           | zoom
+L-Click         | select
+Shift + L-Click | multiple select
+L-Drag          | multiple select
+
+# Object
+key              | command
+---              | ---
+ESC              | cancel
+Tab              | object/edit mode
+Ctrl + z         | undo
+Shift + Ctrl + z | redo
+n                | toggle tool bar
+A                | open add menu
+a                | select all
+x                | delete
+D                | duplicate (same material)
+Ctrl + c         | copy (new material)
+Ctrl + v         | paste
+g[axis]          | grab
+gx               | translate along x axis
+gy               | translate along y axis
+gz               | translate along z axis
+gX               | translate except x axis
+gY               | translate except y axis
+gZ               | translate except z axis
+s[axis]          | scale
+r[axis]          | rotate
+
+## Set Origin
+Object > Set Origin
+
+# Edit
+mode     | key      | command
+---      | ---      | ---
+         | Tab      | object/edit mode
+         | Ctrl + b | bevel
+bevel    | Wheel    | subdivision
+surface  | i        | insert
+surface  | e        | extrude
+
+# Camera
+key         | command
+---         | ---
+camera view | カメラアイコン, Num0, View > View Point > Camera
+g??         | translate in local axis
+gzz         | zoom in/out
+gZZ         | pan
+rxx         | pitch
+ryy         | yaw
+rzz         | roll
+
+## カメラを移動
+n > View > Camera to View
+
+# Create
+## Create Sphere
+- Add > Mesh > UV Sphere
+- Object > Shade Smooth
+
+# Property Panel
+## Render
+- Render Engine: Cycles
+- Device: GPU
+- Motion Blur
+
+## View
+- Denoising
+
+## World
+- Environment Texture
+
+## Particle
+- Children > Simple
+  - Display Amount
+  - Render Amount
+- Kink
+- Hair Dynamics
+
+# Others
+key                  | command
+---                  | ---
+F12                  | rendering
+
 ## Disable in Renders
 - Filter > Disable in Renders
 
@@ -20,88 +106,6 @@ Blender
   - x y z = x z -y
 
 ![blender](images/model_blender.jpg)
-
-## Create Sphere
-- Add > Mesh > UV Sphere
-- Object > Shade Smooth
-
-## Key
-### View
-key             | command
----             | ---
-Shift + M-Drag  | translation
-M-Drag          | rotation
-Wheel           | zoom
-L-Click         | select
-Shift + L-Click | multiple select
-L-Drag          | multiple select
-
-### Object
-key              | command
----              | ---
-ESC              | cancel
-Tab              | object/edit mode
-n                | toggle tool bar
-Ctrl + z         | undo
-Shift + Ctrl + z | redo
-a                | select all
-A                | add
-x                | delete
-Shift + d        | duplicate
-g[axis]          | grab
-gx               | translate along x axis
-gy               | translate along y axis
-gz               | translate along z axis
-gX               | translate except x axis
-gY               | translate except y axis
-gZ               | translate except z axis
-s[axis]          | scale
-r[axis]          | rotate
-
-### Edit
-mode    | key      | command
----     | ---      | ---
-        | Ctrl + b | bevel
-bevel   | Wheel    | subdivision
-surface | i        | insert
-surface | e        | extrude
-
-### Camera
-key         | command
----         | ---
-camera view | カメラアイコン, Num0, View > View Point > Camera
-g??         | translate in local axis
-gzz         | zoom in/out
-gZZ         | pan
-rxx         | pitch
-ryy         | yaw
-rzz         | roll
-
-n > View > Camera to View
-
-### Others
-key                  | command
----                  | ---
-F12                  | rendering
-
-## Property
-### Render
-- Render Engine: Cycles
-- Device: GPU
-- Motion Blur
-
-### View
-- Denoising
-
-### World
-- Environment Texture
-
-### Particle
-- Children > Simple
-  - Display Amount
-  - Render Amount
-- Kink
-- Hair Dynamics
 
 ### テクスチャを取り出す
 File > External Data > Unpack All Into Files
@@ -158,37 +162,11 @@ TAB ... エディットモードに入る
 Tools > Loop Cut and Slide
 -> 等間隔にしか切れない
 
-## 数値パッドを表示
-N
-
 ## ユーザー設定
 File > User Preferences...
 
-## カメラ
-- View > Persp/Ortho
-- View > Front
-
-## カメラ移動
-- 真ん中マウスドラッグ ... 回転
-- 左マウスドラッグ ... 移動
-- ホイール ... ズーム
-
-- 左マウスクリック ... カーソル配置
-
-## オブジェクトモード
-- 右マウスクリック ... オブジェクトの選択
-- Shift + 右マウスクリック ... オブジェクトの追加選択
-- A ... 全選択/解除
-- X ... 削除
-- Ctrl + マニュピレーター ... グリッド単位で移動
-- Shift + A ... Add
-
 ## 他のレイヤへ移動
 オブジェクト選択 > M > 移動先レイヤ選択
-
-## エディットモード
-- TAB ... オブジェクトモード/エディットモード切替
-- B ... 矩形選択
 
 ## 連続面選択
 面選択 > Select > Linked Flat Faces
@@ -207,41 +185,6 @@ Ctrl + R
 
 ## 法線の反転
 選択 > Faces > Flip Normals
-
-<meta name="keywords" content="*memo_cg.unity*">
-Unity
-=======================================================
-- Left-handed coordinate system
-- X-left
-- Y-up
-- Z-front
-- Matrix
-    - Column order memory
-- [Unity matrix](http://edom18.hateblo.jp/entry/2019/01/04/153205)
-
-![unity](images/model_unity.jpg)
-
-<meta name="keywords" content="*memo_cg.meshlab*">
-MeshLab
-=======================================================
-- Right-handed coordinate system
-- X-right
-- Y-up
-- Z-front
-
-![meshlab](images/model_meshlab.jpg)
-
-## UV表示
-- Render > Show UV Tex Param
-
-## 法線表示
-- Render > Show Normal
-
-## Bounding Boxの情報表示
-- Render > Show Box Corners
-
-## 法線をそろえる
-- Filters > Normals, ... > Re-Orient all faces coherently
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="markdeep.min.js"></script>

@@ -1,10 +1,7 @@
 !_TAG_FILE_ENCODING	utf-8	//
 memo_ahk	dev.md.html	/*memo_ahk*
 memo_autohotkey	dev.md.html	/*memo_autohotkey*
-memo_cg	blender.md.html	/*memo_cg*
-memo_cg.blender	blender.md.html	/*memo_cg.blender*
-memo_cg.meshlab	blender.md.html	/*memo_cg.meshlab*
-memo_cg.unity	blender.md.html	/*memo_cg.unity*
+memo_blender	blender.md.html	/*memo_blender*
 memo_csh	sh.md.html	/*memo_csh*
 memo_csh.syntax	sh.md.html	/*memo_csh.syntax*
 memo_dev	dev.md.html	/*memo_dev*
@@ -154,7 +151,9 @@ memo_soft.convert	soft.md.html	/*memo_soft.convert*
 memo_soft.freecad	soft.md.html	/*memo_soft.freecad*
 memo_soft.gimp	soft.md.html	/*memo_soft.gimp*
 memo_soft.imagemagick	soft.md.html	/*memo_soft.imagemagick*
+memo_soft.meshlab	soft.md.html	/*memo_soft.meshlab*
 memo_soft.powerpoint	soft.md.html	/*memo_soft.powerpoint*
+memo_soft.unity	soft.md.html	/*memo_soft.unity*
 memo_soft.word	soft.md.html	/*memo_soft.word*
 memo_stock	stock.md.html	/*memo_stock*
 memo_top	memo.md.html	/*memo_top*
