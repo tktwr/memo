@@ -57,6 +57,7 @@ memo_init.mirror	init.md.html	/*memo_init.mirror*
 memo_init.proxy	init.md.html	/*memo_init.proxy*
 memo_init.setup	init.md.html	/*memo_init.setup*
 memo_init.shared_folder	init.md.html	/*memo_init.shared_folder*
+memo_lang.html	lang.md.html	/*memo_lang.html*
 memo_links	links.md.html	/*memo_links*
 memo_my	my.md.html	/*memo_my*
 memo_my.fn.keymap	my.md.html	/*memo_my.fn.keymap*

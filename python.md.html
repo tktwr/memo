@@ -48,18 +48,21 @@ pip install -U {pkg}             | update package
 pip install -r requirements.txt  | install packages listed in requirements.txt
 pip uninstall {pkg}              | uninstall package
 
-## upgrade pip
+### upgrade pip
 ~~~
 python -m pip install --upgrade pip
 ~~~
 
-## list / install requrired packages
+### list / install requrired packages
 ~~~
 pip freeze > requirements.txt
 pip install -r requirements.txt
 ~~~
 
-## script
+<meta name="keywords" content="*memo_prog.python.syntax*">
+## syntax
+
+### main
 ~~~
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -73,13 +76,13 @@ if __name__ == "__main__":
     main(sys.argv)
 ~~~
 
-## print sys.path
+### sys.path
 ~~~
 >>> import sys
 >>> sys.path
 ~~~
 
-## import
+### import
 ~~~
 import <modeule>
 import <modeule> as <new_name>
@@ -87,24 +90,34 @@ from <package> import <symbol>
 from <package> import <symbol> as <new_name>
 ~~~
 
-## examples of import
+### examples of import
 ~~~
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import pyplot as plt
 ~~~
 
-<meta name="keywords" content="*memo_prog.python.syntax*">
-## syntax
 <meta name="keywords" content="*memo_prog.python.syntax.expr*">
 ### expr
-expr          | Description
----           | ---
-expr and expr | logical AND
-expr or expr  | logical OR
-not expr      | not
-0 <= i < 2    | 0以上2より小さい
-i in l        | リストlの中にiがあるか
+
+~~~
+expr       | Description
+---        | ---
+x <  y     |
+x <= y     |
+x >  y     |
+x >= y     |
+x == y     | x と y の値が等しい
+x != y     | x と y の値が等しくない
+0 <= x < 2 | x が 0 以上 2 より小さい
+x is y     | x が y と同じオブジェクト
+x is not y | x が y と同じオブジェクトでない
+x in y     | x が y に含まれる
+x not in y | x が y に含まれない
+x and y    | AND
+x or y     | OR
+not x      | NOT
+~~~
 
 <meta name="keywords" content="*memo_prog.python.syntax.if*">
 ### if
