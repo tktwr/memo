@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source common.sh
+
 #======================================================
 # functions
 #======================================================
@@ -8,7 +10,7 @@ f_default() {
 }
 
 f_tags_memo() {
-  memotags.sh *.html > tags.memo
+  f_eval "memotags.sh *.html > tags.memo"
 }
 
 f_helptags() {

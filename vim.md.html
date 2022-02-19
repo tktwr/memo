@@ -55,6 +55,7 @@ vnoremap A y:!cmd "<C-R>""<CR>
 <meta name="keywords" content="*memo_vim.script.syntax*">
 ## syntax
 
+<meta name="keywords" content="*memo_vim.script.syntax.expr*">
 ### expr
 expr           | Description
 ---            | ---
@@ -74,6 +75,7 @@ expr !~ expr   | regexp doesn't match
 :help expression-syntax
 ~~~
 
+<meta name="keywords" content="*memo_vim.script.syntax.let*">
 ### let
 ~~~
 let var = val
@@ -81,6 +83,7 @@ let var_list = []
 let var_dict = {}
 ~~~
 
+<meta name="keywords" content="*memo_vim.script.syntax.if*">
 ### if
 ~~~
 if expr
@@ -92,6 +95,7 @@ else
 endif
 ~~~
 
+<meta name="keywords" content="*memo_vim.script.syntax.for*">
 ### for
 ~~~
 for var in list
@@ -99,6 +103,7 @@ for var in list
 endfor
 ~~~
 
+<meta name="keywords" content="*memo_vim.script.syntax.while*">
 ### while
 ~~~
 while expr
@@ -106,6 +111,7 @@ while expr
 endwhile
 ~~~
 
+<meta name="keywords" content="*memo_vim.script.syntax.func*">
 ### func
 ~~~
 func name(arg1, arg2)
@@ -114,7 +120,8 @@ func name(arg1, arg2)
 endfunc
 ~~~
 
-## script
+<meta name="keywords" content="*memo_vim.script.syntax.args*">
+### args
 Word   | Description
 ---    | ---
 args   | 
@@ -124,6 +131,7 @@ cward  | word under the cursor
 cWARD  | word under the cursor
 cfile  | file under the cursor
 
+<meta name="keywords" content="*memo_vim.script.syntax.autocmd*">
 ### autocmd
 - VimEnter
   - FileType
@@ -452,7 +460,7 @@ C-W ""       | paste the unnamed register
   | Command          | Description
 --|------------------|---
   | -                | toggle stage / unstage
-  | X                | discard the change
+  | X                | discard changes
   | D                | diff
   | R                | reload the status buffer
 
