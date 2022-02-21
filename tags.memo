@@ -121,6 +121,7 @@ memo_prog.python.syntax.for	python.md.html	/*memo_prog.python.syntax.for*
 memo_prog.python.syntax.if	python.md.html	/*memo_prog.python.syntax.if*
 memo_prog.python.syntax.import	python.md.html	/*memo_prog.python.syntax.import*
 memo_prog.python.syntax.main	python.md.html	/*memo_prog.python.syntax.main*
+memo_prog.python.syntax.string	python.md.html	/*memo_prog.python.syntax.string*
 memo_prog.python.syntax.while	python.md.html	/*memo_prog.python.syntax.while*
 memo_prog.python.tensorflow	python.md.html	/*memo_prog.python.tensorflow*
 memo_prog.python.venv	python.md.html	/*memo_prog.python.venv*
@@ -190,6 +191,7 @@ memo_vim.script.syntax.for	vim.md.html	/*memo_vim.script.syntax.for*
 memo_vim.script.syntax.func	vim.md.html	/*memo_vim.script.syntax.func*
 memo_vim.script.syntax.if	vim.md.html	/*memo_vim.script.syntax.if*
 memo_vim.script.syntax.let	vim.md.html	/*memo_vim.script.syntax.let*
+memo_vim.script.syntax.string	vim.md.html	/*memo_vim.script.syntax.string*
 memo_vim.script.syntax.while	vim.md.html	/*memo_vim.script.syntax.while*
 memo_vim.term	vim.md.html	/*memo_vim.term*
 memo_vim.ultisnips	vim.md.html	/*memo_vim.ultisnips*
