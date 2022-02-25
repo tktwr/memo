@@ -10,11 +10,11 @@ f_default() {
 }
 
 f_tags_memo() {
-  f_eval "memotags.sh *.html > tags.memo"
+  f_eval 'memotags.sh *.html > tags.memo'
 }
 
 f_helptags() {
-  vim -e -c "helptags . | quit"
+  vim -e -c 'helptags . | quit'
 }
 
 f_dot() {
