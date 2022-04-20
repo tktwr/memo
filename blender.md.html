@@ -5,6 +5,7 @@
 <meta name="keywords" content="*memo_blender*">
 **Blender**
 
+<meta name="keywords" content="*memo_blender.view*">
 # View
 key             | command
 ---             | ---
@@ -15,7 +16,11 @@ L-Click         | select
 Shift + L-Click | multiple select
 L-Drag          | multiple select
 
-# Object
+## 選択オブジェクトを中心に表示
+- View > Frame Selected
+
+<meta name="keywords" content="*memo_blender.object*">
+# Object Mode
 key              | command
 ---              | ---
 ESC              | cancel
@@ -29,20 +34,34 @@ x                | delete
 D                | duplicate (same material)
 Ctrl + c         | copy (new material)
 Ctrl + v         | paste
-g[axis]          | grab
-gx               | translate along x axis
-gy               | translate along y axis
-gz               | translate along z axis
-gX               | translate except x axis
-gY               | translate except y axis
-gZ               | translate except z axis
-s[axis]          | scale
-r[axis]          | rotate
+g[x,y,z]         | translate along x or y or z axis
+s[x,y,z]         | scale along x or y or z axis
+r[x,y,z]         | rotate along x or y or z axis
+g[X,Y,Z]         | translate except x or y or z axis
+s[X,Y,Z]         | scale except x or y or z axis
+r[X,Y,Z]         | rotate except x or y or z axis
+
+## Create Sphere
+- Add > Mesh > UV Sphere
+
+## Smoothing
+- Object > Shade Smooth
+
+## Auto Smooth
+- Object Data Properties > Normals > Auto Smooth
+
+<meta name="keywords" content="*memo_blender.origin*">
+## Set 3D cursor to the origin
+- Shift + s > Cursor to World Origin
 
 ## Set Origin
-Object > Set Origin
+- Object > Set Origin > Origin to 3D Cursor
 
-# Edit
+## Apply Transforms
+- Object > Apply > All Transforms
+
+<meta name="keywords" content="*memo_blender.edit*">
+# Edit Mode
 mode     | key      | command
 ---      | ---      | ---
          | Tab      | object/edit mode
@@ -51,6 +70,20 @@ bevel    | Wheel    | subdivision
 surface  | i        | insert
 surface  | e        | extrude
 
+## split vertices
+- [面選択] > Mesh > Split > Selection
+
+## separate to another object
+- [面選択] > Mesh > Separate > Selection
+
+## Flip Normals
+- [面選択] > Mesh > Normals > Flip
+- Viewport Overlays > Face Orientation
+
+## UV展開
+- [面選択] > UV > Unwrap
+
+<meta name="keywords" content="*memo_blender.camera*">
 # Camera
 key         | command
 ---         | ---
@@ -63,18 +96,23 @@ ryy         | yaw
 rzz         | roll
 
 ## カメラを移動
-n > View > Camera to View
-
-# Create
-## Create Sphere
-- Add > Mesh > UV Sphere
-- Object > Shade Smooth
+- n > View > Camera to View
 
 # Property Panel
+<meta name="keywords" content="*memo_blender.render*">
 ## Render
 - Render Engine: Cycles
 - Device: GPU
 - Motion Blur
+
+<meta name="keywords" content="*memo_blender.ssrefr*">
+### Screen Space Refraction
+- Render Engine: Eevee
+- Render Properties > Screen Space Reflections > Refraction
+
+<meta name="keywords" content="*memo_blender.background*">
+### 背景の透過
+- Render Properties > Film > Transparent
 
 ## View
 - Denoising
@@ -94,6 +132,13 @@ key                  | command
 ---                  | ---
 F12                  | rendering
 
+## Quick Favorites
+- menu item 上で右クリック > Add to Quick Favorites
+- qキーでQuick Favorites Menu表示
+
+## テクスチャを取り出す
+- File > External Data > Unpack All Into Files
+
 ## Disable in Renders
 - Filter > Disable in Renders
 
@@ -106,34 +151,6 @@ F12                  | rendering
   - x y z = x z -y
 
 ![blender](images/model_blender.jpg)
-
-### テクスチャを取り出す
-File > External Data > Unpack All Into Files
-
-## AO
-- 「AOベイク」で3Dモデルのクオリティを上げよう！
-  - https://virtualcast.jp/blog/2020/04/blender_bake_ao/
-  - https://github.com/SavMartin/TexTools-Blender
-  - https://github.com/SavMartin/TexTools-Blender/releases
-- 手順
-  - Window > UV Editor
-  - 右上Tab > TexTools
-  - Baking
-  - AO
-  - Size
-  - Samples
-
-## Python API
-- https://docs.blender.org/api/current/index.html
-- https://docs.blender.org/api/2.83
-
-## BSDF
-- https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
-- https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/hair_principled.html
-
-## BSDF (Arnold)
-- https://docs.arnoldrenderer.com/display/A5AFMUG/Standard+Surface
-- https://docs.arnoldrenderer.com/display/A5AFMUG/Standard+Hair
 
 ## 回転中心を指定
 1. 点を選択して、
@@ -183,8 +200,33 @@ File > User Preferences...
 ## 面分割
 Ctrl + R
 
-## 法線の反転
-選択 > Faces > Flip Normals
+<meta name="keywords" content="*memo_blender.reference*">
+# Reference
+## AO
+- 「AOベイク」で3Dモデルのクオリティを上げよう！
+  - https://virtualcast.jp/blog/2020/04/blender_bake_ao/
+  - https://github.com/SavMartin/TexTools-Blender
+  - https://github.com/SavMartin/TexTools-Blender/releases
+- 手順
+  - Window > UV Editor
+  - 右上Tab > TexTools
+  - Baking
+  - AO
+  - Size
+  - Samples
+
+## Python API
+- https://docs.blender.org/api/current/index.html
+- https://docs.blender.org/api/2.83
+
+## BSDF
+- https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
+- https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/hair_principled.html
+
+## BSDF (Arnold)
+- https://docs.arnoldrenderer.com/display/A5AFMUG/Standard+Surface
+- https://docs.arnoldrenderer.com/display/A5AFMUG/Standard+Hair
+
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="markdeep.min.js"></script>

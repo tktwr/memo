@@ -2,6 +2,15 @@
 memo_ahk	dev.md.html	/*memo_ahk*
 memo_autohotkey	dev.md.html	/*memo_autohotkey*
 memo_blender	blender.md.html	/*memo_blender*
+memo_blender.background	blender.md.html	/*memo_blender.background*
+memo_blender.camera	blender.md.html	/*memo_blender.camera*
+memo_blender.edit	blender.md.html	/*memo_blender.edit*
+memo_blender.object	blender.md.html	/*memo_blender.object*
+memo_blender.origin	blender.md.html	/*memo_blender.origin*
+memo_blender.reference	blender.md.html	/*memo_blender.reference*
+memo_blender.render	blender.md.html	/*memo_blender.render*
+memo_blender.ssrefr	blender.md.html	/*memo_blender.ssrefr*
+memo_blender.view	blender.md.html	/*memo_blender.view*
 memo_csh	sh.md.html	/*memo_csh*
 memo_csh.syntax	sh.md.html	/*memo_csh.syntax*
 memo_dev	dev.md.html	/*memo_dev*
@@ -57,7 +66,10 @@ memo_init.mirror	init.md.html	/*memo_init.mirror*
 memo_init.proxy	init.md.html	/*memo_init.proxy*
 memo_init.setup	init.md.html	/*memo_init.setup*
 memo_init.shared_folder	init.md.html	/*memo_init.shared_folder*
+memo_lang.compare	lang.md.html	/*memo_lang.compare*
+memo_lang.compare_lib	lang.md.html	/*memo_lang.compare_lib*
 memo_lang.html	lang.md.html	/*memo_lang.html*
+memo_lang.markdeep	lang.md.html	/*memo_lang.markdeep*
 memo_links	links.md.html	/*memo_links*
 memo_my	my.md.html	/*memo_my*
 memo_my.fn.keymap	my.md.html	/*memo_my.fn.keymap*
@@ -158,6 +170,7 @@ memo_soft.gimp	soft.md.html	/*memo_soft.gimp*
 memo_soft.imagemagick	soft.md.html	/*memo_soft.imagemagick*
 memo_soft.meshlab	soft.md.html	/*memo_soft.meshlab*
 memo_soft.powerpoint	soft.md.html	/*memo_soft.powerpoint*
+memo_soft.ue	soft.md.html	/*memo_soft.ue*
 memo_soft.unity	soft.md.html	/*memo_soft.unity*
 memo_soft.word	soft.md.html	/*memo_soft.word*
 memo_stock	stock.md.html	/*memo_stock*
