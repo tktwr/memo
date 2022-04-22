@@ -18,9 +18,9 @@ f_helptags() {
 }
 
 f_dot() {
-  dot -T svg -o images/skk.svg skk.dot
-  dot -T svg -o images/git.svg git.dot
-  dot -T svg -o images/vim-ide.svg vim-ide.dot
+  dot -T svg -o images/skk.svg dot/skk.dot
+  dot -T svg -o images/git.svg dot/git.dot
+  dot -T svg -o images/vim-ide.svg dot/vim-ide.dot
 }
 
 f_help() {
