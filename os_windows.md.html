@@ -1,0 +1,205 @@
+<meta vim:set syntax=markdown:>
+<meta charset="utf-8">
+<link rel="stylesheet" href="inc/default.css">
+
+**Windows**
+
+<meta name="keywords" content="*memo_os.windows*">
+<meta name="keywords" content="*memo_os.windows10*">
+Windows
+=======================================================
+
+## Config Directories
+env            | path                              | description
+---            | ---                               | ---
+%APPDATA%      | %USERPROFILE%/AppData/Roaming/    | per-user data files that a roaming user can access from multiple machines
+%LOCALAPPDATA% | %USERPROFILE%/AppData/Local/      | per-user data files for this machine
+%TEMP%         | %USERPROFILE%/AppData/Local/Temp/ | per-user temporary files
+
+## 設定
+- control panel
+- device manager
+- disk manager
+- credential manager
+- performance
+  - Visual Effects
+    - Custom
+      - Show thumbnails instead of icons
+
+### Font
+- フォントをダブルクリックしてインストール
+
+### キーボード配列変更
+- 設定 > 日付と時刻 > 地域と言語 > 日本語 > オプション > ハードウェアキーボードレイアウト
+
+### Key delay
+- Control panel > Keyboard
+  - set key delay to short
+  - set key repeat to maximum
+
+### パーティションの変更
+- [コンピュータ (右クリックメニュー)] -> [管理] -> [ディスクの管理]
+
+## 共有
+ディレクトリを選択して右クリック:
+- プロパティ > 共有タブ > 共有...
+- プロパティ > 共有タブ > 詳細な共有... > このフォルダーを共有するをチェック
+- プロパティ > 共有タブ > 詳細な共有... > アクセス許可 > 追加
+
+ネットワークディレクトリを選択して右クリック:
+- ネットワークドライブの割り当て...
+
+## Windows ExplorerでPDFのプレビューを表示する
+- Adobe Acrobat Reader DCをインストール
+- [編集] -> [環境設定] -> [一般] -> [Windows ExplorerでPDFサムネールのプレビューを有効にする]
+
+<meta name="keywords" content="*memo_os.chocolatey*">
+<meta name="keywords" content="*memo_os.choco*">
+## Chocolatey
+
+~~~
+# help
+choco -h
+# version
+choco -v
+# upgrade
+choco upgrade chocolatey
+choco upgrade -y all
+# install
+choco install -y PACKAGE
+# uninstall
+choco uninstall PACKAGE
+# search PACKAGE
+choco list PACKAGE
+# list local
+choco list -l
+~~~
+
+- PACKAGE: virtual package
+  - PACKAGE.install: native installer
+  - PACKAGE.portable: portable package
+
+## Shortcut
+- [Windows Keyboard Shortcut](https://support.microsoft.com/ja-jp/help/12445/windows-keyboard-shortcuts)
+
+Shortcut               | Description
+-----------------------|-------------------------------
+Ctrl + W               | ウィンドウを閉じる
+Alt + `                | 日本語入力 [英語キーボード]
+Alt + Tab              | ウィンドウを切り替える
+Windows + L            | 画面ロック
+Windows + D            | デスクトップを表示
+Windows + E            | エクスプローラーを開く
+Windows + Up           | ウィンドウの最大化
+Windows + Down         | ウィンドウの最小化
+Windows + Left         | ウィンドウを左半分に最大化
+Windows + Right        | ウィンドウを右半分に最大化
+Windows + Tab          | タスクビューを開く
+Windows + Ctrl + Left  | 左の仮想デスクトップへ移動
+Windows + Ctrl + Right | 右の仮想デスクトップへ移動
+Windows + Shift + S    | 範囲を指定してスクリーンショット
+Windows + PrintScreen  | 全画面をスクリーンショットして保存 (~/Pictures/スクリーンショット)
+Alt + PrintScreen      | アクティブなウィンドウをスクリーンショット (~/OneDrive/画像/スクリーンショット)
+
+### Windows + PrintScreenの保存先
+- ピクチャ/スクリーンショットを右クリック > プロパティ > 場所で指定
+
+### Alt + PrintScreenのOneDriveへの保存
+- OneDrive > 設定 > バックアップ > スクリーンショット
+
+<meta name="keywords" content="*memo_os.dos*">
+<meta name="keywords" content="*memo_os.bat*">
+DOSコマンド
+=======================================================
+## UNIX - DOS コマンド対応表
+UNIX                    | DOS
+------------------------|--------------
+mkdir dir               | mkdir(md) dir
+cp src_file dst_file    | copy src_file dst_file
+cp -a src_dir dst_dir   | xcopy src_dir dst_dir
+mv src_file dst_file    | move src_file dst_file
+mv src_dir dst_dir      | move src_dir dst_dir
+rm file                 | del file
+rm -r dir               | rmdir(rd) /s dir
+ln -s src_file dst_file | mklink dst_file src_file
+ln -s src_dir dst_dir   | mklink /d dst_dir src_dir
+
+## シンボリックリンクの作成と削除
+     | 作成                    | 削除
+-----|-------------------------|----
+dir  | mklink /d dstdir srcdir | rmdir dstdir
+file | mklink dstfile srcfile  | del dstfile
+
+注意点
+
+- シンボリックリンク作成には管理者権限が必要。コマンドプロンプト(cmd.exe)を管理者権限で起動する。
+- mklink は ln と書き順が逆。
+- delでディレクトリへのシンボリックリンクは削除できない。del dir/* と解釈されてリンク先のディレクトリ内のファイルが削除される。
+
+## ミラーリング (管理者権限で実行)
+~~~
+robocopy C:\srcdir D:\dstdir /mir /sl
+robocopy srcdir D:\dstdir /mir /sl
+robocopy /?
+~~~
+
+## HDDの廃棄
+1. NTFSでフォーマット
+2. f:ドライブを消去 (0を書込み -> 1を書込み -> 乱数を書込み)
+~~~
+cipher /w:f:
+~~~
+
+## task
+~~~
+tasklist
+taskkill /?
+taskkill /IM notepad.exe [/T] [/F]
+taskkill /PID PID
+~~~
+
+## 共有
+### 共有フォルダを表示
+~~~
+net share
+~~~
+
+### ネットワークドライブ割り当て
+Command               | Description
+---                   | ---
+net use               | 割り当てを表示
+net use X: ¥¥PC¥share | 割り当て
+net use X: /DELETE    | 割り当てを削除
+
+## リモートデスクトップ接続でサーバー上のOpenGLアプリケーションを起動する
+### セッションIDを調べる
+~~~
+query session
+~~~
+### 管理者権限で実行
+~~~
+tscon 1 /dest:console 
+cd /d D:\work
+start opengl_prog.exe
+~~~
+
+<meta name="keywords" content="*memo_os.bootcamp*">
+BootCamp
+=======================================================
+## Shortcut
+Shortcut               | Description
+-----------------------|-------------------------------------
+option長押し           | OSの選択 [起動時]
+      Shift + Fn + F11 | スクリーンキャプチャ
+Alt + Shift + Fn + F11 | 選択されたウィンドウのキャプチャ
+
+<meta name="keywords" content="*memo_os.misc*">
+misc
+=======================================================
+## NTP Server
+ntp.nict.jp
+time.windows.com
+
+<style class="fallback">body{visibility:hidden}</style>
+<script src="inc/markdeep.min.js"></script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>

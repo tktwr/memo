@@ -1,0 +1,168 @@
+<meta vim:set syntax=markdown:>
+<meta charset="utf-8">
+<link rel="stylesheet" href="inc/default.css">
+
+**MSYS2**
+
+<meta name="keywords" content="*memo_os.msys2*">
+MSYS2
+=======================================================
+- http://www.msys2.org/
+
+<meta name="keywords" content="*memo_os.msys2.pacman*">
+
+## pacman
+
+- https://wiki.archlinux.org/index.php/pacman
+
+Option                | 説明
+--------------------  | -----------------
+-S -h                 | help
+-Syy                  | forcely update database all
+-Syyu                 | forcely update database all & update packages
+-S package            | install
+-R package            | uninstall
+-Ss [pattern]         | search packages
+-Sg [package group]   | print package group
+-Si [package]         | print information
+-Sl                   | print list
+-Qi installed_package | info of the package
+-Ql installed_package | list files in the package
+
+## paccache
+
+最新の３つのバージョンを残してパッケージのキャッシュを削除
+
+~~~
+paccache -r
+~~~
+
+<meta name="keywords" content="*memo_os.msys2.pacman.conf*">
+
+## /etc/pacman.conf
+~~~
+#XferCommand = /usr/bin/curl -C - -f %u > %o
+XferCommand = /c/Windows/System32/curl -C - -f %u > %o
+
+[mingw64]
+Server = https://MIRROR_SERVER/mingw/x86_64/
+~~~
+
+## disable POSIX-to-Windows path conversion
+以下のいずれかの方法がある
+
+1. パスの先頭の'/'を'//'に変更して記述する
+~~~
+//c/dir/fname
+~~~
+
+2. MSYS_NO_PATHCONVを設定する
+~~~
+export MSYS_NO_PATHCONV=1
+~~~
+
+3. MSYS2_ARG_CONV_EXCLを設定する
+~~~
+export MSYS2_ARG_CONV_EXCL="*"
+~~~
+
+## stdc++ man pages
+
+- https://github.com/jeaye/stdman
+
+ファイル名にstd::...を使用しているのでMSYS2のgitを使う
+~~~
+/usr/bin/git clone https://github.com/jeaye/stdman.git
+~~~
+
+<meta name="keywords" content="*memo_os.gitbash*">
+Git for Windows (gitbash)
+=======================================================
+## Update
+~~~
+$ git update-git-for-windows
+~~~
+
+<meta name="keywords" content="*memo_os.scp*">
+## scp
+~~~
+$ scp [-P PORT] USER@HOST:SRC DST
+$ scp [-P PORT] SRC USER@HOST:DST
+~~~
+
+<meta name="keywords" content="*memo_os.ssh*">
+## ssh
+~~~
+$ ssh [-p PORT] USER@HOST
+~~~
+
+<meta name="keywords" content="*memo_os.sshd*">
+## ssh server (sshd)
+
+gitbashを管理者権限で起動する
+
+### Server
+#### host key 作成
+~~~
+[SERVER]$ ssh-keygen -A
+~~~
+- /etc/ssh/ssh_host_*_key[.pub]が作成される
+
+#### ssh server 起動
+~~~
+[SERVER]$ /usr/bin/sshd
+~~~
+- absolute pathで起動
+
+### Client
+~~~
+[CLIENT]$ ssh-keygen
+~~~
+- ~/.ssh/id_rsa[.pub]が作成される
+- クライアントの~/.ssh/id_rsa.pubをサーバーの~/.ssh/authorized_keysに追加する
+
+## ssh-agent
+~~~
+$ ssh-agent $SHELL
+~~~
+
+Option | Description
+-------|---
+-k     | kill ssh-agent
+
+## ssh-add
+~~~
+$ ssh-add
+~~~
+
+Option | Description
+-------|---
+-l     | list fingerprints of private keys
+
+<meta name="keywords" content="*memo_os.cygwin*">
+Cygwin
+=======================================================
+## DLLの読み込みに失敗する場合
+~~~
+C:\cygwin\bin\dash.exe -c '/usr/bin/rebaseall -v'
+~~~
+
+## X serverのインストール
+- xorg-server
+- xinit
+
+## X serverの起動
+スタートメニュー -> XWin Server
+
+## テキストファイル形式
+UTF8, DOS形式
+
+## 現在のパスをWindows形式の絶対パスに変換
+~~~
+cygpath -am `pwd`
+~~~
+
+<style class="fallback">body{visibility:hidden}</style>
+<script src="inc/markdeep.min.js"></script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>
+

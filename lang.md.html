@@ -80,6 +80,34 @@ body {
 </style>
 ~~~
 
+<meta name="keywords" content="*memo_lang.bat*">
+BAT
+=============================================
+
+## sample.bat
+~~~
+@echo off
+rem sample batch file
+
+echo ARGS : %*
+echo ARG0 : %0
+echo ARG1 : %1
+echo DIR  : %~dp0
+
+set num=0
+if %num% equ 0 (
+  echo 0
+) else (
+  echo 1
+)
+
+set str=A
+if "%str%" == "A" (
+  echo 0
+) else (
+  echo 1
+)
+~~~
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="inc/markdeep.min.js"></script>

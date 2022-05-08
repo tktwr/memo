@@ -1,0 +1,322 @@
+<meta vim:set syntax=markdown:>
+<meta charset="utf-8">
+<link rel="stylesheet" href="inc/default.css">
+
+**Linux**
+
+<meta name="keywords" content="*memo_os.wsl*">
+WSL
+=======================================================
+## wsl command
+
+| Command       | Description            |
+| ---           | ---                    |
+| wsl --install | install linux          |
+| wsl -l -v     | list installed linux   |
+| wsl -l -o     | list installable linux |
+
+## file path to access from WSL to Windows
+~~~
+/mnt/c/Users/username
+~~~
+
+## file path to access from Windows to WSL
+~~~
+\\wsl$\Ubuntu\home\username
+~~~
+
+## Show Ubuntu Version
+
+~~~
+ubuntu$ lsb_release -a
+~~~
+
+<meta name="keywords" content="*memo_os.virtualbox*">
+VirtualBox
+=======================================================
+
+Shortcut    | Description
+------------|---
+Host        | Right Control
+Host + C    | scale mode
+Host + F    | full screen
+Host + M    | minimize
+Host + Home | menu
+
+Host Key: Right Control
+
+## Shared Folder
+
+### add user to vboxsf group
+~~~
+sudo usermod -a -G vboxsf `whoami`
+~~~
+
+### mount (manual)
+~~~
+sudo mkdir -p /mnt/vbox/SHARE_FOLDER
+sudo mount -t vboxsf SHARE_FOLDER /mnt/vbox/SHARE_FOLDER
+~~~
+
+### /etc/fstab
+~~~
+SHARE_FOLDER /mnt/vbox/SHARE_FOLDER vboxsf defaults,noauto,iocharset=utf8,uid=1000,gid=1000 0 0
+~~~
+
+<meta name="keywords" content="*memo_os.linux*">
+Linux
+=======================================================
+
+<meta name="keywords" content="*memo_os.linux.apt*">
+## apt
+| Command         | Description            |
+| ---             | ---                    |
+| apt update      | update database        |
+| apt upgrade     | update packages        |
+| apt autoremove  | remove unused packages |
+| apt list pkg    |                        |
+| apt show pkg    |                        |
+| apt install pkg |                        |
+| apt remove pkg  |                        |
+| apt search pkg  |                        |
+
+<meta name="keywords" content="*memo_os.linux.flatpak*">
+## flatpak
+
+~~~
+sudo apt install flatpak
+
+flatpak remotes
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install --user flathub io.neovim.nvim
+flatpak run --user io.neovim.nvim -u ~/.vimrc
+~~~
+
+### installed location
+~~~
+~/.var/app
+~~~
+
+## Config Directories
+env              | path               | description
+---              | ---                | ---
+$XDG_CONFIG_HOME | $HOME/.config      | per-user configuration files
+$XDG_DATA_HOME   | $HOME/.local/share | per-user data files
+$XDG_CACHE_HOME  | $HOME/.cache       | per-user cache files
+
+- [Config Directories](https://unix.stackexchange.com/questions/312988/understanding-home-configuration-file-locations-config-and-local-sha)
+
+## Shortcut [X Window]
+Shortcut            | Description
+--------------------|-------------------------------------
+Ctrl + Alt + F[1-6] | X Window から仮想コンソールへの切替え
+Ctrl + Alt + BS     | kill X server
+
+## Shortcut [Console]
+Shortcut            | Description
+--------------------|-------------------------------------
+       Alt + F[1-6] | 仮想コンソールの切替え
+       Alt + F7     | X Window へもどる
+Ctrl + Alt + Delete | reboot
+SysRq + s           | sync
+SysRq + u           | unmount
+SysRq + b           | reboot
+
+## WindowsでISOイメージをUSBメモリーに書き込む
+- [Rufus](https://rufus.ie/)
+
+<meta name="keywords" content="*memo_os.ubuntu*">
+Ubuntu Linux
+=======================================================
+
+## /etc/apt/apt.conf
+~~~
+Acquire::http::Proxy "http://USER:PASS@PROXY_SERVER:PORT";
+Acquire::https::Proxy "http://USER:PASS@PROXY_SERVER:PORT";
+~~~
+
+## フォルダ名を英語に変更
+~~~
+sudo pacman -S xdg-user-dirs-gtk
+LC_ALL=C xdg-user-dirs-gtk-update
+~~~
+
+## Font
+- フォントを~/.local/share/fontsにコピーする
+
+<meta name="keywords" content="*memo_os.mxlinux*">
+MX Linux
+=======================================================
+## MX Package Installer
+- Japanese_Fonts
+- Japanese_Input_fcitx
+
+## Setup
+- MX Tools
+  - Repo Manager
+- Synaptic
+  - Settings > Repository
+- Terminal
+  - Preferences...
+    - Disable F1
+    - Disable Alt
+    - Colors
+- japanese input
+  - Mozc
+- mount shared folder
+  - mount -t vboxsf share mount_point
+- copy and paste
+  - vim-gtk3 +clipboard +python3
+
+- [VirtualBox(2) VirtualBoxにMX Linux 19 とGuest Additions をインストール](https://qiita.com/FuRuYa7/items/954e8aab926ab99ec95e)
+- [How to enable a Virtualbox shared folder for Linux guest systems](https://averagelinuxuser.com/virtualbox-shared-folder/)
+- [VirtualBox のゲスト Linux で共有フォルダを使う](https://jade.alt-area.jp/archives/769)
+
+~~~
+$ sudo apt install build-essential dkms linux-headers-$(uname -r)
+$ sudo sh VBoxLinuxAdditions.run
+$ sudo usermod -a -G vboxsf `whoami`
+$ sudo chown -R `whoami`:users /media/
+$ id
+~~~
+
+## /etc/fstab
+~~~
+share /mnt/vbox/share vboxsf defaults,iocharset=utf8,uid=1000,gid=1000 0 0
+~~~
+
+## encfs
+- [EncFS](https://wiki.archlinux.jp/index.php/EncFS)
+- [ディスク暗号化](https://wiki.archlinux.jp/index.php/ディスク暗号化)
+
+### create / mount
+~~~
+$ encfs ~/.mysecret ~/mysecret
+~~~
+
+### umount
+~~~
+$ fusermount -u ~/mysecret
+~~~
+
+### change password
+~~~
+$ encfsctl passwd ~/.mysecret
+~~~
+
+<meta name="keywords" content="*memo_os.manjaro*">
+Manjaro Linux
+=======================================================
+
+## Mirror
+
+### setup mirrors
+~~~
+sudo pacman-mirrors --country Japan && sudo pacman -Syy
+~~~
+
+### print mirrors
+~~~
+pacman-mirrors
+~~~
+
+## Install
+~~~
+sudo pacman -Syu
+sudo pacman -S virtualbox-guest-utils
+sudo pacman -S vim
+sudo pacman -S nodejs npm
+~~~
+
+<meta name="keywords" content="*memo_os.termux*">
+Termux
+=======================================================
+- https://termux.com/
+- [The Termux Wiki](https://wiki.termux.com/wiki/Main_Page)
+- Hacker's Keyboard
+
+<meta name="keywords" content="*memo_os.termux.pkg*">
+## pkg [recommended]
+~~~
+pkg help
+pkg upgrade
+pkg install PACKAGE
+pkg search PACKAGE
+~~~
+
+## setup storage
+~~~
+termux-setup-storage
+~~~
+- [termux-setup-storage](https://wiki.termux.com/wiki/Termux-setup-storage)
+
+## /bin/shで始まるスクリプトを実行できるようにする
+~~~
+pkg install termux-exec
+~~~
+- [termux-exec](https://wiki.termux.com/wiki/FAQ#Why_do_I_keep_getting_.27.2Fbin.2Fsh_bad_interpreter.27_error.3F)
+
+## sshd
+
+- [Termux on AndroidのSSHサーバに接続する方法](https://linuxfan.info/termux-sshd)
+
+### generate key
+~~~
+pc$ ssh-keygen
+~~~
+
+### generated files
+~~~
+~/.ssh/id_rsa
+~/.ssh/id_rsa.pub
+~~~
+
+### print key info
+~~~
+pc$ ssh-keygen -l -f id_rsa.pub
+~~~
+
+### push id_rsa.pub by adb
+~~~
+pc$ adb push id_rsa.pub //sdcard/Download
+~~~
+
+### authorized_keys
+~~~
+termux$ mkdir ~/.ssh
+termux$ cat ~/storage/downloads/id_rsa.pub >> ~/.ssh/authorized_keys
+termux$ chmod 600 ~/.ssh/authorized_keys
+termux$ chmod 700 ~/.ssh
+~~~
+
+### run sshd server
+~~~
+termux$ sshd
+~~~
+
+### check ip address on termux
+~~~
+termux$ ip -4 a
+~~~
+
+### connect by ssh via 8022 port
+~~~
+pc$ ssh -p 8022 192.168.XXX.XXX
+~~~
+
+<meta name="keywords" content="*memo_os.mac*">
+Mac
+=======================================================
+## Shortcut
+Shortcut        | Description
+----------------|-------------------------------------
+Cmd + Tab       | アプリ切替
+Cmd + Space     | 日本語入力
+Shift + クリック| ファイル連続選択
+Cmd + クリック  | ファイル個別選択
+Cmd + delete    | ファイル削除
+
+<style class="fallback">body{visibility:hidden}</style>
+<script src="inc/markdeep.min.js"></script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>
+
