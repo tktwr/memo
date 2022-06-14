@@ -227,6 +227,12 @@ git branch -m {branch}  # 現在のブランチ名の変更
 git branch -a           # ブランチの表示
 ~~~
 
+### master branchをHEADに移動する
+~~~
+git branch -f master HEAD
+git update-ref refs/heads/master HEAD
+~~~
+
 <meta name="keywords" content="*memo_git-tag*">
 ## tag
 ~~~
@@ -383,6 +389,9 @@ cd ..
 ~~~
 git diff [--binary] from_commit [to_commit=HEAD] > diff_file
 git diff [--cached] [<commit>]
+git diff [--staged] [<commit>]
+git diff HEAD~[n]
+git diff origin/main
 ~~~
 
 <meta name="keywords" content="*memo_git-apply*">

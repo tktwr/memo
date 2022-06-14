@@ -77,6 +77,9 @@ $ command > foo.txt 2>&1
   2. > foo.txt: redirect stdout to file foo.txt
   So, foo.txt will contain stderr and stdout of command
 
+# discard stderr and stdout
+$ command > /dev/null 2>&1
+
 [bash]
 # redirect stderr and stdout
 $ command &> foo.txt
