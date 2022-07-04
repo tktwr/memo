@@ -103,6 +103,7 @@ memo_os.virtualbox	os_linux.md.html	/*memo_os.virtualbox*
 memo_os.windows	os_windows.md.html	/*memo_os.windows*
 memo_os.windows.choco	os_windows.md.html	/*memo_os.windows.choco*
 memo_os.windows.chocolatey	os_windows.md.html	/*memo_os.windows.chocolatey*
+memo_os.windows.http-server	os_windows.md.html	/*memo_os.windows.http-server*
 memo_os.windows.nodejs	os_windows.md.html	/*memo_os.windows.nodejs*
 memo_os.windows.npm	os_windows.md.html	/*memo_os.windows.npm*
 memo_os.windows10	os_windows.md.html	/*memo_os.windows10*
@@ -209,6 +210,7 @@ memo_vim.script.syntax.let	vim.md.html	/*memo_vim.script.syntax.let*
 memo_vim.script.syntax.string	vim.md.html	/*memo_vim.script.syntax.string*
 memo_vim.script.syntax.while	vim.md.html	/*memo_vim.script.syntax.while*
 memo_vim.term	vim.md.html	/*memo_vim.term*
+memo_vim.tmap	vim.md.html	/*memo_vim.tmap*
 memo_vim.ultisnips	vim.md.html	/*memo_vim.ultisnips*
 memo_vim.vim-lsp	vim.md.html	/*memo_vim.vim-lsp*
 memo_vim.vim-plug	vim.md.html	/*memo_vim.vim-plug*
