@@ -2,10 +2,10 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="inc/default.css">
 
-<meta name="keywords" content="*memo_init*">
-**Init**
+<meta name="keywords" content="*memo_setup*">
+**Setup**
 
-<meta name="keywords" content="*memo_init.proxy*">
+<meta name="keywords" content="*memo_setup.proxy*">
 Proxy
 =======================================================
 ## ~/.bashrc
@@ -20,7 +20,7 @@ export CURL_SSL_NO_VERIFY=1
 export NO_PROXY="localhost,127.0.0.1"
 ~~~
 
-<meta name="keywords" content="*memo_init.setup*">
+<meta name="keywords" content="*memo_setup.linux*">
 Setup
 =======================================================
 
@@ -41,7 +41,7 @@ Setup
 - GoogleDrive
 - Dropbox
 
-<meta name="keywords" content="*memo_init.install.min*">
+<meta name="keywords" content="*memo_setup.install.min*">
 Install (minimal)
 =======================================================
 ## Windows (Msys2)
@@ -126,7 +126,7 @@ $MY_VIM/coc_data/win   (windows)
 ~/.config/coc          (linux)
 ~~~
 
-<meta name="keywords" content="*memo_init.install*">
+<meta name="keywords" content="*memo_setup.install*">
 Install packages
 =======================================================
 ## Windows
@@ -204,7 +204,7 @@ cygwin
 ~~~
 -->
 
-<meta name="keywords" content="*memo_init.commands*">
+<meta name="keywords" content="*memo_setup.commands*">
 Install/Update/Upgrade
 =======================================================
 App          | Command                    | Description
@@ -227,14 +227,15 @@ termux       |                            |
              | pkg search pkg             |
              | pkg install pkg            |
 vim.vim-plug |                            |
-             | :PlugInstall               |
-             | :PlugUpdate                |
-             | :PlugUpgrade               |
+             | :PlugInstall               | install plugins
+             | :PlugUpdate                | update plugins
+             | :PlugUpgrade               | upgrade vim-plug
 vim.coc      |                            |
-             | :MyCocInstall              |
-             | :CocUpdate                 |
+             | :MyCocInstall              | install plugins
+             | :CocUpdate                 | update plugins
 pip          |                            |
-             | upgrade-pip.sh             |
+             | pip-install.sh             | install packages
+             | pip-upgrade.sh             | upgrade pip
              | pip search pkg             |
              | pip install pkg            |
              | pip uninstall pkg          |
