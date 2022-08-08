@@ -5,32 +5,48 @@
 <meta name="keywords" content="*memo_setup*">
 **Setup**
 
-<meta name="keywords" content="*memo_setup.proxy*">
-Proxy
+<meta name="keywords" content="*memo_setup.wsl*">
+Setup WSL
 =======================================================
-## ~/.bashrc
+## Clone env
 ~~~
-export HTTP_PROXY="http://USER:PASS@PROXY_SERVER:PORT"
-export HTTPS_PROXY="http://USER:PASS@PROXY_SERVER:PORT"
-export http_proxy="$HTTP_PROXY"
-export https_proxy="$HTTPS_PROXY"
-
-export GIT_SSL_NO_VERIFY=1
-export CURL_SSL_NO_VERIFY=1
-export NO_PROXY="localhost,127.0.0.1"
+mkdir ~/MyRoaming
+cd ~/MyRoaming
+git clone https://github.com/tktwr/env.git
+cd env
+./setup-wsl-ubuntu.sh init
 ~~~
 
-<meta name="keywords" content="*memo_setup.linux*">
-Setup
+## Setup env
+1. apt update
+1. apt upgrade
+1. apt install pkg_min
+1. make symlink WinHome
+1. etc init
+   1. dot.sh init
+   1. bash min
+   1. vim min
+1. wsltty
+1. python
+  1. create venv torch
+  1. pip upgrade
+  1. pip install vim
+
+## Install Windows Apps
+1. [wsltty](https://github.com/mintty/wsltty)
+1. [AutoHotkey](https://www.autohotkey.com/)
+1. [Cica font](https://github.com/tsunesan3/awsome-jp-coding-fonts)
+
+<meta name="keywords" content="*memo_setup.msys2*">
+Setup Msys2
 =======================================================
+## Install Windows Apps
+1. [Git](https://git-scm.com/)
+1. [Python3 64bit](https://www.python.org/)
+1. [Node.js](https://nodejs.org/ja/)
+1. [Cmake](https://cmake.org/)
 
-- Displayの解像度変更
-- デスクトップ背景変更
-- ConkyToggleでConkyを非表示
-- Screen Saver OFF
-- 電源管理
-
-## symbolic links (admin on command prompt)
+## Make symbolic links (admin on command prompt)
 - WinHome
 
 - Desktop
@@ -41,29 +57,15 @@ Setup
 - GoogleDrive
 - Dropbox
 
-<meta name="keywords" content="*memo_setup.install.min*">
-Install (minimal)
+<meta name="keywords" content="*memo_setup.linux*">
+Setup Linux
 =======================================================
-## Windows (Msys2)
-
-Native:
-- git
-- cmake
-- python3-64bit
-- nodejs
-
-~~~
-pacman -Syu
-pacman -S vim winpty
-~~~
-
-## MX Linux
-~~~
-sudo apt update
-sudo apt upgrade
-sudo apt install vim
-sudo apt install nodejs npm
-~~~
+## Settings
+- Displayの解像度変更
+- デスクトップ背景変更
+- ConkyToggleでConkyを非表示
+- Screen Saver OFF
+- 電源管理
 
 <details>
 <summary>Install/Uninstall Vim 8.2</summary>
@@ -82,54 +84,10 @@ sudo add-apt-repository --remove ppa:jonathonf/vim
 ~~~
 </details>
 
-Bash
-=============================================
-~~~
-cd etc
-
-./make_init.sh
-
-vim .my/hostname
-vim .my/pythonrc
-vim .gitconfig
-
-./make.sh
-~~~
-
-Python
-=============================================
-~~~
-mypython-venv-create torch
-pip-upgrade.sh
-pip-install.sh
-~~~
-
-## pip.conf/pip.ini
-Linux:
-- $HOME/.config/pip/pip.conf
-
-Windows:
-- $APPDATA/pip/pip.ini
-
-Vim
-=============================================
-## g:coc_config_home
-~~~
-~/.vim/coc-settings.json               (local)
-$MY_VIM/coc/win/coc-settings.json      (windows)
-$MY_VIM/coc/linux/coc-settings.json    (linux)
-~~~
-
-## g:coc_data_home
-~~~
-$MY_VIM/coc_data/win   (windows)
-~/.config/coc          (linux)
-~~~
-
-<meta name="keywords" content="*memo_setup.install*">
-Install packages
+<meta name="keywords" content="*memo_setup.windows*">
+Setup Windows
 =======================================================
-## Windows
+## Install Windows Apps
 <div id="col2">
 ### App
 - Chrome
@@ -204,8 +162,48 @@ cygwin
 ~~~
 -->
 
+<meta name="keywords" content="*memo_setup.proxy*">
+Proxy
+=======================================================
+## ~/.bashrc
+~~~
+export HTTP_PROXY="http://USER:PASS@PROXY_SERVER:PORT"
+export HTTPS_PROXY="http://USER:PASS@PROXY_SERVER:PORT"
+export http_proxy="$HTTP_PROXY"
+export https_proxy="$HTTPS_PROXY"
+
+export GIT_SSL_NO_VERIFY=1
+export CURL_SSL_NO_VERIFY=1
+export NO_PROXY="localhost,127.0.0.1"
+~~~
+
+<meta name="keywords" content="*memo_setup.pip*">
+Pip
+=======================================================
+## pip.conf (Linux)
+- $HOME/.config/pip/pip.conf
+
+## pip.ini (Windows)
+- $APPDATA/pip/pip.ini
+
+<meta name="keywords" content="*memo_setup.vim*">
+Vim
+=============================================
+## g:coc_config_home
+~~~
+~/.vim/coc-settings.json               (local)
+$MY_VIM/coc/win/coc-settings.json      (windows)
+$MY_VIM/coc/linux/coc-settings.json    (linux)
+~~~
+
+## g:coc_data_home
+~~~
+$MY_VIM/coc_data/win   (windows)
+~/.config/coc          (linux)
+~~~
+
 <meta name="keywords" content="*memo_setup.commands*">
-Install/Update/Upgrade
+Install/Update/Upgrade Commands
 =======================================================
 App          | Command                    | Description
 ---          | ---                        | ---
