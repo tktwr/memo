@@ -1,20 +1,10 @@
 #!/bin/bash
 
-source common.sh
-
 #======================================================
 # functions
 #======================================================
-f_default() {
-  f_tags_memo
-}
-
 f_tags_memo() {
-  f_eval 'memotags.sh *.html > tags.memo'
-}
-
-f_helptags() {
-  vim -e -c 'helptags . | quit'
+  memotags.sh *.html > tags.memo
 }
 
 f_dot() {
@@ -23,11 +13,15 @@ f_dot() {
   dot -T svg -o images/vim-ide.svg dot/vim-ide.dot
 }
 
+#------------------------------------------------------
 f_help() {
 	echo "tags_memo"
-	echo "helptags"
 	echo "dot"
 	echo "help"
+}
+
+f_default() {
+  f_tags_memo
 }
 
 #======================================================
