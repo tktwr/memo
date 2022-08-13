@@ -14,25 +14,46 @@ mkdir ~/MyRoaming
 cd ~/MyRoaming
 git clone https://github.com/tktwr/env.git
 cd env
-./setup-wsl-ubuntu.sh init
+./setup/setup-wsl-ubuntu.sh init
 ~~~
 
 ## Setup env
+1. Windows Update
+1. Windowsの機能の有効化または無効化
+  1. Linux用Windowsサブシステム
+  1. 仮想マシンプラットフォーム
 1. apt update
 1. apt upgrade
 1. apt install pkg_min
-1. make symlink WinHome
-1. etc init
-   1. dot.sh init
-   1. bash min
-   1. vim min
+1. symlink WinHome
 1. wsltty
+1. make init [etc]
+  1. dot files
+  1. bash min
+  1. vim min
+  1. source ~/.bashrc
+1. make [etc]
+  1. source ~/.bashrc
 1. python
   1. create venv torch
   1. pip upgrade
   1. pip install vim
+1. vim
+  1. PlugUpgrade
+  1. PlugInstall
+  1. PlugUpdate
+  1. MyCocInstall
+
+## Install Windows Apps in Microsoft Store
+1. Ubuntu 22.04
+1. Visual Studio Code
+1. Visual Studio Community 2022
+1. Python 3.10
 
 ## Install Windows Apps
+1. Chrome
+1. Steam
+1. Oculus software
 1. [Cica font](https://github.com/tsunesan3/awsome-jp-coding-fonts)
 1. [wsltty](https://github.com/mintty/wsltty)
 1. [AutoHotkey](https://www.autohotkey.com/)
@@ -40,6 +61,14 @@ cd env
   - アドオン: 分割
   - アドオン: お気に入りバー (配置: 左, 高さ: 300)
   - アドオン: サイドバー (配置: 左)
+1. [Git](https://git-scm.com/)
+1. [MSYS2](https://www.msys2.org/)
+1. [Cmake](https://cmake.org/)
+
+~~~
+C:\Program Files\Git\cmd
+C:\Program Files\CMake\bin
+~~~
 
 ## Git
 ~~~
@@ -47,14 +76,16 @@ cd env
   helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
 ~~~
 
+<meta name="keywords" content="*memo_setup.gitbash*">
+Setup Gitbash
+=======================================================
+
 <meta name="keywords" content="*memo_setup.msys2*">
 Setup Msys2
 =======================================================
 ## Install Windows Apps
-1. [Git](https://git-scm.com/)
 1. [Python3 64bit](https://www.python.org/)
 1. [Node.js](https://nodejs.org/ja/)
-1. [Cmake](https://cmake.org/)
 
 ## Make symbolic links (admin on command prompt)
 - WinHome
@@ -209,7 +240,8 @@ $MY_VIM/coc/linux/coc-settings.json    (linux)
 ## g:coc_data_home
 ~~~
 $MY_VIM/coc_data/win   (windows)
-~/.config/coc          (linux)
+$MY_VIM/coc_data/linux (linux)
+~/.config/coc          (local linux)
 ~~~
 
 <meta name="keywords" content="*memo_setup.commands*">

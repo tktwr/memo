@@ -136,6 +136,7 @@ memo_prog.python.tensorflow	python.md.html	/*memo_prog.python.tensorflow*
 memo_prog.python.venv	python.md.html	/*memo_prog.python.venv*
 memo_setup	setup.md.html	/*memo_setup*
 memo_setup.commands	setup.md.html	/*memo_setup.commands*
+memo_setup.gitbash	setup.md.html	/*memo_setup.gitbash*
 memo_setup.linux	setup.md.html	/*memo_setup.linux*
 memo_setup.msys2	setup.md.html	/*memo_setup.msys2*
 memo_setup.pip	setup.md.html	/*memo_setup.pip*
