@@ -249,23 +249,29 @@ Install/Update/Upgrade Commands
 =======================================================
 App          | Command                    | Description
 ---          | ---                        | ---
-pacman       |                            |
-             | pacman -Syu                | update
-             | pacman -Ss pkg             | search
-             | pacman -S pkg              | install
-             | pacman -R pkg              | uninstall
 apt          |                            |
              | apt update                 |
              | apt upgrade                |
              | apt search pkg             |
              | apt install pkg            |
              | apt remove pkg             |
+pacman       |                            |
+             | pacman -Syu                | update
+             | pacman -Ss pkg             | search
+             | pacman -S pkg              | install
+             | pacman -R pkg              | uninstall
 gitbash      |                            |
              | git update-git-for-windows |
 termux       |                            |
              | pkg upgrade                |
              | pkg search pkg             |
              | pkg install pkg            |
+pip          |                            |
+             | pip-upgrade.sh             | upgrade pip
+             | pip-install.sh             | install packages
+             | pip search pkg             |
+             | pip install pkg            |
+             | pip uninstall pkg          |
 vim.vim-plug |                            |
              | :PlugInstall               | install plugins
              | :PlugUpdate                | update plugins
@@ -273,12 +279,6 @@ vim.vim-plug |                            |
 vim.coc      |                            |
              | :MyCocInstall              | install plugins
              | :CocUpdate                 | update plugins
-pip          |                            |
-             | pip-install.sh             | install packages
-             | pip-upgrade.sh             | upgrade pip
-             | pip search pkg             |
-             | pip install pkg            |
-             | pip uninstall pkg          |
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="inc/markdeep.min.js"></script>
