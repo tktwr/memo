@@ -67,6 +67,33 @@ convert +append image1 image2 image3 output_image
 convert rgb.jpg ( alpha.png -colorspace gray -alpha off ) -compose copy-opacity -composite rgba.png
 ~~~
 
+Convert Files
+=======================================================
+## cut video
+~~~
+ffmpeg -i input.mp4 -ss 1:00 -to 1:30 output.mp4
+~~~
+
+## convert mp4 to gif
+~~~
+ffmpeg -i input.mp4 -ss 1:00 -to 1:30 -vf scale=640:-1 -r 10 output.gif
+~~~
+
+## convert images to gif
+~~~
+convert -delay 5 -loop 0 input_*.jpg output.gif
+~~~
+
+## convert images to pdf
+~~~
+convert input_*.jpg output.pdf
+~~~
+
+## convert pdf to images
+~~~
+pdftocairo -jpeg -r 300 input.pdf output_dir
+~~~
+
 <meta name="keywords" content="*memo_soft.gimp*">
 Gimp
 =======================================================
