@@ -15,35 +15,36 @@ body {
 <meta name="keywords" content="*memo_lang.compare*">
 言語syntax比較
 =============================================
-|         | C++                                                  | Python               | Vim               | Bash                |
-| ---     | ---                                                  | ---                  | ---               | ---                 |
-| int     | int x = 1;                                           | x = 1                | let x = 1         | x=1                 |
-| float   | float x = 1.0f;                                      | x = 1.0              |                   |                     |
-| print   | std::cout << x << std::endl;                         | print(f'{x}')        | echom x           | echo $x             |
-| list    | std::list<int> l = {0, 1, 2};                        | l = [0, 1, 2]        | let l = [0, 1, 2] |                     |
-|         |                                                      | l[0:3]               | l[0:2]            |                     |
-| tuple   |                                                      | t = (0, 1, 2)        |                   |                     |
-| dict    | std::map`<`std::string, int`>` m = {"a": 0, "b": 1}; | d = {'a': 0, 'b': 1} |                   |                     |
-| string  | std::string s = "hello"                              | s = "hello"          | let s = "hello"   | s="hello"           |
-| null    | nullptr                                              | None                 |                   |                     |
-| true    | true                                                 | True                 | v:true            | true                |
-| false   | false                                                | False                | v:false           | false               |
-| and     | &&                                                   | and                  | &&                | -a                  |
-| or      | `||`                                                 | or                   | `||`              | -o                  |
-| if      | if (expr) {                                          | if expr:             | if expr           | if [ expr ]; then   |
-|         | } else if (expr) {                                   | elif expr:           | elseif expr       | elif [ expr ]; then |
-|         | } else {                                             | else:                | else              | else                |
-|         | }                                                    |                      | endif             | fi                  |
-| for     | for (auto&& i : list) {                              | for i in list:       | for i in list     | for i in list; do   |
-|         | }                                                    |                      | endfor            | done                |
-| func    | void func() {                                        | def func():          | func Func()       | func() {            |
-|         | }                                                    |                      | endfunc           | }                   |
-| heredoc | s = R"(                                              | s = '''              |                   | cat << END          |
-|         | )"                                                   | '''                  |                   | END                 |
-|         | ++,--                                                |                      |                   |                     |
-|         | +=,-=,*=,/=                                          |                      |                   |                     |
-|         |                                                      |                      |                   |                     |
-|         |                                                      |                      |                   |                     |
+|         | C++                                                      | Python               | Vim                      | Bash                |
+| ---     | ---                                                      | ---                  | ---                      | ---                 |
+| null    | nullptr                                                  | None                 |                          |                     |
+| true    | true                                                     | True                 | v:true                   | true                |
+| false   | false                                                    | False                | v:false                  | false               |
+| int     | int x = 1;                                               | x = 1                | let x = 1                | x=1                 |
+| float   | float x = 1.5f;                                          | x = 1.5              | let x = 1.5              |                     |
+| string  | std::string s = "hello"                                  | s = "hello"          | let s = "hello"          | s="hello"           |
+| vector  | std::vector`<`int`>` v = {0, 1, 2};                      |                      |                          |                     |
+| list    | std::list`<`int`>` l = {0, 1, 2};                        | l = [0, 1, 2]        | let l = [0, 1, 2]        |                     |
+| slice   |                                                          | l[0:3]               | l[0:2]                   |                     |
+| tuple   | std::tuple`<`int, int, int`>` t  = {0, 1, 2};            | t = (0, 1, 2)        |                          |                     |
+| dict    | std::map`<`std::string, int`>` m = {{"a", 0}, {"b", 1}}; | d = {'a': 0, 'b': 1} | let d = {'a': 0, 'b': 1} |                     |
+| print   | std::cout << x << std::endl;                             | print(f'{x}')        | echom x                  | echo $x             |
+| and     | &&                                                       | and                  | &&                       | -a                  |
+| or      | `||`                                                     | or                   | `||`                     | -o                  |
+| if      | if (expr) {                                              | if expr:             | if expr                  | if [ expr ]; then   |
+|         | } else if (expr) {                                       | elif expr:           | elseif expr              | elif [ expr ]; then |
+|         | } else {                                                 | else:                | else                     | else                |
+|         | }                                                        |                      | endif                    | fi                  |
+| for     | for (auto&& i : list) {                                  | for i in list:       | for i in list            | for i in list; do   |
+|         | }                                                        |                      | endfor                   | done                |
+| func    | void func() {                                            | def func():          | func Func()              | func() {            |
+|         | }                                                        |                      | endfunc                  | }                   |
+| heredoc | s = R"(                                                  | s = '''              |                          | cat << END          |
+|         | )"                                                       | '''                  |                          | END                 |
+|         | ++,--                                                    |                      |                          |                     |
+|         | +=,-=,*=,/=                                              |                      |                          |                     |
+|         |                                                          |                      |                          |                     |
+|         |                                                          |                      |                          |                     |
 
 <meta name="keywords" content="*memo_lang.compare_lib*">
 ライブラリsyntax比較
