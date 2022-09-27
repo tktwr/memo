@@ -79,7 +79,12 @@ memo_os.dos	os_windows.md.html	/*memo_os.dos*
 memo_os.gitbash	os_msys2.md.html	/*memo_os.gitbash*
 memo_os.linux	os_linux.md.html	/*memo_os.linux*
 memo_os.linux.apt	os_linux.md.html	/*memo_os.linux.apt*
+memo_os.linux.encfs	os_linux.md.html	/*memo_os.linux.encfs*
 memo_os.linux.flatpak	os_linux.md.html	/*memo_os.linux.flatpak*
+memo_os.linux.ip	os_linux.md.html	/*memo_os.linux.ip*
+memo_os.linux.scp	os_linux.md.html	/*memo_os.linux.scp*
+memo_os.linux.ssh	os_linux.md.html	/*memo_os.linux.ssh*
+memo_os.linux.sshd	os_linux.md.html	/*memo_os.linux.sshd*
 memo_os.mac	os_linux.md.html	/*memo_os.mac*
 memo_os.manjaro	os_linux.md.html	/*memo_os.manjaro*
 memo_os.misc	os_windows.md.html	/*memo_os.misc*
@@ -87,9 +92,6 @@ memo_os.msys2	os_msys2.md.html	/*memo_os.msys2*
 memo_os.msys2.pacman	os_msys2.md.html	/*memo_os.msys2.pacman*
 memo_os.msys2.pacman.conf	os_msys2.md.html	/*memo_os.msys2.pacman.conf*
 memo_os.mxlinux	os_linux.md.html	/*memo_os.mxlinux*
-memo_os.scp	os_msys2.md.html	/*memo_os.scp*
-memo_os.ssh	os_msys2.md.html	/*memo_os.ssh*
-memo_os.sshd	os_msys2.md.html	/*memo_os.sshd*
 memo_os.termux	os_linux.md.html	/*memo_os.termux*
 memo_os.termux.pkg	os_linux.md.html	/*memo_os.termux.pkg*
 memo_os.ubuntu	os_linux.md.html	/*memo_os.ubuntu*
@@ -172,6 +174,7 @@ memo_sh.unzip	sh.md.html	/*memo_sh.unzip*
 memo_sh.zip	sh.md.html	/*memo_sh.zip*
 memo_soft	soft.md.html	/*memo_soft*
 memo_soft.convert	soft.md.html	/*memo_soft.convert*
+memo_soft.convert_files	soft.md.html	/*memo_soft.convert_files*
 memo_soft.freecad	soft.md.html	/*memo_soft.freecad*
 memo_soft.gimp	soft.md.html	/*memo_soft.gimp*
 memo_soft.imagemagick	soft.md.html	/*memo_soft.imagemagick*

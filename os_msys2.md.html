@@ -4,6 +4,10 @@
 
 **MSYS2**
 
+<meta name="keywords" content="*memo_os.gitbash*">
+Git for Windows (gitbash)
+=======================================================
+
 <meta name="keywords" content="*memo_os.msys2*">
 MSYS2
 =======================================================
@@ -66,6 +70,11 @@ export MSYS_NO_PATHCONV=1
 export MSYS2_ARG_CONV_EXCL="*"
 ~~~
 
+## adb
+| Command                          | Description |
+| ---                              | ---         |
+| adb push files //sdcard/Download | push files  |
+
 ## stdc++ man pages
 
 - https://github.com/jeaye/stdman
@@ -74,70 +83,6 @@ export MSYS2_ARG_CONV_EXCL="*"
 ~~~
 /usr/bin/git clone https://github.com/jeaye/stdman.git
 ~~~
-
-<meta name="keywords" content="*memo_os.gitbash*">
-Git for Windows (gitbash)
-=======================================================
-## Update
-~~~
-$ git update-git-for-windows
-~~~
-
-<meta name="keywords" content="*memo_os.scp*">
-## scp
-~~~
-$ scp [-P PORT] USER@HOST:SRC DST
-$ scp [-P PORT] SRC USER@HOST:DST
-~~~
-
-<meta name="keywords" content="*memo_os.ssh*">
-## ssh
-~~~
-$ ssh [-p PORT] USER@HOST
-~~~
-
-<meta name="keywords" content="*memo_os.sshd*">
-## ssh server (sshd)
-
-gitbashを管理者権限で起動する
-
-### Server
-#### host key 作成
-~~~
-[SERVER]$ ssh-keygen -A
-~~~
-- /etc/ssh/ssh_host_*_key[.pub]が作成される
-
-#### ssh server 起動
-~~~
-[SERVER]$ /usr/bin/sshd
-~~~
-- absolute pathで起動
-
-### Client
-~~~
-[CLIENT]$ ssh-keygen
-~~~
-- ~/.ssh/id_rsa[.pub]が作成される
-- クライアントの~/.ssh/id_rsa.pubをサーバーの~/.ssh/authorized_keysに追加する
-
-## ssh-agent
-~~~
-$ ssh-agent $SHELL
-~~~
-
-Option | Description
--------|---
--k     | kill ssh-agent
-
-## ssh-add
-~~~
-$ ssh-add
-~~~
-
-Option | Description
--------|---
--l     | list fingerprints of private keys
 
 <meta name="keywords" content="*memo_os.cygwin*">
 Cygwin

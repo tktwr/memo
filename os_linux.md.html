@@ -79,13 +79,6 @@ SHARE_FOLDER /mnt/vbox/SHARE_FOLDER vboxsf defaults,noauto,iocharset=utf8,uid=10
 Linux
 =======================================================
 
-<meta name="keywords" content="*memo_os.linux.ip*">
-## ip
-| Command | Description        |
-| ---     | ---                |
-| ip a    | show addresses     |
-| ip r    | show routing table |
-
 <meta name="keywords" content="*memo_os.linux.apt*">
 ## apt
 | Command               | Description            |
@@ -210,24 +203,16 @@ $ id
 share /mnt/vbox/share vboxsf defaults,iocharset=utf8,uid=1000,gid=1000 0 0
 ~~~
 
+<meta name="keywords" content="*memo_os.linux.encfs*">
 ## encfs
 - [EncFS](https://wiki.archlinux.jp/index.php/EncFS)
 - [ディスク暗号化](https://wiki.archlinux.jp/index.php/ディスク暗号化)
 
-### create / mount
-~~~
-$ encfs ~/.mysecret ~/mysecret
-~~~
-
-### umount
-~~~
-$ fusermount -u ~/mysecret
-~~~
-
-### change password
-~~~
-$ encfsctl passwd ~/.mysecret
-~~~
+| Command                      | Description     |
+| ---                          | ---             |
+| encfs ~/.encfs_dir ~/dir     | create / mount  |
+| fusermount -u ~/dir          | umount          |
+| encfsctl passwd ~/.encfs_dir | change password |
 
 <meta name="keywords" content="*memo_os.manjaro*">
 Manjaro Linux
@@ -281,54 +266,6 @@ pkg install termux-exec
 ~~~
 - [termux-exec](https://wiki.termux.com/wiki/FAQ#Why_do_I_keep_getting_.27.2Fbin.2Fsh_bad_interpreter.27_error.3F)
 
-## sshd
-
-- [Termux on AndroidのSSHサーバに接続する方法](https://linuxfan.info/termux-sshd)
-
-### generate key
-~~~
-pc$ ssh-keygen
-~~~
-
-### generated files
-~~~
-~/.ssh/id_rsa
-~/.ssh/id_rsa.pub
-~~~
-
-### print key info
-~~~
-pc$ ssh-keygen -l -f id_rsa.pub
-~~~
-
-### push id_rsa.pub by adb
-~~~
-pc$ adb push id_rsa.pub //sdcard/Download
-~~~
-
-### authorized_keys
-~~~
-termux$ mkdir ~/.ssh
-termux$ cat ~/storage/downloads/id_rsa.pub >> ~/.ssh/authorized_keys
-termux$ chmod 600 ~/.ssh/authorized_keys
-termux$ chmod 700 ~/.ssh
-~~~
-
-### run sshd server
-~~~
-termux$ sshd
-~~~
-
-### check ip address on termux
-~~~
-termux$ ip -4 a
-~~~
-
-### connect by ssh via 8022 port
-~~~
-pc$ ssh -p 8022 192.168.XXX.XXX
-~~~
-
 <meta name="keywords" content="*memo_os.mac*">
 Mac
 =======================================================
@@ -340,6 +277,48 @@ Cmd + Space     | 日本語入力
 Shift + クリック| ファイル連続選択
 Cmd + クリック  | ファイル個別選択
 Cmd + delete    | ファイル削除
+
+<meta name="keywords" content="*memo_os.linux.ssh*">
+<meta name="keywords" content="*memo_os.linux.scp*">
+<meta name="keywords" content="*memo_os.linux.ip*">
+SSH
+=======================================================
+
+- [Termux on AndroidのSSHサーバに接続する方法](https://linuxfan.info/termux-sshd)
+
+| Command                         | Description                                        |
+| ---                             | ---                                                |
+| ip -4 a                         | print ip address                                   |
+| ip r                            | print route                                        |
+| ssh-keygen -A                   | generate host keys (/etc/ssh/ssh_host_*_key[.pub]) |
+|                                 | require root, generated during sshd installation   |
+| ssh-keygen                      | generate keys (~/.ssh/id_rsa[.pub])                |
+| ssh-keygen -l -f id_rsa.pub     | print key info                                     |
+| ssh-agent $SHELL                | run agent                                          |
+| ssh-agent -k                    | kill the agent                                     |
+| ssh-add                         | add private key to agent                           |
+| ssh-add -l                      | list fingerprints managed by agent                 |
+| ssh [-p PORT] USER@HOST         | connect to HOST                                    |
+| scp [-P PORT] SRC USER@HOST:DST | copy from local to remote                          |
+| scp [-P PORT] USER@HOST:SRC DST | copy from remote to local                          |
+
+<meta name="keywords" content="*memo_os.linux.sshd*">
+## sshd
+- [gitbash] 管理者権限で起動する
+~~~
+# generate keys on CLIENT
+CLIENT$ ssh-keygen         # generate keys (~/.ssh/id_rsa[.pub])
+
+# add id_rsa.pub to ~/.ssh/authorized_keys on SERVER
+SERVER$ mkdir -p ~/.ssh
+SERVER$ chmod 700 ~/.ssh
+SERVER$ cat id_rsa.pub >> ~/.ssh/authorized_keys
+SERVER$ chmod 600 ~/.ssh/authorized_keys
+SERVER$ /usr/bin/sshd                                 # run sshd server
+
+# connect to SERVER from CLIENT by ssh via 8022 port
+CLIENT$ ssh -p 8022 xxxx.xxxx.xxxx.xxxx
+~~~
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="inc/markdeep.min.js"></script>
