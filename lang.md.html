@@ -18,8 +18,8 @@ body {
 |         | C++                                                      | Python               | Vim                      | Bash                |
 | ---     | ---                                                      | ---                  | ---                      | ---                 |
 | null    | nullptr                                                  | None                 |                          |                     |
-| true    | true                                                     | True                 | v:true                   | true                |
-| false   | false                                                    | False                | v:false                  | false               |
+| true    | true                                                     | True                 | v:true                   | 0                   |
+| false   | false                                                    | False                | v:false                  | 1                   |
 | int     | int x = 1;                                               | x = 1                | let x = 1                | x=1                 |
 | float   | float x = 1.5f;                                          | x = 1.5              | let x = 1.5              |                     |
 | string  | std::string s = "hello"                                  | s = "hello"          | let s = "hello"          | s="hello"           |
@@ -30,7 +30,7 @@ body {
 | dict    | std::map`<`std::string, int`>` m = {{"a", 0}, {"b", 1}}; | d = {'a': 0, 'b': 1} | let d = {'a': 0, 'b': 1} |                     |
 | print   | std::cout << x << std::endl;                             | print(f'{x}')        | echom x                  | echo $x             |
 | and     | &&                                                       | and                  | &&                       | -a                  |
-| or      | `||`                                                     | or                   | `||`                     | -o                  |
+| or      |                                                          | or                   |                          | -o                  |
 | if      | if (expr) {                                              | if expr:             | if expr                  | if [ expr ]; then   |
 |         | } else if (expr) {                                       | elif expr:           | elseif expr              | elif [ expr ]; then |
 |         | } else {                                                 | else:                | else                     | else                |
