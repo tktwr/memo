@@ -12,17 +12,20 @@ bash
 
 <meta name="keywords" content="*memo_sh.zip*">
 <meta name="keywords" content="*memo_sh.unzip*">
-<meta name="keywords" content="*memo_sh.find*">
 <meta name="keywords" content="*memo_sh.tar*">
+<meta name="keywords" content="*memo_sh.find*">
 ~~~
 Command                              | Description
 ---                                  | ---
 zip -r out.zip file/dir...           | compress files
 unzip filename.zip                   | uncompress files
 unzip -l filename.zip                | list files
+tar czvf filename.tar.gz file/dir... | create a tar.gz file
+tar xzvf filename.tar.gz             | expand a tar.gz file
+tar xjvf filename.tar.bz2            | expand a tar.bz2 file
+tar xJvf filename.tar.xz             | expand a tar.xz file
 find . -name '*word*'                | find files including a word
 find . -name '*word*' -exec rm {} \; | remove matched files
-tar czvf out.tar.gz file/dir...      | tar files
 ~~~
 
 ## 環境変数
