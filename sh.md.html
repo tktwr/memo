@@ -8,25 +8,30 @@
 <meta name="keywords" content="*memo_sh.bash*">
 bash
 =======================================================
-## shell commands
-
 <meta name="keywords" content="*memo_sh.zip*">
 <meta name="keywords" content="*memo_sh.unzip*">
-<meta name="keywords" content="*memo_sh.tar*">
-<meta name="keywords" content="*memo_sh.find*">
-~~~
+## zip/unzip
 Command                              | Description
 ---                                  | ---
 zip -r out.zip file/dir...           | compress files
 unzip filename.zip                   | uncompress files
 unzip -l filename.zip                | list files
+
+<meta name="keywords" content="*memo_sh.tar*">
+## tar
+Command                              | Description
+---                                  | ---
 tar czvf filename.tar.gz file/dir... | create a tar.gz file
 tar xzvf filename.tar.gz             | expand a tar.gz file
 tar xjvf filename.tar.bz2            | expand a tar.bz2 file
 tar xJvf filename.tar.xz             | expand a tar.xz file
+
+<meta name="keywords" content="*memo_sh.find*">
+## find
+Command                              | Description
+---                                  | ---
 find . -name '*word*'                | find files including a word
 find . -name '*word*' -exec rm {} \; | remove matched files
-~~~
 
 ## 環境変数
 ~~~
@@ -48,6 +53,7 @@ cat << END
 END
 ~~~
 
+<meta name="keywords" content="*memo_sh.bash.tput*">
 ## get lines and columns in a shell script
 ~~~
 #!/bin/bash
@@ -59,6 +65,7 @@ echo "Lines: " $lines
 echo "Columns: " $columns
 ~~~
 
+<meta name="keywords" content="*memo_sh.bash.IFS*">
 ## 引数 year/month/day の切り出し
 ~~~
 orig_IFS=$IFS
@@ -70,6 +77,7 @@ day=$3
 IFS=$orig_IFS
 ~~~
 
+<meta name="keywords" content="*memo_sh.bash.redirect*">
 ## redirect
 
 ~~~
@@ -161,6 +169,7 @@ n=$((n + 1))
 ~~~
 
 <meta name="keywords" content="*memo_sh.syntax*">
+<meta name="keywords" content="*memo_sh.syntax.test*">
 <meta name="keywords" content="*memo_sh.syntax.expr*">
 ## syntax
 ### expr

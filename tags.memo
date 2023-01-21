@@ -149,10 +149,13 @@ memo_setup.wsl	setup.md.html	/*memo_setup.wsl*
 memo_sh	sh.md.html	/*memo_sh*
 memo_sh.awk	sh.md.html	/*memo_sh.awk*
 memo_sh.bash	sh.md.html	/*memo_sh.bash*
+memo_sh.bash.IFS	sh.md.html	/*memo_sh.bash.IFS*
 memo_sh.bash.arithmetic	sh.md.html	/*memo_sh.bash.arithmetic*
 memo_sh.bash.array	sh.md.html	/*memo_sh.bash.array*
 memo_sh.bash.dict	sh.md.html	/*memo_sh.bash.dict*
 memo_sh.bash.heredoc	sh.md.html	/*memo_sh.bash.heredoc*
+memo_sh.bash.redirect	sh.md.html	/*memo_sh.bash.redirect*
+memo_sh.bash.tput	sh.md.html	/*memo_sh.bash.tput*
 memo_sh.bash.var	sh.md.html	/*memo_sh.bash.var*
 memo_sh.date	sh.md.html	/*memo_sh.date*
 memo_sh.find	sh.md.html	/*memo_sh.find*
@@ -167,6 +170,7 @@ memo_sh.syntax.case	sh.md.html	/*memo_sh.syntax.case*
 memo_sh.syntax.expr	sh.md.html	/*memo_sh.syntax.expr*
 memo_sh.syntax.for	sh.md.html	/*memo_sh.syntax.for*
 memo_sh.syntax.if	sh.md.html	/*memo_sh.syntax.if*
+memo_sh.syntax.test	sh.md.html	/*memo_sh.syntax.test*
 memo_sh.syntax.while	sh.md.html	/*memo_sh.syntax.while*
 memo_sh.tar	sh.md.html	/*memo_sh.tar*
 memo_sh.trans	sh.md.html	/*memo_sh.trans*
