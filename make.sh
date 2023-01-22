@@ -4,7 +4,8 @@
 # functions
 #======================================================
 f_tags_memo() {
-  memotags.sh *.html > tags.memo
+  memotags.sh *.html > tags
+  mktags_dir.sh
 }
 
 f_dot() {
@@ -28,5 +29,5 @@ f_default() {
 # main
 #======================================================
 func_name=${1:-"default"}
-eval "f_$func_name"
-
+shift
+eval "f_$func_name $@"
