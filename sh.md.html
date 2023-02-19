@@ -8,53 +8,6 @@
 <meta name="keywords" content="*memo_sh.bash*">
 bash
 =======================================================
-<meta name="keywords" content="*memo_sh.zip*">
-<meta name="keywords" content="*memo_sh.unzip*">
-## zip/unzip
-Command                              | Description
----                                  | ---
-zip -r out.zip file/dir...           | compress files
-unzip filename.zip                   | uncompress files
-unzip -l filename.zip                | list files
-
-<meta name="keywords" content="*memo_sh.tar*">
-## tar
-Command                              | Description
----                                  | ---
-tar czvf filename.tar.gz file/dir... | create a tar.gz file
-tar xzvf filename.tar.gz             | expand a tar.gz file
-tar xjvf filename.tar.bz2            | expand a tar.bz2 file
-tar xJvf filename.tar.xz             | expand a tar.xz file
-
-<meta name="keywords" content="*memo_sh.find*">
-## find
-Command                              | Description
----                                  | ---
-find . -name '*word*'                | find files including a word
-find . -name '*word*' -exec rm {} \; | remove matched files
-
-<meta name="keywords" content="*memo_sh.fzf*">
-## fzf
-Command     | Description
----         | ---
-cmd **<TAB> | file completion
-Ctrl-r      | history
-Ctrl-t      | print file and dir name
-Alt-c       | cd
-
-<meta name="keywords" content="*memo_sh.cli*">
-## New CLI
-| Traditional | New          |
-| ---         | ---          |
-| ls          | exa          |
-| cat         | bat (batcat) |
-| find        | fd (fdfind)  |
-| grep        | rg (ripgrep) |
-| -           | fzf          |
-| du          | ncdu         |
-| top         | htop, btop   |
-| ps          |              |
-
 ## 環境変数
 ~~~
 HISTCONTROL=ignoreboth
@@ -73,30 +26,6 @@ cat << END
 ...
 ...
 END
-~~~
-
-<meta name="keywords" content="*memo_sh.bash.tput*">
-## get lines and columns in a shell script
-~~~
-#!/bin/bash
-
-lines=$(tput lines)
-columns=$(tput cols)
-
-echo "Lines: " $lines
-echo "Columns: " $columns
-~~~
-
-<meta name="keywords" content="*memo_sh.bash.IFS*">
-## 引数 year/month/day の切り出し
-~~~
-orig_IFS=$IFS
-IFS='/'
-set $*
-year=$1
-month=$2
-day=$3
-IFS=$orig_IFS
 ~~~
 
 <meta name="keywords" content="*memo_sh.bash.redirect*">
@@ -132,62 +61,6 @@ echo "error" 1>&2
 
 # pipe
 % tar cf - dir | (cd /mirror; tar xf -)
-~~~
-
-<meta name="keywords" content="*memo_sh.bash.var*">
-## 変数置換
-変数                                 | 説明
--------------------------------------|---
-${変数名#パターン}                   | 前方一致でのマッチ部分削除 (最短マッチ)
-${変数名##パターン}                  | 前方一致でのマッチ部分削除 (最長マッチ)
-${変数名%パターン}                   | 後方一致でのマッチ部分削除 (最短マッチ)
-${変数名%%パターン}                  | 後方一致でのマッチ部分削除 (最長マッチ)
-${変数名/置換前文字列/置換後文字列}  | 文字列置換 (最初にマッチしたもののみ)
-${変数名//置換前文字列/置換後文字列} | 文字列置換 (マッチしたものすべて)
-${変数名:-デフォルト文字列}          | デフォルト文字列
-
-~~~
-x=foo.bar
-echo $x
-echo ${x:4}
-echo ${x:$((-4))}
-echo ${x/.bar/.com}
-echo a{d,c,b}e
-~~~
-
-<meta name="keywords" content="*memo_sh.bash.array*">
-## array
-~~~
-a=(\
-"abc" \
-"def" \
-"ghi" \
-)
-echo ${a[0]}
-echo ${a[2]}
-echo ${a[*]}
-echo ${a[@]}
-echo ${#a[*]}
-~~~
-
-<meta name="keywords" content="*memo_sh.bash.dict*">
-## dict
-~~~
-declare -A DICT
-DICT["en"]="en_US"
-DICT["ja"]="ja_JP.UTF-8"
-echo ${DICT["ja"]}
-echo ${DICT["de"]}  # return ""
-echo ${DICT["en"]}
-echo ${DICT[""]}    # error
-~~~
-
-<meta name="keywords" content="*memo_sh.bash.arithmetic*">
-## arithmetic
-~~~
-n=1
-n=`expr $n + 1`
-n=$((n + 1))
 ~~~
 
 <meta name="keywords" content="*memo_sh.syntax*">
@@ -252,6 +125,66 @@ case $i in
 esac
 ~~~
 
+<meta name="keywords" content="*memo_sh.bash.var*">
+## 変数置換
+
+~~~
+変数                                 | 説明
+-------------------------------------|---
+${変数名#パターン}                   | 前方一致でのマッチ部分削除 (最短マッチ)
+${変数名##パターン}                  | 前方一致でのマッチ部分削除 (最長マッチ)
+${変数名%パターン}                   | 後方一致でのマッチ部分削除 (最短マッチ)
+${変数名%%パターン}                  | 後方一致でのマッチ部分削除 (最長マッチ)
+${変数名/置換前文字列/置換後文字列}  | 文字列置換 (最初にマッチしたもののみ)
+${変数名//置換前文字列/置換後文字列} | 文字列置換 (マッチしたものすべて)
+${変数名:-デフォルト文字列}          | デフォルト文字列
+~~~
+
+### 変数置換 (例)
+~~~
+x=foo.bar
+echo $x
+echo ${x:4}
+echo ${x:$((-4))}
+echo ${x/.bar/.com}
+echo a{d,c,b}e
+~~~
+
+<meta name="keywords" content="*memo_sh.bash.array*">
+## array
+~~~
+a=(\
+"abc" \
+"def" \
+"ghi" \
+)
+echo ${a[0]}
+echo ${a[2]}
+echo ${a[*]}
+echo ${a[@]}
+echo ${#a[*]}
+~~~
+
+<meta name="keywords" content="*memo_sh.bash.dict*">
+## dict
+~~~
+declare -A DICT
+DICT["en"]="en_US"
+DICT["ja"]="ja_JP.UTF-8"
+echo ${DICT["ja"]}
+echo ${DICT["de"]}  # return ""
+echo ${DICT["en"]}
+echo ${DICT[""]}    # error
+~~~
+
+<meta name="keywords" content="*memo_sh.bash.arithmetic*">
+## arithmetic
+~~~
+n=1
+n=`expr $n + 1`
+n=$((n + 1))
+~~~
+
 <meta name="keywords" content="*memo_sh.stdin*">
 ## read from stdin
 ~~~
@@ -265,11 +198,28 @@ while [ true ]; do
 done
 ~~~
 
-<meta name="keywords" content="*memo_sh.date*">
-## date
+<meta name="keywords" content="*memo_sh.bash.tput*">
+## get lines and columns in a shell script
 ~~~
-env LC_TIME=C date '+%Y/%m/%d (%a)'
-env LC_TIME=C date '+%H:%M:%S'
+#!/bin/bash
+
+lines=$(tput lines)
+columns=$(tput cols)
+
+echo "Lines: " $lines
+echo "Columns: " $columns
+~~~
+
+<meta name="keywords" content="*memo_sh.bash.IFS*">
+## 引数 year/month/day の切り出し
+~~~
+orig_IFS=$IFS
+IFS='/'
+set $*
+year=$1
+month=$2
+day=$3
+IFS=$orig_IFS
 ~~~
 
 <meta name="keywords" content="*memo_csh*">
@@ -305,6 +255,131 @@ default:
   breaksw
 endsw
 ~~~
+
+<meta name="keywords" content="*memo_sh.commands*">
+<meta name="keywords" content="*memo_sh.cli*">
+Commands
+=======================================================
+## New Commands
+Traditional | New          
+---         | ---          
+ls          | exa          
+cat         | bat (batcat) 
+find        | fd (fdfind)  
+grep        | rg (ripgrep) 
+-           | fzf          
+du          | ncdu         
+top         | htop, btop   
+ps          |              
+
+<meta name="keywords" content="*memo_sh.zip*">
+<meta name="keywords" content="*memo_sh.unzip*">
+## zip/unzip
+Command                              | Description
+---                                  | ---
+zip -r out.zip file/dir...           | compress files
+unzip filename.zip                   | uncompress files
+unzip -l filename.zip                | list files
+
+<meta name="keywords" content="*memo_sh.tar*">
+## tar
+Command                              | Description
+---                                  | ---
+tar czvf filename.tar.gz file/dir... | create a tar.gz file
+tar xzvf filename.tar.gz             | expand a tar.gz file
+tar xjvf filename.tar.bz2            | expand a tar.bz2 file
+tar xJvf filename.tar.xz             | expand a tar.xz file
+
+<meta name="keywords" content="*memo_sh.find*">
+## find
+Command                              | Description
+---                                  | ---
+find . -name '*word*'                | find files including a word
+find . -name '*word*' -exec rm {} \; | remove matched files
+
+<meta name="keywords" content="*memo_sh.fd*">
+<meta name="keywords" content="*memo_sh.fdfind*">
+## fd (fdfind)
+
+<meta name="keywords" content="*memo_sh.rg*">
+<meta name="keywords" content="*memo_sh.ripgrep*">
+## rg (ripgrep)
+~~~
+$ rg pattern [path...]
+~~~
+
+<meta name="keywords" content="*memo_sh.fzf*">
+## fzf
+
+Command     | Description             
+---         | ---                     
+cmd **<TAB> | file completion         
+Ctrl-r      | history                 
+Ctrl-t      | print file and dir name 
+Alt-c       | cd                      
+
+<meta name="keywords" content="*memo_sh.fzf.pattern*">
+### Pattern
+
+Pattern       | Description        
+---           | ---                
+str           | match str          
+'str          | exact match        
+^str          | start with str     
+str$          | end with str       
+!str          | not                
+!^str         | not start with str 
+!str$         | not end with str   
+str1 str2     | and                
+str1 `|` str2 | or                 
+
+<meta name="keywords" content="*memo_sh.less*">
+## less
+
+Option  | Description        
+------- | ---                
+-E      | quit at EOF        
+-F      | quit if one screen 
+-R      | raw control chars  
+-S      | chop long lines    
+-X      | no init            
+
+<meta name="keywords" content="*memo_sh.date*">
+## date
+~~~
+env LC_TIME=C date '+%Y/%m/%d (%a)'
+env LC_TIME=C date '+%H:%M:%S'
+~~~
+
+<meta name="keywords" content="*memo_sh.readline*">
+readline
+=======================================================
+
+## History manipulation
+
+Key | Description
+----|---
+C-p | previous-history
+C-n | next-history
+C-r | reverse-search-history
+C-s | forward-search-history
+
+## Command line editing
+
+Key | Description
+----|---
+C-a | beginning-of-line
+C-e | end-of-line
+C-f | forward-char
+C-b | backward-char
+C-l | clear-screen
+C-d | delete-char
+C-k | kill-line
+C-u | unix-line-discard
+M-f | forward-word
+M-b | backward-word
+M-d | kill-word
+C-w | unix-word-rubout
 
 <meta name="keywords" content="*memo_sh.awk*">
 awk
@@ -409,47 +484,6 @@ grep '\<hoge\>' file
 ~~~
 - \<  the begining of a word
 - \>  the end of a word
-
-<meta name="keywords" content="*memo_sh.readline*">
-readline
-=======================================================
-
-## History manipulation
-
-Key | Description
-----|---
-C-p | previous-history
-C-n | next-history
-C-r | reverse-search-history
-C-s | forward-search-history
-
-## Command line editing
-
-Key | Description
-----|---
-C-a | beginning-of-line
-C-e | end-of-line
-C-f | forward-char
-C-b | backward-char
-C-l | clear-screen
-C-d | delete-char
-C-k | kill-line
-C-u | unix-line-discard
-M-f | forward-word
-M-b | backward-word
-M-d | kill-word
-C-w | unix-word-rubout
-
-<meta name="keywords" content="*memo_sh.less*">
-less
-=======================================================
-Option | Description
--------|---
--E     | quit at EOF
--F     | quit if one screen
--R     | raw control chars
--S     | chop long lines
--X     | no init
 
 <meta name="keywords" content="*memo_sh.trans*">
 translate-shell
