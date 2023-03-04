@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="inc/default.css">
 
-<meta name="keywords" content="*memo_git*">
+<meta name="keywords" content="*memo:git*">
 **Git**
 
 git
@@ -26,7 +26,7 @@ HEAD^n   # n番目の親
              [HEAD^2] -+
 ~~~
 
-<meta name="keywords" content="*memo_git-init*">
+<meta name="keywords" content="*memo:git-init*">
 ### make a remote repository
 ~~~
 mkdir myproj.git
@@ -39,7 +39,7 @@ git init --bare
 - URL=https://path/myproj.git
 - URL=X:/path/myproj.git
 
-<meta name="keywords" content="*memo_git-clone*">
+<meta name="keywords" content="*memo:git-clone*">
 #### clone
 ~~~
 git clone URL [work_dir]
@@ -121,7 +121,7 @@ git ls-files -s                               # show filemode of tracked files
 git config -l | grep filemode                 # show filemode setting
 ~~~
 
-<meta name="keywords" content="*memo_git-config*">
+<meta name="keywords" content="*memo:git-config*">
 ## config
 ~~~
 git config --global user.name {name}
@@ -130,7 +130,7 @@ git config --global core.autocrlf input
 git config -l                             # list config
 ~~~
 
-<meta name="keywords" content="*memo_git-status*">
+<meta name="keywords" content="*memo:git-status*">
 ## information
 ~~~
 git status
@@ -149,7 +149,7 @@ git symbolic-ref --short HEAD    # branch name (git > 1.8)
 git branch --show-current        # branch name
 ~~~
 
-<meta name="keywords" content="*memo_git-remote*">
+<meta name="keywords" content="*memo:git-remote*">
 ## remote repository
 ~~~
 git remote add     origin URL  # connect oring to URL
@@ -161,9 +161,9 @@ git remote show origin         # show info of the remote repository
 git remote -v                  # list remote repositories
 ~~~
 
-<meta name="keywords" content="*memo_git-fetch*">
-<meta name="keywords" content="*memo_git-pull*">
-<meta name="keywords" content="*memo_git-push*">
+<meta name="keywords" content="*memo:git-fetch*">
+<meta name="keywords" content="*memo:git-pull*">
+<meta name="keywords" content="*memo:git-push*">
 ## remote branch
 ~~~
 git fetch
@@ -174,7 +174,7 @@ git push origin {branch}
 git push origin :{branch}      # remove the remote branch
 ~~~
 
-<meta name="keywords" content="*memo_git-add*">
+<meta name="keywords" content="*memo:git-add*">
 ## add
 ~~~
 git add {files}  # ファイルをtraced fileにする
@@ -182,7 +182,7 @@ git add .        # カレントディレクトリのすべてのファイルをt
 git add -u       # add updated files
 ~~~
 
-<meta name="keywords" content="*memo_git-reset*">
+<meta name="keywords" content="*memo:git-reset*">
 ## reset
 ~~~
 git reset [tree-ish] [--] {files}   # unstage
@@ -191,7 +191,7 @@ git reset [--mixed] [commit]        # reset [commit, add]
 git reset --soft    [commit]        # reset [commit]
 ~~~
 
-<meta name="keywords" content="*memo_git-commit*">
+<meta name="keywords" content="*memo:git-commit*">
 ## commit
 ~~~
 git commit
@@ -209,7 +209,7 @@ git commit --amend -m "message"     # コミットメッセージを変更
 - 現在形で記述する
 ~~~
 
-<meta name="keywords" content="*memo_git-checkout*">
+<meta name="keywords" content="*memo:git-checkout*">
 ## checkout co
 ~~~
 git checkout    {branch}                 # ブランチへ移動
@@ -219,7 +219,7 @@ git checkout [--] {files}                # ファイルをリポジトリから�
 git checkout --orphan {branch}           # 空ブランチを作成
 ~~~
 
-<meta name="keywords" content="*memo_git-branch*">
+<meta name="keywords" content="*memo:git-branch*">
 ## branch
 ~~~
 git branch    {branch}  # ブランチの作成
@@ -234,7 +234,7 @@ git branch -f master HEAD
 git update-ref refs/heads/master HEAD
 ~~~
 
-<meta name="keywords" content="*memo_git-tag*">
+<meta name="keywords" content="*memo:git-tag*">
 ## tag
 ~~~
 git tag    {name}         # タグの作成
@@ -247,7 +247,7 @@ git push origin :{name}   # リモートタグ削除
 git ls-remote --tags      # リモートタグ一覧
 ~~~
 
-<meta name="keywords" content="*memo_git-merge*">
+<meta name="keywords" content="*memo:git-merge*">
 ## merge
 ~~~
 git merge {branch}          # 指定したブランチを現在のブランチに統合する
@@ -269,7 +269,7 @@ git merge B
 
 ~~~
 
-<meta name="keywords" content="*memo_git-rebase*">
+<meta name="keywords" content="*memo:git-rebase*">
 ## rebase
 ~~~
 git rebase {branch}     # 現在のブランチの派生元を指定したブランチに変更する
@@ -325,13 +325,13 @@ git rebase --continue
 git push -f origin master  # 上書きに注意
 ~~~
 
-<meta name="keywords" content="*memo_git-cherry-pick*">
+<meta name="keywords" content="*memo:git-cherry-pick*">
 ## cherry-pick
 ~~~
 git cherry-pick {commit}
 ~~~
 
-<meta name="keywords" content="*memo_git-stash*">
+<meta name="keywords" content="*memo:git-stash*">
 ## stash
 ~~~
 git stash
@@ -340,7 +340,7 @@ git stash clear
 git stash list
 ~~~
 
-<meta name="keywords" content="*memo_git-worktree*">
+<meta name="keywords" content="*memo:git-worktree*">
 ## worktree
 ~~~
 git worktree add {worktree} {branch}
@@ -348,7 +348,7 @@ git worktree prune                     # worktree を削除後実行
 git worktree list                      # list worktrees
 ~~~
 
-<meta name="keywords" content="*memo_git-submodule*">
+<meta name="keywords" content="*memo:git-submodule*">
 ## submodule
 ### add submodule
 ~~~
@@ -385,7 +385,7 @@ git commit -m "add submodule {module}"
 cd ..
 ~~~
 
-<meta name="keywords" content="*memo_git-diff*">
+<meta name="keywords" content="*memo:git-diff*">
 ## diff
 ~~~
 git diff [--binary] from_commit [to_commit=HEAD] > diff_file
@@ -395,7 +395,7 @@ git diff HEAD~[n]
 git diff origin/main
 ~~~
 
-<meta name="keywords" content="*memo_git-apply*">
+<meta name="keywords" content="*memo:git-apply*">
 ## apply
 ~~~
 git apply [--check] diff_file
@@ -417,7 +417,7 @@ patch -p1 < diff_file
 - [git manual](https://git.github.io/htmldocs/git.html)
 - [GitHub GIT CHEAT SHEET](files/github-git-cheat-sheet.pdf)
 
-<meta name="keywords" content="*memo_git-svn*">
+<meta name="keywords" content="*memo:git-svn*">
 git-svn
 =======================================================
 
@@ -448,7 +448,7 @@ git svn clone file:///x/path/myproj   # msys2
 git svn clone X:/path/myproj          # gitbash
 ~~~
 
-<meta name="keywords" content="*memo_vcs.svn*">
+<meta name="keywords" content="*memo:vcs.svn*">
 svn
 =======================================================
 

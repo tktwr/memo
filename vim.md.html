@@ -2,8 +2,8 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="inc/default.css">
 
-<meta name="keywords" content="*memo_vi*">
-<meta name="keywords" content="*memo_vim*">
+<meta name="keywords" content="*memo:vi*">
+<meta name="keywords" content="*memo:vim*">
 **Vim**
 
 vim
@@ -51,11 +51,11 @@ vnoremap A y:'<,'>w !cmd<CR>
 vnoremap A y:!cmd "<C-R>""<CR>
 ~~~
 
-<meta name="keywords" content="*memo_vim.script*">
-<meta name="keywords" content="*memo_vim.script.syntax*">
+<meta name="keywords" content="*memo:vim.script*">
+<meta name="keywords" content="*memo:vim.script.syntax*">
 ## syntax
 
-<meta name="keywords" content="*memo_vim.script.syntax.string*">
+<meta name="keywords" content="*memo:vim.script.syntax.string*">
 ### string
 ~~~
 :let a = 'hello'
@@ -63,7 +63,7 @@ vnoremap A y:!cmd "<C-R>""<CR>
 ell
 ~~~
 
-<meta name="keywords" content="*memo_vim.script.syntax.expr*">
+<meta name="keywords" content="*memo:vim.script.syntax.expr*">
 ### expr
 expr           | Description
 ---            | ---
@@ -83,7 +83,7 @@ expr !~ expr   | regexp doesn't match
 :help expression-syntax
 ~~~
 
-<meta name="keywords" content="*memo_vim.script.syntax.let*">
+<meta name="keywords" content="*memo:vim.script.syntax.let*">
 ### let
 ~~~
 let var = val
@@ -91,7 +91,7 @@ let var_list = []
 let var_dict = {}
 ~~~
 
-<meta name="keywords" content="*memo_vim.script.syntax.if*">
+<meta name="keywords" content="*memo:vim.script.syntax.if*">
 ### if
 ~~~
 if expr
@@ -103,7 +103,7 @@ else
 endif
 ~~~
 
-<meta name="keywords" content="*memo_vim.script.syntax.for*">
+<meta name="keywords" content="*memo:vim.script.syntax.for*">
 ### for
 ~~~
 for var in list
@@ -111,7 +111,7 @@ for var in list
 endfor
 ~~~
 
-<meta name="keywords" content="*memo_vim.script.syntax.while*">
+<meta name="keywords" content="*memo:vim.script.syntax.while*">
 ### while
 ~~~
 while expr
@@ -119,7 +119,7 @@ while expr
 endwhile
 ~~~
 
-<meta name="keywords" content="*memo_vim.script.syntax.func*">
+<meta name="keywords" content="*memo:vim.script.syntax.func*">
 ### func
 ~~~
 func name(arg1, arg2)
@@ -128,7 +128,7 @@ func name(arg1, arg2)
 endfunc
 ~~~
 
-<meta name="keywords" content="*memo_vim.script.syntax.args*">
+<meta name="keywords" content="*memo:vim.script.syntax.args*">
 ### args
 Word   | Description
 ---    | ---
@@ -139,7 +139,7 @@ cward  | word under the cursor
 cWARD  | word under the cursor
 cfile  | file under the cursor
 
-<meta name="keywords" content="*memo_vim.script.syntax.autocmd*">
+<meta name="keywords" content="*memo:vim.script.syntax.autocmd*">
 ### autocmd
 - VimEnter
   - FileType
@@ -154,10 +154,10 @@ cfile  | file under the cursor
   - WinLeave
 - VimLeave
 
-<meta name="keywords" content="*memo_vim.keymap*">
+<meta name="keywords" content="*memo:vim.keymap*">
 ## keymap
 
-<meta name="keywords" content="*memo_vim.tmap*">
+<meta name="keywords" content="*memo:vim.tmap*">
 ### terminal mode keymap
 
 | Key | Original                  | Map        | New
@@ -189,7 +189,7 @@ cfile  | file under the cursor
 | C-Y |                           |            |
 | C-Z | terminal suspend          |            |
 
-<meta name="keywords" content="*memo_vim.nmap*">
+<meta name="keywords" content="*memo:vim.nmap*">
 ### normal mode keymap
 
 | Key     | Original                  | Map                     | New
@@ -321,14 +321,14 @@ cfile  | file under the cursor
 
 - *: not oftenly used commands for me (candidates for remapping)
 
-<meta name="keywords" content="*memo_vim.vmap*">
+<meta name="keywords" content="*memo:vim.vmap*">
 ### visual mode keymap
 
   | Key    | Original                | Map      | New
 --|--------|-------------------------|----------|---
   | C      |                         |          | nerd commenter
 
-<meta name="keywords" content="*memo_vim.imap*">
+<meta name="keywords" content="*memo:vim.imap*">
 ### insert mode keymap
 
   | Key     | Original                | Map      | New
@@ -348,7 +348,7 @@ cfile  | file under the cursor
   | C-X C-] | completion of tags
   | C-J     |                         |          | skk mode
 
-<meta name="keywords" content="*memo_vim.commands*">
+<meta name="keywords" content="*memo:vim.commands*">
 ## commands
 Command            | Description
 -----------------  | ---
@@ -398,7 +398,7 @@ C-W H   | move window to left
 C-W L   | move window to right
 C-W T   | move window to a new tab
 
-<meta name="keywords" content="*memo_vim.resize*">
+<meta name="keywords" content="*memo:vim.resize*">
 ## resize window
 Command               | Description
 ----------------------|---
@@ -409,7 +409,7 @@ Command               | Description
 :vertical res[ize] +N | increase window width
 :vertical res[ize]  N | set window width
 
-<meta name="keywords" content="*memo_vim.record*">
+<meta name="keywords" content="*memo:vim.record*">
 ## record
 Key | Description
 ----|---
@@ -417,7 +417,7 @@ qq  | start recording into register 'q'
 q   | end recording
 @q  | execute the contents of register 'q'
 
-<meta name="keywords" content="*memo_vim.encryption*">
+<meta name="keywords" content="*memo:vim.encryption*">
 ## encryption
 Command           | Description
 ------------------|---
@@ -439,8 +439,8 @@ Command           | Description
 :w
 ~~~
 
-<meta name="keywords" content="*memo_vim.grep*">
-<meta name="keywords" content="*memo_vim.vimgrep*">
+<meta name="keywords" content="*memo:vim.grep*">
+<meta name="keywords" content="*memo:vim.vimgrep*">
 ## vimgrep
 
 ### サブディレクトリの検索
@@ -448,7 +448,7 @@ Command           | Description
 :vimgrep WORD **/*.h **/*.cpp
 ~~~
 
-<meta name="keywords" content="*memo_vim.diff*">
+<meta name="keywords" content="*memo:vim.diff*">
 ## diff
 
 Command           | Description
@@ -475,7 +475,7 @@ R                 | rename
 D                 | delete
 d                 | make dir
 
-<meta name="keywords" content="*memo_vim.term*">
+<meta name="keywords" content="*memo:vim.term*">
 ## terminal
 
 Command      | Description
@@ -489,8 +489,8 @@ i            | terminal mode
 C-W "{reg}   | paste register {reg}
 C-W ""       | paste the unnamed register
 
-<meta name="keywords" content="*memo_vim.plugin*">
-<meta name="keywords" content="*memo_vim.vim-plug*">
+<meta name="keywords" content="*memo:vim.plugin*">
+<meta name="keywords" content="*memo:vim.vim-plug*">
 ## vim-plug
   | Command          | Description
 --|------------------|---
@@ -498,7 +498,7 @@ C-W ""       | paste the unnamed register
   | :PlugInstall     | install plugins
   | :PlugUpdate      | update plugins
 
-<meta name="keywords" content="*memo_vim.fugitive*">
+<meta name="keywords" content="*memo:vim.fugitive*">
 ## fugitive
   | Command          | Description
 --|------------------|---
@@ -514,7 +514,7 @@ C-W ""       | paste the unnamed register
   - save in the left window (staged)
 - :Gcommit
 
-<meta name="keywords" content="*memo_vim.gv*">
+<meta name="keywords" content="*memo:vim.gv*">
 ## gv
   | Command          | Description
 --|------------------|---
@@ -522,14 +522,14 @@ C-W ""       | paste the unnamed register
 * | D                | diff in a new tab
 * | C-X              | :tabclose
 
-<meta name="keywords" content="*memo_vim.agit*">
+<meta name="keywords" content="*memo:vim.agit*">
 ## agit
   | Command          | Description
 --|------------------|---
 * | D                | diff in a new tab
 * | C-X              | :tabclose
 
-<meta name="keywords" content="*memo_vim.nerdtree*">
+<meta name="keywords" content="*memo:vim.nerdtree*">
 ## nerdtree
   | Command          | Description
 --|------------------|---
@@ -561,7 +561,7 @@ C-W ""       | paste the unnamed register
   | cs"'             | change surrounding "" to ''
   | ys2w)            | surround two words by ()
 
-<meta name="keywords" content="*memo_vim.ultisnips*">
+<meta name="keywords" content="*memo:vim.ultisnips*">
 ## UltiSnips
 Command          | Description
 -----------------|---
@@ -575,7 +575,7 @@ C-P  | prev item on menu
 C-J  | next place
 C-K  | prev place
 
-<meta name="keywords" content="*memo_vim.coc*">
+<meta name="keywords" content="*memo:vim.coc*">
 ## coc
 
 ### install
@@ -606,7 +606,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 :CocCommand python.setLinter
 ~~~
 
-<meta name="keywords" content="*memo_vim.vim-lsp*">
+<meta name="keywords" content="*memo:vim.vim-lsp*">
 ## vim-lsp
 
 Key       | Description
@@ -639,14 +639,14 @@ $ cmake --build build.ninja/Release
 $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
 ~~~
 
-<meta name="keywords" content="*memo_vim.gtags*">
+<meta name="keywords" content="*memo:vim.gtags*">
 ## gtags.vim
 ~~~
 :Gtags <func>
 :Gtags -r <func>     # go to the referenced point
 ~~~
 
-<meta name="keywords" content="*memo_vim.eskk*">
+<meta name="keywords" content="*memo:vim.eskk*">
 ## eskk
 ~~~
 Plug 'tyru/eskk.vim'
@@ -664,7 +664,7 @@ Termuxで使用するときの注意
 
 - 辞書のエンコーディングをEUC-JPからUTF-8に変換が必要
 
-<meta name="keywords" content="*memo_dev.skk*">
+<meta name="keywords" content="*memo:dev.skk*">
 skk
 =======================================================
 
@@ -704,21 +704,21 @@ UgoKu
 SPACE
 ~~~
 
-<meta name="keywords" content="*memo_dev.ctags*">
+<meta name="keywords" content="*memo:dev.ctags*">
 ctags
 =======================================================
 ~~~
 $ ctags -f out_tag_file -R dir
 ~~~
 
-<meta name="keywords" content="*memo_dev.gtags*">
+<meta name="keywords" content="*memo:dev.gtags*">
 gtags
 =======================================================
 ~~~
 $ gtags -v
 ~~~
 
-<meta name="keywords" content="*memo_dev.global*">
+<meta name="keywords" content="*memo:dev.global*">
 global
 =======================================================
 ~~~

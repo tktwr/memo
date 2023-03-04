@@ -4,8 +4,8 @@
 
 **Shell**
 
-<meta name="keywords" content="*memo_sh*">
-<meta name="keywords" content="*memo_sh.bash*">
+<meta name="keywords" content="*memo:sh*">
+<meta name="keywords" content="*memo:sh.bash*">
 bash
 =======================================================
 ## 環境変数
@@ -19,7 +19,7 @@ FIGNORE=.o
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ~~~
 
-<meta name="keywords" content="*memo_sh.bash.heredoc*">
+<meta name="keywords" content="*memo:sh.bash.heredoc*">
 ## ヒアドキュメント heredoc
 ~~~
 cat << END
@@ -28,7 +28,7 @@ cat << END
 END
 ~~~
 
-<meta name="keywords" content="*memo_sh.bash.redirect*">
+<meta name="keywords" content="*memo:sh.bash.redirect*">
 ## redirect
 
 ~~~
@@ -63,9 +63,9 @@ echo "error" 1>&2
 % tar cf - dir | (cd /mirror; tar xf -)
 ~~~
 
-<meta name="keywords" content="*memo_sh.syntax*">
-<meta name="keywords" content="*memo_sh.syntax.test*">
-<meta name="keywords" content="*memo_sh.syntax.expr*">
+<meta name="keywords" content="*memo:sh.syntax*">
+<meta name="keywords" content="*memo:sh.syntax.test*">
+<meta name="keywords" content="*memo:sh.syntax.expr*">
 ## syntax
 ### expr
 EXPRESSION                 | Description
@@ -92,7 +92,7 @@ INT1 -ne INT2              | INT1 is not equal to INT2
 -w FILE                    | FILE exists and write permission is granted
 -x FILE                    | FILE exists and execute (or search) permission is granted
 
-<meta name="keywords" content="*memo_sh.syntax.if*">
+<meta name="keywords" content="*memo:sh.syntax.if*">
 ### if
 ~~~
 if [ EXPR ]; then
@@ -101,7 +101,7 @@ else
 fi
 ~~~
 
-<meta name="keywords" content="*memo_sh.syntax.for*">
+<meta name="keywords" content="*memo:sh.syntax.for*">
 ### for
 ~~~
 for i in $list; do
@@ -109,14 +109,14 @@ for i in $list; do
 done
 ~~~
 
-<meta name="keywords" content="*memo_sh.syntax.while*">
+<meta name="keywords" content="*memo:sh.syntax.while*">
 ### while
 ~~~
 while [ EXPR ]; do
 done
 ~~~
 
-<meta name="keywords" content="*memo_sh.syntax.case*">
+<meta name="keywords" content="*memo:sh.syntax.case*">
 ### case
 ~~~
 case $i in
@@ -125,7 +125,7 @@ case $i in
 esac
 ~~~
 
-<meta name="keywords" content="*memo_sh.bash.var*">
+<meta name="keywords" content="*memo:sh.bash.var*">
 ## 変数置換
 
 ~~~
@@ -150,7 +150,7 @@ echo ${x/.bar/.com}
 echo a{d,c,b}e
 ~~~
 
-<meta name="keywords" content="*memo_sh.bash.array*">
+<meta name="keywords" content="*memo:sh.bash.array*">
 ## array
 ~~~
 a=(\
@@ -165,7 +165,7 @@ echo ${a[@]}
 echo ${#a[*]}
 ~~~
 
-<meta name="keywords" content="*memo_sh.bash.dict*">
+<meta name="keywords" content="*memo:sh.bash.dict*">
 ## dict
 ~~~
 declare -A DICT
@@ -177,7 +177,7 @@ echo ${DICT["en"]}
 echo ${DICT[""]}    # error
 ~~~
 
-<meta name="keywords" content="*memo_sh.bash.arithmetic*">
+<meta name="keywords" content="*memo:sh.bash.arithmetic*">
 ## arithmetic
 ~~~
 n=1
@@ -185,7 +185,7 @@ n=`expr $n + 1`
 n=$((n + 1))
 ~~~
 
-<meta name="keywords" content="*memo_sh.stdin*">
+<meta name="keywords" content="*memo:sh.stdin*">
 ## read from stdin
 ~~~
 while [ true ]; do
@@ -198,7 +198,7 @@ while [ true ]; do
 done
 ~~~
 
-<meta name="keywords" content="*memo_sh.bash.tput*">
+<meta name="keywords" content="*memo:sh.bash.tput*">
 ## get lines and columns in a shell script
 ~~~
 #!/bin/bash
@@ -210,7 +210,7 @@ echo "Lines: " $lines
 echo "Columns: " $columns
 ~~~
 
-<meta name="keywords" content="*memo_sh.bash.IFS*">
+<meta name="keywords" content="*memo:sh.bash.IFS*">
 ## 引数 year/month/day の切り出し
 ~~~
 orig_IFS=$IFS
@@ -222,7 +222,7 @@ day=$3
 IFS=$orig_IFS
 ~~~
 
-<meta name="keywords" content="*memo_csh*">
+<meta name="keywords" content="*memo:csh*">
 csh
 =======================================================
 ## redirect stderr and stdout
@@ -230,7 +230,7 @@ csh
 % command >& foo.txt
 ~~~
 
-<meta name="keywords" content="*memo_csh.syntax*">
+<meta name="keywords" content="*memo:csh.syntax*">
 ## syntax
 ### while
 ~~~
@@ -256,10 +256,10 @@ default:
 endsw
 ~~~
 
-<meta name="keywords" content="*memo_sh.commands*">
-<meta name="keywords" content="*memo_sh.cli*">
-<meta name="keywords" content="*memo_sh.cui*">
-<meta name="keywords" content="*memo_sh.tui*">
+<meta name="keywords" content="*memo:sh.commands*">
+<meta name="keywords" content="*memo:sh.cli*">
+<meta name="keywords" content="*memo:sh.cui*">
+<meta name="keywords" content="*memo:sh.tui*">
 Commands
 =======================================================
 ## New Commands
@@ -276,7 +276,7 @@ du          | ncdu
 top         | htop, btop
 ps          |
 
-<meta name="keywords" content="*memo_sh.lazygit*">
+<meta name="keywords" content="*memo:sh.lazygit*">
 ## Lazygit
 ### All
 Key | Description
@@ -319,8 +319,8 @@ r     | rebase
 M     | merge
 f     | fetch
 
-<meta name="keywords" content="*memo_sh.zip*">
-<meta name="keywords" content="*memo_sh.unzip*">
+<meta name="keywords" content="*memo:sh.zip*">
+<meta name="keywords" content="*memo:sh.unzip*">
 ## zip/unzip
 Command                              | Description
 ---                                  | ---
@@ -328,7 +328,7 @@ zip -r out.zip file/dir...           | compress files
 unzip filename.zip                   | uncompress files
 unzip -l filename.zip                | list files
 
-<meta name="keywords" content="*memo_sh.tar*">
+<meta name="keywords" content="*memo:sh.tar*">
 ## tar
 Command                              | Description
 ---                                  | ---
@@ -337,25 +337,25 @@ tar xzvf filename.tar.gz             | expand a tar.gz file
 tar xjvf filename.tar.bz2            | expand a tar.bz2 file
 tar xJvf filename.tar.xz             | expand a tar.xz file
 
-<meta name="keywords" content="*memo_sh.find*">
+<meta name="keywords" content="*memo:sh.find*">
 ## find
 Command                              | Description
 ---                                  | ---
 find . -name '*word*'                | find files including a word
 find . -name '*word*' -exec rm {} \; | remove matched files
 
-<meta name="keywords" content="*memo_sh.fd*">
-<meta name="keywords" content="*memo_sh.fdfind*">
+<meta name="keywords" content="*memo:sh.fd*">
+<meta name="keywords" content="*memo:sh.fdfind*">
 ## fd (fdfind)
 
-<meta name="keywords" content="*memo_sh.rg*">
-<meta name="keywords" content="*memo_sh.ripgrep*">
+<meta name="keywords" content="*memo:sh.rg*">
+<meta name="keywords" content="*memo:sh.ripgrep*">
 ## rg (ripgrep)
 ~~~
 $ rg pattern [path...]
 ~~~
 
-<meta name="keywords" content="*memo_sh.fzf*">
+<meta name="keywords" content="*memo:sh.fzf*">
 ## fzf
 
 Command     | Description             
@@ -365,7 +365,7 @@ Ctrl-r      | history
 Ctrl-t      | print file and dir name 
 Alt-c       | cd                      
 
-<meta name="keywords" content="*memo_sh.fzf.pattern*">
+<meta name="keywords" content="*memo:sh.fzf.pattern*">
 ### Pattern
 
 Pattern       | Description        
@@ -380,7 +380,7 @@ str$          | end with str
 str1 str2     | and                
 str1 `|` str2 | or                 
 
-<meta name="keywords" content="*memo_sh.less*">
+<meta name="keywords" content="*memo:sh.less*">
 ## less
 
 Option  | Description        
@@ -391,14 +391,14 @@ Option  | Description
 -S      | chop long lines    
 -X      | no init            
 
-<meta name="keywords" content="*memo_sh.date*">
+<meta name="keywords" content="*memo:sh.date*">
 ## date
 ~~~
 env LC_TIME=C date '+%Y/%m/%d (%a)'
 env LC_TIME=C date '+%H:%M:%S'
 ~~~
 
-<meta name="keywords" content="*memo_sh.readline*">
+<meta name="keywords" content="*memo:sh.readline*">
 readline
 =======================================================
 
@@ -428,7 +428,7 @@ M-b | backward-word
 M-d | kill-word
 C-w | unix-word-rubout
 
-<meta name="keywords" content="*memo_sh.awk*">
+<meta name="keywords" content="*memo:sh.awk*">
 awk
 =======================================================
 ## define the field separator to ';'
@@ -447,10 +447,10 @@ awk '{print "'"$1"':" $1}'
 ls -l | grep -v '^total' | awk '{c[$6]++} END {for(m in c) print m,c[m]}'
 ~~~
 
-<meta name="keywords" content="*memo_sh.sed*">
+<meta name="keywords" content="*memo:sh.sed*">
 sed
 =======================================================
-<meta name="keywords" content="*memo_sh.regex*">
+<meta name="keywords" content="*memo:sh.regex*">
 ## 正規表現
 ~~~
 正規表現      | 意味                                         |
@@ -506,7 +506,7 @@ sed 's/aaa/' + "$1" + '/' と考える
 sed 's/aaa/'"$1"'/'
 ~~~
 
-<meta name="keywords" content="*memo_sh.grep*">
+<meta name="keywords" content="*memo:sh.grep*">
 grep
 =======================================================
 ## NOT
@@ -532,7 +532,7 @@ grep '\<hoge\>' file
 - \<  the begining of a word
 - \>  the end of a word
 
-<meta name="keywords" content="*memo_sh.trans*">
+<meta name="keywords" content="*memo:sh.trans*">
 translate-shell
 =======================================================
 - [translate-shell](https://www.soimort.org/translate-shell/)

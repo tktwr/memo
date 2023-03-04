@@ -4,7 +4,7 @@
 # functions
 #======================================================
 f_tags_memo() {
-  memotags.sh *.html > tags
+  memotags.sh 'memo:' *.html > tags
   mktags_dir.sh
 }
 
