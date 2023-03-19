@@ -57,7 +57,7 @@ Host + Home | menu
 
 Host Key: Right Control
 
-## Shared Folder
+## Windowsの共有フォルダにアクセスする
 
 ### add user to vboxsf group
 ~~~
@@ -78,6 +78,15 @@ SHARE_FOLDER /mnt/vbox/SHARE_FOLDER vboxsf defaults,noauto,iocharset=utf8,uid=10
 <meta name="keywords" content="*memo:os.linux*">
 Linux
 =======================================================
+<meta name="keywords" content="*memo:os.linux.smb*">
+<meta name="keywords" content="*memo:os.linux.samba*">
+## samba
+| Command                    | Description               |
+| ---                        | ---                       |
+| sudo pdbedit -L -v         | print users               |
+| sudo smbpasswd -a username | add user                  |
+| sudo smbpasswd -x username | delete user               |
+| sudo smbpasswd username    | set password for username |
 
 <meta name="keywords" content="*memo:os.linux.apt*">
 ## apt
