@@ -5,7 +5,6 @@
 #======================================================
 f_tags_memo() {
   memotags.sh 'memo:' *.html > tags
-  mktags_dir.sh
 }
 
 f_dot() {
