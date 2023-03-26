@@ -222,6 +222,36 @@ day=$3
 IFS=$orig_IFS
 ~~~
 
+<meta name="keywords" content="*memo:sh.readline*">
+readline
+=======================================================
+
+## History manipulation
+
+| Key  | Description            |
+| ---- | ---                    |
+| C-p  | previous-history       |
+| C-n  | next-history           |
+| C-r  | reverse-search-history |
+| C-s  | forward-search-history |
+
+## Command line editing
+
+| Key  | Description       |
+| ---- | ---               |
+| C-a  | beginning-of-line |
+| C-e  | end-of-line       |
+| C-f  | forward-char      |
+| C-b  | backward-char     |
+| C-l  | clear-screen      |
+| C-d  | delete-char       |
+| C-k  | kill-line         |
+| C-u  | unix-line-discard |
+| M-f  | forward-word      |
+| M-b  | backward-word     |
+| M-d  | kill-word         |
+| C-w  | unix-word-rubout  |
+
 <meta name="keywords" content="*memo:csh*">
 csh
 =======================================================
@@ -260,22 +290,140 @@ endsw
 <meta name="keywords" content="*memo:sh.cli*">
 <meta name="keywords" content="*memo:sh.cui*">
 <meta name="keywords" content="*memo:sh.tui*">
-Commands
+Traditional Commands
 =======================================================
-## New Commands
+
+<meta name="keywords" content="*memo:sh.date*">
+## date
+~~~
+env LC_TIME=C date '+%Y/%m/%d (%a)'
+env LC_TIME=C date '+%H:%M:%S'
+~~~
+
+<meta name="keywords" content="*memo:sh.less*">
+## less
+
+| Option  | Description        |
+| ------- | ---                |
+| -E      | quit at EOF        |
+| -F      | quit if one screen |
+| -R      | raw control chars  |
+| -S      | chop long lines    |
+| -X      | no init            |
+
+<meta name="keywords" content="*memo:sh.zip*">
+<meta name="keywords" content="*memo:sh.unzip*">
+## zip/unzip
+| Command                    | Description      |
+| ---                        | ---              |
+| zip -r out.zip file/dir... | compress files   |
+| unzip filename.zip         | uncompress files |
+| unzip -l filename.zip      | list files       |
+
+<meta name="keywords" content="*memo:sh.tar*">
+## tar
+| Command                              | Description           |
+| ---                                  | ---                   |
+| tar czvf filename.tar.gz file/dir... | create a tar.gz file  |
+| tar xzvf filename.tar.gz             | expand a tar.gz file  |
+| tar xjvf filename.tar.bz2            | expand a tar.bz2 file |
+| tar xJvf filename.tar.xz             | expand a tar.xz file  |
+
+<meta name="keywords" content="*memo:sh.find*">
+## find
+| Command                              | Description                                  |
+| ---                                  | ---                                          |
+| find . -name '*word*'                | find files including a word in the file name |
+| find . -name '*word*' -exec rm {} \; | remove matched files                         |
+
+| Option  | Description        |
+| ---     | ---                |
+| -type f | select files       |
+| -type d | select directories |
+
+<meta name="keywords" content="*memo:sh.new_commands*">
+New Commands
+=======================================================
 
 | Traditional | New          |
 | ---         | ---          |
-| -           | fzf          |
-| cat         | bat (batcat) |
-| find        | fd (fdfind)  |
+| find        | fdfind (fd)  |
 | grep        | rg (ripgrep) |
 | ls          | exa          |
+| cat         | batcat (bat) |
 | diff        | delta        |
-| -           | lazygit      |
 | du          | ncdu         |
 | top         | htop, btop   |
 | ps          |              |
+| -           | fzf          |
+| -           | lazygit      |
+
+<meta name="keywords" content="*memo:sh.fd*">
+<meta name="keywords" content="*memo:sh.fdfind*">
+## fdfind (fd)
+~~~
+$ fdfind [options] [pattern]             # find from the current directory
+$ fdfind [options] pattern [path...]     # find from the given directories
+~~~
+
+| Command         | Description                                               |
+| ---             | ---                                                       |
+| fdfind          | find all files and directories from the current directory |
+| fdfind word     | filter by word                                            |
+| fdfind .    dir | find all files and directories from the given directory   |
+| fdfind word dir | filter by word                                            |
+
+| Option        | Description                |
+| ---           | ---                        |
+| --max-depth=1 | current or given directory |
+| --type=f      | select files               |
+| --type=d      | select directories         |
+
+<meta name="keywords" content="*memo:sh.rg*">
+<meta name="keywords" content="*memo:sh.ripgrep*">
+## rg (ripgrep)
+~~~
+$ rg [options] pattern [path...]
+~~~
+
+| Option        | Description                |
+| ---           | ---                        |
+| -S            | smart case                 |
+| -s            | case sensitive             |
+| -i            | ignore case                |
+| -w            | word boundary              |
+| --max-depth=1 | current or given directory |
+
+| Pattern       | Description       |
+| ---           | ---               |
+| BAR           | or                |
+| \b            | word boundary     |
+| \-            | -                 |
+
+<meta name="keywords" content="*memo:sh.fzf*">
+## fzf
+
+| Command   | Description             |
+| ---       | ---                     |
+| cmd **TAB | file completion         |
+| Ctrl-r    | history                 |
+| Ctrl-t    | print file and dir name |
+| Alt-c     | cd                      |
+
+<meta name="keywords" content="*memo:sh.fzf.pattern*">
+### Pattern
+
+| Pattern       | Description        |
+| ---           | ---                |
+| str           | match str          |
+| 'str          | exact match        |
+| ^str          | start with str     |
+| str$          | end with str       |
+| !str          | not                |
+| !^str         | not start with str |
+| !str$         | not end with str   |
+| str1 str2     | and                |
+| str1 BAR str2 | or                 |
 
 <meta name="keywords" content="*memo:sh.lazygit*">
 ## Lazygit
@@ -319,128 +467,6 @@ R     | rename
 r     | rebase
 M     | merge
 f     | fetch
-
-<meta name="keywords" content="*memo:sh.zip*">
-<meta name="keywords" content="*memo:sh.unzip*">
-## zip/unzip
-Command                              | Description
----                                  | ---
-zip -r out.zip file/dir...           | compress files
-unzip filename.zip                   | uncompress files
-unzip -l filename.zip                | list files
-
-<meta name="keywords" content="*memo:sh.tar*">
-## tar
-Command                              | Description
----                                  | ---
-tar czvf filename.tar.gz file/dir... | create a tar.gz file
-tar xzvf filename.tar.gz             | expand a tar.gz file
-tar xjvf filename.tar.bz2            | expand a tar.bz2 file
-tar xJvf filename.tar.xz             | expand a tar.xz file
-
-<meta name="keywords" content="*memo:sh.find*">
-## find
-Command                              | Description
----                                  | ---
-find . -name '*word*'                | find files including a word
-find . -name '*word*' -exec rm {} \; | remove matched files
-
-<meta name="keywords" content="*memo:sh.fd*">
-<meta name="keywords" content="*memo:sh.fdfind*">
-## fd (fdfind)
-
-<meta name="keywords" content="*memo:sh.rg*">
-<meta name="keywords" content="*memo:sh.ripgrep*">
-## rg (ripgrep)
-~~~
-$ rg [options] pattern [path...]
-~~~
-
-| Option | Description    |
-| ---    | ---            |
-| -S     | smart case     |
-| -s     | case sensitive |
-| -i     | ignore case    |
-| -w     | word           |
-
-| Pattern | Description |
-| ---     | ---         |
-| \b      | boundary    |
-| BAR     | or          |
-| \-      | -           |
-
-<meta name="keywords" content="*memo:sh.fzf*">
-## fzf
-
-| Command   | Description             |
-| ---       | ---                     |
-| cmd **TAB | file completion         |
-| Ctrl-r    | history                 |
-| Ctrl-t    | print file and dir name |
-| Alt-c     | cd                      |
-
-<meta name="keywords" content="*memo:sh.fzf.pattern*">
-### Pattern
-
-| Pattern       | Description        |
-| ---           | ---                |
-| str           | match str          |
-| 'str          | exact match        |
-| ^str          | start with str     |
-| str$          | end with str       |
-| !str          | not                |
-| !^str         | not start with str |
-| !str$         | not end with str   |
-| str1 str2     | and                |
-| str1 BAR str2 | or                 |
-
-<meta name="keywords" content="*memo:sh.less*">
-## less
-
-Option  | Description        
-------- | ---                
--E      | quit at EOF        
--F      | quit if one screen 
--R      | raw control chars  
--S      | chop long lines    
--X      | no init            
-
-<meta name="keywords" content="*memo:sh.date*">
-## date
-~~~
-env LC_TIME=C date '+%Y/%m/%d (%a)'
-env LC_TIME=C date '+%H:%M:%S'
-~~~
-
-<meta name="keywords" content="*memo:sh.readline*">
-readline
-=======================================================
-
-## History manipulation
-
-Key | Description
-----|---
-C-p | previous-history
-C-n | next-history
-C-r | reverse-search-history
-C-s | forward-search-history
-
-## Command line editing
-
-Key | Description
-----|---
-C-a | beginning-of-line
-C-e | end-of-line
-C-f | forward-char
-C-b | backward-char
-C-l | clear-screen
-C-d | delete-char
-C-k | kill-line
-C-u | unix-line-discard
-M-f | forward-word
-M-b | backward-word
-M-d | kill-word
-C-w | unix-word-rubout
 
 <meta name="keywords" content="*memo:sh.awk*">
 awk
