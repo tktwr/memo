@@ -331,15 +331,16 @@ env LC_TIME=C date '+%H:%M:%S'
 
 <meta name="keywords" content="*memo:sh.find*">
 ## find
-| Command                              | Description                                  |
-| ---                                  | ---                                          |
-| find . -name '*word*'                | find files including a word in the file name |
-| find . -name '*word*' -exec rm {} \; | remove matched files                         |
+~~~
+$ find path [expression]
+~~~
 
-| Option  | Description        |
-| ---     | ---                |
-| -type f | select files       |
-| -type d | select directories |
+| Expression                   | Description                                  |
+| ---                          | ---                                          |
+| -name '*word*'               | find files including a word in the file name |
+| -name '*word*' -exec rm {} + | remove matched files once                    |
+| -type f                      | select files                                 |
+| -type d                      | select directories                           |
 
 <meta name="keywords" content="*memo:sh.new_commands*">
 New Commands
@@ -373,11 +374,20 @@ $ fdfind [options] pattern [path...]     # find from the given directories
 | fdfind .    dir | find all files and directories from the given directory   |
 | fdfind word dir | filter by word                                            |
 
-| Option        | Description                |
-| ---           | ---                        |
-| --max-depth=1 | current or given directory |
-| --type=f      | select files               |
-| --type=d      | select directories         |
+| Option            | Description                |
+| ---               | ---                        |
+| -d, --max-depth=1 | current or given directory |
+| -t, --type=f      | select files               |
+| -t, --type=d      | select directories         |
+
+### exact match to build
+~~~
+fdfind -I -t d --prune -g build
+~~~
+### remove all .svn directories
+~~~
+fdfind -HI -t d --prune -g '.svn' -X rm -rf {}
+~~~
 
 <meta name="keywords" content="*memo:sh.rg*">
 <meta name="keywords" content="*memo:sh.ripgrep*">
