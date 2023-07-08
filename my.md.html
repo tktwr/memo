@@ -5,7 +5,6 @@
 <meta name="keywords" content="*memo:my*">
 **My**
 
-<meta name="keywords" content="*memo:my.keymap*">
 Keymap
 =======================================================
 
@@ -13,90 +12,82 @@ Keymap
 * +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
 * |ESC|F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Ins|Del|
 * +---+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+
-* |Tab  | Q |   | E |   |   | Y | U |   | O | P |   |   |   BS|
+* |Tab  |   |   |   |   |   |   |   |   |   |   |   |   |   BS|
 * +-----+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-----+
-* |Ctrl   | A |   | D | F | G | H | J | K | L |   |   | Return|
+* |Ctrl   |   |   |   |   |   |   |   |   |   |   |   | Return|
 * +-------+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+---+---+
-* |Shift    |   | X |   |   | B | N |   |   |   |   |Zen  | Fn|
+* |Shift    |   |   |   |   |   |   |   |   |   |   |Zen  | Fn|
 * +-------+-+-+-+-+-+---+---+---+---+---+-+-+---+-+-+-+---+---+
 *         |PgU|Alt|                       | End   |PgD|
 *         +---+---+-----------------------+-------+---+
 *****************************************************************
 
-<meta name="keywords" content="*memo:my.win.keymap*">
-<meta name="keywords" content="*memo:my.fn.keymap*">
-<meta name="keywords" content="*memo:my.mintty.keymap*">
-<meta name="keywords" content="*memo:my.vim.keymap*">
-<meta name="keywords" content="*memo:my.tips*">
+<meta name="keywords" content="*memo:my.keymap*">
 
-App                | Key                 | Description
----                | ---                 | ---
-[Windows]          |                     |
-Windows            | Alt + `             | 日本語入力 [英語キーボード]
-Windows            | Alt + Tab           | App切り替え
-Windows            | Alt + Shift + Tab   | App切り替え（逆順）
-Windows            | Windows + D         | デスクトップを表示
-Windows            | Windows + Up        | ウィンドウの最大化
-Windows            | Windows + Left      | ウィンドウを左半分に最大化
-Windows            | Windows + Right     | ウィンドウを右半分に最大化
-Windows            | Windows + Shift + S | 範囲を指定してスクリーンショット
-[mintty]           |                     |
-mintty             | C-0                 | scale reset
-mintty             | C--                 | scale -
-mintty             | C-=                 | scale +
-[FuncKey]          |                     |
-                   | F1                  | []
-autohotkey         | F2                  | virtual desktop left
-autohotkey         | F3                  | virtual desktop right
-autohotkey         | F4                  | screenshot
-                   | F5                  | []
-autohotkey         | F6                  | MsgBox
-autohotkey         | F7                  | left maximize
-autohotkey         | F8                  | maximize
-autohotkey         | F9                  | right maximize
-autohotkey         | F10                 | display desktop
-autohotkey         | F11                 | auto maximize
-                   | F12                 | []
-[vim]              |                     |
-                   | C-0                 | move to bottom
-                   | C-1                 | move to top
-                   | C-2                 | move to winnr 2
-                   | C-3                 | []
-                   | C-4                 | []
-                   | C-5                 | []
-                   | C-6                 | []
-                   | C-7                 | maximize x
-                   | C-8                 | maximize xy
-                   | C-9                 | maximize y
-[vim]              |                     |
-                   | C-H                 | window left
-                   | C-J                 | window down
-                   | C-K                 | window up
-                   | C-L                 | window right
-[vim]              |                     |
-                   | End                 | WblPrint
+| Custom   | Key             | App | Description          |
+| ---      | ---             | --- | ---                  |
+|          | F1              | vim | goto win top         |
+|          | F2              | vim | goto win 2           |
+|          | F12             | vim | goto win bottom      |
+| PgUp + h | Ctrl + Left     | vim | tabprev              |
+| PgUp + j | Ctrl + Down     | vim |                      |
+| PgUp + k | Ctrl + Up       | vim |                      |
+| PgUp + l | Ctrl + Right    | vim | tabnext              |
+| PgUp + n | Ctrl + PgDn     | vim | maximize y           |
+| PgUp + p | Ctrl + PgUp     | vim | maximize x           |
+| PgUp + 1 | Win + Left      | win | maximize left        |
+| PgUp + 2 | Win + Up        | win | maximize             |
+| PgUp + 3 | Win + Right     | win | maximize right       |
+| PgUp + a |                 | win | toggle half maximize |
+| PgUp + s | Win + Shift + s | win | screenshot           |
+| PgUp + d | Win + d         | win | desktop              |
+| PgUp + g | Win + g         | win | xbox game bar        |
+| PgUp + r |                 | ahk | reload ahk           |
+
+<meta name="keywords" content="*memo:my.shortcut*">
+Shortcut
+=======================================================
+
+| App       | Key               | Description                                      |
+| ---       | ---               | ---                                              |
+| Win       | Alt + `           | 日本語入力 [英語キーボード]                      |
+| Win       | Alt + Tab         | App切り替え                                      |
+| Win       | Alt + Shift + Tab | App切り替え（逆順）                              |
+| Win       | Win + d           | デスクトップを表示                               |
+| Win       | Win + Up          | ウィンドウの最大化                               |
+| Win       | Win + Left        | ウィンドウを左半分に最大化                       |
+| Win       | Win + Right       | ウィンドウを右半分に最大化                       |
+| Win       | Win + Shift + s   | 範囲を指定してクリップボードにスクリーンショット |
+| wt/mintty | Ctrl + 0          | font scale reset                                 |
+| wt/mintty | Ctrl + -          | font scale -                                     |
+| wt/mintty | Ctrl + =          | font scale +                                     |
+| vim       | Ctrl + h          | window left                                      |
+| vim       | Ctrl + j          | window down                                      |
+| vim       | Ctrl + k          | window up                                        |
+| vim       | Ctrl + l          | window right                                     |
+| vim term  | End               | CpmOpen                                          |
 
 Vim next/prev
 =======================================================
-Mode            | Key | Description
--               | -   | -
-search          | n   | next match
-                | N   | prev match
-diff            | C-N | next diff
-                | C-P | prev diff
-quickfix        | C-N | next error
-                | C-P | prev error
-terminal        | C-N | next history
-                | C-P | prev history
-command mode    | C-N | next history
-                | C-P | prev history
-completion      | C-N | next menu
-                | C-P | prev menu
-                | C-L | expand menu
-                | C-J | next arg
-                | C-K | prev arg
-CocList         | C-J | next
-                | C-K | prev
+| Mode         | Key | Description  |
+| ---          | --- | ---          |
+| search       | n   | next match   |
+|              | N   | prev match   |
+| diff         | C-n | next diff    |
+|              | C-p | prev diff    |
+| quickfix     | C-n | next error   |
+|              | C-p | prev error   |
+| terminal     | C-n | next history |
+|              | C-p | prev history |
+| command mode | C-n | next history |
+|              | C-p | prev history |
+| completion   | C-n | next menu    |
+|              | C-p | prev menu    |
+|              | C-l | expand menu  |
+|              | C-j | next arg     |
+|              | C-k | prev arg     |
+| CocList      | C-j | next         |
+|              | C-k | prev         |
 
 Vim IDE
 =======================================================
@@ -108,16 +99,16 @@ Vim IDE
 <meta name="keywords" content="*memo:my.vim.command*">
 Vim Command
 =======================================================
-Command                   | Description
----                       | ---
-:MyGgrep {word} {files}   | Ggrep the word
-:MyGgrepHere {files}      | Ggrep the word under the cursor
-:MyVimgrep {word} {files} | vimgrep the word
-:MyVimgrepHere {files}    | vimgrep the word under the cursor
-:MyCdo                    | apply the command '@q' to each entry in the quickfix list
-:MyCfdo                   | apply the command '@q' to each file in the quickfix list
-:MyClangFormat            | apply clang-format to the current file
-:MyTabBar                 | Tabularize for vertical bars
+| Command                   | Description                                               |
+| ---                       | ---                                                       |
+| :MyGgrep {word} {files}   | Ggrep the word                                            |
+| :MyGgrepHere {files}      | Ggrep the word under the cursor                           |
+| :MyVimgrep {word} {files} | vimgrep the word                                          |
+| :MyVimgrepHere {files}    | vimgrep the word under the cursor                         |
+| :MyCdo                    | apply the command '@q' to each entry in the quickfix list |
+| :MyCfdo                   | apply the command '@q' to each file in the quickfix list  |
+| :MyClangFormat            | apply clang-format to the current file                    |
+| :MyTabBar                 | Tabularize for vertical bars                              |
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="inc/markdeep.min.js"></script>
