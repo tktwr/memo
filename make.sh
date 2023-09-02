@@ -3,7 +3,7 @@
 #======================================================
 # functions
 #======================================================
-f_tags_memo() {
+f_tags() {
   memotags.sh 'memo:' *.html > tags
 }
 
@@ -13,20 +13,11 @@ f_dot() {
   dot -T svg -o images/vim-ide.svg dot/vim-ide.dot
 }
 
-#------------------------------------------------------
-f_help() {
-	echo "tags_memo"
-	echo "dot"
-	echo "help"
-}
-
-f_default() {
-  f_tags_memo
-}
-
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
+f_fzf_default() {
+  f_tags
+}
+
+f_fzf_main "$@"
