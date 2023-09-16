@@ -1,29 +1,56 @@
-<meta vim:set syntax=markdown:>
 <meta charset="utf-8">
-<link rel="stylesheet" href="inc/default.css">
 
 <meta name="keywords" content="*memo:my*">
 **My**
 
-Cheat sheet
-=======================================================
-| Key      | Description     |
-| ---      | ---             |
-| t, tx    | toggle win size |
-| I, N, T  | ide             |
-| Nv, Tv   | ide             |
-| GS, GV   | git             |
-| F, F2    | ferne           |
-| D        | open dir        |
-| f        | bmk             |
-| d        | fd              |
-| r        | rg              |
-| c        | cmd             |
-| g        | git             |
-| INS, DEL | tab             |
+<meta name="keywords" content="*memo:my.keymap*">
+<meta name="keywords" content="*memo:my.shortcut*">
 
 Keymap
 =======================================================
+
+| App  | Ahk      | Key                | Description                 |
+| ---  | ---      | ---                | ---                         |
+| vim  | PgUp + h | Ctrl + Left        | tabprev                     |
+| vim  | PgUp + j | Ctrl + Down        |                             |
+| vim  | PgUp + k | Ctrl + Up          |                             |
+| vim  | PgUp + l | Ctrl + Right       | tabnext                     |
+| vim  | PgUp + p | Ctrl + PgUp        |                             |
+| vim  | PgUp + n | Ctrl + PgDn        |                             |
+| wt   | PgDn + 1 | Ctrl + Alt + [123] | change to tab [1, 2, 3]     |
+| win  | PgDn + 7 | Win + Left         | maximize left               |
+| win  | PgDn + 8 | Win + Up           | maximize                    |
+| win  | PgDn + 9 | Win + Right        | maximize right              |
+| win  | PgDn + 0 |                    | toggle half maximize        |
+| win  | PgDn + s | Win + Shift + s    | screenshot                  |
+| win  | PgDn + d | Win + d            | desktop                     |
+| win  | PgDn + g | Win + g            | xbox game bar               |
+| wt   | PgDn + c | Ctrl + Shift + c   | copy                        |
+| wt   | PgDn + v | Ctrl + Shift + v   | paste                       |
+| ahk  | PgDn + r |                    | reload ahk                  |
+| win  | Zen      | Alt + `            | 日本語入力 [英語キーボード] |
+| win  |          | Alt + Tab          | App切り替え                 |
+| win  |          | Alt + Shift + Tab  | App切り替え（逆順）         |
+| wt   |          | Ctrl + [0-=]       | font scale [reset, -, +]    |
+| vim  |          | Ins, Del           | tab [new, del]              |
+| vim  |          | F1, F2, F10        | goto win [1, 2, $]          |
+| vim  |          | Ctrl + [hjkl]      | goto win                    |
+| bash |          | t, tx              | toggle win size             |
+| bash |          | N , T , I          | ide                         |
+| bash |          | Nt, Tt, It         | ide tab                     |
+| bash |          | Nv, Tv             | ide vert                    |
+| bash |          | GS, GV             | git                         |
+| bash |          | F, F2              | ferne                       |
+| bash |          | D                  | open dir                    |
+| bash |          | f                  | bmk                         |
+| bash |          | d                  | fd                          |
+| bash |          | r                  | rg                          |
+| bash |          | g                  | git                         |
+| bash |          | m, M               | make                        |
+| bash |          | S                  | setup                       |
+| bash |          | ,f                 | pushd bmk                   |
+| bash |          | ,,                 | pushd                       |
+| bash |          | ,-                 | popd                        |
 
 *****************************************************************
 * +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
@@ -38,44 +65,6 @@ Keymap
 *         |PgU|Alt|                       | Win   |PgD|
 *         +---+---+-----------------------+-------+---+
 *****************************************************************
-
-<meta name="keywords" content="*memo:my.keymap*">
-<meta name="keywords" content="*memo:my.shortcut*">
-
-| App       | Ahk      | Key               | Description                 | Note     |
-| ---       | ---      | ---               | ---                         | ---      |
-| vim       |          | Ctrl + h          | window left                 |          |
-| vim       |          | Ctrl + j          | window down                 |          |
-| vim       |          | Ctrl + k          | window up                   |          |
-| vim       |          | Ctrl + l          | window right                |          |
-| vim       |          | F1                | goto win top                |          |
-| vim       |          | F2                | goto win 2                  |          |
-| vim       |          | F10               | goto win bottom             |          |
-| vim       | PgUp + h | Ctrl + Left       | tabprev                     |          |
-| vim       | PgUp + j | Ctrl + Down       |                             |          |
-| vim       | PgUp + k | Ctrl + Up         |                             |          |
-| vim       | PgUp + l | Ctrl + Right      | tabnext                     |          |
-| vim       | PgUp + p | Ctrl + PgUp       |                             |          |
-| vim       | PgUp + n | Ctrl + PgDn       |                             |          |
-| wt        | PgDn + 1 | Ctrl + Alt + 1    | change to tab 1             |          |
-| wt        | PgDn + 2 | Ctrl + Alt + 2    | change to tab 2             |          |
-| wt        | PgDn + 3 | Ctrl + Alt + 3    | change to tab 3             |          |
-| win       | PgDn + 7 | Win + Left        | maximize left               |          |
-| win       | PgDn + 8 | Win + Up          | maximize                    |          |
-| win       | PgDn + 9 | Win + Right       | maximize right              |          |
-| win       | PgDn + 0 |                   | toggle half maximize        |          |
-| win       | PgDn + s | Win + Shift + s   | screenshot                  |          |
-| win       | PgDn + d | Win + d           | desktop                     |          |
-| win       | PgDn + g | Win + g           | xbox game bar               |          |
-| wt        | PgDn + c | Ctrl + Shift + c  | copy                        | not work |
-| wt        | PgDn + v | Ctrl + Shift + v  | paste                       |          |
-| ahk       | PgDn + r |                   | reload ahk                  |          |
-| win       | Zen      | Alt + `           | 日本語入力 [英語キーボード] |          |
-| win       |          | Alt + Tab         | App切り替え                 |          |
-| win       |          | Alt + Shift + Tab | App切り替え（逆順）         |          |
-| wt/mintty |          | Ctrl + 0          | font scale reset            |          |
-| wt/mintty |          | Ctrl + -          | font scale -                |          |
-| wt/mintty |          | Ctrl + =          | font scale +                |          |
 
 Vim next/prev
 =======================================================
@@ -120,6 +109,8 @@ Vim Command
 | :MyClangFormat            | apply clang-format to the current file                    |
 | :MyTabBar                 | Tabularize for vertical bars                              |
 
+<link rel="stylesheet" href="inc/default.css">
 <style class="fallback">body{visibility:hidden}</style>
 <script src="inc/markdeep.min.js"></script>
 <script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>
+<meta vim:set syntax=txt nowrap:>
