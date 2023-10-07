@@ -1,13 +1,174 @@
-<meta vim:set syntax=markdown:>
-<meta charset="utf-8">
-<link rel="stylesheet" href="inc/default.css">
-
 <meta name="keywords" content="*memo:vi*">
 <meta name="keywords" content="*memo:vim*">
 **Vim**
 
 vim
 =======================================================
+
+<meta name="keywords" content="*memo:vim.nmap*">
+<meta name="keywords" content="*memo:vim.tmap*">
+## normal/terminal mode keymap (C-)
+
+| Key      | Normal Original          |   | Normal                             |   | Terminal              | Terminal Original |
+| ---      | ---                      | - | ---                                | - | ---                   | ---               |
+| C-A      | add                      | * | quickhl                            |   | readline begin        |                   |
+| C-B      | one page scroll up       | * |                                    |   | readline back         |                   |
+| C-C      | term interrupt           | * |                                    |   | term interrupt        |                   |
+| C-D      | half page scroll down    | * | one page scroll up                 |   | EOF                   |                   |
+| C-E      | one line scroll down     | * | close the current win              |   | readline end          |                   |
+| C-F      | one page scroll down     |   | one page scroll down               |   | readline front        |                   |
+| C-G      | display info             | * | win redraw                         | * | win redraw            |                   |
+| C-H      | h                        | * | win left                           | * | win left              |                   |
+| C-I      | TAB                      |   | TAB                                |   | TAB                   |                   |
+| C-J      | j                        | * | win next                           | * | win next              |                   |
+| C-K      | not used                 | * | win prev                           | * | win prev              |                   |
+| C-L      | redraw screen            | * | win right                          | * | win right             |                   |
+| C-M      | CR                       |   | CR                                 |   | CR                    |                   |
+| C-N      | j                        | * | one line scroll down               |   | readline history next |                   |
+| C-O      | prev in jump list        | * | pop wbl                            | * | Terminal-Normal       |                   |
+| C-P      | k                        | * | one line scroll up                 |   | readline history prev |                   |
+| C-Q      | term start input         | * | exec the command in the register q |   |                       | term start input  |
+| C-R      | redo                     |   | redo                               |   |                       |                   |
+| C-S      | term stop input          | * |                                    |   |                       | term stop input   |
+| C-T      | prev in tag list         |   | prev in tag list                   |   |                       |                   |
+| C-U      | half page scroll up      | * | open wbl                           |   | readline remove line  |                   |
+| C-V      | block visual mode        |   | block visual mode                  | * | paste                 |                   |
+| C-W      | win command              |   | win command                        |   | win command           |                   |
+| C-X      | subtract                 | * | cut                                |   |                       |                   |
+| C-Y      | one line scroll up       | * | yank                               |   |                       |                   |
+| C-Z      | term suspend             | * | toggle wrap                        |   | term suspend          |                   |
+| Space    | l                        | * | fzf bmk                            |   |                       |                   |
+| Insert   |                          | * | tab new                            | * | tab new               |                   |
+| Del      |                          | * | tab close                          | * | tab close             |                   |
+| C-^      | edit alt file            | * | tab prev                           | * | tab prev              |                   |
+| C-_      | not used                 | * | tab next                           | * | tab next              |                   |
+| Tab      | next in jump list        |   | next in jump list                  |   |                       |                   |
+| BS       | h                        | * | page up                            |   |                       |                   |
+| NL       | j                        |   | j                                  |   |                       |                   |
+| CR       | +                        |   | +                                  |   |                       |                   |
+| C-CR     |                          | * |                                    |   |                       |                   |
+| S-CR     |                          | * |                                    |   |                       |                   |
+| C-;      |                          | * | command mode                       |   |                       |                   |
+| C-.      |                          |   |                                    |   |                       |                   |
+| C-[      | ESC                      |   | ESC                                |   |                       |                   |
+| C-]      | :ta                      |   | :ta                                |   |                       |                   |
+| C-W C-X  | exchange windows         |   | exchange windows                   |   |                       |                   |
+| C-W C-Z  | close the preview window |   | close the preview window           |   |                       |                   |
+| PageUp   |                          |   |                                    |   |                       |                   |
+| PageDown |                          |   |                                    |   |                       |                   |
+| C-Left   |                          |   |                                    |   |                       |                   |
+| C-Right  |                          |   |                                    |   |                       |                   |
+| C-Up     |                          |   |                                    |   |                       |                   |
+| C-Down   |                          |   |                                    |   |                       |                   |
+
+## normal mode keymap
+
+|   | Key | Original                                       | Map | New            |
+| - | --- | ---                                            | --- | ---            |
+|   | a   | add                                            |     |                |
+| * | b   | backward                                       |     |                |
+|   | c   | change                                         |     |                |
+|   | d   | delete                                         |     |                |
+| * | e   | end                                            |     |                |
+|   | f   | find                                           |     |                |
+|   | g   | g commands                                     |     |                |
+|   | h   | move left                                      |     |                |
+|   | i   | insert                                         |     |                |
+|   | j   | move down                                      |     |                |
+|   | k   | move up                                        |     |                |
+|   | l   | move right                                     |     |                |
+|   | m   | mark                                           |     |                |
+|   | n   | serch next                                     |     |                |
+|   | o   | insert                                         |     |                |
+|   | p   | put                                            |     |                |
+|   | q   | record                                         |     |                |
+|   | r   | replace                                        |     |                |
+|   | s   | substitute                                     |     |                |
+|   | t   | find till                                      |     |                |
+|   | u   | undo                                           |     |                |
+|   | v   | visual mode                                    |     |                |
+|   | w   | word                                           |     |                |
+|   | x   | remove                                         |     |                |
+|   | y   | yank                                           |     |                |
+|   | z   | z commands                                     |     |                |
+|   | A   | add                                            |     |                |
+| * | B   | backward                                       |     |                |
+|   | C   | change                                         |     |                |
+|   | D   | delete                                         |     |                |
+| * | E   | end                                            |     |                |
+|   | F   | find                                           |     |                |
+|   | G   | goto                                           |     |                |
+|   | H   | home                                           |     |                |
+|   | I   | insert                                         |     |                |
+|   | J   | join                                           |     |                |
+|   | K   | keyword                                        |     |                |
+|   | L   | last                                           |     |                |
+|   | M   | middle                                         |     |                |
+|   | N   | search previous                                |     |                |
+|   | O   | insert                                         |     |                |
+|   | P   | put                                            |     |                |
+|   | Q   | ex mode                                        |     | quit           |
+|   | R   | replace                                        |     |                |
+| * | S   | substitute                                     |     |                |
+|   | T   | find till                                      |     |                |
+|   | U   | undo                                           |     |                |
+|   | V   | visual mode                                    |     |                |
+| * | W   | word                                           |     |                |
+| * | X   | remove                                         |     |                |
+| * | Y   | yanc                                           |     |                |
+| * | Z   |                                                |     |                |
+| * | -   | move previous line                             |     |                |
+| * | +   | move next line                                 |     |                |
+| * | _   | move next line                                 |     |                |
+| * | =   | format text                                    |     |                |
+| * | [   |                                                |     |                |
+| * | ]   |                                                |     |                |
+| * | {   |                                                |     |                |
+| * | }   |                                                |     |                |
+|   | "   | register                                       |     |                |
+|   | '   | jump to the first CHAR on the line with a mark | ``` | jump to a mark |
+|   | ``` | jump to a mark                                 |     |                |
+|   | ~   | switch case                                    |     |                |
+| * | Bar |                                                |     |                |
+|   | \   |                                                |     |                |
+|   | /   | search forward                                 |     |                |
+|   | ?   | search backward                                |     |                |
+|   | :   | ex mode                                        |     |                |
+|   | ;   | repeat find                                    |     |                |
+| * | ,   | repeat find                                    |     |                |
+|   | .   | repeat                                         |     |                |
+|   | <   |                                                |     |                |
+|   | >   |                                                |     |                |
+
+- *: not oftenly used commands for me (candidates for remapping)
+
+<meta name="keywords" content="*memo:vim.vmap*">
+## visual mode keymap
+
+|   | Key | Original | Map | New            |
+| - | --- | ---      | --- | ---            |
+|   | C   |          |     | nerd commenter |
+
+<meta name="keywords" content="*memo:vim.imap*">
+## insert mode keymap
+
+|   | Key     | Original                                                 | Map   | New                      |
+| - | ---     | ---                                                      | ---   | ---                      |
+|   | C-A     |                                                          | Home  | the begining of the line |
+|   | C-E     |                                                          | End   | the end of the line      |
+|   | C-B     |                                                          | Left  | move left                |
+|   | C-F     |                                                          | Right | move right               |
+|   | C-D     |                                                          | Del   | delete                   |
+|   | C-P     | prev match                                               |       |                          |
+|   | C-N     | next match                                               |       |                          |
+|   | C-X C-P | prev completion                                          |       |                          |
+|   | C-X C-N | next completion                                          |       |                          |
+|   | C-X C-F | file completion                                          |       |                          |
+|   | C-X C-I | completion of keywords in the current and included files |       |                          |
+|   | C-X C-D | completion of definitions or macros                      |       |                          |
+|   | C-X C-] | completion of tags                                       |       |                          |
+|   | C-J     |                                                          |       | skk mode                 |
+
 ## basic
 
 ### スタートアップ時間計測
@@ -153,200 +314,6 @@ cfile  | file under the cursor
     - BufLeave
   - WinLeave
 - VimLeave
-
-<meta name="keywords" content="*memo:vim.keymap*">
-## keymap
-
-<meta name="keywords" content="*memo:vim.tmap*">
-### terminal mode keymap
-
-| Key | Original                  | Map        | New
-| --- | ------------------------- | ---------- | ---
-| C-A | readline begin            |            |
-| C-B | readline back             |            |
-| C-C | terminal stop             |            |
-| C-D | terminal exit             |            |
-| C-E | readline end              |            |
-| C-F | readline front            |            |
-| C-G |                           |            |
-| C-H | vim move                  |            |
-| C-I | terminal TAB              |            |
-| C-J | vim move                  |            |
-| C-K | vim move                  |            |
-| C-L | vim move                  |            |
-| C-M | terminal CR               |            |
-| C-N | readline history next     |            |
-| C-O |                           |            |
-| C-P | readline history prev     |            |
-| C-Q |                           |            |
-| C-R |                           |            |
-| C-S |                           |            |
-| C-T |                           |            |
-| C-U | readline remove line      |            |
-| C-V |                           |            |
-| C-W |                           |            |
-| C-X |                           |            |
-| C-Y |                           |            |
-| C-Z | terminal suspend          |            |
-
-<meta name="keywords" content="*memo:vim.nmap*">
-### normal mode keymap
-
-| Key     | Original                  | Map                     | New
-| ---     | ------------------------- | ----------              | ---
-| C-A     | add                       | quickhl                 | quickhl
-| C-B     | one page scroll up        | :Bmk bmk.txt            | edit bmk
-| C-C     | interrupt                 |                         | ==
-| C-D     | half page scroll down     | C-B                     | one page scroll up
-| C-E     | one line scroll down      | :close                  | close the current window
-| C-F     | one page scroll down      |                         | ==
-| C-G     | display info              | :MyRedraw               | redraw
-| C-H     | h                         | C-W h                   | window left
-| C-I     | TAB                       |                         | ==
-| C-J     | j                         | C-W w                   | window next
-| C-K     | not used                  | C-W W                   | window prev
-| C-L     | redraw screen             | C-W l                   | window right
-| C-M     | CR                        |                         | ==
-| C-N     | j                         | :cn                     | error next
-| C-O     | prev in jump list         | WblPop                  | WblPop
-| C-P     | k                         | :cp                     | error prev
-| C-Q     | terminal control          | @q                      | exec the command in the register q
-| C-R     | redo                      |                         | ==
-| C-S     | terminal control          |                         | [to be assigned]
-| C-T     | prev in tag list          |                         | ==
-| C-U     | half page scroll up       | WblPrint                | WblPrint
-| C-V     | block visual mode         |                         | ==
-| C-W     | window command            |                         | ==
-| C-X     | subtract                  |                         | [to be assigned]
-| C-Y     | one line scroll up        | :CpmOpen fzy            | menu fzy
-| C-Z     | suspend                   | :CpmOpen ref            | menu ref
-| NL      | j                         |                         | ==
-| Space   | l                         | :CpmOpen                | menu
-| Tab     | next in jump list         |                         | ==
-| BS      | h                         | C-B                     | page up
-| CR      | +                         |                         | ==
-| C-CR    |                           | :call BmkViewThis()     | view
-| S-CR    |                           | :call BmkOpenThis()     | open
-| C-;     |                           | C-W :                   | command mode
-| C-.     |                           | :MyLcdHere              |
-| C-[     | ESC                       |                         | ==
-| C-]     | :ta                       | g C-]                   | ==
-| C-W C-X | exchange windows          |                         | ==
-| C-W C-Z | close the preview window  |                         | ==
-| PageUp  |                           | :tabprev                |
-| PageDown|                           | :tabnext                |
-| C-Left  |                           | :tabprev                |
-| C-Right |                           | :tabnext                |
-| C-Up    |                           | :tabedit                |
-| C-Down  |                           | :MyTerm                 |
-| Insert  |                           | :tabedit                |
-| Del     |                           | :MyTabClosePrev         |
-
-  | Key    | Original                | Map      | New
---|--------|-------------------------|----------|---
-  | a      | add
-* | b      | backward
-  | c      | change
-  | d      | delete
-* | e      | end
-  | f      | find
-  | g      | g commands
-  | h      | move left
-  | i      | insert
-  | j      | move down
-  | k      | move up
-  | l      | move right
-  | m      | mark
-  | n      | serch next
-  | o      | insert
-  | p      | put
-  | q      | record
-  | r      | replace
-  | s      | substitute
-  | t      | find till
-  | u      | undo
-  | v      | visual mode
-  | w      | word
-  | x      | remove
-  | y      | yank
-  | z      | z commands
-  | A      | add
-* | B      | backward
-  | C      | change
-  | D      | delete
-* | E      | end
-  | F      | find
-  | G      | goto
-  | H      | home
-  | I      | insert
-  | J      | join
-  | K      | keyword
-  | L      | last
-  | M      | middle
-  | N      | search previous
-  | O      | insert
-  | P      | put
-  | Q      | ex mode           | | quit
-  | R      | replace
-* | S      | substitute
-  | T      | find till
-  | U      | undo
-  | V      | visual mode
-* | W      | word
-* | X      | remove
-* | Y      | yanc
-* | Z      |
-* | -      | move previous line
-* | +      | move next line
-* | _      | move next line
-* | =      | format text
-* | [      |
-* | ]      |
-* | {      |
-* | }      |
-  | "      | register
-  | '      | jump to the first CHAR on the line with a mark | ``` | jump to a mark
-  | ```    | jump to a mark
-  | ~      | switch case
-* | `|`    |
-  | \      |
-  | /      | search forward
-  | ?      | search backward
-  | :      | ex mode
-  | ;      | repeat find
-* | ,      | repeat find
-  | .      | repeat
-  | <      |
-  | >      |
-
-- *: not oftenly used commands for me (candidates for remapping)
-
-<meta name="keywords" content="*memo:vim.vmap*">
-### visual mode keymap
-
-  | Key    | Original                | Map      | New
---|--------|-------------------------|----------|---
-  | C      |                         |          | nerd commenter
-
-<meta name="keywords" content="*memo:vim.imap*">
-### insert mode keymap
-
-  | Key     | Original                | Map      | New
---|---------|-------------------------|----------|---
-  | C-A     |                         | Home     | the begining of the line
-  | C-E     |                         | End      | the end of the line
-  | C-B     |                         | Left     | move left
-  | C-F     |                         | Right    | move right
-  | C-D     |                         | Del      | delete
-  | C-P     | prev match
-  | C-N     | next match
-  | C-X C-P | prev completion
-  | C-X C-N | next completion
-  | C-X C-F | file completion
-  | C-X C-I | completion of keywords in the current and included files
-  | C-X C-D | completion of definitions or macros
-  | C-X C-] | completion of tags
-  | C-J     |                         |          | skk mode
 
 <meta name="keywords" content="*memo:vim.commands*">
 ## commands
@@ -729,6 +696,9 @@ $ global -r func   # list reference files
 $ global -f files  # list functions
 ~~~
 
-<style class="fallback">body{visibility:hidden}</style>
 <script src="inc/markdeep.min.js"></script>
 <script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>
+<link rel="stylesheet" href="inc/default.css">
+<style class="fallback">body{visibility:hidden}</style>
+<meta charset="utf-8">
+<meta vim:set syntax=txt nowrap:>
