@@ -9,57 +9,53 @@ vim
 <meta name="keywords" content="*memo:vim.tmap*">
 ## normal/terminal mode keymap (C-)
 
-| Key      | Normal Original          |   |   | Normal                             |   |   |   | Terminal              | Terminal Original |
-| ---      | ---                      | - | - | ---                                | - | - | - | ---                   | ---               |
-| C-A      | add                      | M |   | quickhl                            |   |   |   | readline begin        |                   |
-| C-B      | one page scroll up       | M |   |                                    |   |   |   | readline back         |                   |
-| C-C      | term interrupt           | M |   |                                    |   |   |   | term interrupt        |                   |
-| C-D      | half page scroll down    | M | N | one page scroll up                 |   |   |   | EOF                   |                   |
-| C-E      | one line scroll down     | M |   | close the current win              |   |   |   | readline end          |                   |
-| C-F      | one page scroll down     |   | N | one page scroll down               |   |   |   | readline front        |                   |
-| C-G      | display info             | M |   | win redraw                         | = | M |   | win redraw            |                   |
-| C-H      | h                        | M | N | win left                           | = | M | N | win left              |                   |
-| C-I      | TAB                      |   |   | TAB                                |   |   |   | TAB                   |                   |
-| C-J      | j                        | M | N | win next                           | = | M | N | win next              |                   |
-| C-K      | not used                 | M | N | win prev                           | = | M | N | win prev              |                   |
-| C-L      | redraw screen            | M | N | win right                          | = | M | N | win right             |                   |
-| C-M      | CR                       |   |   | CR                                 |   |   |   | CR                    |                   |
-| C-N      | j                        | M | N | one line scroll down               |   |   |   | readline history next |                   |
-| C-O      | prev in jump list        | M |   | pop wbl                            |   | M |   | Terminal-Normal       |                   |
-| C-P      | k                        | M | N | one line scroll up                 |   |   |   | readline history prev |                   |
-| C-Q      | term start input         | M | N | exec the command in the register q |   |   |   |                       | term start input  |
-| C-R      | redo                     |   |   | redo                               |   |   |   |                       |                   |
-| C-S      | term stop input          | M |   |                                    |   |   |   |                       | term stop input   |
-| C-T      | prev in tag list         |   |   | prev in tag list                   |   |   |   |                       |                   |
-| C-U      | half page scroll up      | M |   | open wbl                           |   |   |   | readline remove line  |                   |
-| C-V      | block visual mode        |   |   | block visual mode                  |   | M |   | paste                 |                   |
-| C-W      | win command              |   |   | win command                        | = |   |   | win command           |                   |
-| C-X      | subtract                 | M |   | cut                                |   |   |   |                       |                   |
-| C-Y      | one line scroll up       | M |   | yank                               |   |   |   |                       |                   |
-| C-Z      | term suspend             | M |   | toggle wrap                        |   |   |   | term suspend          |                   |
-| Space    | l                        | M |   | fzf bmk                            |   |   |   |                       |                   |
-| Insert   |                          | M |   | tab new                            | = | M |   | tab new               |                   |
-| Del      |                          | M |   | tab close                          | = | M |   | tab close             |                   |
-| C-^      | edit alt file            | M | N | tab prev                           | = | M | N | tab prev              |                   |
-| C-_      | not used                 | M | N | tab next                           | = | M | N | tab next              |                   |
-| Tab      | next in jump list        |   |   | next in jump list                  |   |   |   |                       |                   |
-| BS       | h                        | M |   | page up                            |   |   |   |                       |                   |
-| NL       | j                        |   |   | j                                  |   |   |   |                       |                   |
-| CR       | +                        |   |   | +                                  |   |   |   |                       |                   |
-| C-CR     |                          | M |   |                                    |   |   |   |                       |                   |
-| S-CR     |                          | M |   |                                    |   |   |   |                       |                   |
-| C-;      |                          | M |   | command mode                       |   |   |   |                       |                   |
-| C-.      |                          |   |   |                                    |   |   |   |                       |                   |
-| C-[      | ESC                      |   |   | ESC                                |   |   |   |                       |                   |
-| C-]      | :ta                      |   |   | :ta                                |   |   |   |                       |                   |
-| C-W C-X  | exchange windows         |   |   | exchange windows                   |   |   |   |                       |                   |
-| C-W C-Z  | close the preview window |   |   | close the preview window           |   |   |   |                       |                   |
-| PageUp   |                          |   |   |                                    |   |   |   |                       |                   |
-| PageDown |                          |   |   |                                    |   |   |   |                       |                   |
-| C-Left   |                          |   |   |                                    |   |   |   |                       |                   |
-| C-Right  |                          |   |   |                                    |   |   |   |                       |                   |
-| C-Up     |                          |   |   |                                    |   |   |   |                       |                   |
-| C-Down   |                          |   |   |                                    |   |   |   |                       |                   |
+| Key        | Normal Original          |   |   | Normal                             |   |   |   | Terminal              | Terminal Original |
+| ---        | ---                      | - | - | ---                                | - | - | - | ---                   | ---               |
+| C-A        | add                      | M |   | quickhl                            |   |   |   | readline begin        |                   |
+| C-B        | one page scroll up       | M |   |                                    |   |   |   | readline back         |                   |
+| C-C        | term interrupt           | M |   |                                    |   |   |   | term interrupt        |                   |
+| C-D        | half page scroll down    | M | N | one page scroll up                 |   |   |   | EOF                   |                   |
+| C-E        | one line scroll down     | M |   | close the current win              |   |   |   | readline end          |                   |
+| C-F        | one page scroll down     |   | N | one page scroll down               |   |   |   | readline front        |                   |
+| C-G        | display info             | M |   | win redraw                         | = | M |   | win redraw            |                   |
+| C-H        | h                        | M | N | win left                           | = | M | N | win left              |                   |
+| C-I        | TAB                      |   |   | TAB                                |   |   |   | TAB                   |                   |
+| C-J        | j                        | M | N | win next                           | = | M | N | win next              |                   |
+| C-K        | not used                 | M | N | win prev                           | = | M | N | win prev              |                   |
+| C-L        | redraw screen            | M | N | win right                          | = | M | N | win right             |                   |
+| C-M        | CR                       |   |   | CR                                 |   |   |   | CR                    |                   |
+| C-N        | j                        | M | N | one line scroll down               |   |   |   | readline history next |                   |
+| C-O        | prev in jump list        | M |   | pop wbl                            |   | M |   | Terminal-Normal       |                   |
+| C-P        | k                        | M | N | one line scroll up                 |   |   |   | readline history prev |                   |
+| C-Q        | term start input         | M | N | exec the command in the register q |   |   |   |                       | term start input  |
+| C-R        | redo                     |   |   | redo                               |   |   |   |                       |                   |
+| C-S        | term stop input          | M |   |                                    |   |   |   |                       | term stop input   |
+| C-T        | prev in tag list         |   |   | prev in tag list                   |   |   |   |                       |                   |
+| C-U        | half page scroll up      | M |   | open wbl                           |   |   |   | readline remove line  |                   |
+| C-V        | block visual mode        |   |   | block visual mode                  |   | M |   | paste                 |                   |
+| C-W        | win command              |   |   | win command                        | = |   |   | win command           |                   |
+| C-X        | subtract                 | M |   | cut                                |   |   |   |                       |                   |
+| C-Y        | one line scroll up       | M |   | yank                               |   |   |   |                       |                   |
+| C-Z        | term suspend             | M |   | toggle wrap                        |   |   |   | term suspend          |                   |
+| Space      | l                        | M |   | fzf bmk                            |   |   |   |                       |                   |
+| C-Left     | edit alt file            | M | N | tab prev                           | = | M | N | tab prev              |                   |
+| C-Right    | not used                 | M | N | tab next                           | = | M | N | tab next              |                   |
+| C-Up       |                          | M |   | tab new                            | = | M |   | tab new               |                   |
+| C-Down     |                          | M |   | tab close                          | = | M |   | tab close             |                   |
+| Insert     |                          |   |   |                                    |   |   |   |                       |                   |
+| Del        |                          |   |   |                                    |   |   |   |                       |                   |
+| Tab        | next in jump list        |   |   | next in jump list                  |   |   |   |                       |                   |
+| BS         | h                        | M |   | page up                            |   |   |   |                       |                   |
+| NL         | j                        |   |   | j                                  |   |   |   |                       |                   |
+| CR         | +                        |   |   | +                                  |   |   |   |                       |                   |
+| C-;        |                          | M |   | command mode                       |   |   |   |                       |                   |
+| C-.        |                          |   |   |                                    |   |   |   |                       |                   |
+| C-[        | ESC                      |   |   | ESC                                |   |   |   |                       |                   |
+| C-]        | :ta                      |   |   | :ta                                |   |   |   |                       |                   |
+| C-W C-X    | exchange windows         |   |   | exchange windows                   |   |   |   |                       |                   |
+| C-W C-Z    | close the preview window |   |   | close the preview window           |   |   |   |                       |                   |
+| C-PageUp   |                          |   |   |                                    |   |   |   |                       |                   |
+| C-PageDown |                          |   |   |                                    |   |   |   |                       |                   |
 
 ## normal mode keymap
 

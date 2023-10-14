@@ -5,46 +5,63 @@
 Keymap
 =======================================================
 
-| App  | Ahk      | Key                | Description                 |
-| ---  | ---      | ---                | ---                         |
-| vim  | PgUp + h | Ctrl + Left        | tabprev                     |
-| vim  | PgUp + j | Ctrl + Down        |                             |
-| vim  | PgUp + k | Ctrl + Up          |                             |
-| vim  | PgUp + l | Ctrl + Right       | tabnext                     |
-| vim  | PgUp + p | Ctrl + PgUp        |                             |
-| vim  | PgUp + n | Ctrl + PgDn        |                             |
-| wt   | PgDn + 1 | Ctrl + Alt + [123] | change to tab [1, 2, 3]     |
-| win  | PgDn + 7 | Win + Left         | maximize left               |
-| win  | PgDn + 8 | Win + Up           | maximize                    |
-| win  | PgDn + 9 | Win + Right        | maximize right              |
-| win  | PgDn + 0 |                    | toggle half maximize        |
-| win  | PgDn + s | Win + Shift + s    | screenshot                  |
-| win  | PgDn + d | Win + d            | desktop                     |
-| win  | PgDn + g | Win + g            | xbox game bar               |
-| wt   | PgDn + c | Ctrl + Shift + c   | copy                        |
-| wt   | PgDn + v | Ctrl + Shift + v   | paste                       |
-| ahk  | PgDn + r |                    | reload ahk                  |
-| win  | Zen      | Alt + `            | 日本語入力 [英語キーボード] |
-| win  |          | Alt + Tab          | App切り替え                 |
-| win  |          | Alt + Shift + Tab  | App切り替え（逆順）         |
-| wt   |          | Ctrl + [0-=]       | font scale [reset, -, +]    |
-| vim  |          | Ins, Del           | tab [new, del]              |
-| vim  |          | F1, F2, F10        | goto win [1, 2, $]          |
-| vim  |          | Ctrl + [hjkl]      | goto win                    |
-| bash |          | t, tx              | toggle win size             |
-| bash |          | N , T , I          | ide                         |
-| bash |          | Nt, Tt, It         | ide tab                     |
-| bash |          | Nv, Tv             | ide vert                    |
-| bash |          | GS, GV             | git                         |
-| bash |          | F, F2              | ferne                       |
-| bash |          | D                  | open dir                    |
-| bash |          | g                  | git                         |
-| bash |          | f, d, r            | fzf [bmk, fd, rg]           |
-| bash |          | M, m               | make                        |
-| bash |          | S                  | setup                       |
-| bash |          | ,+                 | pushd bmk                   |
-| bash |          | ,,                 | pushd                       |
-| bash |          | ,-                 | popd                        |
+| App     | Ahk               | Key                | Description                 |
+| ---     | ---               | ---                | ---                         |
+| win     | LCtrl + Space     | Esc                |                             |
+| win     | LCtrl/Space + Esc | Alt + Tab          | app next                    |
+| win     | LCtrl/Space + 1   | Alt + Shift + Tab  | app prev                    |
+| app     | LCtrl/Space + 4   | Ctrl + Shift + Tab | app tab prev                |
+| app     | LCtrl/Space + 5   | Ctrl + Tab         | app tab next                |
+| vim     | LCtrl/Space + 6   | Ctrl + Left        | vim tab prev                |
+| vim     | LCtrl/Space + 7   | Ctrl + Right       | vim tab next                |
+| vim     | Space + i         | Ctrl + Up          | vim tab new                 |
+| vim     | Space + o         | Ctrl + Down        | vim tab del                 |
+| vim     | Space + n         | Alt + n            |                             |
+| vim     | Space + p         | Alt + p            |                             |
+| app/fzf | Space + h         | PgUp / Alt + h     | page up                     |
+| app/fzf | Space + j         | Down / Alt + j     | down                        |
+| app/fzf | Space + k         | Up   / Alt + k     | up                          |
+| app/fzf | Space + l         | PgDn / Alt + l     | page down                   |
+| app     | Space + a         | Home               |                             |
+| app     | Space + e         | End                |                             |
+| app     | Space + b         | Left               |                             |
+| app     | Space + f         | Right              |                             |
+| app     | Space + s         | BS                 |                             |
+| app     | Space + d         | Del                |                             |
+| app     | Space + g         | F5                 |                             |
+| wt      | Space + c         | Ctrl + Shift + c   | copy                        |
+| wt      | Space + v         | Ctrl + Shift + v   | paste                       |
+| win     | RCtrl + 7         | Win + Left         | maximize left               |
+| win     | RCtrl + 8         | Win + Up           | maximize                    |
+| win     | RCtrl + 9         | Win + Right        | maximize right              |
+| win     | RCtrl + 0         |                    | toggle half maximize        |
+| win     | RCtrl + s         | Win + Shift + s    | screenshot                  |
+| win     | RCtrl + d         | Win + d            | desktop                     |
+| win     | RCtrl + g         | Win + g            | xbox game bar               |
+| wt      | RCtrl + c         | Ctrl + Shift + c   | copy                        |
+| wt      | RCtrl + v         | Ctrl + Shift + v   | paste                       |
+| ahk     | RCtrl + r         |                    | reload ahk                  |
+| win     | Zen               | Alt + `            | 日本語入力 [英語キーボード] |
+| win     |                   | Alt + Tab          | App切り替え                 |
+| win     |                   | Alt + Shift + Tab  | App切り替え（逆順）         |
+| wt      |                   | Ctrl + [0-=]       | font scale [reset, -, +]    |
+| vim     |                   | Ins, Del           | tab [new, del]              |
+| vim     |                   | F1, F2, F10        | goto win [1, 2, $]          |
+| vim     |                   | Ctrl + [hjkl]      | goto win                    |
+| bash    |                   | t, tx              | toggle win size             |
+| bash    |                   | N , T , I          | ide                         |
+| bash    |                   | Nt, Tt, It         | ide tab                     |
+| bash    |                   | Nv, Tv             | ide vert                    |
+| bash    |                   | GS, GV             | git                         |
+| bash    |                   | F, F2              | ferne                       |
+| bash    |                   | D                  | open dir                    |
+| bash    |                   | g                  | git                         |
+| bash    |                   | f, d, r            | fzf [bmk, fd, rg]           |
+| bash    |                   | M, m               | make                        |
+| bash    |                   | S                  | setup                       |
+| bash    |                   | ,+                 | pushd bmk                   |
+| bash    |                   | ,,                 | pushd                       |
+| bash    |                   | ,-                 | popd                        |
 
 ## HHKB 60 Keys
 
