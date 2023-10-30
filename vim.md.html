@@ -57,6 +57,16 @@ vim
 | C-PageUp   |                          |   |   |                                    |   |   |   |                       |                   |
 | C-PageDown |                          |   |   |                                    |   |   |   |                       |                   |
 
+## command sequence
+
+|                                   | normal         | terminal |
+| ---                               | ---            | ---      |
+| macro register & execute          | qq -> q -> C-q |          |
+| mark line m, cut & paste          | mm -> C-x -> p |          |
+| mark line m, yank & paste         | mm -> C-y -> p |          |
+| mark line m, cut & paste in term  | mm -> C-x      | C-v      |
+| mark line m, yank & paste in term | mm -> C-y      | C-v      |
+
 ## normal mode keymap
 
 |   | Key | Original                                       | Map | New            |
@@ -373,7 +383,7 @@ Command               | Description
 :vertical res[ize]  N | set window width
 
 <meta name="keywords" content="*memo:vim.record*">
-## record
+## macro
 Key | Description
 ----|---
 qq  | start recording into register 'q'
