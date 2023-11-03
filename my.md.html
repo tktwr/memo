@@ -65,18 +65,18 @@ Keymap
 
 |                       | Key     | Normal | Terminal | Fzf               | App              |
 | ---                   | ---     | ---    | ---      | ---               | ---              |
-| app next              | A-Tab   |        |          |                   | Space-Esc, C-Esc |
-| app prev              | A-S-Tab |        |          |                   | Space-1  , C-1   |
-| app tab prev          | C-S-Tab |        |          |                   | Space-4  , C-4   |
+| win app next          | A-Tab   |        |          |                   | Space-Esc, C-Esc |
+| win app prev          | S-A-Tab |        |          |                   | Space-1  , C-1   |
+| app tab prev          | S-C-Tab |        |          |                   | Space-4  , C-4   |
 | app tab next          | C-Tab   |        |          |                   | Space-5  , C-5   |
-| vim tab prev          | C-Left  |        |          |                   | Space-6  , C-6   |
-| vim tab next          | C-Right |        |          |                   | Space-7  , C-7   |
-| vim tab new           | C-Up    |        |          |                   | Space-i          |
-| vim tab del           | C-Down  |        |          |                   | Space-o          |
-| vim win left          |         | C-h    |          |                   |                  |
-| vim win down          |         | C-j    |          |                   |                  |
-| vim win up            |         | C-k    |          |                   |                  |
-| vim win right         |         | C-l    |          |                   |                  |
+| vim tab prev          | C-Home  |        |          |                   | Space-6  , C-6   |
+| vim tab next          | C-End   |        |          |                   | Space-7  , C-7   |
+| vim tab new           | C-PgUp  |        |          |                   | Space-i          |
+| vim tab del           | C-PgDn  |        |          |                   | Space-o          |
+| vim win left          | C-Left  | C-h    |          |                   |                  |
+| vim win down          | C-Down  | C-j    |          |                   |                  |
+| vim win up            | C-Up    | C-k    |          |                   |                  |
+| vim win right         | C-Right | C-l    |          |                   |                  |
 | cursor left           | Left    | h      |          |                   | Space-h          |
 | cursor down           | Down    | j      |          |                   | Space-j          |
 | cursor up             | Up      | k      |          |                   | Space-k          |
@@ -98,6 +98,10 @@ Keymap
 | fzf preview-page-down | Right   |        |          | Space-l           |                  |
 | fzf down              | PgDn    |        |          | Space-n, C-j, C-n |                  |
 | fzf up                | PgUp    |        |          | Space-p, C-k, C-p |                  |
+| select before cursor  |         |        |          |                   | S-Home           |
+| select after cursor   |         |        |          |                   | S-End            |
+| select all            |         |        |          |                   | S-a              |
+
 
 ## HHKB 60 Keys
 
@@ -157,21 +161,23 @@ Keymap
 * +---+---+---+---+---+   +---+---+---+---+---+
 * |   |   |   |   |   |   |   |   |   |   |   |
 * +---+---+---+---+---+   +---+---+---+---+---+
+*                 |   |   |   |
+*                 +---+   +---+
 *
 * +---+---+---+---+---+   +---+---+---+---+---+
-* |   | 7 | 8 | 9 | 0 |   | + | / | ( | ) |   |
+* |   | 7 | 8 | 9 | 0 |   | + | / | ( | ) |BS |
 * +---+---+---+---+---+   +---+---+---+---+---+
-* |   | 4 | 5 | 6 |   |   | - | * | { | } |   |
+* |   | 4 | 5 | 6 |   |   | - | * | { | } | f |
 * +---+---+---+---+---+   +---+---+---+---+---+
-* |[z]| 1 | 2 | 3 |   |   | = |   | , | . |   |
+* |[z]| 1 | 2 | 3 |   |   | = |   | , | . | l |
 * +---+---+---+---+---+   +---+---+---+---+---+
 *
 * +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   |   |   |   |   |   | ( | ) | ~ |
+* |   |   |   | ! | @ |   | ^ | $ | ( | ) | ~ |
 * +---+---+---+---+---+   +---+---+---+---+---+
-* |[a]|   |   |   |   |   |   |   | { | } |`|`|
+* |[a]|   |   | ` |   |   | ' | " | { | } |`|`|
 * +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   |   |   |   |   |   | [ | ] | \ |
+* |   |   |   | # | % |   | & | _ | [ | ] | \ |
 * +---+---+---+---+---+   +---+---+---+---+---+
 *
 * +---+---+---+---+---+   +---+---+---+---+---+
@@ -192,11 +198,21 @@ Keymap
 *
 ***********************************************************************
 
+|          |          |      |          |          |     |          |          |         |         |      |
+| ---      | ---      | ---  | ---      | ---      | --- | ---      | ---      | ---     | ---     | ---  |
+| win_next | win_prev |      | app_prev | app_next |     | tab_prev | tab_next | tab_new | tab_del |      |
+| A-Tab    | S-A-Tab  | End  | S-C-Tab  | C-Tab    |     | C-Home   | C-End    | C-PgUp  | C-PgDn  | PgUp |
+| Hom      | BS       | Del  | Right    | F5       |     | Left     | Down     | Up      | Right   | PgDn |
+|          |          | copy | paste    | Left     |     | PgDn     |          |         |         |      |
+|          |          |      |          |          |     | [Space]  |          |         |         |      |
+
 <textarea id="typing_area" name="typing_area" rows="10" cols="80">
 This is a typing area.
 </textarea>
 
-- readline, text area
+- text area
+  - Shift + Home, Shift + End
+- readline
   - line edit: Home, End, BS, Del, Left, Right, Up, Down
 - fzf
   - select: up, down
@@ -210,28 +226,15 @@ This is a typing area.
 - win
   - app: next, prev
 
-Home
-End
-PgUp
-PgDn
+## special keys
 
-Left
-Right
-Up
-Down
-
-Tab
-Esc
-
-Ctrl
-Shift
-Alt
-
-Space
-Enter
-Ins
-Del
-BS
+|          | Keys                |
+| ---      | ---                 |
+| modifier | Ctrl Shift Alt Win  |
+| move     | Home End PgUp PgDn  |
+| cursor   | Left Right Up Down  |
+|          | Esc Tab Space Enter |
+| edit     | Ins Del BS          |
 
 ## 24 special keys
 ~~~
