@@ -1,6 +1,96 @@
 <meta name="keywords" content="*memo:my*">
 **My**
 
+<meta name="keywords" content="*memo:my.ahk*">
+Ahk
+=======================================================
+
+| --- 1 ---  | --- 2 ---  | --- 3 ---  | --- 4 ---  | --- 5 ---  |            |            | --- 6 ---  | --- 7 ---  | --- 8 ---  | --- 9 ---  | --- 0 ---  |
+| :-------:  | :-------:  | :-------:  | :-------:  | :-------:  | :-------:  | :-------:  | :-------:  | :-------:  | :-------:  | :-------:  | :-------:  |
+| Q          | W          | E          | R          | T          |            |            | Y          | U          | I          | O          | P          |
+| A          | S          | D          | F          | G          |            |            | H          | J          | K          | L          | :;         |
+| Z          | X          | C          | V          | B          |            |            | N          | M          | <,         | >.         | ?/         |
+| Tab        | Win        | Alt        | Zen        | Ctrl       | Esc        | Shift      | Space      |            |            |            | Enter      |
+| --- 1 ---  | --- 2 ---  | --- 3 ---  | --- 4 ---  | --- 5 ---  |            |            | --- 6 ---  | --- 7 ---  | --- 8 ---  | --- 9 ---  | --- 0 ---  |
+| win_next   | win_prev   | End        | app_prev   | app_next   |            |            | tab_prev   | tab_next   | tab_new    | tab_del    | PgUp       |
+| Hom        | BS         | Del        | Right      | F5         |            |            | Left       | Down       | Up         | Right      | PgDn       |
+|            |            | copy       | paste      | Left       |            |            | PgDn       |            |            |            |            |
+|            |            |            |            |            |            |            | [Space]    |            |            |            |            |
+| --- 1 ---  | --- 2 ---  | --- 3 ---  | --- 4 ---  | --- 5 ---  |            |            | --- 6 ---  | --- 7 ---  | --- 8 ---  | --- 9 ---  | --- 0 ---  |
+|            |            |            | !          | @          |            |            | ^          | '$'        | (          | )          | ~          |
+| [a]        |            |            | `          |            |            |            | '          | "          | {          | }          | Bar        |
+|            |            |            | #          | %          |            |            | &          | _          | [          | ]          | \          |
+| --- 1 ---  | --- 2 ---  | --- 3 ---  | --- 4 ---  | --- 5 ---  |            |            | --- 6 ---  | --- 7 ---  | --- 8 ---  | --- 9 ---  | --- 0 ---  |
+| W-Left     | W-Up       | W-Right    | reload_ahk | toggle_win |            |            |            |            |            |            |            |
+|            | W-s        | W-d        | W-g        |            |            |            | C-h        | C-j        | C-k        | C-l        | [;]        |
+|            |            |            |            |            |            |            |            |            |            |            |            |
+| --- 1 ---  | --- 2 ---  | --- 3 ---  | --- 4 ---  | --- 5 ---  |            |            | --- 6 ---  | --- 7 ---  | --- 8 ---  | --- 9 ---  | --- 0 ---  |
+|            | 7          | 8          | 9          |            |            |            | +          | /          | (          | )          | BS         |
+|            | 4          | 5          | 6          |            |            |            | -          | *          | {          | }          | f          |
+| [z]        | 1          | 2          | 3          | 0          |            |            | =          |            | ,          | .          | l          |
+| --- 1 ---  | --- 2 ---  | --- 3 ---  | --- 4 ---  | --- 5 ---  |            |            | --- 6 ---  | --- 7 ---  | --- 8 ---  | --- 9 ---  | --- 0 ---  |
+|            | F7         | F8         | F9         | F12        |            |            |            |            |            |            |            |
+|            | F4         | F5         | F6         | F11        |            |            |            |            |            |            |            |
+|            | F1         | F2         | F3         | F10        |            |            |            |            |            |            | [/]        |
+| xxxxxxxxxx | xxxxxxxxxx | xxxxxxxxxx | xxxxxxxxxx | xxxxxxxxxx | xxxxxxxxxx | xxxxxxxxxx | xxxxxxxxxx | xxxxxxxxxx | xxxxxxxxxx | xxxxxxxxxx | xxxxxxxxxx |
+
+|          | Key     |
+| ---      | ---     |
+| win_prev | S-A-Tab |
+| win_next | A-Tab   |
+| app_prev | S-C-Tab |
+| app_next | C-Tab   |
+| tab_prev | C-Home  |
+| tab_next | C-End   |
+| tab_new  | C-PgUp  |
+| tab_del  | C-PgDn  |
+
+<textarea id="typing_area" name="typing_area" rows="10" cols="80">
+This is a typing area.
+</textarea>
+
+- text area
+  - Shift + Home, Shift + End
+- readline
+  - line edit: Home, End, BS, Del, Left, Right, Up, Down
+- fzf
+  - select: up, down
+  - preview view: PgUp, PgDn, half PgUp, half PgDn
+- vim
+  - view: PgUp, PgDn, half PgUp, half PgDn
+  - win: next, prev, Left, Right
+  - tab: next, prev
+- app
+  - tab: next, prev
+- win
+  - app: next, prev
+
+## special keys
+
+|          | Keys                |
+| ---      | ---                 |
+| modifier | Ctrl Shift Alt Win  |
+| move     | Home End PgUp PgDn  |
+| cursor   | Left Right Up Down  |
+|          | Esc Tab Space Enter |
+| edit     | Ins Del BS Zen      |
+
+## 24 special keys
+~~~
+'"[]{}
+-_=+\|`~
+!@#$%^&*()
+~~~
+
+~~~
+-+*/=
+()[]{}
+\|~
+!@^$
+#%&_
+`'"
+~~~
+
 <meta name="keywords" content="*memo:my.keymap*">
 Keymap
 =======================================================
@@ -151,109 +241,20 @@ Keymap
   1. Pn
 1. End: Fn + RCtrl
 
-## 40 Keys
+## Keybll 39 Keys
 
 ***********************************************************************
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   |   |   |   |   |   |   |   |   |
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   |   |   |   |   |   |   |   |   |
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   |   |   |   |   |   |   |   |   |
-* +---+---+---+---+---+   +---+---+---+---+---+
-*                 |   |   |   |
-*                 +---+   +---+
-*
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   | 7 | 8 | 9 | 0 |   | + | / | ( | ) |BS |
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   | 4 | 5 | 6 |   |   | - | * | { | } | f |
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |[z]| 1 | 2 | 3 |   |   | = |   | , | . | l |
-* +---+---+---+---+---+   +---+---+---+---+---+
-*
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   | ! | @ |   | ^ | $ | ( | ) | ~ |
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |[a]|   |   | ` |   |   | ' | " | { | } |`|`|
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   | # | % |   | & | _ | [ | ] | \ |
-* +---+---+---+---+---+   +---+---+---+---+---+
-*
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   |   |   |   |   |   |   |   |   |
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   |   |   |   |   |   |   |   |[;]|
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   |   |   |   |   |   |   |   |   |
-* +---+---+---+---+---+   +---+---+---+---+---+
-*
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   |   |   |   |   |   |   |   |   |
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   |   |   |   |   |   |   |   |   |
-* +---+---+---+---+---+   +---+---+---+---+---+
-* |   |   |   |   |   |   |   |   |   |   |[/]|
-* +---+---+---+---+---+   +---+---+---+---+---+
+* +---+---+---+---+---+       +---+---+---+---+---+
+* | Q | W | E | R | T |       | Y | U | I | O | P |
+* +---+---+---+---+---+       +---+---+---+---+---+
+* | A | S | D | F | G |       | H | J | K | L | ; |
+* +---+---+---+---+---+       +---+---+---+---+---+
+* | Z | X | C | V | B |       | N | M | , | . | / |
+* +---+---+---+---+---+---+---+---+---+---+---+---+
+* |Tab|Win|Alt|Zen|Ctr|Esc|Sft|Spc|   |   |   |Ent|
+* +---+---+---+---+---+---+---+---+---+---+---+---+
 *
 ***********************************************************************
-
-|          |          |      |          |          |     |          |          |         |         |      |
-| ---      | ---      | ---  | ---      | ---      | --- | ---      | ---      | ---     | ---     | ---  |
-| win_next | win_prev |      | app_prev | app_next |     | tab_prev | tab_next | tab_new | tab_del |      |
-| A-Tab    | S-A-Tab  | End  | S-C-Tab  | C-Tab    |     | C-Home   | C-End    | C-PgUp  | C-PgDn  | PgUp |
-| Hom      | BS       | Del  | Right    | F5       |     | Left     | Down     | Up      | Right   | PgDn |
-|          |          | copy | paste    | Left     |     | PgDn     |          |         |         |      |
-|          |          |      |          |          |     | [Space]  |          |         |         |      |
-
-<textarea id="typing_area" name="typing_area" rows="10" cols="80">
-This is a typing area.
-</textarea>
-
-- text area
-  - Shift + Home, Shift + End
-- readline
-  - line edit: Home, End, BS, Del, Left, Right, Up, Down
-- fzf
-  - select: up, down
-  - preview view: PgUp, PgDn, half PgUp, half PgDn
-- vim
-  - view: PgUp, PgDn, half PgUp, half PgDn
-  - win: next, prev, Left, Right
-  - tab: next, prev
-- app
-  - tab: next, prev
-- win
-  - app: next, prev
-
-## special keys
-
-|          | Keys                |
-| ---      | ---                 |
-| modifier | Ctrl Shift Alt Win  |
-| move     | Home End PgUp PgDn  |
-| cursor   | Left Right Up Down  |
-|          | Esc Tab Space Enter |
-| edit     | Ins Del BS          |
-
-## 24 special keys
-~~~
-'"[]{}
--_=+\|`~
-!@#$%^&*()
-~~~
-
-
-~~~
--+*=
-()[]{}
-\|~
-
-!@
-^$
-#%&_
-`'"
-~~~
 
 Vim next/prev
 =======================================================
@@ -302,5 +303,6 @@ Vim Command
 <script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>
 <link rel="stylesheet" href="inc/default.css">
 <style class="fallback">body{visibility:hidden}</style>
+<style type="text/css"><!-- body { width: 95%; max-width: 95%; } --></style>
 <meta charset="utf-8">
 <meta vim:set syntax=txt nowrap:>
