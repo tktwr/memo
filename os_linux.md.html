@@ -12,15 +12,15 @@ WSL
 
 ## wsl command
 
-|       | Command                      | Description            |
-| ---   | ---                          | ---                    |
-| Admin | wsl --update                 |                        |
-|       | wsl --install -d DISTRO_NAME | install linux          |
-|       | wsl -l -v                    | list installed linux   |
-|       | wsl -l -o                    | list installable linux |
-|       | wsl -s DISTRO_NAME           | set default distro     |
-|       | wsl --shutdown               |                        |
-|       | wsl --unregister DISTRO_NAME |                        |
+|       | Command                          | Description            |
+| ---   | ---                              | ---                    |
+| Admin | wsl.exe --update                 |                        |
+|       | wsl.exe --install -d DISTRO_NAME | install linux          |
+|       | wsl.exe -l -v                    | list installed linux   |
+|       | wsl.exe -l -o                    | list installable linux |
+|       | wsl.exe -s DISTRO_NAME           | set default distro     |
+|       | wsl.exe --shutdown               |                        |
+|       | wsl.exe --unregister DISTRO_NAME |                        |
 
 ## installed directory
 ~~~
@@ -78,6 +78,18 @@ SHARE_FOLDER /mnt/vbox/SHARE_FOLDER vboxsf defaults,noauto,iocharset=utf8,uid=10
 <meta name="keywords" content="*memo:os.linux*">
 Linux
 =======================================================
+<meta name="keywords" content="*memo:os.linux.systemctl*">
+## systemctl
+| Command                              | Description   |
+| ---                                  | ---           |
+| sudo systemctl start SERVICE         | start         |
+| sudo systemctl stop SERVICE          | stop          |
+| sudo systemctl restart SERVICE       | restart       |
+| sudo systemctl enable SERVICE        | enable        |
+| sudo systemctl disable SERVICE       | disable       |
+| systemctl status SERVICE             | status        |
+| systemctl list-unit-files -t service | list services |
+
 <meta name="keywords" content="*memo:os.linux.smb*">
 <meta name="keywords" content="*memo:os.linux.samba*">
 ## samba
