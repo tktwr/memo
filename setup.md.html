@@ -15,8 +15,6 @@ Setup WSL
 mkdir ~/MyRoaming
 cd ~/MyRoaming
 git clone https://github.com/tktwr/env.git
-cd env
-./setup/setup-wsl-ubuntu.sh init
 ~~~
 
 ## Setup env
@@ -24,11 +22,9 @@ cd env
 1. Windowsの機能の有効化または無効化
   1. Linux用Windowsサブシステム
   1. 仮想マシンプラットフォーム
-1. apt update
-1. apt upgrade
-1. apt install pkg_min
+1. f_apt_update
+1. f_apt_install_min
 1. symlink WinHome
-1. wsltty
 1. make init [etc]
   1. dot files
   1. bash min
@@ -37,15 +33,16 @@ cd env
 1. make [etc]
   1. source ~/.bashrc
 1. python
-  1. create venv torch
-  1. pip upgrade
-  1. pip install vim
+  1. f_venv_create_default
+  1. source ~/.bashrc
+  1. f_pip_upgrade
+  1. f_pip_install_min
 1. node
+  1. f_install_nodejs
 1. vim
   1. PlugUpgrade
-  1. PlugInstall
-  1. PlugUpdate
-  1. MyCocInstall
+  1. f_install_vim
+  1. f_update_vim
 
 ## Install Windows Apps in Microsoft Store
 1. Ubuntu 22.04
