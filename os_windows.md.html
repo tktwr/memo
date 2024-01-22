@@ -131,27 +131,33 @@ WindowsTerminal
 DOSコマンド
 =======================================================
 ## UNIX - DOS コマンド対応表
-UNIX                    | DOS
-------------------------|--------------
-mkdir dir               | mkdir(md) dir
-cp src_file dst_file    | copy src_file dst_file
-cp -a src_dir dst_dir   | xcopy src_dir dst_dir
-mv src_file dst_file    | move src_file dst_file
-mv src_dir dst_dir      | move src_dir dst_dir
-rm file                 | del file
-rm -r dir               | rmdir(rd) /s dir
-ln -s src_file dst_file | mklink dst_file src_file
-ln -s src_dir dst_dir   | mklink /d dst_dir src_dir
 
-## シンボリックリンクの作成と削除
-     | 作成                    | 削除
------|-------------------------|----
-dir  | mklink /d dstdir srcdir | rmdir dstdir
-file | mklink dstfile srcfile  | del dstfile
+| UNIX                     | DOS                       |
+| ------------------------ | --------------            |
+| mkdir dir                | mkdir(md) dir             |
+| cp src_file dst_file     | copy src_file dst_file    |
+| cp -a src_dir dst_dir    | xcopy src_dir dst_dir     |
+| mv src_file dst_file     | move src_file dst_file    |
+| mv src_dir dst_dir       | move src_dir dst_dir      |
+| rm file                  | del file                  |
+| rm -r dir                | rmdir(rd) /s dir          |
+| ln -s src_file dst_file  | mklink dst_file src_file  |
+| ln -s src_dir dst_dir    | mklink /d dst_dir src_dir |
+| ln -s src_dir dst_dir    | mklink /j dst_dir src_dir |
+
+<meta name="keywords" content="*memo:os.windows.mklink*">
+## ジャンクション、シンボリックリンクの作成と削除
+
+|                       | 作成                      | 削除          |
+| -----                 | ------------------------- | ----          |
+| junction to dir       | mklink /j dst_dir src_dir | rmdir dst_dir |
+| symbolic link to dir  | mklink /d dst_dir src_dir | rmdir dst_dir |
+| symbolic link to file | mklink dstfile srcfile    | del dstfile   |
 
 注意点
 
 - シンボリックリンク作成には管理者権限が必要。コマンドプロンプト(cmd.exe)を管理者権限で起動する。
+- 開発者モードにしておくと管理者権限なしでシンボリックリンクを作成できる。
 - mklink は ln と書き順が逆。
 - delでディレクトリへのシンボリックリンクは削除できない。del dir/* と解釈されてリンク先のディレクトリ内のファイルが削除される。
 
