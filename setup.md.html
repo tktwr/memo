@@ -8,41 +8,28 @@
 <meta name="keywords" content="*memo:setup.wsl*">
 Setup WSL
 =======================================================
-## Setup proxy
-
-## Clone env
-~~~
-mkdir ~/MyRoaming
-cd ~/MyRoaming
-git clone https://github.com/tktwr/env.git
-~~~
-
-## Setup env
+## In Windows
 1. Windows Update
 1. Windowsの機能の有効化または無効化
   1. Linux用Windowsサブシステム
   1. 仮想マシンプラットフォーム
-1. f_apt_update
-1. f_apt_install_min
-1. symlink WinHome
-1. make init [etc]
-  1. dot files
-  1. bash min
-  1. vim min
-  1. source ~/.bashrc
-1. make [etc]
-  1. source ~/.bashrc
-1. python
-  1. f_venv_create_default
-  1. source ~/.bashrc
-  1. f_pip_upgrade
-  1. f_pip_install_min
-1. node
-  1. f_install_nodejs
-1. vim
-  1. PlugUpgrade
-  1. f_install_vim
-  1. f_update_vim
+1. wsl.exe
+~~~
+wsl.exe --update
+wsl.exe --install Ubuntu
+~~~
+
+## In Ubuntu
+~~~
+ln -s /mnt/c/Users/USER WinHome
+mkdir MyRoaming
+cd MyRoaming
+git clone https://github.com/tktwr/env.git
+cd env/etc
+./zero.sh
+source ~/.bashrc
+setup.sh f_20_setup_init
+~~~
 
 ## Install Windows Apps in Microsoft Store
 1. Ubuntu 22.04
@@ -91,17 +78,6 @@ Setup Msys2
 ## Install Windows Apps
 1. [Python3 64bit](https://www.python.org/)
 1. [Node.js](https://nodejs.org/ja/)
-
-## Make symbolic links (admin on command prompt)
-- WinHome
-
-- Desktop
-- Downloads
-- MyConfig
-- MyShare
-
-- GoogleDrive
-- Dropbox
 
 <meta name="keywords" content="*memo:setup.linux*">
 Setup Linux
@@ -208,85 +184,41 @@ cygwin
 ~~~
 -->
 
-<meta name="keywords" content="*memo:setup.proxy*">
-Proxy
-=======================================================
-## ~/.bashrc
-~~~
-export HTTP_PROXY="http://$PROXY_USER:$PROXY_PASS@$PROXY_HOST:$PROXY_PORT"
-export HTTPS_PROXY="$HTTP_PROXY"
-export http_proxy="$HTTP_PROXY"
-export https_proxy="$HTTP_PROXY"
-export FTP_PROXY="$HTTP_PROXY"
-export NO_PROXY=".example.com,localhost,127.0.0.1"
-export no_proxy="$NO_PROXY"
-
-export GIT_SSL_NO_VERIFY=1
-export CURL_SSL_NO_VERIFY=1
-~~~
-
-<meta name="keywords" content="*memo:setup.pip*">
-Pip
-=======================================================
-## pip.conf (Linux)
-- $HOME/.config/pip/pip.conf
-
-## pip.ini (Windows)
-- $APPDATA/pip/pip.ini
-
-<meta name="keywords" content="*memo:setup.vim*">
-Vim
-=============================================
-## g:coc_config_home
-~~~
-~/.vim/coc-settings.json               (local)
-$MY_VIM/coc/win/coc-settings.json      (windows)
-$MY_VIM/coc/linux/coc-settings.json    (linux)
-~~~
-
-## g:coc_data_home
-~~~
-~/.vim/coc_data        (local)
-$MY_VIM/coc_data/win   (windows)
-$MY_VIM/coc_data/linux (linux)
-~/.config/coc          (linux local)
-~~~
-
 <meta name="keywords" content="*memo:setup.commands*">
 Install/Update/Upgrade Commands
 =======================================================
-App          | Command                    | Description
----          | ---                        | ---
-apt          |                            |
-             | apt update                 |
-             | apt upgrade                |
-             | apt search pkg             |
-             | apt install pkg            |
-             | apt remove pkg             |
-pacman       |                            |
-             | pacman -Syu                | update
-             | pacman -Ss pkg             | search
-             | pacman -S pkg              | install
-             | pacman -R pkg              | uninstall
-gitbash      |                            |
-             | git update-git-for-windows |
-termux       |                            |
-             | pkg upgrade                |
-             | pkg search pkg             |
-             | pkg install pkg            |
-pip          |                            |
-             | pip-upgrade.sh             | upgrade pip
-             | pip-install.sh             | install packages
-             | pip search pkg             |
-             | pip install pkg            |
-             | pip uninstall pkg          |
-vim.vim-plug |                            |
-             | :PlugInstall               | install plugins
-             | :PlugUpdate                | update plugins
-             | :PlugUpgrade               | upgrade vim-plug
-vim.coc      |                            |
-             | :MyCocInstall              | install plugins
-             | :CocUpdate                 | update plugins
+| App          | Command                    | Description      |
+| ---          | ---                        | ---              |
+| apt          |                            |                  |
+|              | apt update                 |                  |
+|              | apt upgrade                |                  |
+|              | apt search pkg             |                  |
+|              | apt install pkg            |                  |
+|              | apt remove pkg             |                  |
+| pacman       |                            |                  |
+|              | pacman -Syu                | update           |
+|              | pacman -Ss pkg             | search           |
+|              | pacman -S pkg              | install          |
+|              | pacman -R pkg              | uninstall        |
+| gitbash      |                            |                  |
+|              | git update-git-for-windows |                  |
+| termux       |                            |                  |
+|              | pkg upgrade                |                  |
+|              | pkg search pkg             |                  |
+|              | pkg install pkg            |                  |
+| pip          |                            |                  |
+|              | pip-upgrade.sh             | upgrade pip      |
+|              | pip-install.sh             | install packages |
+|              | pip search pkg             |                  |
+|              | pip install pkg            |                  |
+|              | pip uninstall pkg          |                  |
+| vim.vim-plug |                            |                  |
+|              | :PlugInstall               | install plugins  |
+|              | :PlugUpdate                | update plugins   |
+|              | :PlugUpgrade               | upgrade vim-plug |
+| vim.coc      |                            |                  |
+|              | :MyCocInstall              | install plugins  |
+|              | :CocUpdate                 | update plugins   |
 
 <style class="fallback">body{visibility:hidden}</style>
 <script src="inc/markdeep.min.js"></script>

@@ -37,17 +37,23 @@ $ deactivate
 ## pip
 <meta name="keywords" content="*memo:prog.python.pip*">
 
-Command                           | Description
---------------------------------- | ---
-pip -V                            | show version
-pip list                          | list installed packages
-pip freeze                        | list required packages
-pip show {pkg}                    | show package
-pip search {pkg}                  | search package
-pip install {pkg}                 | install package
-pip install -U {pkg}              | update package
-pip install -r requirements.txt   | install packages listed in requirements.txt
-pip uninstall {pkg}               | uninstall package
+| Command                           | Description                                 |
+| --------------------------------- | ---                                         |
+| pip -V                            | show version                                |
+| pip list                          | list installed packages                     |
+| pip freeze                        | list required packages                      |
+| pip show {pkg}                    | show package                                |
+| pip search {pkg}                  | search package                              |
+| pip install {pkg}                 | install package                             |
+| pip install -U {pkg}              | update package                              |
+| pip install -r requirements.txt   | install packages listed in requirements.txt |
+| pip uninstall {pkg}               | uninstall package                           |
+
+### pip.conf (Linux)
+- $HOME/.config/pip/pip.conf
+
+### pip.ini (Windows)
+- $APPDATA/pip/pip.ini
 
 ### upgrade pip
 ~~~

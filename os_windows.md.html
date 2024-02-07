@@ -141,9 +141,9 @@ DOSコマンド
 | mv src_dir dst_dir       | move src_dir dst_dir      |
 | rm file                  | del file                  |
 | rm -r dir                | rmdir(rd) /s dir          |
-| ln -s src_file dst_file  | mklink dst_file src_file  |
-| ln -s src_dir dst_dir    | mklink /d dst_dir src_dir |
 | ln -s src_dir dst_dir    | mklink /j dst_dir src_dir |
+| ln -s src_dir dst_dir    | mklink /d dst_dir src_dir |
+| ln -s src_file dst_file  | mklink dst_file src_file  |
 
 <meta name="keywords" content="*memo:os.windows.mklink*">
 ## ジャンクション、シンボリックリンクの作成と削除
@@ -152,14 +152,16 @@ DOSコマンド
 | -----                 | ------------------------- | ----          |
 | junction to dir       | mklink /j dst_dir src_dir | rmdir dst_dir |
 | symbolic link to dir  | mklink /d dst_dir src_dir | rmdir dst_dir |
-| symbolic link to file | mklink dstfile srcfile    | del dstfile   |
+| symbolic link to file | mklink dst_file src_file  | del dst_file  |
 
 注意点
 
+- ジャンクションはディレクトリのみに使える。
+- シンボリックリンクはディレクトリとファイルの両方に使える。
 - シンボリックリンク作成には管理者権限が必要。コマンドプロンプト(cmd.exe)を管理者権限で起動する。
 - 開発者モードにしておくと管理者権限なしでシンボリックリンクを作成できる。
 - mklink は ln と書き順が逆。
-- delでディレクトリへのシンボリックリンクは削除できない。del dir/* と解釈されてリンク先のディレクトリ内のファイルが削除される。
+- delでディレクトリへのシンボリックリンクを削除してはいけない。del dir/* と解釈されてリンク先のディレクトリ内のファイルが削除される。rmdirを使用する。
 
 ## ミラーリング (管理者権限で実行)
 ~~~
@@ -190,13 +192,13 @@ net share
 ~~~
 
 ### ネットワークドライブ割り当て
-Command               | Description
----                   | ---
-net use               | 割り当てを表示
-net use X: ¥¥PC¥share | 割り当て
-net use X: /DELETE    | 割り当てを削除
+| Command               | Description    |
+| ---                   | ---            |
+| net use               | 割り当てを表示 |
+| net use X: ¥¥PC¥share | 割り当て       |
+| net use X: /DELETE    | 割り当てを削除 |
 
-## リモートデスクトップ接続でサーバー上のOpenGLアプリケーションを起動する
+## リモートデスクトップ接続でサーバー上のOpenGLアプリケーションを起動する (old)
 ### セッションIDを調べる
 ~~~
 query session
@@ -208,15 +210,27 @@ cd /d D:\work
 start opengl_prog.exe
 ~~~
 
+<meta name="keywords" content="*memo:os.mac*">
+Mac
+=======================================================
+## Shortcut
+| Shortcut         | Description                           |
+| ---------------- | ------------------------------------- |
+| Cmd + Tab        | アプリ切替                            |
+| Cmd + Space      | 日本語入力                            |
+| Shift + クリック | ファイル連続選択                      |
+| Cmd + クリック   | ファイル個別選択                      |
+| Cmd + delete     | ファイル削除                          |
+
 <meta name="keywords" content="*memo:os.bootcamp*">
 BootCamp
 =======================================================
 ## Shortcut
-Shortcut               | Description
------------------------|-------------------------------------
-option長押し           | OSの選択 [起動時]
-      Shift + Fn + F11 | スクリーンキャプチャ
-Alt + Shift + Fn + F11 | 選択されたウィンドウのキャプチャ
+| Shortcut                | Description                           |
+| ----------------------- | ------------------------------------- |
+| option長押し            | OSの選択 [起動時]                     |
+| Shift + Fn + F11        | スクリーンキャプチャ                  |
+| Alt + Shift + Fn + F11  | 選択されたウィンドウのキャプチャ      |
 
 <meta name="keywords" content="*memo:os.misc*">
 misc

@@ -12,36 +12,21 @@ WSL
 
 ## wsl command
 
-|       | Command                          | Description            |
-| ---   | ---                              | ---                    |
-| Admin | wsl.exe --update                 |                        |
-|       | wsl.exe --install -d DISTRO_NAME | install linux          |
-|       | wsl.exe -l -v                    | list installed linux   |
-|       | wsl.exe -l -o                    | list installable linux |
-|       | wsl.exe -s DISTRO_NAME           | set default distro     |
-|       | wsl.exe --shutdown               |                        |
-|       | wsl.exe --unregister DISTRO_NAME |                        |
+| Command                          | Description            |
+| ---                              | ---                    |
+| wsl.exe --update                 |                        |
+| wsl.exe --install -d DISTRO_NAME | install linux          |
+| wsl.exe -l -v                    | list installed linux   |
+| wsl.exe -l -o                    | list installable linux |
+| wsl.exe -s DISTRO_NAME           | set default distro     |
+| wsl.exe --shutdown               |                        |
+| wsl.exe --unregister DISTRO_NAME |                        |
 
-## installed directory
-~~~
-AppData/Local/Packages/CanonicalGroupLimited.UbuntuonWindows_*
-~~~
-
-## file path to access from WSL to Windows
-~~~
-/mnt/c/Users/username
-~~~
-
-## file path to access from Windows to WSL
-~~~
-\\wsl$\Ubuntu\home\username
-~~~
-
-## Show Ubuntu Version
-
-~~~
-ubuntu$ lsb_release -a
-~~~
+|                     | Path                                                           |
+| ---                 | ---                                                            |
+| Installed Directory | AppData/Local/Packages/CanonicalGroupLimited.UbuntuonWindows_* |
+| WSL to Windows      | /mnt/c/Users/username                                          |
+| Windows to WSL      | \\wsl$\Ubuntu\home\username                                    |
 
 <meta name="keywords" content="*memo:os.virtualbox*">
 VirtualBox
@@ -78,6 +63,24 @@ SHARE_FOLDER /mnt/vbox/SHARE_FOLDER vboxsf defaults,noauto,iocharset=utf8,uid=10
 <meta name="keywords" content="*memo:os.linux*">
 Linux
 =======================================================
+<meta name="keywords" content="*memo:os.linux.xdg*">
+## Config Directories
+| Env              | Path               | Description                  |
+| ---              | ---                | ---                          |
+| $XDG_CONFIG_HOME | $HOME/.config      | per-user configuration files |
+| $XDG_DATA_HOME   | $HOME/.local/share | per-user data files          |
+| $XDG_CACHE_HOME  | $HOME/.cache       | per-user cache files         |
+
+- [Config Directories](https://unix.stackexchange.com/questions/312988/understanding-home-configuration-file-locations-config-and-local-sha)
+
+<meta name="keywords" content="*memo:os.linux.user*">
+## User Management
+| Command                   | Description            |
+| ---                       | ---                    |
+| sudo adduser USER         | add user (interactive) |
+| sudo gpasswd -a USER sudo | add user to sudo group |
+| su USER                   | switch user            |
+
 <meta name="keywords" content="*memo:os.linux.systemctl*">
 ## systemctl
 | Command                              | Description   |
@@ -150,30 +153,32 @@ flatpak run --user io.neovim.nvim -u ~/.vimrc
 ~/.var/app
 ~~~
 
-## Config Directories
-env              | path               | description
----              | ---                | ---
-$XDG_CONFIG_HOME | $HOME/.config      | per-user configuration files
-$XDG_DATA_HOME   | $HOME/.local/share | per-user data files
-$XDG_CACHE_HOME  | $HOME/.cache       | per-user cache files
+<meta name="keywords" content="*memo:os.linux.encfs*">
+## encfs
+- [EncFS](https://wiki.archlinux.jp/index.php/EncFS)
+- [ディスク暗号化](https://wiki.archlinux.jp/index.php/ディスク暗号化)
 
-- [Config Directories](https://unix.stackexchange.com/questions/312988/understanding-home-configuration-file-locations-config-and-local-sha)
+| Command                      | Description     |
+| ---                          | ---             |
+| encfs ~/.encfs_dir ~/dir     | create / mount  |
+| fusermount -u ~/dir          | umount          |
+| encfsctl passwd ~/.encfs_dir | change password |
 
 ## Shortcut [X Window]
-Shortcut            | Description
---------------------|-------------------------------------
-Ctrl + Alt + F[1-6] | X Window から仮想コンソールへの切替え
-Ctrl + Alt + BS     | kill X server
+| Shortcut             | Description                           |
+| -------------------- | ------------------------------------- |
+| Ctrl + Alt + F[1-6]  | X Window から仮想コンソールへの切替え |
+| Ctrl + Alt + BS      | kill X server                         |
 
 ## Shortcut [Console]
-Shortcut            | Description
---------------------|-------------------------------------
-       Alt + F[1-6] | 仮想コンソールの切替え
-       Alt + F7     | X Window へもどる
-Ctrl + Alt + Delete | reboot
-SysRq + s           | sync
-SysRq + u           | unmount
-SysRq + b           | reboot
+| Shortcut             | Description                           |
+| -------------------- | ------------------------------------- |
+| Alt + F[1-6]         | 仮想コンソールの切替え                |
+| Alt + F7             | X Window へもどる                     |
+| Ctrl + Alt + Delete  | reboot                                |
+| SysRq + s            | sync                                  |
+| SysRq + u            | unmount                               |
+| SysRq + b            | reboot                                |
 
 ## WindowsでISOイメージをUSBメモリーに書き込む
 - [Rufus](https://rufus.ie/)
@@ -181,6 +186,10 @@ SysRq + b           | reboot
 <meta name="keywords" content="*memo:os.ubuntu*">
 Ubuntu Linux
 =======================================================
+## Show Ubuntu Version
+~~~
+lsb_release -a
+~~~
 
 ## /etc/apt/apt.conf
 ~~~
@@ -243,17 +252,6 @@ $ id
 share /mnt/vbox/share vboxsf defaults,iocharset=utf8,uid=1000,gid=1000 0 0
 ~~~
 
-<meta name="keywords" content="*memo:os.linux.encfs*">
-## encfs
-- [EncFS](https://wiki.archlinux.jp/index.php/EncFS)
-- [ディスク暗号化](https://wiki.archlinux.jp/index.php/ディスク暗号化)
-
-| Command                      | Description     |
-| ---                          | ---             |
-| encfs ~/.encfs_dir ~/dir     | create / mount  |
-| fusermount -u ~/dir          | umount          |
-| encfsctl passwd ~/.encfs_dir | change password |
-
 <meta name="keywords" content="*memo:os.manjaro*">
 Manjaro Linux
 =======================================================
@@ -305,18 +303,6 @@ termux-setup-storage
 pkg install termux-exec
 ~~~
 - [termux-exec](https://wiki.termux.com/wiki/FAQ#Why_do_I_keep_getting_.27.2Fbin.2Fsh_bad_interpreter.27_error.3F)
-
-<meta name="keywords" content="*memo:os.mac*">
-Mac
-=======================================================
-## Shortcut
-Shortcut        | Description
-----------------|-------------------------------------
-Cmd + Tab       | アプリ切替
-Cmd + Space     | 日本語入力
-Shift + クリック| ファイル連続選択
-Cmd + クリック  | ファイル個別選択
-Cmd + delete    | ファイル削除
 
 <meta name="keywords" content="*memo:os.linux.ssh*">
 <meta name="keywords" content="*memo:os.linux.scp*">
