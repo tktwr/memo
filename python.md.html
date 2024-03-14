@@ -8,65 +8,41 @@
 Python
 =======================================================
 
+<meta name="keywords" content="*memo:prog.python.poetry*">
+## Poetry
+~~~
+poetry config virtualenvs.in-project true
+~~~
+
 <meta name="keywords" content="*memo:prog.python.venv*">
 ## venv
 
-### install
-~~~
-$ apt install python3-venv
-~~~
-
-### create
-~~~
-$ python3 -m venv {venvname}
-~~~
-
-### activate
-~~~
-# Linux
-$ source {venvname}/bin/activate
-# Windows
-$ .\{venvname}\Scripts\activate
-~~~
-
-### deactivate
-~~~
-$ deactivate
-~~~
+| Command                        | Description             |
+| ---                            | ---                     |
+| apt install python3-venv       | install venv            |
+| python3 -m venv {venvname}     | create venv             |
+| source {venvname}/bin/activate | activate venv (Linux)   |
+| .\{venvname}\Scripts\activate  | activate venv (Windows) |
+| deactivate                     | deactivate venv         |
 
 ## pip
 <meta name="keywords" content="*memo:prog.python.pip*">
 
-| Command                           | Description                                 |
-| --------------------------------- | ---                                         |
-| pip -V                            | show version                                |
-| pip list                          | list installed packages                     |
-| pip freeze                        | list required packages                      |
-| pip show {pkg}                    | show package                                |
-| pip search {pkg}                  | search package                              |
-| pip install {pkg}                 | install package                             |
-| pip install -U {pkg}              | update package                              |
-| pip install -r requirements.txt   | install packages listed in requirements.txt |
-| pip uninstall {pkg}               | uninstall package                           |
-
-### pip.conf (Linux)
-- $HOME/.config/pip/pip.conf
-
-### pip.ini (Windows)
-- $APPDATA/pip/pip.ini
-
-### upgrade pip
-~~~
-python -m pip install --upgrade pip  (old)
-pip install --upgrade pip
-~~~
-
-<meta name="keywords" content="*memo:prog.python.pip.freeze*">
-### list / install requrired packages
-~~~
-pip freeze > requirements.txt
-pip install -r requirements.txt
-~~~
+| Command                             | Description              |
+| ---------------------------------   | ---                      |
+| pip -V                              | show version             |
+| pip list                            | list installed packages  |
+| pip show {pkg}                      | show package             |
+| pip search {pkg}                    | search package           |
+| pip install {pkg}                   | install package          |
+| pip install -U {pkg}                | update package           |
+| pip uninstall {pkg}                 | uninstall package        |
+| pip freeze > requirements.txt       | freeze                   |
+| pip install -r requirements.txt     | install requirements.txt |
+| pip install --upgrade pip           | upgrade pip              |
+| python -m pip install --upgrade pip | upgrade pip (old)        |
+| $HOME/.config/pip/pip.conf          | pip.conf (Linux)         |
+| $APPDATA/pip/pip.ini                | pip.ini (Windows)        |
 
 <meta name="keywords" content="*memo:prog.python.syntax*">
 ## syntax
