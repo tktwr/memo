@@ -382,11 +382,14 @@ $ fdfind [options] pattern [path...]     # find from the given directories
 | fdfind .    dir | find all files and directories from the given directory   |
 | fdfind word dir | filter by word                                            |
 
-| Option            | Description                |
-| ---               | ---                        |
-| -d, --max-depth=1 | current or given directory |
-| -t, --type=f      | select files               |
-| -t, --type=d      | select directories         |
+| Option       | Description                           |
+| ---          | ---                                   |
+| -d 1         | set depth, current or given directory |
+| -t f         | select files                          |
+| -t d         | select directories                    |
+| -e cpp -e py | select files by extensions            |
+| -H           | include hidden files and dirs         |
+| -I           | include ignore files and dirs         |
 
 ### exact match to build
 ~~~
