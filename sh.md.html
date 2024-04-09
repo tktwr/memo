@@ -374,12 +374,15 @@ New Commands
 $ fdfind [options] [pattern]             # find from the current directory
 $ fdfind [options] pattern [path...]     # find from the given directories
 ~~~
+~~~
+fdfind -e png -X ls -l {}
+~~~
 
 | Command         | Description                                               |
 | ---             | ---                                                       |
 | fdfind          | find all files and directories from the current directory |
-| fdfind word     | filter by word                                            |
 | fdfind .    dir | find all files and directories from the given directory   |
+| fdfind word     | filter by word                                            |
 | fdfind word dir | filter by word                                            |
 
 | Option       | Description                           |
@@ -390,6 +393,8 @@ $ fdfind [options] pattern [path...]     # find from the given directories
 | -e cpp -e py | select files by extensions            |
 | -H           | include hidden files and dirs         |
 | -I           | include ignore files and dirs         |
+| -X command   | execute command once                  |
+| -x command   | execute command for each in parallel  |
 
 ### exact match to build
 ~~~
