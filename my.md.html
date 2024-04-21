@@ -149,48 +149,63 @@ Keymap
 
 ## Shortcuts
 
-|     |                      | Normal       | Terminal     | Fzf      | App     |
-| --- | ---                  | ---          | ---          | ---      | ---     |
-| win | win_prev             |              |              |          | S-A-Tab |
-| win | win_next             |              |              |          | A-Tab   |
-| app | app_prev             |              |              |          | S-C-Tab |
-| app | app_next             |              |              |          | C-Tab   |
-| --- | ---                  | ---          | ---          | ---      | ---     |
-| vim | tab_prev             | C-Home       | C-Home       |          |         |
-| vim | tab_next             | C-End        | C-End        |          |         |
-| vim | tab_new              | C-PgUp       | C-PgUp       |          |         |
-| vim | tab_del              | C-PgDn       | C-PgDn       |          |         |
-| vim | win left             | C-h, C-Left  | C-h, C-Left  |          |         |
-| vim | win right            | C-l, C-Right | C-l, C-Right |          |         |
-| vim | win up               | C-k, C-Up    | C-k, C-Up    |          |         |
-| vim | win down             | C-j, C-Down  | C-j, C-Down  |          |         |
-| --- | ---                  | ---          | ---          | ---      | ---     |
-|     | left                 | h            |              |          | Left    |
-|     | right                | l            |              |          | Right   |
-|     | up                   | k            |              |          | Up      |
-|     | down                 | j            |              |          | Down    |
-| --- | ---                  | ---          | ---          | ---      | ---     |
-|     | page up              | C-d          |              |          | PgUp    |
-|     | page down            | C-f          |              |          | PgDn    |
-|     | page up 5            | C-p          |              |          |         |
-|     | page down 5          | C-n          |              |          |         |
-|     | up                   | k            |              | C-k, C-p |         |
-|     | down                 | j            |              | C-j, C-n |         |
-| --- | ---                  | ---          | ---          | ---      | ---     |
-| rl  | Home                 |              | C-a          | C-a      | Home    |
-| rl  | End                  |              | C-e          | C-e      | End     |
-| rl  | Left                 |              | C-b          | C-b      | Left    |
-| rl  | Right                |              | C-f          | C-f      | Right   |
-| rl  | BS                   |              | C-s          | C-s      | BS      |
-| rl  | Del                  |              | C-d          | C-d      | Del     |
-| rl  | delete before cursor |              | C-u          | C-u      |         |
-| rl  | delete after cursor  |              | C-k          | C-k      |         |
-| --- | ---                  | ---          | ---          | ---      | ---     |
-|     | select before cursor |              |              |          | S-Home  |
-|     | select after cursor  |              |              |          | S-End   |
-|     | select all           |              |              |          | C-a     |
-| --- | ---                  | ---          | ---          | ---      | ---     |
-|     | redraw               | C-g          | C-g          | C-g      | F5      |
+|       |                      | Normal  | Terminal | Fzf      | App     |
+| ---   | ---                  | ---     | ---      | ---      | ---     |
+| win   | win_prev             |         |          |          | S-A-Tab |
+| win   | win_next             |         |          |          | A-Tab   |
+| app   | app_prev             |         |          |          | S-C-Tab |
+| app   | app_next             |         |          |          | C-Tab   |
+| ---   | ---                  | ---     | ---      | ---      | ---     |
+| vim   | tab_prev             | C-Left  | C-Left   |          |         |
+| vim   | tab_next             | C-Right | C-Right  |          |         |
+| vim   | tab_new              | C-Up    | C-Up     |          |         |
+| vim   | tab_del              | C-Down  | C-Down   |          |         |
+| vim   | win left             | C-h     | C-h      |          |         |
+| vim   | win right            | C-l     | C-l      |          |         |
+| vim   | win up               | C-k     | C-k      |          |         |
+| vim   | win down             | C-j     | C-j      |          |         |
+| ---   | ---                  | ---     | ---      | ---      | ---     |
+|       | left                 | h       |          |          | Left    |
+|       | right                | l       |          |          | Right   |
+|       | up                   | k       |          |          | Up      |
+|       | down                 | j       |          |          | Down    |
+| ---   | ---                  | ---     | ---      | ---      | ---     |
+|       | page up              | C-d     |          |          | PgUp    |
+|       | page down            | C-f     |          |          | PgDn    |
+|       | page up 5            | C-p     |          |          |         |
+|       | page down 5          | C-n     |          |          |         |
+|       | up                   | k       |          | C-k, C-p |         |
+|       | down                 | j       |          | C-j, C-n |         |
+| ---   | ---                  | ---     | ---      | ---      | ---     |
+| rl    | Home                 |         | C-a      | C-a      | Home    |
+| rl    | End                  |         | C-e      | C-e      | End     |
+| rl    | Left                 |         | C-b      | C-b      | Left    |
+| rl    | Right                |         | C-f      | C-f      | Right   |
+| rl    | BS                   |         | C-s      | C-s      | BS      |
+| rl    | Del                  |         | C-d      | C-d      | Del     |
+| rl    | delete before cursor |         | C-u      | C-u      |         |
+| rl    | delete after cursor  |         |          | C-k      |         |
+| ---   | ---                  | ---     | ---      | ---      | ---     |
+|       | select before cursor |         |          |          | S-Home  |
+|       | select after cursor  |         |          |          | S-End   |
+|       | select all           |         |          |          | C-a     |
+| ---   | ---                  | ---     | ---      | ---      | ---     |
+|       | redraw               | C-g     | C-g      | C-g      | F5      |
+| ---   | ---                  | ---     | ---      | ---      | ---     |
+| term  | terminate            |         | C-c      |          |         |
+| term  | TAB                  |         | C-i      |          |         |
+| term  | CR                   |         | C-m      |          |         |
+| shell | hist next            |         | C-n      |          |         |
+| vim   | normal mode          |         | C-o      |          |         |
+| shell | hist prev            |         | C-p      |          |         |
+| vim   | toggle win height    |         | C-q      |          |         |
+| fzf   | fzf hist             |         | C-r      |          |         |
+| fzf   | fzf file             |         | C-t      |          |         |
+| vim   | paste                |         | C-v      |          |         |
+| vim   | window mode          |         | C-w      |          |         |
+|       |                      |         | C-x      |          |         |
+|       |                      |         | C-y      |          |         |
+| term  | stop job             |         | C-z      |          |         |
 
 ## HHKB 60 Keys
 
