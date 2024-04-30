@@ -370,20 +370,31 @@ New Commands
 <meta name="keywords" content="*memo:sh.fd*">
 <meta name="keywords" content="*memo:sh.fdfind*">
 ## fdfind (fd)
+
 ~~~
-$ fdfind [options] [pattern]             # find from the current directory
-$ fdfind [options] pattern [path...]     # find from the given directories
-~~~
-~~~
-fdfind -e png -X ls -l {}
+$ fdfind [options] pattern [path...]
 ~~~
 
-| Command         | Description                                               |
-| ---             | ---                                                       |
-| fdfind          | find all files and directories from the current directory |
-| fdfind .    dir | find all files and directories from the given directory   |
-| fdfind word     | filter by word                                            |
-| fdfind word dir | filter by word                                            |
+| Command         | Description                                                   |
+| ---             | ---                                                           |
+| fdfind          | find all files and directories from the current directory     |
+| fdfind .    dir | find all files and directories from the given directory       |
+| fdfind word     | find matched files and directories from the current directory |
+| fdfind word dir | find matched files and directories from the given directory   |
+
+### Examples
+~~~
+# find all png files under the current dir and list info at once
+fdfind -e png -X ls -l {}
+
+# exact match to build
+fdfind -I -t d --prune -g build
+
+# remove all .svn directories
+fdfind -HI -t d --prune -g '.svn' -X rm -rf {}
+~~~
+
+### Options
 
 | Option       | Description                           |
 | ---          | ---                                   |
@@ -395,15 +406,7 @@ fdfind -e png -X ls -l {}
 | -I           | include ignore files and dirs         |
 | -X command   | execute command once                  |
 | -x command   | execute command for each in parallel  |
-
-### exact match to build
-~~~
-fdfind -I -t d --prune -g build
-~~~
-### remove all .svn directories
-~~~
-fdfind -HI -t d --prune -g '.svn' -X rm -rf {}
-~~~
+| -g pattern   | glob match                            |
 
 <meta name="keywords" content="*memo:sh.rg*">
 <meta name="keywords" content="*memo:sh.ripgrep*">
@@ -412,6 +415,14 @@ fdfind -HI -t d --prune -g '.svn' -X rm -rf {}
 $ rg [options] pattern [path...]
 ~~~
 
+### Examples
+~~~
+# OR
+$ rg 'aaa|bbb' file
+~~~
+
+### Options
+
 | Option        | Description                |
 | ---           | ---                        |
 | -S            | smart case                 |
@@ -419,6 +430,8 @@ $ rg [options] pattern [path...]
 | -i            | ignore case                |
 | -w            | word boundary              |
 | --max-depth=1 | current or given directory |
+
+### Patterns
 
 | Pattern       | Description       |
 | ---           | ---               |
