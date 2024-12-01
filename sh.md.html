@@ -392,6 +392,9 @@ fdfind -I -t d --prune -g build
 
 # remove all .svn directories
 fdfind -HI -t d --prune -g '.svn' -X rm -rf {}
+
+# find git repositories
+fdfind -H '\.git'
 ~~~
 
 ### Options
