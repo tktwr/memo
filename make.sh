@@ -8,7 +8,7 @@ f_add_submodule() {
   git submodule add https://github.com/tktwr/memo_js.git third_party/memo_js
 }
 f_git_submodule_update() {
-  git submodule update --init --recursive --remote --merge
+  git submodule update --init --recursive --remote --rebase
 }
 f_git_submodule_status() {
   git submodule status --recursive
