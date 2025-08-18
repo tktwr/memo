@@ -1,22 +1,13 @@
 #!/bin/bash
 
+source cmd_git.sh
+
 #======================================================
 # functions
 #======================================================
-f_add_submodule() {
-  mkdir -p third_party
-  git submodule add https://github.com/tktwr/memo_js.git third_party/memo_js
-}
-f_git_submodule_update() {
-  git submodule update --init --recursive --remote --rebase
-}
-f_git_submodule_status() {
-  git submodule status --recursive
-  git submodule summary
-}
-f_tags() {
-  memotags.sh 'memo:' *.html > tags
-}
+f_0_submod_add()    { f_git_submodule_add_memo_js; }
+f_0_submod_update() { f_git_submodule_update_all; }
+f_0_submod_status() { f_git_submodule_status; }
 
 f_dot() {
   dot -T svg -o images/skk.svg dot/skk.dot
@@ -24,6 +15,7 @@ f_dot() {
   dot -T svg -o images/vim-ide.svg dot/vim-ide.dot
 }
 
+f_tags() { memotags.sh 'memo:' *.html > tags; }
 #======================================================
 # main
 #======================================================
