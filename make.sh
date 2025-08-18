@@ -3,6 +3,10 @@
 #======================================================
 # functions
 #======================================================
+f_add_submodule() {
+  mkdir -p third_party
+  git submodule add https://github.com/tktwr/memo_js.git third_party/memo_js
+}
 f_tags() {
   memotags.sh 'memo:' *.html > tags
 }
